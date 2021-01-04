@@ -1,0 +1,8 @@
+syntax = "proto2";
+import "student.proto";
+message Cinformation {
+	required fixed32 personnum=1;
+	required string content=2;
+	required Student student=3;
+        optional Cinformation  cinfo=4;
+}
