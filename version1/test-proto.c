@@ -96,6 +96,7 @@ int main(int argc, char *argv[])
     //ignore the first 4 bytes which are prefix 
     int real_len=recv_len-HEAD_LENGTH;
     char* dest;
+    //address of recvBuff + 4
     dest = recvBuff+HEAD_LENGTH; 
 
     //check the received bytes and unpacked bytes(dest) for debug
