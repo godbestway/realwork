@@ -39,19 +39,35 @@ static void *state_handler(void *arg)
         INFO_PRINT("while...connread...finish...\n");
 
 	int length = (int)buffer[0];
+        int message_type = (int)buffer[1];
 
         Information* info_recv = NULL;
         
 	//try put len on first position
         //force translation from char to uint_8
-	uint8_t * intbuf = (uint8_t*)(buffer+1);
-        info_recv = information__unpack(NULL,length,intbuf);
+ 
+        if(message_type == 1){
+		uint8_t * intbuf = (uint8_t*)(buffer+2);
+        	info_recv = information__unpack(NULL,length,intbuf);
 
-        printf("content name : %s\n", info_recv->content);  
+       	 	printf("recieve content name : %s\n", info_recv->content);  
 
-	printf("content name : %p\n", buffer);  
+		  
+	}
+	
+	free(buffer);
 
-        free(buffer);     
+	// Take appropriate action
+        // TODO: Check whether we support the action
+        /*if (0 == strcmp(type, COMMAND_GET_PERFLOW))
+        { handle_get_perflow(msg, id); }
+        else if (0 == strcmp(type, COMMAND_PUT_PERFLOW))
+        { handle_put_perflow(msg, id); }
+        else
+        { 
+            ERROR_PRINT("Unknown type: %s", type);
+            send_error(id, -1, ERROR_MALFORMED);
+        }*/   
 
         // Get message id
 #define CONTENT_LEN 32
@@ -59,12 +75,12 @@ static void *state_handler(void *arg)
     	Information info = INFORMATION__INIT;
     	info.personnum=5252;
     	info.content = (char*)malloc(CONTENT_LEN);
-    	info.content="hello";
+    	info.content="nihao a";
 
     	//check info length  
     	unsigned int len;
     	len = information__get_packed_size(&info);
-    	printf("size of Student info : %u\n", len);
+    	printf("send size of Student info : %u\n", len);
  
     	//use length to malloc a space, check pb-c.h to know the buf pointer type
     	//here is uint8_t  buf   
@@ -79,7 +95,7 @@ static void *state_handler(void *arg)
     	new_buf[0] = len & 0xff;
     	new_buf[1] = (len>>8)&0xff;
     	new_buf[2] = 0;
-    	new_buf[3] = 0;
+    	new_buf[3] = 0x01;
 
    	 int m;
     	for(m = HEAD_LENGTH; m < len+HEAD_LENGTH; m++){
@@ -88,26 +104,12 @@ static void *state_handler(void *arg)
 
 	conn_write(connac_conn_state, new_buf, len+HEAD_LENGTH);
 
-	printf("content name : %p\n", new_buf);
-
  	free(new_buf);
 
         // Get message type
         
                 
         DEBUG_PRINT("Message: id=%d, type=%s", id, type);
-
-        // Take appropriate action
-        // TODO: Check whether we support the action
-        /*if (0 == strcmp(type, COMMAND_GET_PERFLOW))
-        { handle_get_perflow(msg, id); }
-        else if (0 == strcmp(type, COMMAND_PUT_PERFLOW))
-        { handle_put_perflow(msg, id); }
-        else
-        { 
-            ERROR_PRINT("Unknown type: %s", type);
-            send_error(id, -1, ERROR_MALFORMED);
-        }*/
 
         // Free JSON object
         

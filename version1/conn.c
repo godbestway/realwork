@@ -149,6 +149,7 @@ char * conn_read(int conn)
     }
     int strlen;
     strlen = (int)((lenchars[0] & 0xff) |( (lenchars[1] & 0xff)<<8));
+    int message_type = (int)lenchars[3];
     
     //int strlen = ntohl(*((int *)lenchars));
     DEBUG_PRINT("Should read %d bytes", strlen);
@@ -160,11 +161,12 @@ char * conn_read(int conn)
     // Allocate buffer for string
     char *buf = NULL;
     //first buf to store the length
-    buf = (char *)malloc(strlen+1);
+    buf = (char *)malloc(strlen+2);
     buf[0] = strlen; 
-
+    buf[1] = message_type;
+ 
     assert(buf != NULL);
-    char *cur = buf+1;
+    char *cur = buf+2;
 
     // Read string
     while (readlen < strlen)
