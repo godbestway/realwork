@@ -3,14 +3,21 @@ LDFLAGS +=  -lpthread -lpcap -lprotobuf-c -Wl,--no-undefined
 
 all: connac
 
-connac: main.o conn.o config.o connac_state.o information.pb-c.o
-	gcc main.o config.o conn.o connac_state.o information.pb-c.o -o connac $(CFLAGS) $(LDFLAGS)
+connac: main.o conn.o config.o connac_state.o information.pb-c.o person.pb-c.o protoObject.o
+	gcc main.o config.o conn.o connac_state.o information.pb-c.o person.pb-c.o protoObject.o -o connac $(CFLAGS) $(LDFLAGS)
+
+person.pb-c.o: person.pb-c.c 
+	gcc -c $(CFLAGS) $(LDFLAGS) person.pb-c.h person.pb-c.c
 
 information.pb-c.o: information.pb-c.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) information.pb-c.h information.pb-c.c
 
 conn.o: conn.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) conn.c conn.h
+
+protoObject.o: protoObject.c 
+	gcc -c $(CFLAGS) $(LDFLAGS) protoObject.c protoObject.h
+
 
 config.o: config.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) config.c config.h
@@ -22,4 +29,4 @@ main.o: main.c
 	gcc -c $(CFLAGS) $(LDFLAGS) main.c
 
 clean: 
-	rm -rf main.o conn.o config.o connac_state.o
+	rm -rf main.o conn.o config.o protoObject.o connac_state.o

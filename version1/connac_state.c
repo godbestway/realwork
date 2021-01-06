@@ -1,6 +1,9 @@
 #include "connac_state.h"
-#include "information.pb-c.h"
 #include "debug.h"
+#include "protoObject.h"
+#include "information.pb-c.h"
+#include "person.pb-c.h"
+
 #include "main.h"
 #include "config.h"
 #include "conn.h"
@@ -12,6 +15,8 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdint.h>
+
 
 
 // Thread for handling state messages
@@ -40,76 +45,47 @@ static void *state_handler(void *arg)
 
 	int length = (int)buffer[0];
         int message_type = (int)buffer[1];
+        uint8_t * intbuf = (uint8_t*)(buffer+2);
 
-        Information* info_recv = NULL;
         
 	//try put len on first position
         //force translation from char to uint_8
- 
-        if(message_type == 1){
-		uint8_t * intbuf = (uint8_t*)(buffer+2);
+ 	
+	if(message_type == Proto_Person){
+		Person* person_recv = NULL;
+        	person_recv = person__unpack(NULL,length,intbuf);
+
+       	 	printf("person name : %s\n", person_recv->name);  
+
+	}
+        else if(message_type == Proto_Information){
+		Information* info_recv = NULL;
         	info_recv = information__unpack(NULL,length,intbuf);
 
        	 	printf("recieve content name : %s\n", info_recv->content);  
 
 		  
 	}
+	else{ 
+            ERROR_PRINT("Unknown type!!!!!");
+        }
 	
 	free(buffer);
 
-	// Take appropriate action
-        // TODO: Check whether we support the action
-        /*if (0 == strcmp(type, COMMAND_GET_PERFLOW))
-        { handle_get_perflow(msg, id); }
-        else if (0 == strcmp(type, COMMAND_PUT_PERFLOW))
-        { handle_put_perflow(msg, id); }
-        else
-        { 
-            ERROR_PRINT("Unknown type: %s", type);
-            send_error(id, -1, ERROR_MALFORMED);
-        }*/   
-
-        // Get message id
-#define CONTENT_LEN 32
-       //initialize a new Information object
-    	Information info = INFORMATION__INIT;
-    	info.personnum=5252;
-    	info.content = (char*)malloc(CONTENT_LEN);
-    	info.content="nihao a";
-
-    	//check info length  
-    	unsigned int len;
-    	len = information__get_packed_size(&info);
-    	printf("send size of Student info : %u\n", len);
- 
-    	//use length to malloc a space, check pb-c.h to know the buf pointer type
-    	//here is uint8_t  buf   
-    	uint8_t * buf = NULL;
-    	buf = (uint8_t*)malloc(len);
-    	information__pack(&info, buf);
-    #define HEAD_LENGTH 4
-
-    	//create a new buf, add prefix before info
-    	uint8_t *new_buf = NULL;
-	new_buf = (uint8_t*)malloc(len+HEAD_LENGTH);
-    	new_buf[0] = len & 0xff;
-    	new_buf[1] = (len>>8)&0xff;
-    	new_buf[2] = 0;
-    	new_buf[3] = 0x01;
-
-   	 int m;
-    	for(m = HEAD_LENGTH; m < len+HEAD_LENGTH; m++){
-	new_buf[m] = buf[m-HEAD_LENGTH];
+	
+	ProtoObject *info_object = NULL;
+	//person_object = proto_compose_person_message("xiaoming", 12, "str");
+	info_object = proto_compose_information_message(50,"hello a");
+	int send_success = send_proto_object( connac_conn_state, info_object);
+	if(send_success < 0){
+		INFO_PRINT("send message failed");
+		return -1;
 	}
 
-	conn_write(connac_conn_state, new_buf, len+HEAD_LENGTH);
-
- 	free(new_buf);
-
+	free(info_object);
         // Get message type
         
-                
-        DEBUG_PRINT("Message: id=%d, type=%s", id, type);
+            
 
         // Free JSON object
         
