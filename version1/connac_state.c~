@@ -85,7 +85,7 @@ static void *state_handler(void *arg)
 		return -1;
 	}
 
-	free(info_object);
+	free(syn_object);
         // Get message type
         
             
@@ -104,7 +104,7 @@ int state_init()
 {
     // Open state communication channel
     connac_conn_state = conn_active_open(connac_config.ctrl_ip, 
-            connac_config.ctrl_port_state);
+            connac_config.ctrl_port_conn);
     if (connac_conn_state < 0)
     { 
         ERROR_PRINT("Failed to open state communication channel");

@@ -1,4 +1,4 @@
-#include "connac_state.h"
+#include "connac_ac.h"
 #include "debug.h"
 #include "protoObject.h"
 #include "information.pb-c.h"
@@ -24,7 +24,7 @@
 static pthread_t state_thread;
 
 // Connection for state messages
-int connac_conn_state = -1;
+int connac_action_state = -1;
 
 static void *state_handler(void *arg)
 {
@@ -35,7 +35,7 @@ static void *state_handler(void *arg)
         INFO_PRINT("while.........\n");        
 	// Attempt to read a JSON string
         char* buffer; 
-        buffer = conn_read(connac_conn_state);
+        buffer = conn_read(connac_action_state);
         if (NULL == buffer)
         {
             ERROR_PRINT("Failed to read from state socket");
@@ -78,8 +78,8 @@ static void *state_handler(void *arg)
 	
 	//ProtoObject *info_object = NULL;
 	//info_object = proto_compose_information_message(50,"hello a");
-	int send_success = send_proto_object( connac_conn_state, syn_object);
-	//int send_success = send_proto_object( connac_conn_state, info_object);
+	int send_success = send_proto_object( connac_action_state, syn_object);
+	//int send_success = send_proto_object( connac_action_state, info_object);
 	if(send_success < 0){
 		INFO_PRINT("send message failed");
 		return -1;
@@ -100,22 +100,22 @@ static void *state_handler(void *arg)
 
 
 
-int state_init()
+int action_init()
 {
     // Open state communication channel
-    connac_conn_state = conn_active_open(connac_config.ctrl_ip, 
-            connac_config.ctrl_port_conn);
-    if (connac_conn_state < 0)
+    connac_action_state = conn_active_open(connac_config.ctrl_ip, 
+            connac_config.ctrl_port_action);
+    if (connac_action_state < 0)
     { 
         ERROR_PRINT("Failed to open state communication channel");
-        return connac_conn_state; 
+        return connac_action_state; 
     }
     printf("state init\n");
   /*  // Create SYN
     json_object *syn = json_compose_syn();
 
     // Send SYN
-    json_send(syn, connac_conn_state);
+    json_send(syn, connac_action_state);
 
     // Free JSON object
     json_object_put(syn);
@@ -125,11 +125,11 @@ int state_init()
     return 1;
 }
 
-int state_cleanup()
+int action_cleanup()
 {
     // Close state communication channel
-    if (conn_close(connac_conn_state) >= 0)
-    { connac_conn_state = -1; }
+    if (conn_close(connac_action_state) >= 0)
+    { connac_action_state = -1; }
     else
     { ERROR_PRINT("Failed to close state communication channel"); }
 

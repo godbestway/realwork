@@ -3,8 +3,8 @@ LDFLAGS +=  -lpthread -lpcap -lprotobuf-c -Wl,--no-undefined
 
 all: connac
 
-connac: main.o conn.o config.o connac_state.o information.pb-c.o person.pb-c.o syn.pb-c.o protoObject.o
-	gcc main.o config.o conn.o connac_state.o information.pb-c.o person.pb-c.o syn.pb-c.o protoObject.o -o connac $(CFLAGS) $(LDFLAGS)
+connac: main.o conn.o config.o connac_state.o connac_ac.o information.pb-c.o person.pb-c.o syn.pb-c.o protoObject.o
+	gcc main.o config.o conn.o connac_state.o connac_ac.o information.pb-c.o person.pb-c.o syn.pb-c.o protoObject.o -o connac $(CFLAGS) $(LDFLAGS)
 
 person.pb-c.o: person.pb-c.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) person.pb-c.h person.pb-c.c
@@ -27,6 +27,10 @@ config.o: config.c
 
 connac_state.o: connac_state.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) connac_state.c connac_state.h
+
+connac_ac.o: connac_ac.c 
+	gcc -c $(CFLAGS) $(LDFLAGS) connac_ac.c connac_ac.h
+
 
 main.o: main.c 
 	gcc -c $(CFLAGS) $(LDFLAGS) main.c
