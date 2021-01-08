@@ -85,7 +85,7 @@ static void *state_handler(void *arg)
 		return -1;
 	}
 
-	free(syn_object);
+	free(info_object);
         // Get message type
         
             

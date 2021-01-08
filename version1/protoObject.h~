@@ -15,6 +15,12 @@ extern "C" {
 #define PROTO_SYN	2
 
 
+/*#define RESPONSE_DELETE_PERFLOW_ACK     "delete-perflow-ack"
+#define EVENT_REPROCESS         "reprocess"
+#define CONSTANT_ACTION_DROP            "drop"
+#define ERROR_MALFORMED          "malformed"
+*/
+
 ///// STRUCTS ///////////////////////////////////////////////////////////////
 
 typedef struct{

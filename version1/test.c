@@ -22,6 +22,12 @@ int main()
     int j = strlen(buf);
     //printf("strlen %d\n ",c);
     printf("size %x\n", bufint[0]); 
+    int pid = getpid();
+    char hostname[1024];
+    memset(hostname, 0, 1024);
+    gethostname(hostname, 1024);    
+    printf("hostname %s\n", hostname);
+    printf("pid %d\n",pid);
  
 //    printf("int: %d\n",b);
    
