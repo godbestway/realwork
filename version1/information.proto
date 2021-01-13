@@ -1,6 +1,0 @@
-syntax = "proto2";
-
-message Information {
-	required fixed32 personnum=1;
-	required string content=2;
-}
