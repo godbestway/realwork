@@ -66,7 +66,9 @@ static void *state_handler(void *arg)
        	 	printf("recieve content name : %s\n", info_recv->content);  
 
 		  
-	}
+	}else if(message_type == PROTO_GETPERFLOWMSG)
+
+
 	else{ 
             ERROR_PRINT("Unknown type!!!!!");
         }
@@ -110,7 +112,7 @@ int state_init()
         ERROR_PRINT("Failed to open state communication channel");
         return connac_conn_state; 
     }
-    printf("state init");
+    printf("state init\n");
   /*  // Create SYN
     json_object *syn = json_compose_syn();
 

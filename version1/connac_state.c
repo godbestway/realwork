@@ -66,6 +66,10 @@ static void *state_handler(void *arg)
        	 	printf("recieve content name : %s\n", info_recv->content);  
 
 		  
+	}else if(message_type == PROTO_GETPERFLOWMSG){
+		GetPerflowMsg* getPerflow_recv = NULL;
+		getPerlfow_recv = get_perflow_msg__unpack(NULL,length,intbuf)
+
 	}
 	else{ 
             ERROR_PRINT("Unknown type!!!!!");

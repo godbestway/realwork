@@ -13,6 +13,7 @@ extern "C" {
 #define PROTO_PERSON	0
 #define PROTO_INFORMATION	1
 #define PROTO_SYN	2
+#define PROTO_GETPERFLOWMSG	3
 
 
 ///// STRUCTS ///////////////////////////////////////////////////////////////
