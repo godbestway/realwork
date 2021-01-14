@@ -1,3 +1,4 @@
+#include "flowstate.pb-c.h"
 #include <CONNAC.h>
 #include <pthread.h>
 #include <assert.h>
@@ -15,14 +16,13 @@ typedef struct line{
     struct line * next;
 }line;
 
-line* initLine(line * head);
+line head;
 
-void display(line * head);
+void initLine(line * head);
 
-void local_get_perflow(){
+int local_get_perflow();
+ProtoObject* proto_compose_perflow_message(int data);
 
-	printf("begin to get STATES");
-}
 
 
 int main()
@@ -31,16 +31,14 @@ int main()
     CONNACLocals locals;
     bzero(&locals,sizeof(locals));
     locals.get_perflow = &local_get_perflow;
+	
+    initLine(&head);
     
     connac_init(&locals);
 
-    line * head=NULL;
     
-    head=initLine(head);
-    
-    display(head);
    
-    printf("链表中第 4 个节点的直接前驱是：%d\n",head->next->next->next->prior->data);
+   // printf("链表中第 4 个节点的直接前驱是：%d\n",head->next->next->prior->data);
     
     while(1){
 
@@ -50,9 +48,8 @@ int main()
 }
 
 
-line* initLine(line * head){
+void initLine(line * head){
     
-    head=(line*)malloc(sizeof(line));
    
     head->prior=NULL;
     head->next=NULL;
@@ -74,20 +71,66 @@ line* initLine(line * head){
         list=list->next;
     }
     
-    return head;
 }
-void display(line * head){
-    line * temp=head;
+
+
+ProtoObject* proto_compose_perflow_message(int data){
+	FlowState perflow = FLOW_STATE__INIT;
+    	perflow.data=data;
+    	
+    	//check info length  
+    	unsigned int len;
+    	len = flow_state__get_packed_size(&perflow);
+    	printf("send size of perflow : %u\n", len);
+ 
+    	//use length to malloc a space, check pb-c.h to know the buf pointer type
+    	//here is uint8_t  buf   
+    	uint8_t * buf = NULL;
+    	buf = (uint8_t*)malloc(len);
+    	flow_state__pack(&perflow, buf);
+	
+	ProtoObject *perflow_object;
+    	perflow_object = (ProtoObject *)malloc(sizeof(ProtoObject));	
+	
+	//printf("message %d\n",message_type);
+	perflow_object->length = len;
+	perflow_object->buf = buf;
+	perflow_object->message_type=PROTO_CONNPERFLOW;
+	
+	
+	return perflow_object;
+	
+
+}
+
+int local_get_perflow(){
+    line * temp= &head;
     while (temp) {
-        
-        if (temp->next==NULL) {
-            printf("%d\n",temp->data);
-        }else{
-            printf("%d <-> ",temp->data);
+
+    	ProtoObject *perflow_object	= NULL;
+
+    	perflow_object = proto_compose_perflow_message(temp->data);	
+   	int send_success = connac_send_perflow(perflow_object);
+
+    	if(send_success < 0){
+		printf("send perflow message failed");
+	    	return -1;
         }
+
+        free(perflow_object);
+    
         temp=temp->next;
     }
+	return 1;
 }
+
+
+
+
+
+
+
+
 
 
 

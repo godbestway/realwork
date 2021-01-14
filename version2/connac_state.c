@@ -43,6 +43,12 @@ static int handle_get_perflow(GetPerflowMsg* getPerflow_recv)
 
 }
 
+int connac_send_perflow(ProtoObject * proto_object){
+	int result;
+	result = send_proto_object(connac_conn_state, proto_object);
+	return result;
+}
+
 static void *state_handler(void *arg)
 {
     INFO_PRINT("State handling thread started");

@@ -3,6 +3,19 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <stdio.h>
+
+typedef struct line{
+    struct line * prior;
+    int data;
+    struct line * next;
+}line;
+
+line head;
+
+void initLine(line * head);
+
+int local_get_perflow();
+
  
 int main()
 {
@@ -28,8 +41,46 @@ int main()
     gethostname(hostname, 1024);    
     printf("hostname %s\n", hostname);
     printf("pid %d\n",pid);
- 
+    
+     initLine(&head);
+     local_get_perflow();
+    
 //    printf("int: %d\n",b);
    
 }
 
+void initLine(line * head){
+    
+   
+    head->prior=NULL;
+    head->next=NULL;
+    head->data=1;
+    
+    line * list=head;
+    int i;
+    for (i=2; i<=5; i++) {
+       
+        line * body=(line*)malloc(sizeof(line));
+        body->prior=NULL;
+        body->next=NULL;
+        body->data=i;
+
+        
+        list->next=body;
+        body->prior=list;
+        
+        list=list->next;
+    }
+    
+}
+
+
+int local_get_perflow(){
+    line * temp= &head;
+    while (temp) { 
+       
+    printf("while data: %d\n",temp->data);
+    temp=temp->next;
+    }
+	return 1;
+}

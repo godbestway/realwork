@@ -1,3 +1,4 @@
+#include "CONNAC.h"
 #include "conn.h"
 #include "debug.h"
 #include "information.pb-c.h"
@@ -123,7 +124,7 @@ int send_proto_object(int conn, ProtoObject* proto_object){
 	uint8_t* buf = proto_object->buf;
 	int len = proto_object->length;
 	uint8_t type = proto_object->message_type;
-	printf("type %u\n",type);
+	printf("type %x\n",type);
 
 	if(buf == NULL){
 		return -1;

@@ -1,7 +1,7 @@
 CFLAGS += -Wall -g 
 LDFLAGS +=  -lpthread -lpcap -lconnac -lprotobuf-c -Wl,--no-undefined 
 
-SOURCES = main.c 
+SOURCES = main.c flowstate.pb-c.o
 CC = gcc
 
 all : realnf

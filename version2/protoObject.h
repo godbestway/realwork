@@ -7,7 +7,7 @@ extern "C" {
 
 #include <pcap.h>
 #include <stdint.h>
-
+#include "CONNAC.h"
 
 ///// DEFINES ////////////////////////////////////////////////////////////////
 #define PROTO_PERSON	0
@@ -18,12 +18,7 @@ extern "C" {
 
 ///// STRUCTS ///////////////////////////////////////////////////////////////
 
-typedef struct{
-	int length;		//send_protoObject need a message length for coding head
-	uint8_t* buf;
-	uint8_t message_type;	//send_protoObject need a message type for coding head
-	
-}ProtoObject;
+
 
 
 
@@ -31,7 +26,8 @@ typedef struct{
 //json_object *json_compose_perflow_key(PerflowKey *key)
 
 //json_object* json_compose_discover();
-int send_proto_object(int conn, ProtoObject * proto_object);
+
+int send_proto_object(int conn, ProtoObject* proto_object);
 ProtoObject* proto_compose_person_message(char* name, int age, char* address);
 ProtoObject* proto_compose_information_message(int personnum, char* content);
 ProtoObject* proto_compose_syn_message();
