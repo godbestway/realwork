@@ -1,4 +1,4 @@
-SOURCES= connac_core.c conn.c config.c connac_state.c connac_ac.c information.pb-c.c person.pb-c.c syn.pb-c.c protoObject.c
+SOURCES= connac_core.c conn.c config.c connac_state.c connac_ac.c information.pb-c.c person.pb-c.c syn.pb-c.c getPerflowMsg.pb-c.c putPerflowMsg.pb-c.c putPerflowAckMsg.pb-c.c  flowstate.pb-c.c getPerflowAckMsg.pb-c.c protoObject.c
 CC = gcc
 
 ifeq (${PREFIX},)
@@ -24,6 +24,7 @@ install: build
 	install libconnac.so ${LIBDIR}/libconnac.so
 	install -d ${INCLUDEDIR}
 	install CONNAC.h ${INCLUDEDIR}/CONNAC.h
+	install flowstate.pb-c.h ${INCLUDEDIR}/flowstate.pb-c.h
 	install -d ${CONFDIR}
 	if [ ! -f ${CONFDIR}/config.conf ]; then install config.conf ${CONFDIR}/config.conf; fi
 

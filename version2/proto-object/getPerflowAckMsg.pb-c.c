@@ -58,7 +58,7 @@ static const ProtobufCFieldDescriptor get_perflow_ack_msg__field_descriptors[1] 
     "count",
     1,
     PROTOBUF_C_LABEL_REQUIRED,
-    PROTOBUF_C_TYPE_STRING,
+    PROTOBUF_C_TYPE_FIXED32,
     0,   /* quantifier_offset */
     offsetof(GetPerflowAckMsg, count),
     NULL,

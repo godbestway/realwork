@@ -2,6 +2,8 @@
 #include "conn.h"
 #include "debug.h"
 #include "information.pb-c.h"
+#include "putPerflowAckMsg.pb-c.h"
+#include "getPerflowAckMsg.pb-c.h"
 #include "person.pb-c.h"
 #include "protoObject.h"
 #include "syn.pb-c.h"
@@ -91,6 +93,53 @@ ProtoObject* proto_compose_information_message(int personnum, char* content){
 
 }
 
+ProtoObject* proto_compose_getPerflowack_message(int count){
+	GetPerflowAckMsg getPerflowAck = GET_PERFLOW_ACK_MSG__INIT;
+    	getPerflowAck.count=count;
+    	
+    	//check info length  
+    	unsigned int len;
+    	len = get_perflow_ack_msg__get_packed_size(&getPerflowAck);
+    	printf("send size of info : %u\n", len);
+ 
+    	//use length to malloc a space, check pb-c.h to know the buf pointer type
+    	//here is uint8_t  buf   
+    	uint8_t * buf = NULL;
+    	buf = (uint8_t*)malloc(len);
+    	get_perflow_ack_msg__pack(&getPerflowAck, buf);
+	
+	ProtoObject *getPerflowAck_object;
+    	getPerflowAck_object = make_proto_object(len, buf, PROTO_GETPERFLOWMSGACK);	
+	
+	return getPerflowAck_object;
+	
+
+}
+
+
+ProtoObject* proto_compose_putPerflowack_message(int count){
+	PutPerflowAckMsg putPerflowAck = PUT_PERFLOW_ACK_MSG__INIT;
+    	putPerflowAck.count=count;
+    	
+    	//check info length  
+    	unsigned int len;
+    	len = put_perflow_ack_msg__get_packed_size(&putPerflowAck);
+    	printf("send size of info : %u\n", len);
+ 
+    	//use length to malloc a space, check pb-c.h to know the buf pointer type
+    	//here is uint8_t  buf   
+    	uint8_t * buf = NULL;
+    	buf = (uint8_t*)malloc(len);
+    	put_perflow_ack_msg__pack(&putPerflowAck, buf);
+	
+	ProtoObject *putPerflowAck_object;
+    	putPerflowAck_object = make_proto_object(len, buf, PROTO_PUTPERFLOWMSGACK);	
+	
+	return putPerflowAck_object;
+	
+
+}
+
 ProtoObject* proto_compose_person_message(char* name, int age, char* address){
 	Person info = PERSON__INIT;
 	info.name = (char*)malloc(CONTENT_LEN);
@@ -124,7 +173,7 @@ int send_proto_object(int conn, ProtoObject* proto_object){
 	uint8_t* buf = proto_object->buf;
 	int len = proto_object->length;
 	uint8_t type = proto_object->message_type;
-	printf("type %u\n",type);
+	printf("type %x\n",type);
 
 	if(buf == NULL){
 		return -1;

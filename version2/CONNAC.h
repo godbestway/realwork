@@ -5,9 +5,11 @@ extern "C" {
 #ifndef _CONNAC_H_
 #define _CONNAC_H_
 
+#include "flowstate.pb-c.h"
 #include <stdint.h>
 #include <sys/time.h>
 #include <pcap/pcap.h>
+
 
 typedef struct {
 	uint32_t nw_src;
@@ -50,16 +52,17 @@ typedef struct{
 typedef struct {
     //int (*init)();
     //int (*cleanup)();
-    int (*get_perflow)();
-    int (*put_perflow)(); 
+    int (*conn_get_perflow)();
+    int (*conn_put_perflow)(FlowState* state); 
+    int (*action_get_perflow)();
+    int (*action_put_perflow)(FlowState* state); 
     
 } CONNACLocals;
 
 ///// FUNCTION PROTOTYPES ////////////////////////////////////////////////////
 //shared library export
 
-int connac_send_perflow(ProtoObject* proto_object);
-ProtoObject* make_proto_object(int len, uint8_t* buf, int message_type );
+int conn_send_perflow(ProtoObject* proto_object);
 int connac_init(CONNACLocals *locals);
 int connac_cleanup();
 int connac_send_perflow();

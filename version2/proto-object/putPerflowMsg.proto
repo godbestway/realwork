@@ -1,0 +1,7 @@
+syntax = "proto2";
+import "flowstate.proto";
+
+message PutPerflowMsg {
+    required FlowState state = 1;
+    required fixed32 count = 2;
+}

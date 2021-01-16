@@ -10,13 +10,15 @@ typedef struct line{
     struct line * next;
 }line;
 
-line head;
+line* head;
+line* put_head;
 
-void initLine(line * head);
+void initLine();
 
 int local_get_perflow();
 
- 
+void display(line * head);
+
 int main()
 {
     char a[2];
@@ -41,15 +43,17 @@ int main()
     gethostname(hostname, 1024);    
     printf("hostname %s\n", hostname);
     printf("pid %d\n",pid);
-    
-     initLine(&head);
-     local_get_perflow();
+
+     head=(line*)malloc(sizeof(line));    
+     put_head=(line*)malloc(sizeof(line));    
+     //initLine();
+     local_put_perflow();
     
 //    printf("int: %d\n",b);
    
 }
 
-void initLine(line * head){
+void initLine(){
     
    
     head->prior=NULL;
@@ -66,21 +70,78 @@ void initLine(line * head){
         body->data=i;
 
         
-        list->next=body;
-        body->prior=list;
-        
-        list=list->next;
+        list->prior=body;
+        body->next=list;
+	/*printf("body->data %d\n", body->data);
+	if(body->next != NULL){
+	printf("body->next %d\n", body ->next->data);
+	}
+	if(body->prior != NULL){
+        printf("body->prior %d\n",body -> prior->data);
+	} */       
+        list = body;
+	/*printf("list->data %d\n", list->data);
+	if(list->next != NULL){
+	printf("list->next %d\n", list ->next->data);
+	}
+	if(list->prior != NULL){
+        printf("list->prior %d\n",list -> prior->data);
+	} */       
     }
+    //printf("list:next %d",list->next->next->next->next->data);
+    //input = list;    
+    //printf("input:next %d",input->next->next->next->next->data);
+    head = list;
+}
+
+int local_put_perflow(){
+
+    int i = 1;
+    for(i; i < 5 ;i++){
+
+
+
+    line * in_state = NULL;
+    in_state = (line*)malloc(sizeof(line)); 
+    in_state->data = i; 
+     printf("in_state:data %d\n", in_state->data);
+    in_state -> prior = NULL;
+    if(put_head != NULL){
+         put_head->prior = in_state;
+	 in_state->next = put_head; 
+	}
+    else{
+	
+	in_state->next = NULL;
+	}
+    put_head = in_state;
     
+	}
+
+    display(put_head);   
 }
 
 
+
 int local_get_perflow(){
-    line * temp= &head;
+    line * temp= head;
     while (temp) { 
        
     printf("while data: %d\n",temp->data);
     temp=temp->next;
     }
 	return 1;
+}
+
+void display(line * head){
+    line * temp=head;
+    while (temp) {
+        
+        if (temp->next==NULL) {
+            printf("%d\n",temp->data);
+        }else{
+            printf("%d <-> ",temp->data);
+        }
+        temp=temp->next;
+    }
 }

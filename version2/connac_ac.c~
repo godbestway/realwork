@@ -3,6 +3,9 @@
 #include "debug.h"
 #include "protoObject.h"
 #include "information.pb-c.h"
+#include "getPerflowMsg.pb-c.h"
+#include "putPerflowMsg.pb-c.h"
+#include "flowstate.pb-c.h"
 #include "person.pb-c.h"
 #include "syn.pb-c.h"
 #include "connac_core.h"
@@ -25,6 +28,63 @@ static pthread_t state_thread;
 
 // Connection for state messages
 int connac_action_state = -1;
+
+int action_send_getPerflowAck(int count){
+        printf("send getPerflowAck");
+	ProtoObject * getPerflowAck_object;
+	getPerflowAck_object = proto_compose_getPerflowack_message(count);
+	int result;
+	result = send_proto_object(connac_action_state,getPerflowAck_object);
+	return result;
+
+}
+
+int action_send_putPerflowAck(int count){
+	ProtoObject * perflowack_object;
+	perflowack_object = proto_compose_putPerflowack_message(count);
+	int result;
+	result = send_proto_object(connac_action_state, perflowack_object);
+	return result;
+}
+
+static int handle_get_perflow(GetPerflowMsg* getPerflow_recv)
+{
+    if (NULL == connac_locals->action_get_perflow)
+    {
+	printf("this function is not supported");
+        return -1; 
+    }
+    int count;
+    char* key = getPerflow_recv->key;
+    if(strcmp(key,"all")==0){
+	INFO_PRINT("receive getPerflow msg and try to get all states");
+	count = connac_locals->action_get_perflow();
+	} 
+   printf("perflow count %d",count);
+   action_send_getPerflowAck(count);
+}
+
+static int handle_put_perflow(PutPerflowMsg* putPerflow_recv)
+{
+    if (NULL == connac_locals->action_put_perflow)
+    {
+	printf("this function is not supported");
+        return -1; 
+    }
+
+    FlowState* state = putPerflow_recv->state;
+    printf("state count: %d\n",putPerflow_recv->count);
+    connac_locals->action_put_perflow(state);
+    action_send_putPerflowAck(putPerflow_recv->count);
+
+}
+
+
+int action_send_perflow(ProtoObject * proto_object){
+	int result;
+	result = send_proto_object(connac_action_state, proto_object);
+	return result;
+}
 
 static void *state_handler(void *arg)
 {
@@ -66,6 +126,16 @@ static void *state_handler(void *arg)
        	 	printf("recieve content name : %s\n", info_recv->content);  
 
 		  
+	}else if(message_type == PROTO_GETPERFLOWMSG){
+		GetPerflowMsg* getPerflow_recv = NULL;
+		getPerflow_recv = get_perflow_msg__unpack(NULL,length,intbuf);
+		handle_get_perflow(getPerflow_recv);
+
+	}else if(message_type == PROTO_PUTPERFLOWMSG){
+		PutPerflowMsg* putPerflow_recv = NULL;
+	        putPerflow_recv = put_perflow_msg__unpack(NULL,length,intbuf);
+		handle_put_perflow(putPerflow_recv);
+
 	}
 	else{ 
             ERROR_PRINT("Unknown type!!!!!");

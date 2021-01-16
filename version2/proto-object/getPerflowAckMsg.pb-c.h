@@ -26,11 +26,11 @@ typedef struct _GetPerflowAckMsg GetPerflowAckMsg;
 struct  _GetPerflowAckMsg
 {
   ProtobufCMessage base;
-  char *count;
+  uint32_t count;
 };
 #define GET_PERFLOW_ACK_MSG__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&get_perflow_ack_msg__descriptor) \
-    , NULL }
+    , 0 }
 
 
 /* GetPerflowAckMsg methods */
