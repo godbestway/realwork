@@ -65,7 +65,8 @@ typedef struct {
 int conn_send_perflow(ProtoObject* proto_object);
 int connac_init(CONNACLocals *locals);
 int connac_cleanup();
-int connac_send_perflow();
+int connac_send_perflow(ProtoObject * proto_object);
+int action_send_perflow(ProtoObject * proto_object);
 
 #endif
 

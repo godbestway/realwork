@@ -57,7 +57,7 @@ static int handle_get_perflow(GetPerflowMsg* getPerflow_recv)
     int count;
     char* key = getPerflow_recv->key;
     if(strcmp(key,"all")==0){
-	INFO_PRINT("receive getPerflow msg and try to get all states");
+	INFO_PRINT("action receive getPerflow msg and try to get all states");
 	count = connac_locals->action_get_perflow();
 	} 
    printf("perflow count %d",count);
@@ -127,6 +127,7 @@ static void *state_handler(void *arg)
 
 		  
 	}else if(message_type == PROTO_GETPERFLOWMSG){
+		printf("receive a get perflow msg action action action");
 		GetPerflowMsg* getPerflow_recv = NULL;
 		getPerflow_recv = get_perflow_msg__unpack(NULL,length,intbuf);
 		handle_get_perflow(getPerflow_recv);
@@ -143,19 +144,6 @@ static void *state_handler(void *arg)
 	
 	free(buffer);
 
-	ProtoObject *syn_object	= NULL;
-	syn_object = proto_compose_syn_message();
-	
-	//ProtoObject *info_object = NULL;
-	//info_object = proto_compose_information_message(50,"hello a");
-	int send_success = send_proto_object( connac_action_state, syn_object);
-	//int send_success = send_proto_object( connac_action_state, info_object);
-	if(send_success < 0){
-		INFO_PRINT("send message failed");
-		return -1;
-	}
-
-	free(syn_object);
         // Get message type
         
             
@@ -181,15 +169,17 @@ int action_init()
         return connac_action_state; 
     }
     printf("state init\n");
-  /*  // Create SYN
-    json_object *syn = json_compose_syn();
+    ProtoObject *syn_object	= NULL;
+    syn_object = proto_compose_syn_message();
+    int send_success = send_proto_object( connac_action_state, syn_object);
+	
+    if(send_success < 0){
+	INFO_PRINT("send message failed");
+	return -1;
+	}
 
-    // Send SYN
-    json_send(syn, connac_action_state);
+    free(syn_object);
 
-    // Free JSON object
-    json_object_put(syn);
-*/
     // Create SDMBN state handling thread
     pthread_create(&state_thread, NULL, state_handler, NULL);
     return 1;

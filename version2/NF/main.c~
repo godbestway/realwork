@@ -16,18 +16,25 @@ typedef struct line{
     struct line * next;
 }line;
 
-line* head;
-line* put_head;
-int msg_count = 0;
+line* conn_head;
+line* conn_put_head;
+line* action_head;
+line* action_put_head;
 
-void initLine();
+void conn_initLine();
+void action_initLine();
 void display(line * head);
+void display1();
 void display2();
 
-int local_get_perflow();
-int local_put_perflow();
+int local_conn_get_perflow();
+int local_action_get_perflow();
+int local_action_put_perflow(FlowState* state);
+int local_conn_put_perflow(FlowState* state);
 ProtoObject* proto_compose_perflow_message(int data);
 
+int conn_msg_count;
+int action_msg_count;
 
 
 int main()
@@ -35,10 +42,14 @@ int main()
 	
     CONNACLocals locals;
     bzero(&locals,sizeof(locals));
-    locals.conn_get_perflow = &local_get_perflow;
-    locals.conn_put_perflow = &local_put_perflow;
-    head=(line*)malloc(sizeof(line));
-    put_head=(line*)malloc(sizeof(line));
+    locals.conn_get_perflow = &local_conn_get_perflow;
+    locals.conn_put_perflow = &local_conn_put_perflow;
+    locals.action_get_perflow = &local_action_get_perflow;
+    locals.action_put_perflow = &local_action_put_perflow;
+    conn_head=(line*)malloc(sizeof(line));
+    conn_put_head=(line*)malloc(sizeof(line));
+    action_head=(line*)malloc(sizeof(line));
+    action_put_head=(line*)malloc(sizeof(line));
     
 	
     /*if(put_head -> data == NULL){
@@ -47,8 +58,8 @@ int main()
     else{
 		printf("at first put_head = %d\n",put_head -> data);
 	}*/
-    initLine();
-    
+    conn_initLine();
+    action_initLine();   
     connac_init(&locals);
 
     
@@ -62,15 +73,38 @@ int main()
     return 1;
 }
 
-
-void initLine(){
+void action_initLine(){
     
    
-    head->prior=NULL;
-    head->next=NULL;
-    head->data=1;
+    action_head->prior=NULL;
+    action_head->next=NULL;
+    action_head->data=1;
     
-    line * list=head;
+    line * list=action_head;
+    int i;
+    for (i=2; i<=8; i++) {
+       
+        line * body=(line*)malloc(sizeof(line));
+        body->prior=NULL;
+        body->next=NULL;
+        body->data=i;
+        
+        list->next=body;
+        body->prior=list;
+        
+        list=list->next;
+    }
+    
+}
+
+void conn_initLine(){
+    
+   
+    conn_head->prior=NULL;
+    conn_head->next=NULL;
+    conn_head->data=1;
+    
+    line * list=conn_head;
     int i;
     for (i=2; i<=5; i++) {
        
@@ -88,31 +122,62 @@ void initLine(){
 }
 
 
-int local_put_perflow(FlowState* state){
-
+int local_conn_put_perflow(FlowState* state){
+    
     printf("receive state, begin to putPerFlow");
     line * in_state = NULL;
     in_state = (line*)malloc(sizeof(line)); 
     in_state->data = state->data; 
      printf("in_state:data %d\n", in_state->data);
     in_state -> prior = NULL;
-    if(put_head != NULL){
-         put_head->prior = in_state;
-	 in_state->next = put_head; 
+    if(conn_put_head != NULL){
+         conn_put_head->prior = in_state;
+	 in_state->next = conn_put_head; 
 	}
     else{
 	
 	in_state->next = NULL;
 	}
-    put_head = in_state;
+    conn_put_head = in_state;
     
-    msg_count++;
+    conn_msg_count++;
     
-    if(msg_count == 5){
-	if(put_head->next->next->next->next->next->data != NULL){ 
-        	printf("put_head->next->next->next->next->next->data %d\n",put_head->next->next->next->next->next->data);
+    if(conn_msg_count == 5){
+	if(conn_put_head->next->next->next->next->next->data != NULL){ 
+        	printf("put_head->next->next->next->next->next->data %d\n",conn_put_head->next->next->next->next->next->data);
 	}else{
-		printf("else put_head->next->next->next->next->data %d\n",put_head->next->next->next->next->data);
+		printf("else put_head->next->next->next->next->data %d\n",conn_put_head->next->next->next->next->data);
+	}
+	display1();
+	}
+   
+}
+
+int local_action_put_perflow(FlowState* state){
+    
+    printf("receive state, begin to putPerFlow");
+    line * in_state = NULL;
+    in_state = (line*)malloc(sizeof(line)); 
+    in_state->data = state->data; 
+     printf("in_state:data %d\n", in_state->data);
+    in_state -> prior = NULL;
+    if(action_put_head != NULL){
+         action_put_head->prior = in_state;
+	 in_state->next = action_put_head; 
+	}
+    else{
+	
+	in_state->next = NULL;
+	}
+    action_put_head = in_state;
+    
+    action_msg_count++;
+    
+    if(action_msg_count == 8){
+	if(action_put_head->next->next->next->next->next->data != NULL){ 
+        	printf("put_head->next->next->next->next->next->data %d\n",action_put_head->next->next->next->next->next->data);
+	}else{
+		printf("else put_head->next->next->next->next->data %d\n",action_put_head->next->next->next->next->data);
 	}
 	display2();
 	}
@@ -150,12 +215,38 @@ ProtoObject* proto_compose_perflow_message(int data){
 
 }
 
-int local_get_perflow(){
+int local_action_get_perflow(){
     int count = 0;
-    line * temp= head;
+    line * temp= action_head;
     while (temp) {
 
-    	ProtoObject *perflow_object	= NULL;
+    	ProtoObject *perflow_object= NULL;
+
+    	perflow_object = proto_compose_perflow_message(temp->data);	
+   	int send_success = action_send_perflow(perflow_object);
+
+    	if(send_success < 0){
+		printf("send perflow message failed");
+	    	return -1;
+        }
+
+        free(perflow_object);
+    
+        temp=temp->next;
+	 count++;
+    }
+    
+    
+	return count;
+}
+
+
+int local_conn_get_perflow(){
+    int count = 0;
+    line * temp= conn_head;
+    while (temp) {
+
+    	ProtoObject *perflow_object= NULL;
 
     	perflow_object = proto_compose_perflow_message(temp->data);	
    	int send_success = conn_send_perflow(perflow_object);
@@ -187,14 +278,24 @@ void display(line * input){
         temp=temp->next;
     }
 }
+void display1(){
+    while (conn_put_head->next != NULL) {
+        
+        
+        printf("!!!%d <-> ",conn_put_head->data);
+        
+        conn_put_head=conn_put_head->next;
+    }
+}
+
 
 void display2(){
-    while (put_head->next != NULL) {
+    while (action_put_head->next != NULL) {
         
         
-        printf("!!!%d <-> ",put_head->data);
+        printf("!!!%d <-> ",action_put_head->data);
         
-        put_head=put_head->next;
+        action_put_head=action_put_head->next;
     }
 }
 
