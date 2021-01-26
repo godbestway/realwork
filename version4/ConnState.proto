@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+message ConnState {
+	repeated fixed32 ether_dst=1;
+        repeated fixed32 ether_src=2;	
+        required fixed32 s_ip=3;
+        required fixed32 d_ip=4;
+        required fixed32 s_port=5;
+        required fixed32 d_port=6;
+        optional fixed64 cxid=7;
+        optional fixed32 hash=8;
+}
+
+
+

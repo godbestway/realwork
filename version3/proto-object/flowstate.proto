@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message FlowState {
+    required int32 data = 1;
+}

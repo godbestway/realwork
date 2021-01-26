@@ -1,0 +1,115 @@
+state init
+hostname xiaolin-virtual-machine
+pid 35120
+send size of syn : 30
+type 2
+State handling thread started
+while.........
+
+conn_read.........
+
+state init
+hostname xiaolin-virtual-machine
+pid 35120
+send size of syn : 30
+type 2
+Initialized
+State handling thread started
+while.........
+
+conn_read.........
+
+conn_read_in.....string.........
+
+while...connread...finish...
+
+receive a get perflow msg action action actionaction receive getPerflow msg and try to get all states
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 2us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 5us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1987us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2003us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 1us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 3us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1996us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2005us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 4us
+type 12
+conn_read_in.....string.........
+
+while...connread...finish...
+
+receive getPerflow msg and try to get all states
+COON STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+CONN STATS: PERFLOW: TIME TO compose message CURRENT = 6us
+type 11
+CONN STATS: PERFLOW: TIME TO send message CURRENT = 665us
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 674us
+COON STATS: PERFLOW: TIME TO add lock CURRENT = 1us
+send size of perflow : 2
+CONN STATS: PERFLOW: TIME TO compose message CURRENT = 2us
+type 11
+CONN STATS: PERFLOW: TIME TO send message CURRENT = 610us
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 616us
+COON STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+CONN STATS: PERFLOW: TIME TO compose message CURRENT = 2us
+type 11
+CONN STATS: PERFLOW: TIME TO send message CURRENT = 458us
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 462us
+COON STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+CONN STATS: PERFLOW: TIME TO compose message CURRENT = 1us
+type 11
+CONN STATS: PERFLOW: TIME TO send message CURRENT = 504us
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 508us
+COON STATS: PERFLOW: TIME TO add lock CURRENT = 1us
+send size of perflow : 2
+CONN STATS: PERFLOW: TIME TO compose message CURRENT = 1us
+type 11
+CONN STATS: PERFLOW: TIME TO send message CURRENT = 497us
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 502us
+perflow count 5send getPerflowAcksend getPerflowAck size of : 5
+type 7
+while.........
+
+conn_read.........
+
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 5455us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 5461us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 2us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1834us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1841us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 1us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 3us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1969us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1978us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 1us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 3us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1983us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1992us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 3us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1899us
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1906us
+ACTION STATS: PERFLOW: TIME TO add lock CURRENT = 0us
+send size of perflow : 2
+ACTION STATS: PERFLOW: TIME TO compose message CURRENT = 3us
+type 12
+ACTION STATS: PERFLOW: TIME TO send message CURRENT = 1907us
+ACTION STATS: PERFLOW: TIME TO SERIAL

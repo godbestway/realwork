@@ -1,0 +1,560 @@
+2021-01-25 13:15:50,302 [Thread-0] INFO  v.zmove.single.OperationManager [OperationManager.java : 184] - a new condition is added
+2021-01-25 13:15:50,303 [nioEventLoopGroup-2-2] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18081
+2021-01-25 13:15:50,302 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18080
+2021-01-25 13:15:50,306 [main] INFO  v.zmove.single.OperationManager [OperationManager.java : 222] - netty server is set up
+2021-01-25 13:17:08,439 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18080
+2021-01-25 13:17:08,440 [Thread-0] INFO  v.zmove.single.OperationManager [OperationManager.java : 184] - a new condition is added
+2021-01-25 13:17:08,440 [nioEventLoopGroup-2-2] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18081
+2021-01-25 13:17:08,442 [main] INFO  v.zmove.single.OperationManager [OperationManager.java : 222] - netty server is set up
+2021-01-25 14:03:06,997 [nioEventLoopGroup-3-2] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 33] - 客户端：/127.0.0.1:45824已连接上Action来
+2021-01-25 14:03:06,998 [nioEventLoopGroup-3-2] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/127.0.0.1:45824在线
+2021-01-25 14:03:07,003 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 30] - 客户端：/127.0.0.1:56296已连接上Connection来
+2021-01-25 14:03:07,004 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 58] - 客户端：/127.0.0.1:56296在线
+2021-01-25 14:03:07,114 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype2
+2021-01-25 14:03:07,119 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype2
+2021-01-25 14:03:07,187 [nioEventLoopGroup-3-2] INFO  version1.channel.ActionChannel [ActionChannel.java : 41] - syn message comes
+2021-01-25 14:03:07,196 [nioEventLoopGroup-3-2] INFO  v.zmove.single.OperationManager [OperationManager.java : 140] - channel try to connect
+2021-01-25 14:03:07,187 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - syn message comes
+2021-01-25 14:03:07,196 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 140] - channel try to connect
+2021-01-25 14:03:07,196 [nioEventLoopGroup-3-2] INFO  v.zmove.single.OperationManager [OperationManager.java : 122] - a new NF is found
+2021-01-25 14:03:07,197 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 122] - a new NF is found
+2021-01-25 14:03:07,197 [nioEventLoopGroup-3-2] INFO  v.zmove.single.OperationManager [OperationManager.java : 132] - set a NF successful
+2021-01-25 14:03:07,198 [nioEventLoopGroup-3-2] INFO  v.zmove.single.OperationManager [OperationManager.java : 152] - try to set a action channel
+2021-01-25 14:03:07,198 [nioEventLoopGroup-3-2] INFO  v.zmove.single.OperationManager [OperationManager.java : 171] - action channel has connected
+2021-01-25 14:03:07,199 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 147] - try to set a connection channel
+2021-01-25 14:03:07,200 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 162] - xiaolin-virtual-machine.33993has already fully connected
+2021-01-25 14:03:12,229 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 122] - a simulation of move start
+2021-01-25 14:03:12,230 [pool-3-thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 77] - 添加了connection storage
+2021-01-25 14:03:12,231 [pool-3-thread-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 75] - 添加了action storage
+2021-01-25 14:03:12,234 [Thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 66] - 发送了connection getperflow
+2021-01-25 14:03:12,239 [Thread-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 67] - 发送了action getperflow
+2021-01-25 14:03:12,294 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,301 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,304 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype17
+2021-01-25 14:03:12,308 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,309 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,310 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,310 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,311 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,315 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,316 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,323 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype18
+2021-01-25 14:03:12,323 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype8
+2021-01-25 14:03:12,326 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=1
+2021-01-25 14:03:12,334 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype17
+2021-01-25 14:03:12,334 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=2
+2021-01-25 14:03:12,335 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype17
+2021-01-25 14:03:12,336 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype17
+2021-01-25 14:03:12,336 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype17
+2021-01-25 14:03:12,337 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype7
+2021-01-25 14:03:12,338 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 33] - connection receive a state, data=1
+2021-01-25 14:03:12,344 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=3
+2021-01-25 14:03:12,354 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=4
+2021-01-25 14:03:12,356 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=5
+2021-01-25 14:03:12,357 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=6
+2021-01-25 14:03:12,359 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,370 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,373 [pool-2-thread-5] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,359 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 33] - connection receive a state, data=2
+2021-01-25 14:03:12,379 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=7
+2021-01-25 14:03:12,381 [pool-2-thread-6] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,359 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,393 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 33] - connection receive a state, data=3
+2021-01-25 14:03:12,395 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg
+2021-01-25 14:03:12,359 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,395 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 33] - connection receive a state, data=4
+2021-01-25 14:03:12,395 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 33] - connection receive a state, data=5
+2021-01-25 14:03:12,375 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg
+2021-01-25 14:03:12,393 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive a state, data=8
+2021-01-25 14:03:12,396 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 53] - action totalnum:8
+2021-01-25 14:03:12,397 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,397 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,397 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,393 [pool-2-thread-5] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,396 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 33] - send a action putPerflowMsg
+2021-01-25 14:03:12,400 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,402 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,403 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,404 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,405 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,406 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg
+2021-01-25 14:03:12,406 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,407 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg
+2021-01-25 14:03:12,413 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 53] - connection totalnum:5
+2021-01-25 14:03:12,414 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,415 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,415 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,416 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,417 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype9
+2021-01-25 14:03:12,419 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype9
+2021-01-25 14:03:12,420 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype9
+2021-01-25 14:03:12,420 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg
+2021-01-25 14:03:12,421 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,422 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype9
+2021-01-25 14:03:12,429 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,429 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - connection put perflow count1
+2021-01-25 14:03:12,435 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,434 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - connection put perflow count2
+2021-01-25 14:03:12,436 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,436 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - connection put perflow count3
+2021-01-25 14:03:12,436 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - connection put perflow count4
+2021-01-25 14:03:12,436 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,437 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerEncoder [ServerEncoder.java : 26] - msg encode
+2021-01-25 14:03:12,438 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-2] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype10
+2021-01-25 14:03:12,442 [nioEventLoopGroup-3-1] INFO  version1.coder.ServerDecoder [ServerDecoder.java : 39] - datatype9
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count1
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - connection put perflow count5
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count2
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count3
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count4
+2021-01-25 14:03:12,443 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 94] - set a stateStorage Ack
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count5
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnStateStorage [ConnStateStorage.java : 84] - set a conn stateStorage ack
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count6
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count7
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 59] - action put perflow count8
+2021-01-25 14:03:12,444 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 80] - test receive ack process
+2021-01-25 14:03:12,445 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ActionStateStorage [ActionStateStorage.java : 77] - set a action stateStorage ack
+2021-01-25 14:03:12,445 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 135] - begin to change forward direction
+2021-01-25 14:03:12,445 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 137] - stateMove time211
+2021-01-25 14:03:18,913 [nioEventLoopGroup-3-2] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 76] - 客户端：/127.0.0.1:45824掉线
+2021-01-25 14:03:18,913 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 75] - 客户端：/127.0.0.1:56296掉线
+2021-01-25 14:03:18,914 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 49] - 客户端：/127.0.0.1:56296已断开
+2021-01-25 14:03:18,914 [nioEventLoopGroup-3-2] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/127.0.0.1:45824已断开
+2021-01-25 18:56:37,576 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18080
+2021-01-25 18:56:37,577 [nioEventLoopGroup-4-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18081
+2021-01-25 18:56:37,580 [main] INFO  v.zmove.single.OperationManager [OperationManager.java : 242] - netty server is set up
+2021-01-25 18:56:37,578 [Thread-0] INFO  v.zmove.single.OperationManager [OperationManager.java : 204] - a new condition is added
+2021-01-25 18:56:45,569 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 33] - 客户端：/127.0.0.1:46158已连接上Action来
+2021-01-25 18:56:45,569 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/127.0.0.1:46158在线
+2021-01-25 18:56:45,579 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 30] - 客户端：/127.0.0.1:56630已连接上Connection来
+2021-01-25 18:56:45,580 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 58] - 客户端：/127.0.0.1:56630在线
+2021-01-25 18:56:45,589 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597405589
+2021-01-25 18:56:45,589 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597405589
+2021-01-25 18:56:45,592 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype2
+2021-01-25 18:56:45,604 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype2
+2021-01-25 18:56:45,635 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 29] - syn message comes
+2021-01-25 18:56:45,639 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 28] - syn message comes
+2021-01-25 18:56:45,642 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 160] - channel try to connect
+2021-01-25 18:56:45,642 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 142] - a new NF is found
+2021-01-25 18:56:45,643 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 152] - set a NF successful
+2021-01-25 18:56:45,643 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 172] - try to set a action channel
+2021-01-25 18:56:45,643 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 191] - action channel has connected
+2021-01-25 18:56:45,641 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 160] - channel try to connect
+2021-01-25 18:56:45,649 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 142] - a new NF is found
+2021-01-25 18:56:45,650 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 167] - try to set a connection channel
+2021-01-25 18:56:45,650 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 182] - xiaolin-virtual-machine.35384has already fully connected
+2021-01-25 18:56:50,652 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 123] - a simulation of move start
+2021-01-25 18:56:50,653 [pool-3-thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 78] - 添加了connection storage
+2021-01-25 18:56:50,655 [pool-3-thread-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 78] - 添加了action storage
+2021-01-25 18:56:50,696 [Thread-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 70] - 发送了action getperflow
+2021-01-25 18:56:50,696 [Thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 67] - 发送了connection getperflow
+2021-01-25 18:56:50,708 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410708
+2021-01-25 18:56:50,719 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410719
+2021-01-25 18:56:50,724 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410724
+2021-01-25 18:56:50,723 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410723
+2021-01-25 18:56:50,737 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597410737
+2021-01-25 18:56:50,738 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:56:50,738 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597410738
+2021-01-25 18:56:50,739 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,740 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:56:50,741 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:56:50,742 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:56:50,748 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,748 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,749 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,749 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,749 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,750 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,750 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:56:50,750 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype8
+2021-01-25 18:56:50,751 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410751
+2021-01-25 18:56:50,752 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410751 data= 1
+2021-01-25 18:56:50,760 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410760
+2021-01-25 18:56:50,761 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:56:50,762 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype7
+2021-01-25 18:56:50,765 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597410765
+2021-01-25 18:56:50,773 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597410773 data=1
+2021-01-25 18:56:50,777 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410776
+2021-01-25 18:56:50,777 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410777
+2021-01-25 18:56:50,777 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410777 data= 2
+2021-01-25 18:56:50,778 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410778
+2021-01-25 18:56:50,782 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410781 actionState1
+2021-01-25 18:56:50,786 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState1
+2021-01-25 18:56:50,786 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597410786
+2021-01-25 18:56:50,787 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597410787 data=2
+2021-01-25 18:56:50,790 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597410790connState 1
+2021-01-25 18:56:50,799 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410799
+2021-01-25 18:56:50,800 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410800
+2021-01-25 18:56:50,800 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410800 data= 3
+2021-01-25 18:56:50,800 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410800
+2021-01-25 18:56:50,800 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410800 actionState2
+2021-01-25 18:56:50,800 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState2
+2021-01-25 18:56:50,799 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build1
+2021-01-25 18:56:50,801 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish1
+2021-01-25 18:56:50,809 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597410809
+2021-01-25 18:56:50,810 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597410810 data=3
+2021-01-25 18:56:50,810 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410810 actionState3
+2021-01-25 18:56:50,809 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410809
+2021-01-25 18:56:50,811 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597410811
+2021-01-25 18:56:50,811 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597410811 data=4
+2021-01-25 18:56:50,811 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState3
+2021-01-25 18:56:50,811 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410811
+2021-01-25 18:56:50,812 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410812 data= 4
+2021-01-25 18:56:50,814 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410814
+2021-01-25 18:56:50,814 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410814
+2021-01-25 18:56:50,815 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410815
+2021-01-25 18:56:50,816 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410816 data= 5
+2021-01-25 18:56:50,817 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410817
+2021-01-25 18:56:50,818 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410818
+2021-01-25 18:56:50,818 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410818
+2021-01-25 18:56:50,818 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410818 data= 6
+2021-01-25 18:56:50,813 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597410813
+2021-01-25 18:56:50,819 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597410819 data=5
+2021-01-25 18:56:50,820 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597410820connState 2
+2021-01-25 18:56:50,820 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build2
+2021-01-25 18:56:50,820 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish2
+2021-01-25 18:56:50,814 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410814 actionState4
+2021-01-25 18:56:50,814 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597410814connState 4
+2021-01-25 18:56:50,820 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState4
+2021-01-25 18:56:50,818 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410818 actionState5
+2021-01-25 18:56:50,822 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState5
+2021-01-25 18:56:50,819 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410819
+2021-01-25 18:56:50,822 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410822
+2021-01-25 18:56:50,823 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410823
+2021-01-25 18:56:50,819 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597410819connState 3
+2021-01-25 18:56:50,825 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build3
+2021-01-25 18:56:50,825 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish3
+2021-01-25 18:56:50,823 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410823 actionState6
+2021-01-25 18:56:50,826 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState6
+2021-01-25 18:56:50,821 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build4
+2021-01-25 18:56:50,826 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish4
+2021-01-25 18:56:50,827 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 39] - receive a  conn getAck1611597410827
+2021-01-25 18:56:50,827 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 53] - connection totalnum:5
+2021-01-25 18:56:50,827 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410827
+2021-01-25 18:56:50,828 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410828
+2021-01-25 18:56:50,828 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410828
+2021-01-25 18:56:50,828 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410828
+2021-01-25 18:56:50,829 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410829
+2021-01-25 18:56:50,838 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410838
+2021-01-25 18:56:50,838 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410838
+2021-01-25 18:56:50,838 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410838
+2021-01-25 18:56:50,839 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597410839
+2021-01-25 18:56:50,840 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:56:50,856 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597410856connState 5
+2021-01-25 18:56:50,856 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build5
+2021-01-25 18:56:50,857 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish5
+2021-01-25 18:56:50,860 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:56:50,859 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410823 data= 7
+2021-01-25 18:56:50,861 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410861
+2021-01-25 18:56:50,861 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410861
+2021-01-25 18:56:50,862 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:56:50,861 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410861 actionState7
+2021-01-25 18:56:50,862 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597410862
+2021-01-25 18:56:50,864 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:56:50,863 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState7
+2021-01-25 18:56:50,864 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597410864 data= 8
+2021-01-25 18:56:50,864 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597410864
+2021-01-25 18:56:50,865 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597410865
+2021-01-25 18:56:50,865 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 37] - receive a action get ack1611597410865
+2021-01-25 18:56:50,865 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action totalnum:8
+2021-01-25 18:56:50,865 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410865
+2021-01-25 18:56:50,865 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410865
+2021-01-25 18:56:50,866 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410866
+2021-01-25 18:56:50,866 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410866
+2021-01-25 18:56:50,865 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597410865 actionState8
+2021-01-25 18:56:50,866 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState8
+2021-01-25 18:56:50,867 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410867
+2021-01-25 18:56:50,867 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410867
+2021-01-25 18:56:50,867 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410867
+2021-01-25 18:56:50,868 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410868
+2021-01-25 18:56:50,868 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410868
+2021-01-25 18:56:50,868 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410868
+2021-01-25 18:56:50,869 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410869
+2021-01-25 18:56:50,869 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410869
+2021-01-25 18:56:50,870 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410870
+2021-01-25 18:56:50,872 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410872
+2021-01-25 18:56:50,873 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597410873
+2021-01-25 18:56:50,873 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597410873
+2021-01-25 18:56:50,874 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597410874
+2021-01-25 18:56:50,874 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,877 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,877 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,878 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,878 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,879 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,880 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410880
+2021-01-25 18:56:50,881 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410881
+2021-01-25 18:56:50,882 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count1
+2021-01-25 18:56:50,864 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597410864
+2021-01-25 18:56:50,882 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410882
+2021-01-25 18:56:50,885 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597410885
+2021-01-25 18:56:50,894 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410894
+2021-01-25 18:56:50,895 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count1
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597410896
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597410896
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count2
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597410896
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597410896
+2021-01-25 18:56:50,896 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count3
+2021-01-25 18:56:50,897 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597410897
+2021-01-25 18:56:50,897 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597410897
+2021-01-25 18:56:50,897 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count4
+2021-01-25 18:56:50,897 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597410897
+2021-01-25 18:56:50,897 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597410897
+2021-01-25 18:56:50,898 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597410898
+2021-01-25 18:56:50,898 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:56:50,899 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597410899
+2021-01-25 18:56:50,899 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597410899
+2021-01-25 18:56:50,902 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count2
+2021-01-25 18:56:50,903 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410903
+2021-01-25 18:56:50,903 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410903
+2021-01-25 18:56:50,903 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count3
+2021-01-25 18:56:50,903 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410903
+2021-01-25 18:56:50,902 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count5
+2021-01-25 18:56:50,904 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 95] - set a stateStorage Ack
+2021-01-25 18:56:50,904 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnStateStorage [ConnStateStorage.java : 84] - set a conn stateStorage ack
+2021-01-25 18:56:50,903 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410903
+2021-01-25 18:56:50,908 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count4
+2021-01-25 18:56:50,911 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410911
+2021-01-25 18:56:50,911 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410911
+2021-01-25 18:56:50,918 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count5
+2021-01-25 18:56:50,918 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410918
+2021-01-25 18:56:50,918 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410918
+2021-01-25 18:56:50,918 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count6
+2021-01-25 18:56:50,919 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597410919
+2021-01-25 18:56:50,926 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,930 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:56:50,933 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410933
+2021-01-25 18:56:50,933 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410933
+2021-01-25 18:56:50,933 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count7
+2021-01-25 18:56:50,934 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597410933
+2021-01-25 18:56:50,935 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597410935
+2021-01-25 18:56:50,935 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count8
+2021-01-25 18:56:50,935 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 83] - test receive ack process
+2021-01-25 18:56:50,935 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionStateStorage [ActionStateStorage.java : 77] - set a action stateStorage ack
+2021-01-25 18:56:50,936 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 106] - receive double ack1611597410936
+2021-01-25 18:56:50,936 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 138] - begin to change forward direction
+2021-01-25 18:56:50,936 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 140] - end move time1611597410936
+2021-01-25 18:56:50,936 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 141] - total move time240
+2021-01-25 18:58:00,814 [nioEventLoopGroup-4-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18081
+2021-01-25 18:58:00,810 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener [ServerListener.java : 35] - bind success at port:18080
+2021-01-25 18:58:00,819 [Thread-0] INFO  v.zmove.single.OperationManager [OperationManager.java : 204] - a new condition is added
+2021-01-25 18:58:00,820 [main] INFO  v.zmove.single.OperationManager [OperationManager.java : 242] - netty server is set up
+2021-01-25 18:58:11,341 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 30] - 客户端：/127.0.0.1:56633已连接上Connection来
+2021-01-25 18:58:11,345 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 58] - 客户端：/127.0.0.1:56633在线
+2021-01-25 18:58:11,347 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 33] - 客户端：/127.0.0.1:46161已连接上Action来
+2021-01-25 18:58:11,348 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/127.0.0.1:46161在线
+2021-01-25 18:58:11,365 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597491365
+2021-01-25 18:58:11,368 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype2
+2021-01-25 18:58:11,377 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597491377
+2021-01-25 18:58:11,377 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype2
+2021-01-25 18:58:11,395 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 29] - syn message comes
+2021-01-25 18:58:11,398 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 160] - channel try to connect
+2021-01-25 18:58:11,399 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 142] - a new NF is found
+2021-01-25 18:58:11,399 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 152] - set a NF successful
+2021-01-25 18:58:11,399 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 167] - try to set a connection channel
+2021-01-25 18:58:11,399 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 187] - connection channel has connected
+2021-01-25 18:58:11,400 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 28] - syn message comes
+2021-01-25 18:58:11,400 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 160] - channel try to connect
+2021-01-25 18:58:11,400 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 142] - a new NF is found
+2021-01-25 18:58:11,400 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 172] - try to set a action channel
+2021-01-25 18:58:11,400 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager [OperationManager.java : 182] - xiaolin-virtual-machine.35418has already fully connected
+2021-01-25 18:58:16,401 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 123] - a simulation of move start
+2021-01-25 18:58:16,402 [pool-3-thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 78] - 添加了connection storage
+2021-01-25 18:58:16,403 [pool-3-thread-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 78] - 添加了action storage
+2021-01-25 18:58:16,409 [Thread-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 67] - 发送了connection getperflow
+2021-01-25 18:58:16,415 [Thread-2] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 70] - 发送了action getperflow
+2021-01-25 18:58:16,417 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496417
+2021-01-25 18:58:16,424 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496424
+2021-01-25 18:58:16,427 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496426
+2021-01-25 18:58:16,430 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597496430
+2021-01-25 18:58:16,435 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:58:16,436 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:58:16,439 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:58:16,441 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496441
+2021-01-25 18:58:16,441 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:58:16,456 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype17
+2021-01-25 18:58:16,462 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597496462
+2021-01-25 18:58:16,462 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,464 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,464 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,456 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype7
+2021-01-25 18:58:16,466 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597496466
+2021-01-25 18:58:16,482 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597496482 data=1
+2021-01-25 18:58:16,481 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,485 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597496485connState 1
+2021-01-25 18:58:16,491 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build1
+2021-01-25 18:58:16,485 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597496485
+2021-01-25 18:58:16,492 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597496492 data=2
+2021-01-25 18:58:16,492 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish1
+2021-01-25 18:58:16,484 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,497 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,498 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,498 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype18
+2021-01-25 18:58:16,499 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype8
+2021-01-25 18:58:16,500 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597496500
+2021-01-25 18:58:16,500 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597496500 data=3
+2021-01-25 18:58:16,500 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597496500
+2021-01-25 18:58:16,500 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496500
+2021-01-25 18:58:16,500 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597496500 data=4
+2021-01-25 18:58:16,500 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496500 data= 1
+2021-01-25 18:58:16,501 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597496501connState 3
+2021-01-25 18:58:16,501 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496501
+2021-01-25 18:58:16,501 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build3
+2021-01-25 18:58:16,501 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish3
+2021-01-25 18:58:16,501 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597496501connState 2
+2021-01-25 18:58:16,501 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build2
+2021-01-25 18:58:16,502 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish2
+2021-01-25 18:58:16,502 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 35] - receive a connstate1611597496502
+2021-01-25 18:58:16,509 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 32] - conn receive state current time 1611597496509 data=5
+2021-01-25 18:58:16,509 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 39] - receive a  conn getAck1611597496509
+2021-01-25 18:58:16,510 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 53] - connection totalnum:5
+2021-01-25 18:58:16,510 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496510
+2021-01-25 18:58:16,510 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496510
+2021-01-25 18:58:16,510 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496510
+2021-01-25 18:58:16,510 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496510
+2021-01-25 18:58:16,511 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496511
+2021-01-25 18:58:16,511 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496511
+2021-01-25 18:58:16,511 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597496511
+2021-01-25 18:58:16,511 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:58:16,512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597496512
+2021-01-25 18:58:16,513 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597496513
+2021-01-25 18:58:16,513 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count1
+2021-01-25 18:58:16,502 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597496502connState 4
+2021-01-25 18:58:16,513 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build4
+2021-01-25 18:58:16,513 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish4
+2021-01-25 18:58:16,502 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496502
+2021-01-25 18:58:16,514 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496514
+2021-01-25 18:58:16,514 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496514 data= 2
+2021-01-25 18:58:16,514 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496514
+2021-01-25 18:58:16,502 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496502 actionState1
+2021-01-25 18:58:16,516 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState1
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496517
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496517
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496517 data= 3
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496517
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496517
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496517
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496517 data= 4
+2021-01-25 18:58:16,517 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496517
+2021-01-25 18:58:16,518 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597496518
+2021-01-25 18:58:16,518 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496518 actionState3
+2021-01-25 18:58:16,518 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:58:16,518 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:58:16,519 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597496519
+2021-01-25 18:58:16,521 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 33] - ConnstateChuck call before build1611597496521connState 5
+2021-01-25 18:58:16,522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 37] - send a connection putPerFlowMsg after build5
+2021-01-25 18:58:16,522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk [ConnStateChunk.java : 39] - send a connection putPerFlowMsg send finish5
+2021-01-25 18:58:16,518 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState3
+2021-01-25 18:58:16,529 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496529 actionState2
+2021-01-25 18:58:16,529 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496529
+2021-01-25 18:58:16,529 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState2
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496530
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496530 data= 5
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496530
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496530
+2021-01-25 18:58:16,530 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496530 actionState5
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496530
+2021-01-25 18:58:16,530 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState5
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496530 data= 6
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496530
+2021-01-25 18:58:16,530 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496530
+2021-01-25 18:58:16,531 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496531
+2021-01-25 18:58:16,531 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496531 data= 7
+2021-01-25 18:58:16,531 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496531
+2021-01-25 18:58:16,531 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496531
+2021-01-25 18:58:16,531 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496531 actionState7
+2021-01-25 18:58:16,531 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 34] - receive a actionstate1611597496531
+2021-01-25 18:58:16,531 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState7
+2021-01-25 18:58:16,532 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 34] - action receive state current time1611597496532 data= 8
+2021-01-25 18:58:16,531 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496531 actionState6
+2021-01-25 18:58:16,532 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState6
+2021-01-25 18:58:16,532 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 38] - before send action state1611597496532
+2021-01-25 18:58:16,532 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496532 actionState8
+2021-01-25 18:58:16,532 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState8
+2021-01-25 18:58:16,532 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 40] - after send action state1611597496532
+2021-01-25 18:58:16,536 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 37] - receive a action get ack1611597496536
+2021-01-25 18:58:16,536 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action totalnum:8
+2021-01-25 18:58:16,537 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496537
+2021-01-25 18:58:16,537 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496537
+2021-01-25 18:58:16,538 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 29] - ActionStateChuck call1611597496538 actionState4
+2021-01-25 18:58:16,538 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk [ActionStateChunk.java : 34] - send a action putPerflowMsg actionState4
+2021-01-25 18:58:16,539 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496539
+2021-01-25 18:58:16,540 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496540
+2021-01-25 18:58:16,540 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496540
+2021-01-25 18:58:16,540 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496540
+2021-01-25 18:58:16,540 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496540
+2021-01-25 18:58:16,540 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496540
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496541
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496541
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496541
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496541
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496541
+2021-01-25 18:58:16,541 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496541
+2021-01-25 18:58:16,542 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 23] - begin encode1611597496542
+2021-01-25 18:58:16,544 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder [ActionServerEncoder.java : 38] - finish encode1611597496544
+2021-01-25 18:58:16,553 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597496553
+2021-01-25 18:58:16,553 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count2
+2021-01-25 18:58:16,553 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597496553
+2021-01-25 18:58:16,553 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597496553
+2021-01-25 18:58:16,554 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count3
+2021-01-25 18:58:16,554 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496554
+2021-01-25 18:58:16,554 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496554
+2021-01-25 18:58:16,555 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 23] - begin encode1611597496555
+2021-01-25 18:58:16,555 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder [ConnServerEncoder.java : 38] - finish encode1611597496555
+2021-01-25 18:58:16,556 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 22] - receive a object1611597496555
+2021-01-25 18:58:16,556 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:58:16,561 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder [ConnServerDecoder.java : 38] - datatype9
+2021-01-25 18:58:16,561 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597496561
+2021-01-25 18:58:16,562 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 22] - receive a  action object1611597496562
+2021-01-25 18:58:16,562 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,563 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,564 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,564 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,564 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,565 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,561 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597496561
+2021-01-25 18:58:16,566 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count4
+2021-01-25 18:58:16,566 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel [ConnectionChannel.java : 42] - receive a conn putAck1611597496566
+2021-01-25 18:58:16,567 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 59] - conn putperflow ack current time1611597496567
+2021-01-25 18:58:16,567 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 60] - connection put perflow count5
+2021-01-25 18:58:16,567 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor [ConnMsgProcessor.java : 95] - set a stateStorage Ack
+2021-01-25 18:58:16,567 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnStateStorage [ConnStateStorage.java : 84] - set a conn stateStorage ack
+2021-01-25 18:58:16,587 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,588 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder [ActionServerDecoder.java : 38] - datatype10
+2021-01-25 18:58:16,589 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496589
+2021-01-25 18:58:16,589 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496589
+2021-01-25 18:58:16,589 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count1
+2021-01-25 18:58:16,589 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496589
+2021-01-25 18:58:16,589 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496589
+2021-01-25 18:58:16,590 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count2
+2021-01-25 18:58:16,594 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496594
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496597
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count3
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496597
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496597
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count4
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496597
+2021-01-25 18:58:16,597 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496597
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count5
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count6
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count7
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel [ActionChannel.java : 40] - receive a action put ack1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 61] - action put perflow current time1611597496598
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 62] - action put perflow count8
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor [ActionMsgProcessor.java : 83] - test receive ack process
+2021-01-25 18:58:16,598 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionStateStorage [ActionStateStorage.java : 77] - set a action stateStorage ack
+2021-01-25 18:58:16,599 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 106] - receive double ack1611597496599
+2021-01-25 18:58:16,599 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 138] - begin to change forward direction
+2021-01-25 18:58:16,600 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 140] - end move time1611597496599
+2021-01-25 18:58:16,600 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl [MoveProcessControl.java : 141] - total move time194
+2021-01-25 18:58:21,744 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 76] - 客户端：/127.0.0.1:46161掉线
+2021-01-25 18:58:21,746 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/127.0.0.1:46161已断开
+2021-01-25 18:58:21,745 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 75] - 客户端：/127.0.0.1:56633掉线
+2021-01-25 18:58:21,747 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 49] - 客户端：/127.0.0.1:56633已断开

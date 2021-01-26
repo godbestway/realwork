@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message Inaddr {
+	repeated fixed32 address=1;
+}
