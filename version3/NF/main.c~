@@ -92,7 +92,7 @@ void action_initLine(){
     
     line * list=action_head;
     int i;
-    for (i=2; i<=8; i++) {
+    for (i=2; i<=11; i++) {
        
         line * body=(line*)malloc(sizeof(line));
         body->prior=NULL;
@@ -116,7 +116,7 @@ void conn_initLine(){
     
     line * list=conn_head;
     int i;
-    for (i=2; i<=5; i++) {
+    for (i=2; i<=10; i++) {
        
         line * body=(line*)malloc(sizeof(line));
         body->prior=NULL;
@@ -152,12 +152,12 @@ int local_conn_put_perflow(ConnState* state){
     
     conn_msg_count++;
     
-    if(conn_msg_count == 5){
-	if(conn_put_head->next->next->next->next->next->data != NULL){ 
+    if(conn_msg_count == 50){
+	/*if(conn_put_head->next->next->next->next->next->data != NULL){ 
         	printf("put_head->next->next->next->next->next->data %d\n",conn_put_head->next->next->next->next->next->data);
 	}else{
 		printf("else put_head->next->next->next->next->data %d\n",conn_put_head->next->next->next->next->data);
-	}
+	}*/
 	display1();
 	}
    
@@ -183,12 +183,12 @@ int local_action_put_perflow(ActionState* state){
     
     action_msg_count++;
     
-    if(action_msg_count == 8){
-	if(action_put_head->next->next->next->next->next->data != NULL){ 
+    if(action_msg_count == 50){
+	/*if(action_put_head->next->next->next->next->next->data != NULL){ 
         	printf("put_head->next->next->next->next->next->data %d\n",action_put_head->next->next->next->next->next->data);
 	}else{
 		printf("else put_head->next->next->next->next->data %d\n",action_put_head->next->next->next->next->data);
-	}
+	}*/
 	display2();
 	}
    
@@ -346,9 +346,9 @@ int local_conn_get_perflow(){
 	 count++;
          pthread_mutex_unlock(&ConnEntryLock);
 	gettimeofday(&end_serialize, NULL);
-	long sec = end_serialize.tv_sec - start_serialize.tv_sec;
-        long usec = end_serialize.tv_usec - start_serialize.tv_usec;
-        long total = (sec * 1000 * 1000) + usec;
+	sec = end_serialize.tv_sec - start_serialize.tv_sec;
+        usec = end_serialize.tv_usec - start_serialize.tv_usec;
+        total = (sec * 1000 * 1000) + usec;
         printf("CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = %ldus\n", total);
     }
     

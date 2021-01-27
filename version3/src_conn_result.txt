@@ -1,0 +1,31 @@
+22:03:40.472 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611695020472
+22:03:40.483 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.487 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.488 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.495 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.496 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.498 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype7
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020507
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=1
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020508
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=2
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020512 data=3
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.513 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020513 data=4
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020526
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020527 data=5
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a  conn getAck1611695020528
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection totalnum:5

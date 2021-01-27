@@ -1,3 +1,4 @@
+#include "local.h"
 #include <CONNAC.h>
 #include <pthread.h>
 #include <assert.h>
@@ -30,6 +31,8 @@ int main()
     head=initLine(head);
     
     display(head);
+
+    printNumber();
    
     printf("链表中第 4 个节点的直接前驱是：%d\n",head->next->next->next->prior->data);
     

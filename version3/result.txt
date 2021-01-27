@@ -1,311 +1,331 @@
-:\Program Files\Java\jdk1.8.0_241\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\lib\idea_rt.jar=54298:C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_241\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\rt.jar;D:\java\realwork\version1\target\classes;C:\Users\Dingchenglin\.m2\repository\org\msgpack\msgpack\0.6.12\msgpack-0.6.12.jar;C:\Users\Dingchenglin\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\Dingchenglin\.m2\repository\org\javassist\javassist\3.18.1-GA\javassist-3.18.1-GA.jar;C:\Users\Dingchenglin\.m2\repository\io\netty\netty-all\4.1.50.Final\netty-all-4.1.50.Final.jar;C:\Users\Dingchenglin\.m2\repository\com\google\protobuf\protobuf-java\3.14.0\protobuf-java-3.14.0.jar;C:\Users\Dingchenglin\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\Dingchenglin\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Dingchenglin\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar" version1.zmove.single.OperationManager
-19:50:47.076 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener - bind success at port:18080
-19:50:47.135 [nioEventLoopGroup-4-1] INFO  version1.server.ServerListener - bind success at port:18081
-19:50:47.136 [main] INFO  v.zmove.single.OperationManager - netty server is set up
-19:50:47.137 [Thread-0] INFO  v.zmove.single.OperationManager - a new condition is added
-19:51:15.904 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.5.185:60587已连接上Connection来
-19:51:15.904 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.5.185:39624已连接上Action来
-19:51:15.905 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.5.185:39624在线
-19:51:15.905 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.5.185:60587在线
-19:51:15.941 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600675941
-19:51:15.941 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600675941
+22:03:27.778 [nioEventLoopGroup-2-1] INFO  version1.server.ServerListener - bind success at port:18080
+22:03:27.779 [Thread-0] INFO  version1.server.OperationManager - a new condition is added
+22:03:27.779 [nioEventLoopGroup-4-1] INFO  version1.server.ServerListener - bind success at port:18081
+22:03:27.782 [main] INFO  version1.zmove.single.SingleMove - netty server is set up
+22:03:32.195 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.1:50865已连接上Connection来
+22:03:32.195 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.1:51498已连接上Action来
+22:03:32.196 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.1:50865在线
+22:03:32.196 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.1:51498在线
+22:03:32.212 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611695012212
+22:03:32.212 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611695012212
 decode: datatype of the coming packet  2
+22:03:32.214 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype2
 decode: datatype of the coming packet  2
-19:51:15.945 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype2
-19:51:15.945 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype2
-19:51:15.983 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:15.983 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:15.983 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:15.983 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - syn message comes
-19:51:15.984 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - syn message comes
-19:51:15.992 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager - channel try to connect
-19:51:15.992 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager - channel try to connect
-19:51:15.992 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager - a new NF is found
-19:51:15.992 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager - a new NF is found
-19:51:15.993 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager - set a NF successful
-19:51:15.993 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager - try to set a action channel
-19:51:15.993 [nioEventLoopGroup-5-1] INFO  v.zmove.single.OperationManager - action channel has connected
-19:51:15.993 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager - try to set a connection channel
-19:51:15.994 [nioEventLoopGroup-3-1] INFO  v.zmove.single.OperationManager - xiaolin-virtual-machine.40017has already fully connected
-19:51:20.996 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - a simulation of move start
-19:51:20.999 [pool-3-thread-1] INFO  v.zmove.single.ConnMsgProcessor - 添加了connection storage
-19:51:21.000 [pool-3-thread-1] INFO  v.zmove.single.ActionMsgProcessor - 添加了action storage
-19:51:21.002 [Thread-1] INFO  v.zmove.single.ConnMsgProcessor - 发送了connection getperflow
-19:51:21.002 [Thread-2] INFO  v.zmove.single.ActionMsgProcessor - 发送了action getperflow
-19:51:21.012 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681012
-19:51:21.012 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681012
-19:51:21.024 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681024
-19:51:21.025 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681025
-19:51:21.028 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681028
+22:03:32.215 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype2
+22:03:32.230 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:32.230 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - syn message comes
+22:03:32.232 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:32.232 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:32.232 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - syn message comes
+22:03:32.234 [nioEventLoopGroup-3-1] INFO  version1.server.OperationManager - channel try to connect
+22:03:32.234 [nioEventLoopGroup-3-1] INFO  version1.server.OperationManager - a new NF is found
+22:03:32.234 [nioEventLoopGroup-3-1] INFO  version1.server.OperationManager - set a NF successful
+22:03:32.234 [nioEventLoopGroup-3-1] INFO  version1.server.OperationManager - try to set a connection channel
+22:03:32.235 [nioEventLoopGroup-3-1] INFO  version1.server.OperationManager - connection channel has connected
+22:03:32.233 [nioEventLoopGroup-5-1] INFO  version1.server.OperationManager - channel try to connect
+22:03:32.235 [nioEventLoopGroup-5-1] INFO  version1.server.OperationManager - a new NF is found
+22:03:32.236 [nioEventLoopGroup-5-1] INFO  version1.server.OperationManager - try to set a action channel
+22:03:32.236 [nioEventLoopGroup-5-1] INFO  version1.server.OperationManager - xiaolin-virtual-machine.15692has already fully connected
+22:03:35.340 [nioEventLoopGroup-5-2] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.2:53877已连接上Action来
+22:03:35.341 [nioEventLoopGroup-5-2] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.2:53877在线
+22:03:35.341 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - receive a  action object1611695015341
+decode: datatype of the coming packet  2
+22:03:35.342 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype2
+22:03:35.342 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:35.345 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - syn message comes
+22:03:35.346 [nioEventLoopGroup-5-2] INFO  version1.server.OperationManager - channel try to connect
+22:03:35.346 [nioEventLoopGroup-5-2] INFO  version1.server.OperationManager - a new NF is found
+22:03:35.346 [nioEventLoopGroup-5-2] INFO  version1.server.OperationManager - set a NF successful
+22:03:35.346 [nioEventLoopGroup-5-2] INFO  version1.server.OperationManager - try to set a action channel
+22:03:35.346 [nioEventLoopGroup-5-2] INFO  version1.server.OperationManager - action channel has connected
+22:03:35.346 [nioEventLoopGroup-3-2] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.2:44307已连接上Connection来
+22:03:35.346 [nioEventLoopGroup-3-2] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.2:44307在线
+22:03:35.347 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - receive a object1611695015347
+decode: datatype of the coming packet  2
+22:03:35.349 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype2
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - syn message comes
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.server.OperationManager - channel try to connect
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.server.OperationManager - a new NF is found
+22:03:35.350 [nioEventLoopGroup-3-2] INFO  version1.server.OperationManager - try to set a connection channel
+22:03:35.351 [nioEventLoopGroup-3-2] INFO  version1.server.OperationManager - xiaolin-virtual-machine.15698has already fully connected
+22:03:40.352 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - a simulation of move start
+22:03:40.354 [pool-3-thread-1] INFO  v.zmove.single.ConnMsgProcessor - 添加了connection storage
+22:03:40.355 [pool-3-thread-1] INFO  v.zmove.single.ActionMsgProcessor - 添加了action storage
+22:03:40.357 [Thread-2] INFO  v.zmove.single.ActionMsgProcessor - 发送了action getperflow
+22:03:40.357 [Thread-1] INFO  v.zmove.single.ConnMsgProcessor - 发送了connection getperflow
+22:03:40.385 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611695020385
+22:03:40.392 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611695020392
+22:03:40.395 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611695020395
+22:03:40.395 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611695020395
+22:03:40.471 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611695020471
 decode: datatype of the coming packet  12
-19:51:21.028 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.029 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681029
+22:03:40.472 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611695020472
 decode: datatype of the coming packet  11
-19:51:21.030 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
-19:51:21.031 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.032 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.032 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681032
-19:51:21.032 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.032 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681032 data= 1
-19:51:21.032 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611600681032
-19:51:21.032 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611600681032 data=1
-19:51:21.033 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681033
-19:51:21.033 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681033
+22:03:40.483 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
 decode: datatype of the coming packet  11
-19:51:21.033 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681033
-19:51:21.034 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
-19:51:21.034 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681034
+22:03:40.487 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
 decode: datatype of the coming packet  11
-19:51:21.034 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
-decode: datatype of the coming packet  12
+22:03:40.488 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
 decode: datatype of the coming packet  11
-19:51:21.034 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.034 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
-19:51:21.034 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.495 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
 decode: datatype of the coming packet  11
-19:51:21.035 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
-19:51:21.035 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681035
-19:51:21.035 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681035 data= 2
+22:03:40.496 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
 decode: datatype of the coming packet  7
-19:51:21.035 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681035
-19:51:21.035 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype7
-19:51:21.035 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681035
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681036
+22:03:40.498 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype7
+22:03:40.472 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020507
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=1
 decode: datatype of the coming packet  12
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681036
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681036 data= 3
-19:51:21.036 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681036
-19:51:21.037 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681037
-19:51:21.038 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.038 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.038 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611600681038
-19:51:21.038 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611600681038 data=2
-19:51:21.039 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.039 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.039 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611600681039
-19:51:21.039 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611600681039 data=3
-19:51:21.040 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.040 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.040 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611600681040
-19:51:21.040 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611600681040 data=4
-19:51:21.040 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611600681041
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611600681041 data=5
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a  conn getAck1611600681041
-19:51:21.041 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection totalnum:5
-19:51:21.042 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681042
+22:03:40.508 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
 decode: datatype of the coming packet  12
-19:51:21.042 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.043 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.043 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681043
-19:51:21.043 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681043 data= 4
-19:51:21.043 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681043
-19:51:21.043 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681043
-19:51:21.053 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611600681053connState 1
-19:51:21.054 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681054 actionState1
-19:51:21.056 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681056 actionState2
-19:51:21.058 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build1
-19:51:21.059 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState1
-19:51:21.059 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681059
-19:51:21.059 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681059
-19:51:21.059 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681059
-19:51:21.060 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681060
-19:51:21.060 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish1
-19:51:21.060 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState2
-19:51:21.060 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681060
-19:51:21.060 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681060
-19:51:21.061 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681061 actionState3
-19:51:21.061 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState3
-19:51:21.062 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681062
-19:51:21.062 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681062
-19:51:21.063 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611600681063connState 2
-19:51:21.064 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build2
-19:51:21.064 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681064
-19:51:21.064 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681064
-19:51:21.065 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish2
-19:51:21.067 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681067
-decode: datatype of the coming packet  9
-19:51:21.067 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype9
-19:51:21.069 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681069
+22:03:40.508 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
 decode: datatype of the coming packet  12
-19:51:21.069 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.070 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.070 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.070 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.070 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681070
-19:51:21.070 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611600681070
-19:51:21.070 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681070 data= 5
-19:51:21.070 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611600681070
-19:51:21.070 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681070
-19:51:21.070 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count1
-19:51:21.070 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681070
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681071
-decode: datatype of the coming packet  9
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype9
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611600681071
-19:51:21.071 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611600681071
-19:51:21.072 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count2
-19:51:21.072 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681072
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020508
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=2
+22:03:40.509 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020509connState 1
+22:03:40.511 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build1
+22:03:40.512 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish1
+22:03:40.512 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020512 data=3
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.513 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020513 data=4
+22:03:40.508 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
 decode: datatype of the coming packet  12
-19:51:21.072 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.072 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.072 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681072
-19:51:21.072 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681072 data= 6
-19:51:21.073 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681073
-19:51:21.073 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681073
-19:51:21.073 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681073 actionState5
-19:51:21.074 [pool-2-thread-3] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState5
-19:51:21.074 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681074
-19:51:21.074 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681074
-19:51:21.074 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681074 actionState6
-19:51:21.075 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState6
-19:51:21.075 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681075
-19:51:21.075 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681075
-19:51:21.076 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611600681076connState 3
-19:51:21.076 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build3
-19:51:21.077 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681077
-19:51:21.077 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish3
-19:51:21.077 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681077
-19:51:21.078 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611600681078connState 4
-19:51:21.078 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build4
-19:51:21.078 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681078
-19:51:21.078 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681078
-19:51:21.078 [pool-1-thread-4] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish4
-19:51:21.079 [pool-1-thread-5] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611600681079connState 5
-19:51:21.079 [pool-1-thread-5] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build5
-19:51:21.080 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - begin encode1611600681080
-19:51:21.080 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerEncoder - finish encode1611600681080
-19:51:21.080 [pool-1-thread-5] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish5
-19:51:21.081 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681081 actionState4
-19:51:21.082 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState4
-19:51:21.082 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681082
-19:51:21.082 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681082
-19:51:21.093 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681093
-decode: datatype of the coming packet  9
-19:51:21.093 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype9
-19:51:21.094 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.094 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.094 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611600681094
-19:51:21.094 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611600681094
-19:51:21.094 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count3
-19:51:21.095 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611600681095
-decode: datatype of the coming packet  9
-19:51:21.095 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype9
-19:51:21.095 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681095
-decode: datatype of the coming packet  9
+22:03:40.519 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
 decode: datatype of the coming packet  12
-19:51:21.095 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype9
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681096
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681096 data= 7
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611600681096
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681096
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611600681096
-19:51:21.096 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681096
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count4
-19:51:21.096 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611600681097
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611600681097
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count5
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - set a stateStorage Ack
-19:51:21.097 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnStateStorage - set a conn stateStorage ack
-19:51:21.098 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681098
-19:51:21.098 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681098 actionState7
+22:03:40.519 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
 decode: datatype of the coming packet  12
-19:51:21.098 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState7
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611600681099
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611600681099 data= 8
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611600681099
-19:51:21.099 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611600681099
-19:51:21.100 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681100
-19:51:21.100 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681100
-19:51:21.100 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611600681100 actionState8
-19:51:21.100 [pool-2-thread-4] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState8
-19:51:21.101 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - begin encode1611600681101
-19:51:21.101 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerEncoder - finish encode1611600681101
-19:51:21.116 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681116
+22:03:40.519 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
+decode: datatype of the coming packet  12
+22:03:40.519 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype18
 decode: datatype of the coming packet  8
-19:51:21.116 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype8
-19:51:21.120 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.120 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action get ack1611600681120
-19:51:21.120 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action totalnum:8
-19:51:21.123 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681123
+22:03:40.519 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype8
+22:03:40.520 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.521 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020521
+22:03:40.521 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020521 data= 1
+22:03:40.521 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020521
+22:03:40.513 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020513connState 3
+22:03:40.522 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build3
+22:03:40.522 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish3
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020522
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020522connState 2
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020522
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build2
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish2
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020522
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020522
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020526
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020527 data=5
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a  conn getAck1611695020528
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection totalnum:5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020529connState 5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish5
+22:03:40.529 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020529
+22:03:40.529 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020529
+22:03:40.529 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020529connState 4
+22:03:40.529 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build4
+22:03:40.530 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020530
+22:03:40.530 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020530
+22:03:40.530 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish4
+22:03:40.535 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020535
+22:03:40.535 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.535 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020535
+22:03:40.535 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020535 data= 2
+22:03:40.535 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020535
+22:03:40.536 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020536 actionState1
+22:03:40.538 [pool-2-thread-1] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState1
+22:03:40.540 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020540
+22:03:40.540 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020540 actionState2
+22:03:40.540 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020540
+22:03:40.540 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState2
+22:03:40.540 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.540 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020540
+22:03:40.541 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020541 data= 3
+22:03:40.541 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020541
+22:03:40.541 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020541
+22:03:40.541 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020542
+22:03:40.542 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020542 actionState3
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020542 data= 4
+22:03:40.542 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState3
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020542
+22:03:40.541 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020541
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020542
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020542
+22:03:40.542 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020542
+22:03:40.543 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020543
+22:03:40.543 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020543
+22:03:40.543 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020543
+22:03:40.543 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020543 actionState4
+22:03:40.544 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState4
+22:03:40.545 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020545
+22:03:40.547 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020547
+22:03:40.542 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020542 data= 5
+22:03:40.550 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020550
+22:03:40.550 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020550
+22:03:40.550 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020550 actionState5
+22:03:40.550 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState5
+22:03:40.551 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020551
+22:03:40.551 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020551
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020553
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020553 data= 6
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020553
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020553
+22:03:40.553 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020553 actionState6
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.553 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState6
+22:03:40.553 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020553
+22:03:40.554 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020554 data= 7
+22:03:40.554 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020554
+22:03:40.554 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020554
+22:03:40.554 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020554
+22:03:40.554 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020554
+22:03:40.554 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.554 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a actionstate1611695020554
+22:03:40.554 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020554 actionState7
+22:03:40.554 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState7
+22:03:40.554 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020554
+22:03:40.555 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020555
+22:03:40.555 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action receive state current time1611695020555 data= 8
+22:03:40.555 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - before send action state1611695020555
+22:03:40.555 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - after send action state1611695020555
+22:03:40.555 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.556 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action get ack1611695020556
+22:03:40.556 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action totalnum:8
+22:03:40.556 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - ActionStateChuck call1611695020556 actionState8
+22:03:40.556 [pool-2-thread-2] INFO  v.zmove.single.ActionStateChunk - send a action putPerflowMsg actionState8
+22:03:40.557 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - begin encode1611695020557
+22:03:40.557 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerEncoder - finish encode1611695020557
+22:03:40.571 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - receive a object1611695020571
+decode: datatype of the coming packet  9
+22:03:40.572 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+decode: datatype of the coming packet  9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+decode: datatype of the coming packet  9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+decode: datatype of the coming packet  9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+decode: datatype of the coming packet  9
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count1
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020574
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count2
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020575
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020575
+22:03:40.587 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count3
+22:03:40.587 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.588 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - receive a  action object1611695020588
 decode: datatype of the coming packet  a
-19:51:21.123 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.127 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.128 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681128
-19:51:21.128 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681128
-19:51:21.128 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count1
-19:51:21.142 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681142
+22:03:40.588 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.142 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.142 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.143 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681143
-19:51:21.143 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681143
-19:51:21.143 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count2
-19:51:21.155 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681155
+22:03:40.589 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.155 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.155 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.155 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681155
-19:51:21.156 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681156
-19:51:21.156 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count3
-19:51:21.157 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681157
+22:03:40.590 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.158 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.158 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.158 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681158
-19:51:21.158 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681158
-19:51:21.158 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count4
-19:51:21.169 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681169
+22:03:40.590 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.170 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.170 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.170 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681170
-19:51:21.170 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681170
-19:51:21.170 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count5
-19:51:21.187 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681187
+22:03:40.590 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.187 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.187 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.188 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681188
-19:51:21.188 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681188
-19:51:21.188 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count6
-19:51:21.200 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681200
+22:03:40.590 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.201 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.201 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.202 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681202
-19:51:21.202 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681202
-19:51:21.202 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count7
-19:51:21.208 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - receive a  action object1611600681208
+22:03:40.590 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
 decode: datatype of the coming packet  a
-19:51:21.209 [nioEventLoopGroup-5-1] INFO  version1.coder.ActionServerDecoder - datatype10
-19:51:21.209 [nioEventLoopGroup-5-1] INFO  version1.channel.BaseChannelHandler - channel read
-19:51:21.209 [nioEventLoopGroup-5-1] INFO  version1.channel.ActionChannel - receive a action put ack1611600681209
-19:51:21.209 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611600681209
-19:51:21.210 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count8
-19:51:21.210 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionMsgProcessor - test receive ack process
-19:51:21.210 [nioEventLoopGroup-5-1] INFO  v.zmove.single.ActionStateStorage - set a action stateStorage ack
-19:51:21.211 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - receive double ack1611600681211
-19:51:21.211 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - begin to change forward direction
-19:51:21.212 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - end move time1611600681211
-19:51:21.212 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - total move time209
-19:52:03.059 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.5.185:60587掉线
-19:52:03.059 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.5.185:39624掉线
-19:52:03.059 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.5.185:39624已断开
-19:52:03.059 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.5.185:60587已断开
-
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.coder.ActionServerDecoder - datatype10
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020591
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020591
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count1
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020591
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020591
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count2
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.591 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count3
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count4
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020592
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count5
+22:03:40.592 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.593 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.593 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020593
+22:03:40.593 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020593
+22:03:40.593 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count6
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020595
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020595
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count4
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020596
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020596
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - set a stateStorage Ack
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnStateStorage - set a conn stateStorage ack
+22:03:40.596 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020597
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020597
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count7
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  version1.channel.ActionChannel - receive a action put ack1611695020597
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow current time1611695020597
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow count8
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - action put perflow totalnum8
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionMsgProcessor - test receive ack process
+22:03:40.597 [nioEventLoopGroup-5-2] INFO  v.zmove.single.ActionStateStorage - set a action stateStorage ack
+22:03:40.598 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - receive double ack1611695020598
+22:03:40.602 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - begin to change forward direction
+22:03:40.603 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - end move time1611695020598
+22:03:40.603 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - total move time241
+22:03:45.291 [nioEventLoopGroup-5-2] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.2:53877掉线
+22:03:45.292 [nioEventLoopGroup-5-2] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.2:53877已断开
+22:03:45.292 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.1:51498掉线
+22:03:45.292 [nioEventLoopGroup-5-1] INFO  v.channel.ActionChannelHandler - 客户端：/192.168.0.1:51498已断开
+22:03:45.293 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.1:50865掉线
+22:03:45.293 [nioEventLoopGroup-3-1] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.1:50865已断开
+22:03:45.294 [nioEventLoopGroup-3-2] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.2:44307掉线
+22:03:45.294 [nioEventLoopGroup-3-2] INFO  v.channel.ConnectionChannelHandler - 客户端：/192.168.0.2:44307已断开
