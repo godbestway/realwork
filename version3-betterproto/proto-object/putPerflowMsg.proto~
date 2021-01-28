@@ -1,0 +1,6 @@
+syntax = "proto2";
+import "ConnState.proto";
+
+message ConnPutPerflowMsg {
+    required FlowState state = 1;
+}

@@ -241,18 +241,20 @@ int send_proto_object(int conn, ProtoObject* proto_object){
     	new_buf[1] = (len>>8)&0xff;
     	new_buf[2] = 0;
     	new_buf[3] = type ;
-   	 int m;
-    	for(m = HEAD_LENGTH; m < len+HEAD_LENGTH; m++){
-	new_buf[m] = buf[m-HEAD_LENGTH];
-	}
+   	// int m;
+    	//for(m = HEAD_LENGTH; m < len+HEAD_LENGTH; m++){
+	//new_buf[m] = buf[m-HEAD_LENGTH];
+	//}
        
         gettimeofday(&end_encode, NULL);
         long sec = end_encode.tv_sec - start_serialize.tv_sec;
         long usec = end_encode.tv_usec - start_serialize.tv_usec;
         long total = (sec * 1000 * 1000) + usec;
         printf("SEND STATS: PERFLOW: TIME TO Encode PROTO OBJECT = %ldus\n", total);
-
-	int result = conn_write(conn, new_buf, len+HEAD_LENGTH);
+        printf("only use buf");
+	//int result = conn_write(conn, new_buf, len+HEAD_LENGTH);
+	int result_1 = conn_write(conn, new_buf,HEAD_LENGTH);
+	int result_2 = conn_write(conn, buf, len);
 
  	free(new_buf);
 	
@@ -262,7 +264,7 @@ int send_proto_object(int conn, ProtoObject* proto_object){
         total = (sec * 1000 * 1000) + usec;
         printf("SEND STATS: PERFLOW: TIME TO SEND PROTO OBJECT = %ldus\n", total);
 
-	return result;
+	return result_2;
 }
 
 

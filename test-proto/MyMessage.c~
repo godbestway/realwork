@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "MyMessage.pb-c.h"
+
+#define NAME_LEN 32
+#define MY_MESSAGE__PERSON_INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&my_message__descriptor) \
+    , MY_MESSAGE__DATA_TYPE__PersonType, MY_MESSAGE__MESSAGE_PERSON, {0} }
+
+
+int main() {
+    void *buf = NULL;
+    unsigned int len;
+    Person person = PERSON__INIT;
+    //MyMessage stu = MY_MESSAGE__INIT
+
+    person.has_age = 2;
+    person.age = 20;
+    person.name = (char*)malloc(NAME_LEN);
+    person.name = "lin";
+
+    person.address = (char*)malloc(NAME_LEN);
+    person.address = "haydn";
+    
+
+
+    MyMessage stu = MY_MESSAGE__PERSON_INIT;
+     stu.person =&person;
+
+    
+
+    len =  my_message__get_packed_size(&stu);  
+    printf("size of Student info : %u\n", len);
+    buf = malloc(len);
+    my_message__pack(&stu, buf);
+
+    MyMessage *msg =  NULL; 
+
+    msg = my_message__unpack(NULL, len, buf); 
+
+    /*Person person2;
+    if(msg->data_type == 2){
+	person2 = msg->person;
+
+	}
+*/
+   // printf("msg name : %d\n", msg->data_body_case);
+    printf("msg name : %d\n", msg->data_type);
+    //printf("msg name : %d\n", msg->person->age);
+    printf("msg name : %s\n", msg->person->name);
+
+    my_message__free_unpacked(msg, NULL); 
+
+    free(buf);
+    return 0;
+}

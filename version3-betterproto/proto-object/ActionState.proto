@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+message ActionState {
+	repeated fixed64 start_time=1;
+        repeated fixed64 last_pkt_time=2;	
+        required fixed64 cxid=3;
+        required uint32  reversed=4;
+        required fixed32 af=5;
+        required fixed32 hw_proto=6;
+        required uint32  proto=7;
+        required fixed64 s_total_pkts=8;
+        required fixed64 s_total_bytes=9;
+        required fixed64 d_total_pkts=10;
+        required fixed64 d_total_bytes=11;
+        required uint32  s_tcpFlags=12;
+        required uint32  pad=13;
+        required uint32  d_tcpFlags=14;
+        required uint32  check=15;
+        required fixed32 hash=16;        
+}
+
+
+
