@@ -1,6 +1,6 @@
 #include "conn.h"
 #include "debug.h"
-#include "information.pb-c.h"
+#include "myMessage.pb-c.h"
 
 #include <assert.h>
 #include <errno.h>
@@ -133,7 +133,7 @@ int conn_close(int conn)
     return 0;
 }
 
-Information* conn_read(int conn)
+MyMessage conn_read(int conn)
 {
     int readlen = 0, result = 0;
 
@@ -168,7 +168,6 @@ Information* conn_read(int conn)
         { 
             ERROR_PRINT("Error reading from socket: %d", result);
             free(buf);
-            return NULL;
         }
 	
         // Data was read
@@ -177,10 +176,10 @@ Information* conn_read(int conn)
     }
     buf = buf -length;
     uint8_t * intbuf = (uint8_t*)(buf);
-    Information* information = information__unpack(NULL, length, intbuf);
- 	
-   
-    return -1;
+    MyMessage message = *my_message__unpack(NULL,length,intbuf);
+    
+    return message;
+
 }
 
 

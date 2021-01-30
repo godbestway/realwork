@@ -1,0 +1,29 @@
+17:00:14.290 [nioEventLoopGroup-2-1] INFO  Server.ServerListener - bind success at port:18080
+17:00:14.291 [Thread-0] INFO  Server.OperationManager - a new condition is added
+17:00:14.291 [nioEventLoopGroup-4-1] INFO  Server.ServerListener - bind success at port:18081
+17:00:14.294 [main] INFO  Server.OperationManager - netty server is set up
+17:00:17.100 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.1:47729已连接上Connection来
+17:00:17.100 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.1:33867已连接上action来
+17:00:17.100 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.1:47729在线
+17:00:17.100 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.1:33867在线
+begin to process messgae
+17:00:17.158 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - channel try to connect
+17:00:17.158 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - syn message comes
+17:00:17.159 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - a new NF is found
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - host: godbestway
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - pid: 28503
+godbestway.28503
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - channel try to connect
+17:00:17.159 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - not contains this id
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - a new NF is found
+17:00:17.159 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - set a NF successful
+godbestway.28503
+17:00:17.159 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - try to set a connection channel
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - contains this id
+17:00:17.159 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - connection channel has connected
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - try to set a action channel
+17:00:17.159 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - godbestway.28503has already fully connected
+17:00:22.161 [pool-2-thread-1] INFO  zmove.MoveProcessControl - a simulation of move start
+17:00:22.382 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage - set a conn stateStorage ack
+17:00:22.386 [nioEventLoopGroup-3-1] INFO  zmove.MoveProcessControl - begin to change forward direction
+17:00:22.386 [nioEventLoopGroup-3-1] INFO  zmove.MoveProcessControl - end move time1611936022386

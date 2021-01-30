@@ -44,11 +44,11 @@ int connac_init(CONNACLocals *locals)
         return -1;
     }
     // Initialize state
-  /*  if (action_init() < 0)
+    if (action_init() < 0)
     { 
         ERROR_PRINT("Failed to initialize action"); 
         return -1;
-    }*/
+    }
     
     INFO_PRINT("Initialized");
     

@@ -33,9 +33,9 @@ extern "C" {
 
 //json_object* json_compose_discover();
 
-int send_proto_object(int conn, ProtoObject* proto_object);
+int send_proto_object(int conn, uint8_t* buf, int len );
 ProtoObject* make_proto_object(int len, uint8_t* buf, int message_type );
-int send_information_message(int conn, int personnum, char* content);
+int send_syn_message(int conn);
 
 /*ProtoObject* proto_compose_person_message(char* name, int age, char* address);
 ProtoObject* proto_compose_conn_putPerflowack_message(int hash);

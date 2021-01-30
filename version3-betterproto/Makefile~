@@ -1,4 +1,4 @@
-SOURCES= connac_core.c conn.c config.c connac_state.c connac_ac.c information.pb-c.c  protoObject.c
+SOURCES= connac_core.c conn.c config.c connac_state.c connac_ac.c information.pb-c.c myMessage.pb-c.c protoObject.c
 CC = gcc
 
 ifeq (${PREFIX},)
@@ -24,7 +24,7 @@ install: build
 	install libconnac.so ${LIBDIR}/libconnac.so
 	install -d ${INCLUDEDIR}
 	install CONNAC.h ${INCLUDEDIR}/CONNAC.h
-	install ActionState.pb-c.h ${INCLUDEDIR}/ActionState.pb-c.h
+	install myMessage.pb-c.h ${INCLUDEDIR}/myMessage.pb-c.h
 	install -d ${CONFDIR}
 	if [ ! -f ${CONFDIR}/config.conf ]; then install config.conf ${CONFDIR}/config.conf; fi
 

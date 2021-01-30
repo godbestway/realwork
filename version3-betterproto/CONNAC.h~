@@ -7,6 +7,7 @@ extern "C" {
 
 //#include "ActionState.pb-c.h"
 //#include "ConnState.pb-c.h"
+#include "myMessage.pb-c.h"
 #include <stdint.h>
 #include <sys/time.h>
 #include <pcap/pcap.h>
@@ -54,20 +55,21 @@ typedef struct {
     //int (*init)();
     //int (*cleanup)();
     int (*conn_get_perflow)();
-  //  int (*conn_put_perflow)(ConnState* state); 
+    int (*conn_put_perflow)(ConnState* state); 
     int (*action_get_perflow)();
-  //  int (*action_put_perflow)(ActionState* state); 
+    int (*action_put_perflow)(ActionState* state); 
     
 } CONNACLocals;
 
 ///// FUNCTION PROTOTYPES ////////////////////////////////////////////////////
 //shared library export
 
-int conn_send_perflow(ProtoObject* proto_object);
+int conn_send_perflow(uint8_t* buf, int len);
+int action_send_perflow(uint8_t* buf, int len);
 int connac_init(CONNACLocals *locals);
 int connac_cleanup();
-int connac_send_perflow(ProtoObject * proto_object);
-int action_send_perflow(ProtoObject * proto_object);
+//int connac_send_perflow(ProtoObject * proto_object);
+//int action_send_perflow(ProtoObject * proto_object);
 
 void connac_notify_packet_received(char *type, struct timeval *recv_time);
 void connac_notify_flow_created();

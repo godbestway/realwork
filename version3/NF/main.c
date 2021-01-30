@@ -116,7 +116,7 @@ void conn_initLine(){
     
     line * list=conn_head;
     int i;
-    for (i=2; i<=5; i++) {
+    for (i=2; i<=100; i++) {
        
         line * body=(line*)malloc(sizeof(line));
         body->prior=NULL;
@@ -152,7 +152,7 @@ int local_conn_put_perflow(ConnState* state){
     
     conn_msg_count++;
     
-    if(conn_msg_count == 5){
+    if(conn_msg_count == 100){
 	if(conn_put_head->next->next->next->next->next->data != NULL){ 
         	printf("put_head->next->next->next->next->next->data %d\n",conn_put_head->next->next->next->next->next->data);
 	}else{

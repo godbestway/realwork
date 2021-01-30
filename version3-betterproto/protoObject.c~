@@ -26,21 +26,13 @@
 #define HEAD_LENGTH 4
 static void writeRawVarint32(int conn, int value);
 
-ProtoObject* make_proto_object(int len, uint8_t* buf, int message_type ){
-	
-	ProtoObject *proto_object;
-    	proto_object = (ProtoObject *)malloc(sizeof(ProtoObject));	
-	
-	//printf("message %d\n",message_type);
-	proto_object->length = len;
-	proto_object->buf = buf;
-	proto_object->message_type=message_type;
 
-	return proto_object;
-}
+int send_syn_message(int conn){
 
-/*ProtoObject* proto_compose_syn_message(){
-	Syn syn = SYN__INIT;
+
+        printf("try to build a syn Message");
+	Syn syn;
+        syn__init(&syn);
 
 	int pid = getpid();
         char host[1024];
@@ -49,57 +41,37 @@ ProtoObject* make_proto_object(int len, uint8_t* buf, int message_type ){
         printf("hostname %s\n", host);
         printf("pid %d\n",pid);
 
+	syn.has_pid = 1;
     	syn.pid=pid;
     	syn.host = (char*)malloc(CONTENT_LEN);
     	syn.host=host;
 
-    	//check info length  
-    	unsigned int len;
-    	len = syn__get_packed_size(&syn);
-    	printf("send size of syn : %u\n", len);
+        MyMessage mes;
+        my_message__init(&mes);
+   
+        mes.data_type = MY_MESSAGE__DATA_TYPE__SynType;
+        mes.message_case = MY_MESSAGE__MESSAGE_SYN;
+        mes.syn = &syn;
  
-    	//use length to malloc a space, check pb-c.h to know the buf pointer type
-    	//here is uint8_t  buf   
-    	uint8_t * buf = NULL;
-    	buf = (uint8_t*)malloc(len);
-    	syn__pack(&syn, buf);
-	
-	ProtoObject *syn_object;
-    	syn_object = make_proto_object(len, buf,PROTO_SYN);	
-	
-	return syn_object;
-	
+        int len = my_message__get_packed_size(&mes);
+        printf("size of MyMessage : %u\n", len);
+        void *buf = malloc(len);
+        my_message__pack(&mes, buf);
 
-}*/
-
-int send_information_message(int conn, int personnum, char* content){
-	Information info = INFORMATION__INIT;
-    	info.personnum=personnum;
-    	info.content = (char*)malloc(CONTENT_LEN);
-    	info.content=content;
-
-    	//check info length  
-    	unsigned int len;
-    	len = information__get_packed_size(&info);
-    	printf("send size of info : %u\n", len);
- 
-    	//use length to malloc a space, check pb-c.h to know the buf pointer type
-    	//here is uint8_t  buf   
-    	uint8_t * buf = NULL;
-    	buf = (uint8_t*)malloc(len);
-    	information__pack(&info, buf);
-	
-	int result = send_proto_object(conn,buf, len );
+    	int result = send_proto_object(conn,buf, len );
 	if(result < 0){
 		printf("send failed");
 		return -1;
 	}
 
 	free(buf);
+	
 	return result;
 	
 
 }
+
+
 
 /*ProtoObject* proto_compose_person_message(char* name, int age, char* address){
 	Person info = PERSON__INIT;
@@ -247,7 +219,7 @@ static void writeRawVarint32(int conn, int value) {
         char out;
 	int result;
         while((value & -128) != 0) {
-            out =value & 127 | 128;
+            out =value & 127 |128;
 	    uint8_t out_while = (uint8_t)out;
 	    
             result = conn_write(conn, &out_while, 1);

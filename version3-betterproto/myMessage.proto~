@@ -1,0 +1,104 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyMessage{
+    enum DataType{
+        SynType= 1;
+	PersonType = 2;
+	ConnGetPerflowMsgType =3;
+	ConnGetPerflowAckMsgType =4;
+	ConnStateType = 5;
+	ConnPutPerflowMsgType =6;
+	ConnPutPerflowAckMsgType = 7;
+	ActionGetPerflowMsgType = 8;
+	ActionGetPerflowAckMsgType = 9;
+	ActionStateType = 10;
+	ActionPutPerflowMsgType = 11;
+	ActionPutPerflowAckMsgType = 12;
+
+	
+
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        Syn syn = 2;
+	Person person = 3;
+	ConnGetPerflowMsg connGetPerflowMsg=4;
+	ConnGetPerflowAckMsg connGetPerflowAckMsg=5;
+	ConnState connState= 6;
+	ConnPutPerflowMsg connPutPerflowMsg=7;
+	ConnPutPerflowAckMsg connPutPerflowAckMsg= 8;
+	ActionGetPerflowMsg actionGetPerflowMsg = 9;
+	ActionGetPerflowAckMsg actionGetPerflowAckMsg = 10;
+	ActionState actionState= 11;
+	ActionPutPerflowMsg actionPutPerflowMsg= 12;
+	ActionPutPerflowAckMsg actionPutPerflowAckMsg= 13;
+        
+    }
+}
+
+
+message Syn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message Person {
+    optional string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+
+message ConnGetPerflowMsg {
+    optional string key = 1;
+}
+
+message ConnGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ConnState {
+	optional int32 data = 1;
+	optional fixed64 cxid =2;
+    	optional int32 hash = 3;
+}
+
+
+message ConnPutPerflowMsg {
+    optional ConnState state = 1;
+}
+
+message ConnPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+message ActionGetPerflowMsg {
+    optional string key = 1;
+}
+
+message ActionGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ActionState {
+	optional int32 data = 1;
+	optional fixed64 cxid =2;
+    	optional int32 hash = 3;
+}
+
+message ActionPutPerflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+}
+
+
+
+
+
