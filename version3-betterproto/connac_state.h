@@ -5,7 +5,9 @@ extern "C" {
 #ifndef _state_H_
 #define _state_H_
 
+#include "CONNAC.h"
 #include <pthread.h>
+
 
 ///// GLOBALS ///////////////////////////////////////////////////////////////
 extern int connac_conn_state;

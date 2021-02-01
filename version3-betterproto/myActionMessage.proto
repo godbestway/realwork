@@ -1,0 +1,64 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyActionMessage{
+    enum DataType{
+        SynType= 1;
+	ActionGetPerflowMsgType = 2;
+	ActionGetPerflowAckMsgType = 3;
+	ActionStateType =4;
+	ActionPutPerflowMsgType = 5;
+	ActionPutPerflowAckMsgType = 6;
+
+	
+
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        ActionSyn actionsyn = 2;
+	ActionGetPerflowMsg actionGetPerflowMsg = 3;
+	ActionGetPerflowAckMsg	actionGetPerflowAckMsg = 4;
+	ActionState actionState= 5;
+	ActionPutPerflowMsg actionPutPerflowMsg= 6;
+	ActionPutPerflowAckMsg actionPutPerflowAckMsg= 7;
+        
+    }
+}
+
+
+message ActionSyn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message ActionGetPerflowMsg {
+    optional int32 hw_proto = 1;            
+    optional int32  proto = 2; 
+}
+
+message ActionGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+
+message ActionState {
+	optional int32 data = 1;
+	optional fixed64 cxid =2;
+    	optional int32 hash = 3;
+}
+
+message ActionPutPerflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+
+
+

@@ -18244,3 +18244,1140 @@
 2021-01-29 23:22:39,223 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 53] - 客户端：/192.168.0.1:53141已断开
 2021-01-29 23:22:39,223 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 82] - 客户端：/192.168.0.1:39279掉线
 2021-01-29 23:22:39,224 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/192.168.0.1:39279已断开
+2021-01-30 15:08:25,778 [main] WARN  i.netty.util.internal.MacAddressUtil [MacAddressUtil.java : 142] - Failed to find a usable hardware address from the network interfaces; using random bytes: 8b:70:ea:bc:3b:a4:5c:5f
+2021-01-30 15:08:25,853 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-30 15:08:25,855 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-30 15:08:25,856 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-30 15:08:25,856 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-30 15:09:16,970 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 34] - 客户端：/192.168.0.1:55252已连接上Connection来
+2021-01-30 15:09:16,970 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 62] - 客户端：/192.168.0.1:55252在线
+2021-01-30 15:09:16,971 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 31] - 客户端：/192.168.0.1:41390已连接上action来
+2021-01-30 15:09:16,983 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/192.168.0.1:41390在线
+2021-01-30 15:09:17,056 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:09:17,056 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - syn message comes
+2021-01-30 15:09:17,056 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:09:17,056 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 38] - host: godbestway
+2021-01-30 15:09:17,057 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-30 15:09:17,057 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 40] - pid: 36912
+2021-01-30 15:09:17,057 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-30 15:09:17,057 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:09:17,057 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-30 15:09:17,057 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:09:17,057 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-30 15:09:17,057 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-30 15:09:17,058 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-30 15:09:17,058 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.36912has already fully connected
+2021-01-30 15:09:22,060 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-30 15:09:22,063 [Thread-3] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-30 15:09:22,063 [Thread-2] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 58] - 发送了connection getperflow
+2021-01-30 15:09:22,064 [Thread-3] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - 发送了action getperflow
+2021-01-30 15:09:22,151 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 40] - action totalnum:30
+2021-01-30 15:09:22,154 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 42] - connection totalnum:30
+2021-01-30 15:09:22,240 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-30 15:09:22,242 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 71] - set a conn stateStorage ack
+2021-01-30 15:09:22,244 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612015762244
+2021-01-30 15:09:22,244 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-30 15:09:22,244 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612015762244
+2021-01-30 15:09:22,244 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time181
+2021-01-30 15:09:52,034 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-30 15:09:52,033 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-30 15:09:52,034 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-30 15:09:52,036 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-30 15:11:33,954 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 34] - 客户端：/192.168.0.1:55391已连接上Connection来
+2021-01-30 15:11:33,956 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 31] - 客户端：/192.168.0.1:41529已连接上action来
+2021-01-30 15:11:33,956 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 62] - 客户端：/192.168.0.1:55391在线
+2021-01-30 15:11:33,964 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/192.168.0.1:41529在线
+2021-01-30 15:11:34,046 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:11:34,046 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - syn message comes
+2021-01-30 15:11:34,046 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:11:34,047 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 38] - host: godbestway
+2021-01-30 15:11:34,047 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 40] - pid: 37005
+2021-01-30 15:11:34,047 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:11:34,047 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-30 15:11:34,047 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:11:34,048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-30 15:11:34,048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-30 15:11:34,048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-30 15:11:34,048 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-30 15:11:34,049 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-30 15:11:34,049 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.37005has already fully connected
+2021-01-30 15:11:39,051 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-30 15:11:39,054 [Thread-3] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-30 15:11:39,054 [Thread-2] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 58] - 发送了connection getperflow
+2021-01-30 15:11:39,054 [Thread-3] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - 发送了action getperflow
+2021-01-30 15:11:39,152 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 42] - connection totalnum:120
+2021-01-30 15:11:39,173 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 40] - action totalnum:120
+2021-01-30 15:11:39,244 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-30 15:11:39,247 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 71] - set a conn stateStorage ack
+2021-01-30 15:11:39,247 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612015899247
+2021-01-30 15:11:39,247 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-30 15:11:39,248 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612015899247
+2021-01-30 15:11:39,248 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time193
+2021-01-30 15:12:06,424 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 85] - 客户端：/192.168.0.1:55391掉线
+2021-01-30 15:12:06,425 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 53] - 客户端：/192.168.0.1:55391已断开
+2021-01-30 15:12:06,424 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 82] - 客户端：/192.168.0.1:41529掉线
+2021-01-30 15:12:06,425 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/192.168.0.1:41529已断开
+2021-01-30 15:12:10,510 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-30 15:12:10,513 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-30 15:12:10,514 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-30 15:12:10,514 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-30 15:12:13,121 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 31] - 客户端：/192.168.0.1:41571已连接上action来
+2021-01-30 15:12:13,130 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/192.168.0.1:41571在线
+2021-01-30 15:12:13,124 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 34] - 客户端：/192.168.0.1:55433已连接上Connection来
+2021-01-30 15:12:13,135 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 62] - 客户端：/192.168.0.1:55433在线
+2021-01-30 15:12:13,209 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:12:13,209 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:12:13,209 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-30 15:12:13,209 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-30 15:12:13,209 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-30 15:12:13,210 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-30 15:12:13,208 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - syn message comes
+2021-01-30 15:12:13,210 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 38] - host: godbestway
+2021-01-30 15:12:13,210 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 40] - pid: 37053
+2021-01-30 15:12:13,210 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:12:13,210 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:12:13,211 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-30 15:12:13,211 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-30 15:12:13,211 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.37053has already fully connected
+2021-01-30 15:12:18,212 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-30 15:12:18,216 [Thread-3] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-30 15:12:18,216 [Thread-2] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 58] - 发送了connection getperflow
+2021-01-30 15:12:18,216 [Thread-3] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - 发送了action getperflow
+2021-01-30 15:12:18,280 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 42] - connection totalnum:120
+2021-01-30 15:12:18,292 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 40] - action totalnum:120
+2021-01-30 15:12:18,439 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-30 15:12:18,432 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 71] - set a conn stateStorage ack
+2021-01-30 15:12:18,439 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612015938439
+2021-01-30 15:12:18,440 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-30 15:12:18,440 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612015938440
+2021-01-30 15:12:18,440 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time225
+2021-01-30 15:12:28,322 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 85] - 客户端：/192.168.0.1:55433掉线
+2021-01-30 15:12:28,322 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 82] - 客户端：/192.168.0.1:41571掉线
+2021-01-30 15:12:28,322 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/192.168.0.1:41571已断开
+2021-01-30 15:12:28,322 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 53] - 客户端：/192.168.0.1:55433已断开
+2021-01-30 15:12:43,738 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-30 15:12:43,736 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-30 15:12:43,738 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-30 15:12:43,739 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-30 15:12:46,272 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 34] - 客户端：/192.168.0.1:55469已连接上Connection来
+2021-01-30 15:12:46,273 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 62] - 客户端：/192.168.0.1:55469在线
+2021-01-30 15:12:46,272 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 31] - 客户端：/192.168.0.1:41607已连接上action来
+2021-01-30 15:12:46,285 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 59] - 客户端：/192.168.0.1:41607在线
+2021-01-30 15:12:46,357 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - syn message comes
+2021-01-30 15:12:46,357 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:12:46,357 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 38] - host: godbestway
+2021-01-30 15:12:46,357 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:12:46,357 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 40] - pid: 37102
+2021-01-30 15:12:46,357 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-30 15:12:46,357 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-30 15:12:46,357 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-30 15:12:46,358 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-30 15:12:46,358 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-30 15:12:46,358 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-30 15:12:46,358 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-30 15:12:46,358 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-30 15:12:46,359 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.37102has already fully connected
+2021-01-30 15:12:51,361 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-30 15:12:51,364 [Thread-3] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-30 15:12:51,364 [Thread-2] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 58] - 发送了connection getperflow
+2021-01-30 15:12:51,364 [Thread-3] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - 发送了action getperflow
+2021-01-30 15:12:51,444 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 42] - connection totalnum:120
+2021-01-30 15:12:51,457 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 40] - action totalnum:120
+2021-01-30 15:12:51,526 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-30 15:12:51,531 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 71] - set a conn stateStorage ack
+2021-01-30 15:12:51,532 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612015971532
+2021-01-30 15:12:51,532 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-30 15:12:51,532 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612015971532
+2021-01-30 15:12:51,532 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time169
+2021-01-30 15:13:00,423 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 82] - 客户端：/192.168.0.1:41607掉线
+2021-01-30 15:13:00,424 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 50] - 客户端：/192.168.0.1:41607已断开
+2021-01-30 15:13:00,424 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 85] - 客户端：/192.168.0.1:55469掉线
+2021-01-30 15:13:00,424 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 53] - 客户端：/192.168.0.1:55469已断开
+2021-01-31 22:03:26,619 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:03:26,633 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:03:26,621 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:03:26,635 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:03:49,408 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43064已连接上action来
+2021-01-31 22:03:49,408 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43064在线
+2021-01-31 22:03:49,409 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:56926已连接上Connection来
+2021-01-31 22:03:49,414 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:56926在线
+2021-01-31 22:03:49,506 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:03:49,507 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:03:49,508 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:03:49,508 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:03:49,509 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:03:49,509 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:03:49,511 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:03:49,512 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:03:49,512 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43454
+2021-01-31 22:03:49,513 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:03:49,513 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:03:49,513 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:03:49,514 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:03:49,514 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43454has already fully connected
+2021-01-31 22:03:54,517 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:03:54,533 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:03:54,533 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:03:54,534 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:03:54,627 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034627 data=1
+2021-01-31 22:03:54,631 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:03:54,631 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034631 data=4
+2021-01-31 22:03:54,632 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:03:54,636 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:03:54,635 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034635 data=5
+2021-01-31 22:03:54,634 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:03:54,642 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034642 data=6
+2021-01-31 22:03:54,658 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034658 data=9
+2021-01-31 22:03:54,664 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034664 data=10
+2021-01-31 22:03:54,658 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:03:54,667 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:03:54,666 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:03:54,656 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:03:54,665 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034665 data=11
+2021-01-31 22:03:54,672 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:03:54,674 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034674 data=14
+2021-01-31 22:03:54,677 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:03:54,677 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:03:54,680 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:03:54,681 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:03:54,683 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:03:54,677 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034677 data=15
+2021-01-31 22:03:54,663 [pool-1-thread-4] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:03:54,694 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:03:54,695 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034695 data=16
+2021-01-31 22:03:54,696 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:03:54,697 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034697 data=19
+2021-01-31 22:03:54,697 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:03:54,698 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034698 data=20
+2021-01-31 22:03:54,698 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:03:54,699 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034699 data=21
+2021-01-31 22:03:54,700 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:03:54,700 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034700 data=24
+2021-01-31 22:03:54,701 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:03:54,701 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034701 data=25
+2021-01-31 22:03:54,702 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:03:54,703 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034703 data=26
+2021-01-31 22:03:54,703 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:03:54,704 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034704 data=29
+2021-01-31 22:03:54,705 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:03:54,706 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127034706 data=30
+2021-01-31 22:03:54,706 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:03:54,708 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:03:54,685 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:03:54,713 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:03:54,722 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:03:54,725 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:03:54,727 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:03:54,731 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:03:54,737 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:03:54,737 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:03:54,738 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:03:54,738 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:03:54,739 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:03:54,740 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:03:54,740 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:03:54,745 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:03:54,745 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,746 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:03:54,746 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,746 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:03:54,747 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,747 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:03:54,747 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,747 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:03:54,748 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,748 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:03:54,748 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:03:54,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:03:54,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:03:54,750 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,750 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:03:54,750 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,750 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:03:54,750 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,795 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:03:54,798 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,799 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:03:54,799 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,799 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:03:54,800 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,800 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:03:54,801 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,801 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:03:54,802 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,798 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:03:54,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:03:54,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,804 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:03:54,805 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,802 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:03:54,807 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,806 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:03:54,809 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:03:54,810 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:03:54,811 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:03:54,810 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,812 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:03:54,812 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,814 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:03:54,814 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,815 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:03:54,815 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,816 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:03:54,816 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,816 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:03:54,817 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,817 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:03:54,818 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,819 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:03:54,819 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,819 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:03:54,820 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,820 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:03:54,821 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,823 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:03:54,825 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,826 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:03:54,827 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,827 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:03:54,827 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,827 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:03:54,828 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,828 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:03:54,828 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:03:54,829 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:03:54,829 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:03:54,829 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127034829
+2021-01-31 22:03:54,829 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:03:54,830 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127034829
+2021-01-31 22:03:54,830 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time297
+2021-01-31 22:03:58,699 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - 客户端：/192.168.0.1:56926掉线
+2021-01-31 22:03:58,701 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - 客户端：/192.168.0.1:56926已断开
+2021-01-31 22:03:58,704 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 69] - 客户端：/192.168.0.1:43064掉线
+2021-01-31 22:03:58,705 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 49] - 客户端：/192.168.0.1:43064已断开
+2021-01-31 22:04:07,852 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:04:07,853 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:04:07,853 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:04:07,856 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:04:10,172 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:56949已连接上Connection来
+2021-01-31 22:04:10,172 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:56949在线
+2021-01-31 22:04:10,176 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43087已连接上action来
+2021-01-31 22:04:10,177 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43087在线
+2021-01-31 22:04:10,251 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:04:10,259 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:04:10,259 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:04:10,260 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:04:10,260 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43491
+2021-01-31 22:04:10,260 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:04:10,261 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:04:10,261 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:04:10,261 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:04:10,261 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:04:10,262 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:04:10,262 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:04:10,264 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:04:10,264 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43491has already fully connected
+2021-01-31 22:04:15,267 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:04:15,277 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:04:15,277 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:04:15,278 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:04:15,405 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:04:15,400 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055400 data=1
+2021-01-31 22:04:15,416 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:04:15,420 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055420 data=4
+2021-01-31 22:04:15,422 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:04:15,431 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055431 data=5
+2021-01-31 22:04:15,433 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:04:15,433 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:04:15,437 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055437 data=6
+2021-01-31 22:04:15,438 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:04:15,440 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:04:15,441 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055441 data=9
+2021-01-31 22:04:15,442 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:04:15,444 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:04:15,461 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:04:15,461 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055461 data=10
+2021-01-31 22:04:15,464 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:04:15,464 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:04:15,464 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055464 data=11
+2021-01-31 22:04:15,466 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055466 data=14
+2021-01-31 22:04:15,466 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:04:15,468 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:04:15,470 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055470 data=15
+2021-01-31 22:04:15,471 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:04:15,472 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055472 data=16
+2021-01-31 22:04:15,473 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:04:15,475 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055475 data=19
+2021-01-31 22:04:15,476 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:04:15,477 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055477 data=20
+2021-01-31 22:04:15,480 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:04:15,482 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055482 data=21
+2021-01-31 22:04:15,482 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:04:15,483 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:04:15,484 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:04:15,486 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:04:15,488 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:04:15,490 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:04:15,510 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055510 data=24
+2021-01-31 22:04:15,523 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055523 data=25
+2021-01-31 22:04:15,523 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:04:15,524 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:04:15,525 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:04:15,524 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055524 data=26
+2021-01-31 22:04:15,528 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:04:15,528 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055528 data=29
+2021-01-31 22:04:15,534 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:04:15,534 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127055534 data=30
+2021-01-31 22:04:15,540 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:04:15,546 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:04:15,547 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:04:15,547 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:04:15,548 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:04:15,549 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:04:15,550 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:04:15,559 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:04:15,564 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,565 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:04:15,566 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,566 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:04:15,551 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:04:15,567 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,567 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:04:15,568 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,568 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:04:15,569 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:04:15,571 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:04:15,572 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,573 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:04:15,574 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,574 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:04:15,575 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:04:15,575 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,575 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,576 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:04:15,576 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:04:15,576 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,576 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,577 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:04:15,578 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,579 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:04:15,581 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,587 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:04:15,588 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,589 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:04:15,589 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,590 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:04:15,590 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,599 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:04:15,599 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,602 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:04:15,603 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,604 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:04:15,605 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,606 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:04:15,607 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,608 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:04:15,608 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:04:15,609 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:04:15,611 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:04:15,612 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,619 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:04:15,620 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,621 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:04:15,622 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,624 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:04:15,624 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,625 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:04:15,625 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,626 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:04:15,626 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,627 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:04:15,627 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,628 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:04:15,628 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,628 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:04:15,629 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,629 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:04:15,630 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,630 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:04:15,631 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,632 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:04:15,632 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,633 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:04:15,633 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,634 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:04:15,634 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,635 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:04:15,636 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,636 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:04:15,637 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:04:15,638 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:04:15,638 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:04:15,639 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127055639
+2021-01-31 22:04:15,640 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:04:15,640 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127055640
+2021-01-31 22:04:15,641 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time363
+2021-01-31 22:04:51,898 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:04:51,900 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:04:51,903 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:04:51,901 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:04:54,882 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43133已连接上action来
+2021-01-31 22:04:54,883 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43133在线
+2021-01-31 22:04:54,886 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:56995已连接上Connection来
+2021-01-31 22:04:54,892 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:56995在线
+2021-01-31 22:04:54,968 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:04:54,975 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:04:54,975 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:04:54,975 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:04:54,975 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43534
+2021-01-31 22:04:54,976 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:04:54,976 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:04:54,976 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:04:54,976 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:04:54,976 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:04:54,977 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:04:54,977 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:04:54,977 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:04:54,978 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43534has already fully connected
+2021-01-31 22:04:59,980 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:04:59,990 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:04:59,990 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:04:59,991 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:05:00,116 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:05:00,118 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:05:00,121 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:05:00,121 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100121 data=1
+2021-01-31 22:05:00,126 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:05:00,127 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:05:00,130 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100130 data=4
+2021-01-31 22:05:00,131 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:05:00,135 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:05:00,136 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100136 data=5
+2021-01-31 22:05:00,137 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100137 data=6
+2021-01-31 22:05:00,138 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:05:00,139 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:05:00,140 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100140 data=9
+2021-01-31 22:05:00,140 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:05:00,140 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:05:00,141 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100141 data=10
+2021-01-31 22:05:00,147 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100147 data=11
+2021-01-31 22:05:00,148 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:05:00,141 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:05:00,150 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:05:00,151 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:05:00,152 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:05:00,142 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:05:00,148 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100148 data=14
+2021-01-31 22:05:00,152 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:05:00,154 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100154 data=15
+2021-01-31 22:05:00,153 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:05:00,155 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:05:00,155 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:05:00,156 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100155 data=16
+2021-01-31 22:05:00,156 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:05:00,157 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:05:00,157 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100157 data=19
+2021-01-31 22:05:00,160 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100160 data=20
+2021-01-31 22:05:00,161 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100161 data=21
+2021-01-31 22:05:00,163 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:05:00,164 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100164 data=24
+2021-01-31 22:05:00,168 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100168 data=25
+2021-01-31 22:05:00,169 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:05:00,172 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:05:00,172 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:05:00,176 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100176 data=26
+2021-01-31 22:05:00,178 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:05:00,176 [pool-1-thread-4] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:05:00,178 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100178 data=29
+2021-01-31 22:05:00,181 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127100181 data=30
+2021-01-31 22:05:00,183 [pool-1-thread-4] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:05:00,181 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:05:00,186 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:05:00,191 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:05:00,192 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:05:00,218 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:05:00,219 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:05:00,220 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:05:00,221 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:05:00,225 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:05:00,230 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:05:00,232 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,246 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:05:00,247 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,247 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:05:00,247 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,247 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:05:00,248 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,248 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:05:00,248 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,248 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:05:00,248 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:05:00,248 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,249 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,249 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:05:00,249 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,249 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:05:00,249 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,249 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:05:00,249 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,249 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:05:00,250 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,250 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:05:00,250 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,251 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:05:00,251 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,251 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:05:00,252 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,252 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:05:00,252 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,253 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:05:00,253 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,253 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:05:00,254 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,297 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:05:00,297 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,298 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:05:00,298 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,298 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:05:00,299 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,302 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:05:00,302 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,302 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:05:00,303 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,299 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:05:00,309 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,310 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:05:00,312 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,308 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:05:00,313 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,313 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:05:00,314 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,314 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:05:00,314 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,315 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:05:00,312 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:05:00,316 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,316 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:05:00,316 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,317 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:05:00,317 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,317 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:05:00,315 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,318 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:00,318 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:05:00,319 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:05:00,318 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:05:00,319 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,320 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:05:00,320 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,321 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:05:00,321 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,321 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:05:00,321 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:00,322 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:05:00,322 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127100322
+2021-01-31 22:05:00,322 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:05:00,322 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127100322
+2021-01-31 22:05:00,322 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time333
+2021-01-31 22:05:35,297 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:05:35,295 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:05:35,292 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:05:35,300 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:05:38,261 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:57041已连接上Connection来
+2021-01-31 22:05:38,266 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:57041在线
+2021-01-31 22:05:38,265 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43179已连接上action来
+2021-01-31 22:05:38,275 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43179在线
+2021-01-31 22:05:38,341 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:05:38,348 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:05:38,348 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:05:38,348 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:05:38,348 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43577
+2021-01-31 22:05:38,349 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:05:38,349 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:05:38,349 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:05:38,349 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:05:38,349 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:05:38,349 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:05:38,350 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:05:38,350 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:05:38,351 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43577has already fully connected
+2021-01-31 22:05:43,353 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:05:43,362 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:05:43,362 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:05:43,363 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:05:43,510 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143510 data=1
+2021-01-31 22:05:43,517 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143517 data=4
+2021-01-31 22:05:43,517 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:05:43,514 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:05:43,527 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143527 data=5
+2021-01-31 22:05:43,530 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:05:43,530 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143530 data=6
+2021-01-31 22:05:43,530 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:05:43,533 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:05:43,534 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143534 data=9
+2021-01-31 22:05:43,529 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:05:43,535 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:05:43,533 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:05:43,535 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143535 data=10
+2021-01-31 22:05:43,545 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:05:43,555 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:05:43,556 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:05:43,557 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:05:43,559 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:05:43,561 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:05:43,554 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143554 data=11
+2021-01-31 22:05:43,564 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:05:43,565 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:05:43,566 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:05:43,567 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:05:43,568 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:05:43,564 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143564 data=14
+2021-01-31 22:05:43,573 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:05:43,574 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143574 data=15
+2021-01-31 22:05:43,575 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:05:43,576 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143576 data=16
+2021-01-31 22:05:43,578 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:05:43,580 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143580 data=19
+2021-01-31 22:05:43,581 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:05:43,584 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143584 data=20
+2021-01-31 22:05:43,586 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:05:43,587 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:05:43,589 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143589 data=21
+2021-01-31 22:05:43,589 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:05:43,603 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:05:43,607 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:05:43,609 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:05:43,611 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:05:43,614 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:05:43,618 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:05:43,626 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:05:43,633 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143633 data=24
+2021-01-31 22:05:43,636 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:05:43,636 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143636 data=25
+2021-01-31 22:05:43,644 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:05:43,645 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143644 data=26
+2021-01-31 22:05:43,643 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:05:43,647 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:05:43,649 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,651 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:05:43,648 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143648 data=29
+2021-01-31 22:05:43,652 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,663 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:05:43,664 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,665 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:05:43,665 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,666 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:05:43,666 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,659 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:05:43,667 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:05:43,658 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127143658 data=30
+2021-01-31 22:05:43,667 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:05:43,667 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,668 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:05:43,669 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,671 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:05:43,672 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,673 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:05:43,673 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:05:43,673 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,674 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:05:43,674 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,674 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:05:43,675 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,676 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:05:43,677 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,703 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:05:43,703 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,704 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:05:43,704 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,704 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:05:43,705 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,705 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:05:43,705 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,706 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:05:43,706 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,711 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:05:43,711 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:05:43,712 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:05:43,712 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:05:43,709 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:05:43,715 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,715 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:05:43,716 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,716 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:05:43,717 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,717 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:05:43,717 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,718 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:05:43,719 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,724 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:05:43,725 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,725 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:05:43,726 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,726 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:05:43,726 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,727 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:05:43,727 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,727 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:05:43,728 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,728 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:05:43,728 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,728 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:05:43,728 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,729 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:05:43,729 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,729 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:05:43,730 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,730 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:05:43,730 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,730 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:05:43,731 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,731 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:05:43,731 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,732 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:05:43,732 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:05:43,732 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:05:43,733 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127143733
+2021-01-31 22:05:43,733 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:05:43,733 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127143733
+2021-01-31 22:05:43,734 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time372
+2021-01-31 22:05:47,105 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 69] - 客户端：/192.168.0.1:43179掉线
+2021-01-31 22:05:47,106 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - 客户端：/192.168.0.1:57041掉线
+2021-01-31 22:05:47,110 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - 客户端：/192.168.0.1:57041已断开
+2021-01-31 22:05:47,110 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 49] - 客户端：/192.168.0.1:43179已断开
+2021-01-31 22:06:10,110 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:06:10,108 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:06:10,110 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:06:10,112 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:06:12,784 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:57077已连接上Connection来
+2021-01-31 22:06:12,785 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:57077在线
+2021-01-31 22:06:12,799 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43215已连接上action来
+2021-01-31 22:06:12,807 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43215在线
+2021-01-31 22:06:12,882 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:06:12,890 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:06:12,890 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:06:12,890 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:06:12,890 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43615
+2021-01-31 22:06:12,891 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:06:12,891 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:06:12,892 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:06:12,892 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:06:12,892 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:06:12,892 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:06:12,893 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:06:12,895 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:06:12,895 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43615has already fully connected
+2021-01-31 22:06:17,897 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:06:17,906 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:06:17,915 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:06:17,916 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:06:18,099 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178099 data=1
+2021-01-31 22:06:18,097 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:06:18,111 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:06:18,120 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178120 data=4
+2021-01-31 22:06:18,125 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:06:18,123 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:06:18,130 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:06:18,123 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178123 data=5
+2021-01-31 22:06:18,124 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:06:18,145 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:06:18,150 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:06:18,152 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178152 data=6
+2021-01-31 22:06:18,154 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178154 data=9
+2021-01-31 22:06:18,156 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:06:18,158 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:06:18,158 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:06:18,159 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178159 data=10
+2021-01-31 22:06:18,161 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:06:18,162 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:06:18,163 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:06:18,162 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:06:18,172 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178172 data=11
+2021-01-31 22:06:18,177 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:06:18,177 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178177 data=14
+2021-01-31 22:06:18,179 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178179 data=15
+2021-01-31 22:06:18,182 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:06:18,183 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:06:18,173 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:06:18,185 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178185 data=16
+2021-01-31 22:06:18,186 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:06:18,188 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:06:18,189 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178189 data=19
+2021-01-31 22:06:18,190 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:06:18,191 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178191 data=20
+2021-01-31 22:06:18,192 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:06:18,193 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:06:18,207 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:06:18,208 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178208 data=21
+2021-01-31 22:06:18,209 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:06:18,222 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178222 data=24
+2021-01-31 22:06:18,224 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:06:18,225 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178225 data=25
+2021-01-31 22:06:18,228 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:06:18,228 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178228 data=26
+2021-01-31 22:06:18,227 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:06:18,229 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:06:18,229 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:06:18,229 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178229 data=29
+2021-01-31 22:06:18,229 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:06:18,229 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:06:18,230 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:06:18,230 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:06:18,232 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:06:18,233 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:06:18,238 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127178229 data=30
+2021-01-31 22:06:18,240 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:06:18,242 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:06:18,308 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:06:18,308 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,311 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:06:18,311 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,312 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:06:18,312 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,312 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:06:18,313 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,313 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:06:18,314 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,314 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:06:18,319 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,319 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:06:18,320 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,320 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:06:18,317 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:06:18,321 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,322 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:06:18,322 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,323 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:06:18,321 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,323 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:06:18,325 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,326 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:06:18,323 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,326 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,326 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:06:18,326 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:06:18,327 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,327 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,327 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:06:18,327 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,327 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:06:18,328 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,328 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:06:18,328 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:06:18,328 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,328 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,329 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:06:18,329 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,329 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:06:18,329 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,329 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:06:18,330 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,330 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:06:18,330 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,330 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:06:18,330 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:06:18,331 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,331 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,331 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:06:18,332 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:06:18,332 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,332 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,332 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:06:18,332 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:06:18,332 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:06:18,332 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:06:18,333 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:06:18,333 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,333 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:06:18,333 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,333 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:06:18,334 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,334 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:06:18,334 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,334 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:06:18,335 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,335 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:06:18,335 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,336 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:06:18,336 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,336 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:06:18,337 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:06:18,337 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:06:18,337 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127178337
+2021-01-31 22:06:18,338 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:06:18,338 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127178338
+2021-01-31 22:06:18,338 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time433
+2021-01-31 22:06:21,506 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 69] - 客户端：/192.168.0.1:43215掉线
+2021-01-31 22:06:21,508 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 49] - 客户端：/192.168.0.1:43215已断开
+2021-01-31 22:06:21,511 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - 客户端：/192.168.0.1:57077掉线
+2021-01-31 22:06:21,515 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - 客户端：/192.168.0.1:57077已断开
+2021-01-31 22:07:26,644 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18080
+2021-01-31 22:07:26,647 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 34] - bind success at port:18081
+2021-01-31 22:07:26,647 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 214] - a new condition is added
+2021-01-31 22:07:26,649 [main] INFO  Server.OperationManager [OperationManager.java : 257] - netty server is set up
+2021-01-31 22:07:29,475 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - 客户端：/192.168.0.1:57157已连接上Connection来
+2021-01-31 22:07:29,476 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - 客户端：/192.168.0.1:57157在线
+2021-01-31 22:07:29,476 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 30] - 客户端：/192.168.0.1:43295已连接上action来
+2021-01-31 22:07:29,487 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 58] - 客户端：/192.168.0.1:43295在线
+2021-01-31 22:07:29,558 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 31] - syn message comes
+2021-01-31 22:07:29,565 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:07:29,565 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 34] - host: godbestway
+2021-01-31 22:07:29,565 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:07:29,566 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 36] - pid: 43664
+2021-01-31 22:07:29,566 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 159] - not contains this id
+2021-01-31 22:07:29,567 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 170] - channel try to connect
+2021-01-31 22:07:29,567 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 149] - a new NF is found
+2021-01-31 22:07:29,567 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - set a NF successful
+2021-01-31 22:07:29,567 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 155] - contains this id
+2021-01-31 22:07:29,567 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 177] - try to set a connection channel
+2021-01-31 22:07:29,568 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 197] - connection channel has connected
+2021-01-31 22:07:29,568 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 182] - try to set a action channel
+2021-01-31 22:07:29,568 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 192] - godbestway.43664has already fully connected
+2021-01-31 22:07:34,570 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 135] - a simulation of move start
+2021-01-31 22:07:34,576 [Thread-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 63] - 发送了connection getperflow
+2021-01-31 22:07:34,576 [Thread-2] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 94] - send a getperflow
+2021-01-31 22:07:34,577 [Thread-2] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 63] - 发送了action getperflow
+2021-01-31 22:07:34,707 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254707 data=1
+2021-01-31 22:07:34,701 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:07:34,712 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 1
+2021-01-31 22:07:34,715 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254715 data=4
+2021-01-31 22:07:34,716 [pool-1-thread-1] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 1
+2021-01-31 22:07:34,722 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254722 data=5
+2021-01-31 22:07:34,723 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 4
+2021-01-31 22:07:34,733 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 4
+2021-01-31 22:07:34,739 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 5
+2021-01-31 22:07:34,727 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254727 data=6
+2021-01-31 22:07:34,741 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 5
+2021-01-31 22:07:34,747 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 6
+2021-01-31 22:07:34,741 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254741 data=9
+2021-01-31 22:07:34,742 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 6
+2021-01-31 22:07:34,750 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 9
+2021-01-31 22:07:34,748 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 9
+2021-01-31 22:07:34,749 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254749 data=10
+2021-01-31 22:07:34,752 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 10
+2021-01-31 22:07:34,754 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 11
+2021-01-31 22:07:34,755 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 14
+2021-01-31 22:07:34,756 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 15
+2021-01-31 22:07:34,757 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 16
+2021-01-31 22:07:34,758 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 19
+2021-01-31 22:07:34,752 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 10
+2021-01-31 22:07:34,752 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254752 data=11
+2021-01-31 22:07:34,759 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 11
+2021-01-31 22:07:34,759 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 20
+2021-01-31 22:07:34,759 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254759 data=14
+2021-01-31 22:07:34,760 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254760 data=15
+2021-01-31 22:07:34,760 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 14
+2021-01-31 22:07:34,763 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 15
+2021-01-31 22:07:34,763 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254763 data=16
+2021-01-31 22:07:34,764 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 16
+2021-01-31 22:07:34,764 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254764 data=19
+2021-01-31 22:07:34,765 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 19
+2021-01-31 22:07:34,765 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254765 data=20
+2021-01-31 22:07:34,767 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 20
+2021-01-31 22:07:34,767 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254767 data=21
+2021-01-31 22:07:34,767 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 21
+2021-01-31 22:07:34,772 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 21
+2021-01-31 22:07:34,773 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 24
+2021-01-31 22:07:34,774 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 25
+2021-01-31 22:07:34,775 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 26
+2021-01-31 22:07:34,775 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254775 data=24
+2021-01-31 22:07:34,775 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 24
+2021-01-31 22:07:34,775 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254775 data=25
+2021-01-31 22:07:34,776 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 25
+2021-01-31 22:07:34,776 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254776 data=26
+2021-01-31 22:07:34,776 [pool-1-thread-2] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 26
+2021-01-31 22:07:34,776 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254776 data=29
+2021-01-31 22:07:34,776 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 29
+2021-01-31 22:07:34,776 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 37] - conn receive state current time 1612127254776 data=30
+2021-01-31 22:07:34,777 [pool-1-thread-3] INFO  zmove.ConnStateChunk [ConnStateChunk.java : 30] - send a connState 30
+2021-01-31 22:07:34,775 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 29
+2021-01-31 22:07:34,777 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 36] - action receive state current time 30
+2021-01-31 22:07:34,778 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 44] - getPerflowAck action totalnum:18
+2021-01-31 22:07:34,780 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid1
+2021-01-31 22:07:34,780 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,781 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid4
+2021-01-31 22:07:34,781 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,778 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 47] - connection getperflow totalnum:18
+2021-01-31 22:07:34,793 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count1
+2021-01-31 22:07:34,795 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid6
+2021-01-31 22:07:34,795 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,796 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid5
+2021-01-31 22:07:34,796 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,797 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid10
+2021-01-31 22:07:34,798 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,798 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid15
+2021-01-31 22:07:34,799 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,799 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid14
+2021-01-31 22:07:34,800 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,800 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid20
+2021-01-31 22:07:34,800 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,801 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid19
+2021-01-31 22:07:34,801 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,801 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid16
+2021-01-31 22:07:34,793 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,802 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,802 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid11
+2021-01-31 22:07:34,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid9
+2021-01-31 22:07:34,803 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,804 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid21
+2021-01-31 22:07:34,804 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,804 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid24
+2021-01-31 22:07:34,802 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count2
+2021-01-31 22:07:34,805 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,806 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count3
+2021-01-31 22:07:34,806 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,806 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count4
+2021-01-31 22:07:34,807 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,807 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count5
+2021-01-31 22:07:34,807 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,805 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,808 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count6
+2021-01-31 22:07:34,808 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,809 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count7
+2021-01-31 22:07:34,809 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,808 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid25
+2021-01-31 22:07:34,811 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,814 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid26
+2021-01-31 22:07:34,814 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,818 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid29
+2021-01-31 22:07:34,818 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,824 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 55] - action put perflow cxid30
+2021-01-31 22:07:34,824 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 56] - action put perflow totalnum18
+2021-01-31 22:07:34,825 [nioEventLoopGroup-5-1] INFO  zmove.ActionMsgProcessor [ActionMsgProcessor.java : 80] - set a ActionStorage Ack
+2021-01-31 22:07:34,825 [nioEventLoopGroup-5-1] INFO  zmove.ActionStateStorage [ActionStateStorage.java : 65] - set a action stateStorage ack
+2021-01-31 22:07:34,817 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count8
+2021-01-31 22:07:34,825 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,826 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count9
+2021-01-31 22:07:34,826 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,826 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count10
+2021-01-31 22:07:34,826 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,827 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count11
+2021-01-31 22:07:34,827 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,827 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count12
+2021-01-31 22:07:34,827 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,828 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count13
+2021-01-31 22:07:34,828 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,828 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count14
+2021-01-31 22:07:34,829 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,829 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count15
+2021-01-31 22:07:34,829 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,830 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count16
+2021-01-31 22:07:34,830 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,831 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count17
+2021-01-31 22:07:34,832 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,833 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 54] - connection put perflow count18
+2021-01-31 22:07:34,834 [nioEventLoopGroup-3-1] INFO  zmove.ConnMsgProcessor [ConnMsgProcessor.java : 55] - connection put perflow totalnum18
+2021-01-31 22:07:34,836 [nioEventLoopGroup-3-1] INFO  zmove.ConnStateStorage [ConnStateStorage.java : 72] - set a conn stateStorage ack
+2021-01-31 22:07:34,838 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 107] - receive double ack1612127254837
+2021-01-31 22:07:34,838 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 120] - begin to change forward direction
+2021-01-31 22:07:34,839 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 121] - end move time1612127254838
+2021-01-31 22:07:34,839 [pool-3-thread-1] INFO  zmove.MoveProcessControl [MoveProcessControl.java : 122] - total move time262
+2021-01-31 22:07:52,005 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 69] - 客户端：/192.168.0.1:43295掉线
+2021-01-31 22:07:52,009 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - 客户端：/192.168.0.1:57157掉线
+2021-01-31 22:07:52,013 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler [ActionChannelHandler.java : 49] - 客户端：/192.168.0.1:43295已断开
+2021-01-31 22:07:52,013 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - 客户端：/192.168.0.1:57157已断开

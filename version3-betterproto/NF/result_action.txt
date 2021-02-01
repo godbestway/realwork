@@ -1,0 +1,409 @@
+state init
+try to build a syn Messagehostname godbestway
+pid 41702
+size of MyMessage : 21
+State handling thread started
+while.........
+
+conn_read.........
+
+try to build a syn Messagehostname godbestway
+pid 41702
+size of MyMessage : 21
+Initialized
+----------------------State handling thread started
+while.........
+
+conn_read.........
+
+length : 9conn_read_in.....string.........
+
+result 9
+while...connread...finish...
+
+data_type : 2
+handle get perflow hw_proto 800
+handle get perflow proto 6
+receive getPerflow msg and try to get states
+local get action per flow
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1865us
+action_head[i] cxid 2action_head[i] cxid 3size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1373us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1994us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1883us
+action_head[i] cxid 7action_head[i] cxid 8size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1966us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1605us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1871us
+action_head[i] cxid 12action_head[i] cxid 13size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1522us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1880us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2334us
+action_head[i] cxid 17action_head[i] cxid 18size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1965us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1816us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1525us
+action_head[i] cxid 22action_head[i] cxid 23size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1216us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1600us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1906us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1734us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1231us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1278us
+size of Perflow : 17
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 1502us
+perflow count 20send action getPerflowAck
+size of getPerflowAck : 9
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 2
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 3
+show final action line
+show action line i = 0
+show action line i = 1
+hash = 1
+data = 5
+conn_id = 5
+hash = 1
+data = 4
+conn_id = 4
+hash = 1
+data = 1
+conn_id = 1
+show action line i = 2
+hash = 2
+data = 5
+conn_id = 10
+hash = 2
+data = 4
+conn_id = 9
+hash = 2
+data = 1
+conn_id = 6
+show action line i = 3
+hash = 3
+data = 5
+conn_id = 15
+hash = 3
+data = 4
+conn_id = 14
+hash = 3
+data = 1
+conn_id = 11
+show action line i = 4
+hash = 4
+data = 5
+conn_id = 20
+hash = 4
+data = 4
+conn_id = 19
+hash = 4
+data = 1
+conn_id = 16
+show action line i = 5
+hash = 5
+data = 5
+conn_id = 25
+hash = 5
+data = 4
+conn_id = 24
+hash = 5
+data = 1
+conn_id = 21
+show action line i = 6
+show action line i = 7
+show action line i = 8
+show action line i = 9
+hash = 9
+data = 3
+conn_id = 28
+hash = 9
+data = 2
+conn_id = 27
+hash = 9
+data = 1
+conn_id = 26
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 5
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish.

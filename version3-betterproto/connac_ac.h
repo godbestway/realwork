@@ -13,7 +13,7 @@ extern int connac_action_state;
 ///// FUNCTION PROTOTYPES ///////////////////////////////////////////////////
 int action_init();
 int action_cleanup();
-
+int action_send_getPerflowAck(int count);
 #endif
 
 #ifdef __cplusplus

@@ -1,0 +1,148 @@
+state init
+try to build a syn Messagehostname godbestway
+pid 42003
+size of MyMessage : 21
+State handling thread started
+while.........
+
+conn_read.........
+
+try to build a syn Messagehostname godbestway
+pid 42003
+size of MyMessage : 21
+Initialized
+----------------------State handling thread started
+while.........
+
+conn_read.........
+
+length : 9conn_read_in.....string.........
+
+result 9
+handle get perflow hw_proto 800
+handle get perflow proto 6
+receive getPerflow msg and try to get states
+local get per flow
+local  key.dl_type 800
+key.nw_proto 6
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2122us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 1
+get one action hash 0
+get one action cxid 1
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 218us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 17
+key.nw_proto 6
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2362us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 1
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 2
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 3
+get one action hash before 0
+get one action cxid before 4
+get one action hash 0
+get one action cxid 4
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 387us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2476us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 1
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 2
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 3
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 4
+get one action hash before 0
+get one action cxid before 5
+get one action hash 0
+get one action cxid 5
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 399us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2582us
+local get one action per flow
+action begin----------------------
+get one action hash before 1
+get one action cxid before 6
+get one action hash 1
+get one action cxid 6
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 390us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 17
+key.nw_proto 6
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+conn_head[i]->proto) 6
+key.nw_proto 6
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 2371us
+local get one action per flow
+action begin----------------------
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 6
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 7
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 8
+get one action hash before 1
+get one action cxid before 9
+get one action hash 1
+get one action cxid 9
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 292us
+action

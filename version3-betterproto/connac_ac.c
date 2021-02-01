@@ -2,7 +2,7 @@
 #include "connac_ac.h"
 #include "debug.h"
 #include "protoObject.h"
-#include "myMessage.pb-c.h"
+#include "myActionMessage.pb-c.h"
 
 #include "connac_core.h"
 #include "config.h"
@@ -25,6 +25,7 @@ static pthread_t state_thread;
 // Connection for state messages
 int connac_action_state = -1;
 
+
 int action_send_getPerflowAck(int count){
         printf("send action getPerflowAck\n");
 
@@ -33,20 +34,20 @@ int action_send_getPerflowAck(int count){
 
         actionGetPerflowAckMsg.has_count=1;
 	actionGetPerflowAckMsg.count = count;
-	MyMessage mes;
-        my_message__init(&mes);
+	MyActionMessage mes;
+        my_action_message__init(&mes);
    
-        mes.data_type = MY_MESSAGE__DATA_TYPE__ActionGetPerflowAckMsgType;
-        mes.message_case = MY_MESSAGE__MESSAGE_ACTION_GET_PERFLOW_ACK_MSG;
+        mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionGetPerflowAckMsgType;
+        mes.message_case = MY_ACTION_MESSAGE__MESSAGE_ACTION_GET_PERFLOW_ACK_MSG;
         mes.actiongetperflowackmsg = &actionGetPerflowAckMsg;
  
-        int len = my_message__get_packed_size(&mes);
+        int len = my_action_message__get_packed_size(&mes);
         printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
-        my_message__pack(&mes, buf);
+        my_action_message__pack(&mes, buf);
 
 	int result;
-	result = send_proto_object(connac_action_state, buf, len );
+	result = send_conn_proto_object(connac_action_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -64,21 +65,23 @@ int action_send_putPerflowAck(int hash, int cxid){
 
         actionPutPerflowAckMsg.has_hash=1;
 	actionPutPerflowAckMsg.hash = hash;
+	actionPutPerflowAckMsg.has_cxid=1;
+	actionPutPerflowAckMsg.cxid = cxid;
 
-	MyMessage mes;
-        my_message__init(&mes);
+	MyActionMessage mes;
+        my_action_message__init(&mes);
    
-        mes.data_type =MY_MESSAGE__DATA_TYPE__ActionPutPerflowAckMsgType;
-        mes.message_case = MY_MESSAGE__MESSAGE_ACTION_PUT_PERFLOW_ACK_MSG;
+        mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionPutPerflowAckMsgType;
+        mes.message_case = MY_ACTION_MESSAGE__MESSAGE_ACTION_PUT_PERFLOW_ACK_MSG;
         mes.actionputperflowackmsg = &actionPutPerflowAckMsg;
  
-        int len = my_message__get_packed_size(&mes);
+        int len = my_action_message__get_packed_size(&mes);
         printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
-        my_message__pack(&mes, buf);
+        my_action_message__pack(&mes, buf);
 
 	int result;
-	result = send_proto_object(connac_action_state, buf, len );
+	result = send_conn_proto_object(connac_action_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -88,7 +91,7 @@ int action_send_putPerflowAck(int hash, int cxid){
 
 int action_send_perflow(uint8_t* buf, int len){
 	int result;
-	result = send_proto_object(connac_action_state, buf, len );
+	result = send_conn_proto_object(connac_action_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -106,16 +109,30 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
     }
 
     int count;
-    char* key = actionGetPerflow_recv->key;
+    Key key;
+    if(actionGetPerflow_recv->has_hw_proto){
+	key.dl_type = actionGetPerflow_recv->hw_proto;
+	printf("handle get perflow hw_proto %x\n",key.dl_type);
+	}
+    else{ key.wildcards |= WILDCARD_DL_TYPE;  }
+    if(actionGetPerflow_recv->has_proto){
+	key.nw_proto = actionGetPerflow_recv->proto;
+	printf("handle get perflow proto %u\n",key.nw_proto);
+	}
+    else{  key.wildcards |= WILDCARD_NW_PROTO; }
+
+
+
     pthread_mutex_lock(&connac_action_lock_get);
-    if(strcmp(key,"all")==0){
-	INFO_PRINT("action receive getPerflow msg and try to get all states");
-	count = connac_locals->action_get_perflow();
-	} 
+
+    INFO_PRINT("receive getPerflow msg and try to get states");
+    count = connac_locals->action_get_perflow(key);
     printf("perflow count %d",count);
-    action_send_getPerflowAck(count);
+    action_send_getPerflowAck(count);    
 
     pthread_mutex_unlock(&connac_action_lock_get);
+
+
 }
 
 
@@ -128,8 +145,12 @@ static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
     }
 
     ActionState* state = actionPutPerflow_recv->state;
-    printf("state count");
+    printf("state count\n");
     connac_locals->action_put_perflow(state);
+    int32_t hash = state->hash;
+    printf("state->hash %u \n",hash);
+    uint64_t cxid = state->cxid;
+    printf("state->cxid %lu\n",cxid);
     action_send_putPerflowAck(state->hash, state->cxid);
 }
 
@@ -140,36 +161,36 @@ static void *state_handler(void *arg)
 
     while (1)
     {
-        INFO_PRINT("while.........\n");        
+        INFO_PRINT("while.....action....\n");        
 	// Attempt to read a JSON string
-        MyMessage myMessage; 
-        my_message__init(&myMessage);
 
-        myMessage = conn_read(connac_action_state);
+
+	ProtoObject protoObject;
+
+        protoObject = action_read(connac_action_state);
+
+	MyActionMessage myActionMessage = *my_action_message__unpack(NULL,protoObject.length,protoObject.object);
+
+
+
 
         INFO_PRINT("while...connread...finish...\n");
 
-	int data_type = myMessage.data_type;
-        printf("data_type : %d",data_type );
+	int data_type = myActionMessage.data_type;
+        printf("data_type : %d\n",data_type );
 
 
-        printf("MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType: %d", MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType);
+        //printf("MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType: %d", MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType);
 	//try put len on first position
         //force translation from char to uint_8
  	
 	
-	if(myMessage.data_type == MY_MESSAGE__DATA_TYPE__PersonType){
-		Person *person = myMessage.person;
-		printf("personnum %d\n", person->age);
-		printf("content %s\n", person->name);
-		printf("content %s\n", person->address);
-
-	}else if(myMessage.data_type == MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType){
-		ActionGetPerflowMsg* actionGetPerflowMsg = myMessage.actiongetperflowmsg;
+	if(myActionMessage.data_type == MY_ACTION_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType){
+		ActionGetPerflowMsg* actionGetPerflowMsg = myActionMessage.actiongetperflowmsg;
 		handle_get_perflow(actionGetPerflowMsg);
 
-	}else if(myMessage.data_type ==MY_MESSAGE__DATA_TYPE__ActionPutPerflowMsgType){
-		ActionPutPerflowMsg* actionPutPerflowMsg = myMessage.actionputperflowmsg;
+	}else if(myActionMessage.data_type ==MY_ACTION_MESSAGE__DATA_TYPE__ActionPutPerflowMsgType){
+		ActionPutPerflowMsg* actionPutPerflowMsg = myActionMessage.actionputperflowmsg;
 		handle_put_perflow(actionPutPerflowMsg);
 
 	}else{ 
@@ -205,7 +226,7 @@ int action_init()
     }
    
 
-    int send_success = send_syn_message(connac_action_state);
+    int send_success = send_action_syn_message(connac_action_state);
     if(send_success < 0){
 	INFO_PRINT("send message failed");
 	return -1;

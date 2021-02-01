@@ -1,0 +1,62 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyConnMessage{
+    enum DataType{
+        SynType= 1;
+	ConnGetPerflowMsgType =2;
+	ConnGetPerflowAckMsgType =3;
+	ConnStateType = 4;
+	ConnPutPerflowMsgType =5;
+	ConnPutPerflowAckMsgType = 6;
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        ConnSyn connsyn = 2;
+	ConnGetPerflowMsg connGetPerflowMsg=3;
+	ConnGetPerflowAckMsg connGetPerflowAckMsg=4;
+	ConnState connState= 5;
+	ConnPutPerflowMsg connPutPerflowMsg=6;
+	ConnPutPerflowAckMsg connPutPerflowAckMsg= 7;
+    }
+}
+
+
+message ConnSyn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message ConnGetPerflowMsg {
+    optional int32 hw_proto = 1;            
+    optional int32  proto = 2; 
+}
+
+message ConnGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ConnState {
+	optional int32 hw_proto = 1;            
+        optional int32  proto = 2;               
+	optional int32 data = 3;
+	optional fixed64 cxid =4;
+    	optional int32 hash = 5;
+}
+
+
+message ConnPutPerflowMsg {
+    optional ConnState state = 1;
+}
+
+message ConnPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+
+
+

@@ -36,6 +36,7 @@ int connac_init(CONNACLocals *locals)
     bzero(&connac_stats, sizeof(connac_stats));
 //+++
     assert(0 == pthread_mutex_init(&connac_lock_conn, NULL));
+    assert(0 == pthread_mutex_init(&connac_lock_action, NULL));
     
     // Initialize state
     if (state_init() < 0)

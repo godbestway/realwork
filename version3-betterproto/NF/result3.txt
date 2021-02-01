@@ -1,0 +1,633 @@
+state init
+try to build a syn Messagehostname godbestway
+pid 39776
+size of MyMessage : 21
+State handling thread started
+while.........
+
+conn_read.........
+
+try to build a syn Messagehostname godbestway
+pid 39776
+size of MyMessage : 21
+Initialized
+----------------------State handling thread started
+while.........
+
+conn_read.........
+
+length : 9conn_read_in.....string.........
+
+result 9
+handle get perflow hw_proto 800
+handle get perflow proto 6
+receive getPerflow msg and try to get states
+local get per flow
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 587us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 1
+get one action hash 0
+get one action cxid 1
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4019us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 638us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 1
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 2
+get one action hash before 0
+get one action cxid before 4
+get one action cxid middle 3
+get one action hash before 0
+get one action cxid before 4
+get one action hash 0
+get one action cxid 4
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4245us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4982us
+local get one action per flow
+action begin----------------------
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 1
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 2
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 3
+get one action hash before 0
+get one action cxid before 5
+get one action cxid middle 4
+get one action hash before 0
+get one action cxid before 5
+get one action hash 0
+get one action cxid 5
+size of Perflow : 17
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 9735us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 443us
+local get one action per flow
+action begin----------------------
+get one action hash before 1
+get one action cxid before 6
+get one action hash 1
+get one action cxid 6
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3626us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4379us
+local get one action per flow
+action begin----------------------
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 6
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 7
+get one action hash before 1
+get one action cxid before 9
+get one action cxid middle 8
+get one action hash before 1
+get one action cxid before 9
+get one action hash 1
+get one action cxid 9
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3705us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3837us
+local get one action per flow
+action begin----------------------
+get one action hash before 1
+get one action cxid before 10
+get one action cxid middle 6
+get one action hash before 1
+get one action cxid before 10
+get one action cxid middle 7
+get one action hash before 1
+get one action cxid before 10
+get one action cxid middle 8
+get one action hash before 1
+get one action cxid before 10
+get one action cxid middle 9
+get one action hash before 1
+get one action cxid before 10
+get one action hash 1
+get one action cxid 10
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3452us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4362us
+local get one action per flow
+action begin----------------------
+get one action hash before 2
+get one action cxid before 11
+get one action hash 2
+get one action cxid 11
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3280us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3635us
+local get one action per flow
+action begin----------------------
+get one action hash before 2
+get one action cxid before 14
+get one action cxid middle 11
+get one action hash before 2
+get one action cxid before 14
+get one action cxid middle 12
+get one action hash before 2
+get one action cxid before 14
+get one action cxid middle 13
+get one action hash before 2
+get one action cxid before 14
+get one action hash 2
+get one action cxid 14
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3488us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4100us
+local get one action per flow
+action begin----------------------
+get one action hash before 2
+get one action cxid before 15
+get one action cxid middle 11
+get one action hash before 2
+get one action cxid before 15
+get one action cxid middle 12
+get one action hash before 2
+get one action cxid before 15
+get one action cxid middle 13
+get one action hash before 2
+get one action cxid before 15
+get one action cxid middle 14
+get one action hash before 2
+get one action cxid before 15
+get one action hash 2
+get one action cxid 15
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3800us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4434us
+local get one action per flow
+action begin----------------------
+get one action hash before 3
+get one action cxid before 16
+get one action hash 3
+get one action cxid 16
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3967us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4555us
+local get one action per flow
+action begin----------------------
+get one action hash before 3
+get one action cxid before 19
+get one action cxid middle 16
+get one action hash before 3
+get one action cxid before 19
+get one action cxid middle 17
+get one action hash before 3
+get one action cxid before 19
+get one action cxid middle 18
+get one action hash before 3
+get one action cxid before 19
+get one action hash 3
+get one action cxid 19
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3565us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3840us
+local get one action per flow
+action begin----------------------
+get one action hash before 3
+get one action cxid before 20
+get one action cxid middle 16
+get one action hash before 3
+get one action cxid before 20
+get one action cxid middle 17
+get one action hash before 3
+get one action cxid before 20
+get one action cxid middle 18
+get one action hash before 3
+get one action cxid before 20
+get one action cxid middle 19
+get one action hash before 3
+get one action cxid before 20
+get one action hash 3
+get one action cxid 20
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3863us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3571us
+local get one action per flow
+action begin----------------------
+get one action hash before 4
+get one action cxid before 21
+get one action hash 4
+get one action cxid 21
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3740us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 1
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3756us
+local get one action per flow
+action begin----------------------
+get one action hash before 4
+get one action cxid before 24
+get one action cxid middle 21
+get one action hash before 4
+get one action cxid before 24
+get one action cxid middle 22
+get one action hash before 4
+get one action cxid before 24
+get one action cxid middle 23
+get one action hash before 4
+get one action cxid before 24
+get one action hash 4
+get one action cxid 24
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 3331us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 4
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4059us
+local get one action per flow
+action begin----------------------
+get one action hash before 4
+get one action cxid before 25
+get one action cxid middle 21
+get one action hash before 4
+get one action cxid before 25
+get one action cxid middle 22
+get one action hash before 4
+get one action cxid before 25
+get one action cxid middle 23
+get one action hash before 4
+get one action cxid before 25
+get one action cxid middle 24
+get one action hash before 4
+get one action cxid before 25
+get one action hash 4
+get one action cxid 25
+size of Perflow : 17
+ACTION STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4017us
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+length : 19conn_read_in.....string.........
+
+result 19
+while...connread...finish...
+
+data_type : 8
+state count
+receive action state, begin to putPerFlowin_state:data 5
+send action putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 4665us
+local get one action per flow
+action begin----------------------
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2054
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 589us
+local get one action per flow
+action begin----------------------
+action end----------------------
+local ntohs(conn_head[i]->hw_proto) 2048
+local  key.dl_type 2048
+size of Perflow : 22
+CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = 318us
+local get one action per flow
+action begin----------------------
+action end----------------------
+perflow count 18send conn getPerflowAck
+size of getPerflowAck : 9
+while.........
+
+conn_read.........
+
+length : 24conn_read_in.....string.........
+
+result 24
+state receivedreceive state, begin to putPerFlowin_state:data 1
+send conn putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 24conn_read_in.....string.........
+
+result 24
+state receivedreceive state, begin to putPerFlowin_state:data 4
+send conn putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 24conn_read_in.....string.........
+
+result 24
+state receivedreceive state, begin to putPerFlowin_state:data 5
+send conn putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 24conn_read_in.....string.........
+
+result 24
+state receivedreceive state, begin to putPerFlowin_state:data 1
+send conn putPerflowAck
+size of getPerflowAck : 14
+while.........
+
+conn_read.........
+
+length : 24conn_read_in.....string.........
+
+result 24
+state receivedreceive state, begin to putPerFlowin_state:data 4
+send conn putPerflowAck
+size of getPerflowAck : 14
+w

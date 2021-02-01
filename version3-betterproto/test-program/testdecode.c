@@ -9,7 +9,12 @@ static int readRawVarint32(char* buf);
 void printCount(char* buf);
 static void writeRawVarint32(int value);
 static int computeRawVarint32Size(int value);
-
+#define ETHERNET_TYPE_IP              0x0800
+#define ETHERNET_TYPE_ARP             0x0806
+#define IP_PROTO_TCP                  6
+#define IP_PROTO_UDP                  17
+#define WILDCARD_DL_TYPE    0x01
+#define WILDCARD_NW_PROTO   0x08
 
 typedef signed char byte;
 
@@ -24,12 +29,36 @@ int main(){
         printf("buf[1] %x\n",buf[1]);
         printf("length %d\n",length);
 
+        
+
 	int len = 1;
         writeRawVarint32(length);
         int changdu  = computeRawVarint32Size(length); 
         printf("changdu %d\n",changdu);
 	
+	uint8_t wildcards;
+	wildcards |= WILDCARD_NW_PROTO;
+	uint8_t nw_proto = 0x6;
+	uint8_t tcp_proto = 6;
+	uint8_t udp_proto = 17;
+	printf("wildcards & WILDCARD_NW_PROTO: %u\n",wildcards & WILDCARD_NW_PROTO);
+        if(tcp_proto != nw_proto){
+		printf("tcp_proto != nw_proto \n");
+	}else if(udp_proto != nw_proto){
+		printf("udp_proto != nw_proto \n");
+	}else{
+
+		printf("???");
+	}
+
+       if (!(wildcards & WILDCARD_DL_TYPE) &&
+	                    (udp_proto) != nw_proto)
+            {
+		printf("good");		
+            }
+        	
 }
+
 
 
 static void writeRawVarint32(int value) {
