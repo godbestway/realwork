@@ -1,0 +1,99 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyMessage{
+    enum DataType{
+        SynType= 1;
+	ConnGetPerflowMsgType =2;
+	ConnGetPerflowAckMsgType =3;
+	ConnStateType = 4;
+	ConnPutPerflowMsgType =5;
+	ConnPutPerflowAckMsgType = 6;
+	ActionStateType =7;
+	ActionPutPerflowMsgType = 8;
+	ActionPutPerflowAckMsgType = 9;
+
+	
+
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        Syn syn = 2;
+	ConnGetPerflowMsg connGetPerflowMsg=3;
+	ConnGetPerflowAckMsg connGetPerflowAckMsg=4;
+	ConnState connState= 5;
+	ConnPutPerflowMsg connPutPerflowMsg=6;
+	ConnPutPerflowAckMsg connPutPerflowAckMsg= 7;
+	ActionState actionState= 8;
+	ActionPutPerflowMsg actionPutPerflowMsg= 9;
+	ActionPutPerflowAckMsg actionPutPerflowAckMsg= 10;
+        
+    }
+}
+
+
+message Syn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message ConnGetPerflowMsg {
+    optional PerflowKey perflowKey = 1;
+}
+
+message ConnGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ConnState {
+	optional int32 hw_proto = 1;            
+        optional int32  proto = 2;               
+	optional int32 data = 3;
+	optional fixed64 cxid =4;
+    	optional int32 hash = 5;
+}
+
+
+message ConnPutPerflowMsg {
+    optional ConnState state = 1;
+}
+
+message ConnPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+message ActionGetPerflowMsg {
+    optional string key = 1;
+}
+
+message ActionGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ActionState {
+	optional int32 data = 1;
+	optional fixed64 cxid =2;
+    	optional int32 hash = 3;
+}
+
+message ActionPutPerflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+message PerflowKey {
+	optional int32 hw_proto = 1;            
+        optional int32  proto = 2;               
+}
+
+
+
+

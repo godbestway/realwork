@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message Syn {
+	required string host=1;
+	required fixed32 pid=2;
+}

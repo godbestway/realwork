@@ -65,6 +65,7 @@ void show_final_action_line();
 
 
 int local_conn_get_perflow(Key key);
+int local_conn_get_one_perflow(ConnState* connstate);
 int local_conn_put_perflow(ConnState* state);
 
 int local_action_get_perflow();
@@ -82,10 +83,13 @@ int conn_msg_count;
 int action_msg_count;
 
 static void *action_sender(void *arg);
-void conn_put_initLine_Hash();
-void test_key();
+static void *conn_sender(void *arg);
 
 static pthread_t action_thread;
+static pthread_t conn_thread;
+
+void conn_put_initLine_Hash();
+void test_key();
 
 int main()
 {
@@ -160,7 +164,7 @@ void conn_put_initLine_Hash(){
 void conn_initLine_Hash(){
 	
 	int i;
-	for(i = 0; i< 5; i++){
+	for(i = 0; i< 10; i++){
 		connline * conn_head_line;
 	        conn_head_line =(connline*)malloc(sizeof(connline));
 		conn_initLine(conn_head_line,i+1);
@@ -191,7 +195,7 @@ void conn_initLine(connline* conn_head_line, int hash){
     
     connline * list=head;
     int i;
-    for (i=2; i<=5; i++) {
+    for (i=2; i<=20; i++) {
        
         connline * body=(connline*)malloc(sizeof(connline));
         body->prior=NULL;
@@ -277,7 +281,7 @@ int local_conn_put_perflow(ConnState* state){
     in_state->proto = state->proto; 
 
 
-     printf("in_state:data %d\n", in_state->data);
+     //printf("in_state:data %d\n", in_state->data);
     in_state -> prior = NULL;
     if(conn_put_head[hash] != NULL){
          conn_put_head[hash]->prior = in_state;
@@ -336,7 +340,7 @@ void test_key(){
 
 }
 
-
+/*
 int local_conn_get_perflow(Key key){
         printf("local get per flow\n");
 
@@ -414,7 +418,7 @@ int local_conn_get_perflow(Key key){
         		long total = (sec * 1000 * 1000) + usec;
         		printf("CONN STATS: PERFLOW: TIME TO SERIALIZE CURRENT = %ldus\n", total);
 
-			pthread_mutex_lock(&ActionCreateEntryLock);
+			//pthread_mutex_lock(&ActionCreateEntryLock);
 			Match* match = (Match*)malloc(sizeof(Match));
 			match->hash = hash;
 			match->cxid = cxid;
@@ -427,7 +431,96 @@ int local_conn_get_perflow(Key key){
                		{
                         perror("pthread_create error");
                 	}
-			pthread_mutex_unlock(&ActionCreateEntryLock);
+			//pthread_mutex_unlock(&ActionCreateEntryLock);
+	
+        		conn_head[i] = conn_head[i]->next;
+		}
+		
+		pthread_mutex_unlock(&ConnEntryLock);
+			
+	}
+	return count;
+
+
+}
+*/
+
+int local_conn_get_perflow(Key key){
+        printf("local get per flow\n");
+
+	printf("local  key.dl_type %x\n", key.dl_type);
+	printf("key.nw_proto %u\n",key.nw_proto);
+
+	int i;	
+	struct timeval start_serialize,end_serialize;
+	int count = 0;
+	for(i = 0; i< LENGTH; i++){
+		
+		pthread_mutex_lock(&ConnEntryLock);
+
+		while(conn_head[i] != NULL){
+			gettimeofday(&start_serialize, NULL);
+			//printf("local key.wildcards & WILDCARD_DL_TYPE %d", key.wildcards & WILDCARD_DL_TYPE);
+			//printf("local key.wildcards & WILDCARD_NW_PROTO %d", key.wildcards & WILDCARD_NW_PROTO);
+			//printf("local ntohs(conn_head[i]->hw_proto) %u\n", conn_head[i]->hw_proto);
+			//printf("local  key.dl_type %u\n", key.dl_type);
+
+			//printf("conn_head[i]->proto) %u\n", conn_head[i]->proto);
+			//printf("key.nw_proto %u\n",key.nw_proto);
+
+			if (!(key.wildcards & WILDCARD_DL_TYPE) &&
+	                    (conn_head[i]->hw_proto) != key.dl_type)
+		            {
+		                conn_head[i] = conn_head[i]->next;
+		                continue;
+		            }
+		
+		            // Check nw_proto
+		        if ((!(key.wildcards & WILDCARD_NW_PROTO)) &&(
+	                    (conn_head[i]->proto) != key.nw_proto))
+		            {
+		                conn_head[i] = conn_head[i]->next;
+		                continue;
+		            }
+			
+			ConnState* connstate = (ConnState*)malloc(sizeof(ConnState));
+			conn_state__init(connstate);
+
+			connstate->has_hw_proto=1;
+			connstate->hw_proto = conn_head[i]->hw_proto;
+			connstate->has_proto=1;
+			connstate->proto = conn_head[i]->proto;
+        		connstate->has_data=1;
+			connstate->data = conn_head[i]->data;
+			int hash = conn_head[i]->hash;			
+			connstate->has_hash=1;
+			connstate->hash = hash;
+			int cxid = conn_head[i]->cxid;
+			connstate->has_cxid=1;
+			connstate->cxid = cxid;
+			int err;
+			if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)connstate))!=0)
+               		{
+                        perror("pthread_create error");
+                	}
+			
+			count++;
+			
+
+			//pthread_mutex_lock(&ActionCreateEntryLock);
+			Match* match = (Match*)malloc(sizeof(Match));
+			match->hash = hash;
+			match->cxid = cxid;
+ 			//printf("local_get_conn hash %d\n", match->hash);
+	 		//printf("loca_get_conn cxid %d\n", match->cxid);
+	
+			
+			//create a thread to send action state
+			if((err = pthread_create(&action_thread, NULL, action_sender, (void*)match))!=0)
+               		{
+                        perror("pthread_create error");
+                	}
+			//pthread_mutex_unlock(&ActionCreateEntryLock);
 	
         		conn_head[i] = conn_head[i]->next;
 		}
@@ -440,6 +533,39 @@ int local_conn_get_perflow(Key key){
 
 }
 
+static void *conn_sender(void *arg){
+	
+	ConnState* connstate = (ConnState*)arg;
+	int send_conn = local_conn_get_one_perflow(connstate);
+	if(send_conn < 0){
+		printf("send failed");
+	}
+	free(connstate);
+	
+}
+
+
+int local_conn_get_one_perflow(ConnState* connstate){
+        
+			MyConnMessage mes;
+        		my_conn_message__init(&mes);
+   
+        		mes.data_type = MY_CONN_MESSAGE__DATA_TYPE__ConnStateType;
+        		mes.message_case = MY_CONN_MESSAGE__MESSAGE_CONN_STATE;
+        		mes.connstate = connstate;
+ 
+        		int len = my_conn_message__get_packed_size(&mes);
+        		printf("size of Perflow : %u\n", len);
+        		void *buf = malloc(len);
+        		my_conn_message__pack(&mes, buf);
+
+			int result = conn_send_perflow(buf, len);    
+       		 	if(result < 0){
+				return -1;
+			}
+			
+}
+
 
 
 static void *action_sender(void *arg){
@@ -449,8 +575,8 @@ static void *action_sender(void *arg){
 	int hash = match->hash;
  	int cxid = match->cxid;
 	
-	printf("local_get_action hash %d\n", hash);
-	printf("local_get_action cxid %d\n", cxid);
+	//printf("local_get_action hash %d\n", hash);
+	//printf("local_get_action cxid %d\n", cxid);
 	int send_action = local_action_get_one_perflow(hash-1,cxid);
 	if(send_action < 0){
 		printf("send failed");
@@ -465,7 +591,7 @@ static void *action_sender(void *arg){
 void action_initLine_Hash(){
 	
 	int i;
-	for(i = 0; i< 5; i++){
+	for(i = 0; i< 10; i++){
 		line * action_head_line;
 	        action_head_line =(line*)malloc(sizeof(line));
 		action_initLine(action_head_line,i+1);
@@ -473,10 +599,10 @@ void action_initLine_Hash(){
 		
 
 	}
-	line * action_head_line;
-	action_head_line =(line*)malloc(sizeof(line));
-	action_initLine(action_head_line,10);
-	action_head[9] =action_head_line;
+	//line * action_head_line;
+	//action_head_line =(line*)malloc(sizeof(line));
+	//action_initLine(action_head_line,10);
+	//action_head[9] =action_head_line;
 	//show_action_line();
 	
 }
@@ -497,7 +623,7 @@ void action_initLine(line* action_head_line, int hash){
     
     line * list= head;
     int i;
-    for (i=2; i<=5; i++) {
+    for (i=2; i<=20; i++) {
        
         line * body=(line*)malloc(sizeof(line));
         body->prior=NULL;
@@ -560,7 +686,7 @@ int local_action_put_perflow(ActionState* state){
     in_state->hash = hash; 
     in_state->cxid = state->cxid; 
 
-     printf("in_state:data %d\n", in_state->data);
+    //printf("in_state:data %d\n", in_state->data);
     in_state -> prior = NULL;
     int num = hash-1;
     if(action_put_head[num] != NULL){
@@ -575,7 +701,7 @@ int local_action_put_perflow(ActionState* state){
     
     action_msg_count++;
     
-    if(action_msg_count == 18){
+    if(action_msg_count == 100){
 	
 	show_final_action_line();
 	}
@@ -583,22 +709,22 @@ int local_action_put_perflow(ActionState* state){
 }
 
 int local_action_get_one_perflow(int hash, int cxid){
-        printf("local get one action per flow\n");
+        //printf("local get one action per flow\n");
 	struct timeval start_serialize,end_serialize;
 	
 	pthread_mutex_lock(&ActionEntryLock);
-         printf("action begin----------------------\n");
+         //printf("action begin----------------------\n");
 	line* head = action_head[hash];
 	while(head != NULL){
-		printf("get one action hash before %d\n",hash);
-		printf("get one action cxid before %d\n",cxid);
+		//printf("get one action hash before %d\n",hash);
+		//printf("get one action cxid before %d\n",cxid);
 		if(head->cxid != cxid){
-			printf("get one action cxid middle %d\n",head->cxid);
+			//printf("get one action cxid middle %d\n",head->cxid);
 			head = head->next;
 			continue;
 		}
-		printf("get one action hash %d\n",hash);
-		printf("get one action cxid %d\n",cxid);
+		//printf("get one action hash %d\n",hash);
+		//printf("get one action cxid %d\n",cxid);
 		gettimeofday(&start_serialize, NULL);
 			
 		ActionState actionstate;
@@ -637,7 +763,7 @@ int local_action_get_one_perflow(int hash, int cxid){
 		
 			
 	}
-	printf("action end----------------------\n");
+	//printf("action end----------------------\n");
 	pthread_mutex_unlock(&ActionEntryLock);
 	return 1;
 }
@@ -657,7 +783,7 @@ int local_action_get_perflow(Key key){
 			
 			if (action_head[i]->cxid == (i*5+2) || action_head[i]->cxid == (5*5+2))
 		            {
-				printf("action_head[i] cxid %d", action_head[i]->cxid);		                
+				//printf("action_head[i] cxid %d", action_head[i]->cxid);		                
 				action_head[i] = action_head[i]->next;
 		                continue;
 		            }
@@ -665,7 +791,7 @@ int local_action_get_perflow(Key key){
 		            // Check nw_proto
 		        if (action_head[i]->cxid == (i*5+3) || action_head[i]->cxid == (5*5+3))
 		            {
-				printf("action_head[i] cxid %d", action_head[i]->cxid);			                
+				//printf("action_head[i] cxid %d", action_head[i]->cxid);			                
 				action_head[i] = action_head[i]->next;
 		                continue;
 		            }

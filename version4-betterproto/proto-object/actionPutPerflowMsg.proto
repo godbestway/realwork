@@ -1,0 +1,6 @@
+syntax = "proto2";
+import "ActionState.proto";
+
+message ActionPutPerflowMsg {
+    required ActionState state = 1;
+}
