@@ -24,6 +24,7 @@ typedef struct {
 #define WILDCARD_DL_TYPE    0x01
 #define WILDCARD_NW_PROTO   0x08
 
+extern int drop;
 
 //NF should provide
 typedef struct {

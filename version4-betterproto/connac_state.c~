@@ -48,7 +48,7 @@ int conn_send_getPerflowAck(int count){
         my_conn_message__pack(&mes, buf);
 
 	int result;
-	result = send_action_proto_object(connac_conn_state, buf, len );
+	result = send_conn_proto_object(connac_conn_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -82,7 +82,7 @@ int conn_send_putPerflowAck(int hash, int cxid){
         my_conn_message__pack(&mes, buf);
 
 	int result;
-	result = send_action_proto_object(connac_conn_state, buf, len );
+	result = send_conn_proto_object(connac_conn_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -92,7 +92,7 @@ int conn_send_putPerflowAck(int hash, int cxid){
 
 int conn_send_perflow(uint8_t* buf, int len){
 	int result;
-	result = send_action_proto_object(connac_conn_state, buf, len );
+	result = send_conn_proto_object(connac_conn_state, buf, len );
 	if(result < 0){
 		return -1;
 	}
@@ -108,6 +108,8 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
 	printf("this function is not supported");
         return -1; 
     }
+//set drop flag == 1;
+    drop = 1;
     int count;
     Key key;
     if(connGetPerflow_recv->has_hw_proto){

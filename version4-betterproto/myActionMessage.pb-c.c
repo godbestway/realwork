@@ -322,6 +322,186 @@ void   action_put_perflow_ack_msg__free_unpacked
   assert(message->base.descriptor == &action_put_perflow_ack_msg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
+void   asset__init
+                     (Asset         *message)
+{
+  static const Asset init_value = ASSET__INIT;
+  *message = init_value;
+}
+size_t asset__get_packed_size
+                     (const Asset *message)
+{
+  assert(message->base.descriptor == &asset__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t asset__pack
+                     (const Asset *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &asset__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t asset__pack_to_buffer
+                     (const Asset *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &asset__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+Asset *
+       asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (Asset *)
+     protobuf_c_message_unpack (&asset__descriptor,
+                                allocator, len, data);
+}
+void   asset__free_unpacked
+                     (Asset *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &asset__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+void   serv_asset__init
+                     (ServAsset         *message)
+{
+  static const ServAsset init_value = SERV_ASSET__INIT;
+  *message = init_value;
+}
+size_t serv_asset__get_packed_size
+                     (const ServAsset *message)
+{
+  assert(message->base.descriptor == &serv_asset__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t serv_asset__pack
+                     (const ServAsset *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &serv_asset__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t serv_asset__pack_to_buffer
+                     (const ServAsset *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &serv_asset__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+ServAsset *
+       serv_asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (ServAsset *)
+     protobuf_c_message_unpack (&serv_asset__descriptor,
+                                allocator, len, data);
+}
+void   serv_asset__free_unpacked
+                     (ServAsset *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &serv_asset__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+void   os_asset__init
+                     (OsAsset         *message)
+{
+  static const OsAsset init_value = OS_ASSET__INIT;
+  *message = init_value;
+}
+size_t os_asset__get_packed_size
+                     (const OsAsset *message)
+{
+  assert(message->base.descriptor == &os_asset__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t os_asset__pack
+                     (const OsAsset *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &os_asset__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t os_asset__pack_to_buffer
+                     (const OsAsset *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &os_asset__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+OsAsset *
+       os_asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (OsAsset *)
+     protobuf_c_message_unpack (&os_asset__descriptor,
+                                allocator, len, data);
+}
+void   os_asset__free_unpacked
+                     (OsAsset *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &os_asset__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+void   bstring__init
+                     (Bstring         *message)
+{
+  static const Bstring init_value = BSTRING__INIT;
+  *message = init_value;
+}
+size_t bstring__get_packed_size
+                     (const Bstring *message)
+{
+  assert(message->base.descriptor == &bstring__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t bstring__pack
+                     (const Bstring *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &bstring__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t bstring__pack_to_buffer
+                     (const Bstring *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &bstring__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+Bstring *
+       bstring__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (Bstring *)
+     protobuf_c_message_unpack (&bstring__descriptor,
+                                allocator, len, data);
+}
+void   bstring__free_unpacked
+                     (Bstring *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &bstring__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
 static const ProtobufCEnumValue my_action_message__data_type__enum_values_by_number[6] =
 {
   { "SynType", "MY_ACTION_MESSAGE__DATA_TYPE__SynType", 1 },
@@ -614,7 +794,7 @@ const ProtobufCMessageDescriptor action_get_perflow_ack_msg__descriptor =
   (ProtobufCMessageInit) action_get_perflow_ack_msg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
+static const ProtobufCFieldDescriptor action_state__field_descriptors[18] =
 {
   {
     "start_time",
@@ -678,7 +858,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "s_total_pkts",
-    8,
+    6,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FIXED64,
     offsetof(ActionState, has_s_total_pkts),
@@ -690,7 +870,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "s_total_bytes",
-    9,
+    7,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FIXED64,
     offsetof(ActionState, has_s_total_bytes),
@@ -702,7 +882,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "d_total_pkts",
-    10,
+    8,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FIXED64,
     offsetof(ActionState, has_d_total_pkts),
@@ -714,7 +894,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "d_total_bytes",
-    11,
+    9,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FIXED64,
     offsetof(ActionState, has_d_total_bytes),
@@ -726,7 +906,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "s_tcpFlags",
-    12,
+    10,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
     offsetof(ActionState, has_s_tcpflags),
@@ -738,7 +918,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "pad",
-    13,
+    11,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
     offsetof(ActionState, has_pad),
@@ -750,7 +930,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "d_tcpFlags",
-    14,
+    12,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
     offsetof(ActionState, has_d_tcpflags),
@@ -762,7 +942,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "check",
-    15,
+    13,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
     offsetof(ActionState, has_check),
@@ -774,7 +954,7 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
   },
   {
     "hash",
-    16,
+    14,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FIXED32,
     offsetof(ActionState, has_hash),
@@ -784,11 +964,61 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[14] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "c_asset",
+    15,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(ActionState, c_asset),
+    &asset__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "s_asset",
+    16,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(ActionState, s_asset),
+    &asset__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "s_ip",
+    17,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionState, has_s_ip),
+    offsetof(ActionState, s_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "d_ip",
+    18,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionState, has_d_ip),
+    offsetof(ActionState, d_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned action_state__field_indices_by_name[] = {
   4,   /* field[4] = af */
+  14,   /* field[14] = c_asset */
   12,   /* field[12] = check */
   2,   /* field[2] = cxid */
+  17,   /* field[17] = d_ip */
   11,   /* field[11] = d_tcpFlags */
   8,   /* field[8] = d_total_bytes */
   7,   /* field[7] = d_total_pkts */
@@ -796,16 +1026,17 @@ static const unsigned action_state__field_indices_by_name[] = {
   1,   /* field[1] = last_pkt_time */
   10,   /* field[10] = pad */
   3,   /* field[3] = reversed */
+  15,   /* field[15] = s_asset */
+  16,   /* field[16] = s_ip */
   9,   /* field[9] = s_tcpFlags */
   6,   /* field[6] = s_total_bytes */
   5,   /* field[5] = s_total_pkts */
   0,   /* field[0] = start_time */
 };
-static const ProtobufCIntRange action_state__number_ranges[2 + 1] =
+static const ProtobufCIntRange action_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 8, 5 },
-  { 0, 14 }
+  { 0, 18 }
 };
 const ProtobufCMessageDescriptor action_state__descriptor =
 {
@@ -815,10 +1046,10 @@ const ProtobufCMessageDescriptor action_state__descriptor =
   "ActionState",
   "",
   sizeof(ActionState),
-  14,
+  18,
   action_state__field_descriptors,
   action_state__field_indices_by_name,
-  2,  action_state__number_ranges,
+  1,  action_state__number_ranges,
   (ProtobufCMessageInit) action_state__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
@@ -909,5 +1140,560 @@ const ProtobufCMessageDescriptor action_put_perflow_ack_msg__descriptor =
   action_put_perflow_ack_msg__field_indices_by_name,
   1,  action_put_perflow_ack_msg__number_ranges,
   (ProtobufCMessageInit) action_put_perflow_ack_msg__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor asset__field_descriptors[8] =
+{
+  {
+    "first_seen",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(Asset, has_first_seen),
+    offsetof(Asset, first_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "last_seen",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(Asset, has_last_seen),
+    offsetof(Asset, last_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "i_attempts",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(Asset, has_i_attempts),
+    offsetof(Asset, i_attempts),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "af",
+    4,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(Asset, has_af),
+    offsetof(Asset, af),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "vlan",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(Asset, has_vlan),
+    offsetof(Asset, vlan),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "s_ip",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(Asset, has_s_ip),
+    offsetof(Asset, s_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "services",
+    7,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(Asset, services),
+    &serv_asset__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "os",
+    8,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(Asset, os),
+    &os_asset__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned asset__field_indices_by_name[] = {
+  3,   /* field[3] = af */
+  0,   /* field[0] = first_seen */
+  2,   /* field[2] = i_attempts */
+  1,   /* field[1] = last_seen */
+  7,   /* field[7] = os */
+  5,   /* field[5] = s_ip */
+  6,   /* field[6] = services */
+  4,   /* field[4] = vlan */
+};
+static const ProtobufCIntRange asset__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 8 }
+};
+const ProtobufCMessageDescriptor asset__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "Asset",
+  "Asset",
+  "Asset",
+  "",
+  sizeof(Asset),
+  8,
+  asset__field_descriptors,
+  asset__field_indices_by_name,
+  1,  asset__number_ranges,
+  (ProtobufCMessageInit) asset__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor serv_asset__field_descriptors[10] =
+{
+  {
+    "first_seen",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(ServAsset, has_first_seen),
+    offsetof(ServAsset, first_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "last_seen",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(ServAsset, has_last_seen),
+    offsetof(ServAsset, last_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "i_attempts",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(ServAsset, has_i_attempts),
+    offsetof(ServAsset, i_attempts),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "proto",
+    4,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(ServAsset, has_proto),
+    offsetof(ServAsset, proto),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "port",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(ServAsset, has_port),
+    offsetof(ServAsset, port),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "ttl",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(ServAsset, has_ttl),
+    offsetof(ServAsset, ttl),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "bservice",
+    7,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(ServAsset, bservice),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "bapplication",
+    8,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(ServAsset, bapplication),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "role",
+    9,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ServAsset, has_role),
+    offsetof(ServAsset, role),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "unknown",
+    10,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ServAsset, has_unknown),
+    offsetof(ServAsset, unknown),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned serv_asset__field_indices_by_name[] = {
+  7,   /* field[7] = bapplication */
+  6,   /* field[6] = bservice */
+  0,   /* field[0] = first_seen */
+  2,   /* field[2] = i_attempts */
+  1,   /* field[1] = last_seen */
+  4,   /* field[4] = port */
+  3,   /* field[3] = proto */
+  8,   /* field[8] = role */
+  5,   /* field[5] = ttl */
+  9,   /* field[9] = unknown */
+};
+static const ProtobufCIntRange serv_asset__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 10 }
+};
+const ProtobufCMessageDescriptor serv_asset__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "ServAsset",
+  "ServAsset",
+  "ServAsset",
+  "",
+  sizeof(ServAsset),
+  10,
+  serv_asset__field_descriptors,
+  serv_asset__field_indices_by_name,
+  1,  serv_asset__number_ranges,
+  (ProtobufCMessageInit) serv_asset__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor os_asset__field_descriptors[14] =
+{
+  {
+    "first_seen",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(OsAsset, has_first_seen),
+    offsetof(OsAsset, first_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "last_seen",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED64,
+    offsetof(OsAsset, has_last_seen),
+    offsetof(OsAsset, last_seen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "i_attempts",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_i_attempts),
+    offsetof(OsAsset, i_attempts),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "bvendor",
+    4,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, bvendor),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "bos",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, bos),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "detection",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_detection),
+    offsetof(OsAsset, detection),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "raw_fp",
+    7,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, raw_fp),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "matched_fp",
+    8,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, matched_fp),
+    &bstring__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "match_os",
+    9,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, match_os),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "match_desc",
+    10,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(OsAsset, match_desc),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "port",
+    11,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_port),
+    offsetof(OsAsset, port),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "mtu",
+    12,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_mtu),
+    offsetof(OsAsset, mtu),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "ttl",
+    13,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_ttl),
+    offsetof(OsAsset, ttl),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "uptime",
+    14,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_UINT32,
+    offsetof(OsAsset, has_uptime),
+    offsetof(OsAsset, uptime),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned os_asset__field_indices_by_name[] = {
+  4,   /* field[4] = bos */
+  3,   /* field[3] = bvendor */
+  5,   /* field[5] = detection */
+  0,   /* field[0] = first_seen */
+  2,   /* field[2] = i_attempts */
+  1,   /* field[1] = last_seen */
+  9,   /* field[9] = match_desc */
+  8,   /* field[8] = match_os */
+  7,   /* field[7] = matched_fp */
+  11,   /* field[11] = mtu */
+  10,   /* field[10] = port */
+  6,   /* field[6] = raw_fp */
+  12,   /* field[12] = ttl */
+  13,   /* field[13] = uptime */
+};
+static const ProtobufCIntRange os_asset__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 14 }
+};
+const ProtobufCMessageDescriptor os_asset__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "OsAsset",
+  "OsAsset",
+  "OsAsset",
+  "",
+  sizeof(OsAsset),
+  14,
+  os_asset__field_descriptors,
+  os_asset__field_indices_by_name,
+  1,  os_asset__number_ranges,
+  (ProtobufCMessageInit) os_asset__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor bstring__field_descriptors[3] =
+{
+  {
+    "mlen",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(Bstring, has_mlen),
+    offsetof(Bstring, mlen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "slen",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(Bstring, has_slen),
+    offsetof(Bstring, slen),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "data",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(Bstring, data),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned bstring__field_indices_by_name[] = {
+  2,   /* field[2] = data */
+  0,   /* field[0] = mlen */
+  1,   /* field[1] = slen */
+};
+static const ProtobufCIntRange bstring__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 3 }
+};
+const ProtobufCMessageDescriptor bstring__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "Bstring",
+  "Bstring",
+  "Bstring",
+  "",
+  sizeof(Bstring),
+  3,
+  bstring__field_descriptors,
+  bstring__field_indices_by_name,
+  1,  bstring__number_ranges,
+  (ProtobufCMessageInit) bstring__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

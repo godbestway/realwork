@@ -9,6 +9,8 @@ typedef struct
 {
     int cxid;
     int hash;
+    uint32_t nw_src;
+    uint32_t nw_dst;
 
 }Match;
 
@@ -31,5 +33,7 @@ void showPutActionState();
 void showAllCxid();
 void showAllState();
 
+void showConnState(connState* conn_state);
+void showActionState(actionState* action_state);
 
 #endif

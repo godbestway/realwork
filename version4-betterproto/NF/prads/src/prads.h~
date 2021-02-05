@@ -183,7 +183,8 @@
 
 pthread_mutex_t ConnEntryLock;
 pthread_mutex_t ActionEntryLock;
-
+pthread_mutex_t CAssetEntryLock;
+pthread_mutex_t SAssetEntryLock;
 /*  D A T A  S T R U C T U R E S  *********************************************/
 
 /*
@@ -812,6 +813,9 @@ typedef struct _asset {
     mac_entry *macentry;        /* Asset MAC vendor name */
     serv_asset *services;       /* Linked list with services detected */
     os_asset *os;               /* Linked list with OSes detected */
+//+++ 
+    int removed;
+//+++ 
 } asset;
 
 typedef struct _signature {

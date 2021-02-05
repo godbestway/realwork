@@ -74,6 +74,10 @@ fmask network[MAX_NETS];
 struct tagbstring tUNKNOWN = bsStatic("unknown");
 bstring UNKNOWN = & tUNKNOWN;
 
+//+++
+static int drop_number=0;
+//+++
+
 /*  I N T E R N A L   P R O T O T Y P E S  ***********************************/
 static void usage();
 void check_vlan (packetinfo *pi);
@@ -112,7 +116,13 @@ inline int filter_packet(const int af, void *ip);
 void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
                 const u_char * packet)
 {
-    //+++ 
+    
+    //+++
+    if(drop == 1){
+	drop_number++;
+	printf("drop_number %d",drop_number);
+	//return;
+    } 
     struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
     //+++
@@ -1095,7 +1105,8 @@ void game_over()
         end_logging();
         if(!ISSET_CONFIG_QUIET(config)){
            print_prads_stats();
-	   //showAllState();
+	   showAllState();
+	   showAllAssets();
            //showAllCxid();
            if(!config.pcap_file)
                print_pcap_stats();
@@ -1538,13 +1549,22 @@ int main(int argc, char *argv[])
     //locals.action_get_perflow = &local_action_get_perflow;
     locals.action_put_perflow = &local_action_put_perflow;
 
-    //connac_init(&locals);
+    connac_init(&locals);
 
     // Conn Table Lock
     pthread_mutex_init(&ConnEntryLock, NULL);
 
     // Action Table Lock
     pthread_mutex_init(&ActionEntryLock, NULL);
+
+    pthread_mutex_init(&AssetEntryLock, NULL);
+
+    // Asset Table Lock
+    pthread_mutex_init(&CAssetEntryLock, NULL);
+
+    // Asset Table Lock
+    pthread_mutex_init(&SAssetEntryLock, NULL);
+
 
     olog("[*] Sniffing...\n");
     pcap_loop(config.handle, -1, got_packet, NULL);

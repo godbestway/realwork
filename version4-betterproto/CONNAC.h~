@@ -24,6 +24,7 @@ typedef struct {
 #define WILDCARD_DL_TYPE    0x01
 #define WILDCARD_NW_PROTO   0x08
 
+//int drop = 0;
 
 //NF should provide
 typedef struct {
@@ -31,7 +32,7 @@ typedef struct {
     //int (*cleanup)();
     int (*conn_get_perflow)(Key key);
     int (*conn_put_perflow)(ConnState* state); 
-    int (*action_get_perflow)();
+    int (*action_get_perflow)(Key key);
     int (*action_put_perflow)(ActionState* state); 
     
 } CONNACLocals;

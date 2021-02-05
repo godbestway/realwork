@@ -9,6 +9,8 @@ typedef struct
 {
     int cxid;
     int hash;
+    uint32_t nw_src;
+    uint32_t nw_dst;
 
 }Match;
 
@@ -19,7 +21,7 @@ int local_conn_get_perflow();
 static void *conn_sender(void *arg);
 
 static void *action_sender(void *arg);
-int local_action_get_one_perflow(int hash, int cxid);
+int local_action_get_one_perflow(Match *match);
 
 int local_conn_put_perflow(ConnState* recv_state);
 int local_action_get_perflow();

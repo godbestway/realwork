@@ -22,6 +22,10 @@ typedef struct _ActionGetPerflowAckMsg ActionGetPerflowAckMsg;
 typedef struct _ActionState ActionState;
 typedef struct _ActionPutPerflowMsg ActionPutPerflowMsg;
 typedef struct _ActionPutPerflowAckMsg ActionPutPerflowAckMsg;
+typedef struct _Asset Asset;
+typedef struct _ServAsset ServAsset;
+typedef struct _OsAsset OsAsset;
+typedef struct _Bstring Bstring;
 
 
 /* --- enums --- */
@@ -135,10 +139,16 @@ struct  _ActionState
   uint32_t check;
   protobuf_c_boolean has_hash;
   uint32_t hash;
+  Asset *c_asset;
+  Asset *s_asset;
+  protobuf_c_boolean has_s_ip;
+  uint32_t s_ip;
+  protobuf_c_boolean has_d_ip;
+  uint32_t d_ip;
 };
 #define ACTION_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&action_state__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0 }
 
 
 struct  _ActionPutPerflowMsg
@@ -162,6 +172,101 @@ struct  _ActionPutPerflowAckMsg
 #define ACTION_PUT_PERFLOW_ACK_MSG__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&action_put_perflow_ack_msg__descriptor) \
     , 0, 0, 0, 0 }
+
+
+struct  _Asset
+{
+  ProtobufCMessage base;
+  protobuf_c_boolean has_first_seen;
+  uint64_t first_seen;
+  protobuf_c_boolean has_last_seen;
+  uint64_t last_seen;
+  protobuf_c_boolean has_i_attempts;
+  uint32_t i_attempts;
+  protobuf_c_boolean has_af;
+  uint32_t af;
+  protobuf_c_boolean has_vlan;
+  uint32_t vlan;
+  protobuf_c_boolean has_s_ip;
+  uint32_t s_ip;
+  ServAsset *services;
+  OsAsset *os;
+};
+#define ASSET__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&asset__descriptor) \
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL }
+
+
+struct  _ServAsset
+{
+  ProtobufCMessage base;
+  protobuf_c_boolean has_first_seen;
+  uint64_t first_seen;
+  protobuf_c_boolean has_last_seen;
+  uint64_t last_seen;
+  protobuf_c_boolean has_i_attempts;
+  uint32_t i_attempts;
+  protobuf_c_boolean has_proto;
+  uint32_t proto;
+  protobuf_c_boolean has_port;
+  uint32_t port;
+  protobuf_c_boolean has_ttl;
+  uint32_t ttl;
+  Bstring *bservice;
+  Bstring *bapplication;
+  protobuf_c_boolean has_role;
+  uint32_t role;
+  protobuf_c_boolean has_unknown;
+  uint32_t unknown;
+};
+#define SERV_ASSET__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&serv_asset__descriptor) \
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0 }
+
+
+struct  _OsAsset
+{
+  ProtobufCMessage base;
+  protobuf_c_boolean has_first_seen;
+  uint64_t first_seen;
+  protobuf_c_boolean has_last_seen;
+  uint64_t last_seen;
+  protobuf_c_boolean has_i_attempts;
+  uint32_t i_attempts;
+  Bstring *bvendor;
+  Bstring *bos;
+  protobuf_c_boolean has_detection;
+  uint32_t detection;
+  Bstring *raw_fp;
+  Bstring *matched_fp;
+  char *match_os;
+  char *match_desc;
+  protobuf_c_boolean has_port;
+  uint32_t port;
+  protobuf_c_boolean has_mtu;
+  uint32_t mtu;
+  protobuf_c_boolean has_ttl;
+  uint32_t ttl;
+  protobuf_c_boolean has_uptime;
+  uint32_t uptime;
+};
+#define OS_ASSET__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&os_asset__descriptor) \
+    , 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0 }
+
+
+struct  _Bstring
+{
+  ProtobufCMessage base;
+  protobuf_c_boolean has_mlen;
+  uint32_t mlen;
+  protobuf_c_boolean has_slen;
+  uint32_t slen;
+  char *data;
+};
+#define BSTRING__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&bstring__descriptor) \
+    , 0, 0, 0, 0, NULL }
 
 
 /* MyActionMessage methods */
@@ -297,6 +402,82 @@ ActionPutPerflowAckMsg *
 void   action_put_perflow_ack_msg__free_unpacked
                      (ActionPutPerflowAckMsg *message,
                       ProtobufCAllocator *allocator);
+/* Asset methods */
+void   asset__init
+                     (Asset         *message);
+size_t asset__get_packed_size
+                     (const Asset   *message);
+size_t asset__pack
+                     (const Asset   *message,
+                      uint8_t             *out);
+size_t asset__pack_to_buffer
+                     (const Asset   *message,
+                      ProtobufCBuffer     *buffer);
+Asset *
+       asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   asset__free_unpacked
+                     (Asset *message,
+                      ProtobufCAllocator *allocator);
+/* ServAsset methods */
+void   serv_asset__init
+                     (ServAsset         *message);
+size_t serv_asset__get_packed_size
+                     (const ServAsset   *message);
+size_t serv_asset__pack
+                     (const ServAsset   *message,
+                      uint8_t             *out);
+size_t serv_asset__pack_to_buffer
+                     (const ServAsset   *message,
+                      ProtobufCBuffer     *buffer);
+ServAsset *
+       serv_asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   serv_asset__free_unpacked
+                     (ServAsset *message,
+                      ProtobufCAllocator *allocator);
+/* OsAsset methods */
+void   os_asset__init
+                     (OsAsset         *message);
+size_t os_asset__get_packed_size
+                     (const OsAsset   *message);
+size_t os_asset__pack
+                     (const OsAsset   *message,
+                      uint8_t             *out);
+size_t os_asset__pack_to_buffer
+                     (const OsAsset   *message,
+                      ProtobufCBuffer     *buffer);
+OsAsset *
+       os_asset__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   os_asset__free_unpacked
+                     (OsAsset *message,
+                      ProtobufCAllocator *allocator);
+/* Bstring methods */
+void   bstring__init
+                     (Bstring         *message);
+size_t bstring__get_packed_size
+                     (const Bstring   *message);
+size_t bstring__pack
+                     (const Bstring   *message,
+                      uint8_t             *out);
+size_t bstring__pack_to_buffer
+                     (const Bstring   *message,
+                      ProtobufCBuffer     *buffer);
+Bstring *
+       bstring__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   bstring__free_unpacked
+                     (Bstring *message,
+                      ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
 typedef void (*MyActionMessage_Closure)
@@ -320,6 +501,18 @@ typedef void (*ActionPutPerflowMsg_Closure)
 typedef void (*ActionPutPerflowAckMsg_Closure)
                  (const ActionPutPerflowAckMsg *message,
                   void *closure_data);
+typedef void (*Asset_Closure)
+                 (const Asset *message,
+                  void *closure_data);
+typedef void (*ServAsset_Closure)
+                 (const ServAsset *message,
+                  void *closure_data);
+typedef void (*OsAsset_Closure)
+                 (const OsAsset *message,
+                  void *closure_data);
+typedef void (*Bstring_Closure)
+                 (const Bstring *message,
+                  void *closure_data);
 
 /* --- services --- */
 
@@ -334,6 +527,10 @@ extern const ProtobufCMessageDescriptor action_get_perflow_ack_msg__descriptor;
 extern const ProtobufCMessageDescriptor action_state__descriptor;
 extern const ProtobufCMessageDescriptor action_put_perflow_msg__descriptor;
 extern const ProtobufCMessageDescriptor action_put_perflow_ack_msg__descriptor;
+extern const ProtobufCMessageDescriptor asset__descriptor;
+extern const ProtobufCMessageDescriptor serv_asset__descriptor;
+extern const ProtobufCMessageDescriptor os_asset__descriptor;
+extern const ProtobufCMessageDescriptor bstring__descriptor;
 
 PROTOBUF_C__END_DECLS
 

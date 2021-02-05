@@ -58,7 +58,9 @@ message ActionState {
         optional uint32  pad=13;
         optional uint32  d_tcpFlags=14;
         optional uint32  check=15;
-        optional fixed32 hash=16;        
+        optional fixed32 hash=16;      
+	optional Asset  c_asset = 17;
+	optional Asset  s_asset = 18; 
 }
 
 message ActionPutPerflowMsg {
@@ -69,6 +71,61 @@ message ActionPutPerflowAckMsg {
     optional fixed32 hash = 1;
     optional fixed32 cxid = 2;
 }
+
+
+message Asset{
+	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional fixed32 af = 4;
+	optional uint32 vlan = 5;
+	optional fixed32 s_ip=6;	
+	optional ServAsset services =7;
+	optional OsAsset os = 8;
+}
+
+
+message ServAsset {
+	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional uint32 proto = 4;
+	optional uint32 port = 5;
+	optional uint32 ttl = 6;
+	optional Bstring bservice = 7;
+	optional Bstring bapplication = 8;
+	optional fixed32 role = 9;
+	optional fixed32 unknown = 10; 
+}
+
+message OsAsset{
+   	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional Bstring bvendor = 4;
+	optional Bstring bos = 5;
+	optional uint32 detection = 6;
+	optional Bstring raw_fp = 7;
+	optional Bstring matched_fp = 8;
+	optional string match_os = 9;
+	optional string match_desc = 10;
+	optional uint32 port = 11;
+	optional uint32 mtu = 12;
+	optional uint32 ttl = 13;
+	optional uint32 uptime = 14;
+       
+}
+
+message Bstring {
+    optional fixed32 mlen = 1;
+    optional fixed32 slen = 2;
+    optional string data = 3;
+}
+
+
+
+
+
 
 
 

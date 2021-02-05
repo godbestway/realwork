@@ -25,6 +25,7 @@ static pthread_t state_thread;
 
 // Connection for state messages
 int connac_conn_state = -1;
+int drop = 0;
 
 
 int conn_send_getPerflowAck(int count){
@@ -108,6 +109,8 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
 	printf("this function is not supported");
         return -1; 
     }
+//set drop flag == 1;
+    drop = 1;
     int count;
     Key key;
     if(connGetPerflow_recv->has_hw_proto){
