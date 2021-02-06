@@ -794,7 +794,7 @@ const ProtobufCMessageDescriptor action_get_perflow_ack_msg__descriptor =
   (ProtobufCMessageInit) action_get_perflow_ack_msg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor action_state__field_descriptors[18] =
+static const ProtobufCFieldDescriptor action_state__field_descriptors[16] =
 {
   {
     "start_time",
@@ -988,37 +988,12 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[18] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
-  {
-    "s_ip",
-    17,
-    PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_FIXED32,
-    offsetof(ActionState, has_s_ip),
-    offsetof(ActionState, s_ip),
-    NULL,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
-    "d_ip",
-    18,
-    PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_FIXED32,
-    offsetof(ActionState, has_d_ip),
-    offsetof(ActionState, d_ip),
-    NULL,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
 };
 static const unsigned action_state__field_indices_by_name[] = {
   4,   /* field[4] = af */
   14,   /* field[14] = c_asset */
   12,   /* field[12] = check */
   2,   /* field[2] = cxid */
-  17,   /* field[17] = d_ip */
   11,   /* field[11] = d_tcpFlags */
   8,   /* field[8] = d_total_bytes */
   7,   /* field[7] = d_total_pkts */
@@ -1027,7 +1002,6 @@ static const unsigned action_state__field_indices_by_name[] = {
   10,   /* field[10] = pad */
   3,   /* field[3] = reversed */
   15,   /* field[15] = s_asset */
-  16,   /* field[16] = s_ip */
   9,   /* field[9] = s_tcpFlags */
   6,   /* field[6] = s_total_bytes */
   5,   /* field[5] = s_total_pkts */
@@ -1036,7 +1010,7 @@ static const unsigned action_state__field_indices_by_name[] = {
 static const ProtobufCIntRange action_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 18 }
+  { 0, 16 }
 };
 const ProtobufCMessageDescriptor action_state__descriptor =
 {
@@ -1046,7 +1020,7 @@ const ProtobufCMessageDescriptor action_state__descriptor =
   "ActionState",
   "",
   sizeof(ActionState),
-  18,
+  16,
   action_state__field_descriptors,
   action_state__field_indices_by_name,
   1,  action_state__number_ranges,

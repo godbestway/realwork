@@ -184,8 +184,7 @@
 pthread_mutex_t ConnEntryLock;
 pthread_mutex_t ActionEntryLock;
 pthread_mutex_t AssetEntryLock;
-pthread_mutex_t CAssetEntryLock;
-pthread_mutex_t SAssetEntryLock;
+
 /*  D A T A  S T R U C T U R E S  *********************************************/
 
 /*

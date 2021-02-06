@@ -50,17 +50,17 @@ message ActionState {
         optional fixed64 cxid=3;
         optional uint32  reversed=4;
         optional fixed32 af=5;
-        optional fixed64 s_total_pkts=8;
-        optional fixed64 s_total_bytes=9;
-        optional fixed64 d_total_pkts=10;
-        optional fixed64 d_total_bytes=11;
-        optional uint32  s_tcpFlags=12;
-        optional uint32  pad=13;
-        optional uint32  d_tcpFlags=14;
-        optional uint32  check=15;
-        optional fixed32 hash=16;      
-	optional Asset  c_asset = 17;
-	optional Asset  s_asset = 18; 
+        optional fixed64 s_total_pkts=6;
+        optional fixed64 s_total_bytes=7;
+        optional fixed64 d_total_pkts=8;
+        optional fixed64 d_total_bytes=9;
+        optional uint32  s_tcpFlags=10;
+        optional uint32  pad=11;
+        optional uint32  d_tcpFlags=12;
+        optional uint32  check=13;
+        optional fixed32 hash=14;      
+	optional Asset  c_asset = 15;
+	optional Asset  s_asset = 16; 
 }
 
 message ActionPutPerflowMsg {

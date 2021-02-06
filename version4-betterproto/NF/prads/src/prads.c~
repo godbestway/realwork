@@ -121,7 +121,7 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
     if(drop == 1){
 	drop_number++;
 	printf("drop_number %d",drop_number);
-	//return;
+	return;
     } 
     struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
@@ -1097,8 +1097,8 @@ void game_over()
 //+++
         end_connac_sessions();
 //+++
-        clear_asset_list();
-        //end_all_sessions();
+        //clear_asset_list();   //delete asset list, so that showAssets has nothing
+        //end_all_sessions();	//delete cxt list, so that showAssets has nothing
         del_known_services();
         del_signature_lists();
         unload_tcp_sigs();
@@ -1106,7 +1106,7 @@ void game_over()
         if(!ISSET_CONFIG_QUIET(config)){
            print_prads_stats();
 	   showAllState();
-	   showAllAssets();
+	   //showAllAssets();
            //showAllCxid();
            if(!config.pcap_file)
                print_pcap_stats();
@@ -1557,11 +1557,7 @@ int main(int argc, char *argv[])
     // Action Table Lock
     pthread_mutex_init(&ActionEntryLock, NULL);
 
-    // Asset Table Lock
-    pthread_mutex_init(&CAssetEntryLock, NULL);
-
-    // Asset Table Lock
-    pthread_mutex_init(&SAssetEntryLock, NULL);
+    pthread_mutex_init(&AssetEntryLock, NULL);
 
 
     olog("[*] Sniffing...\n");

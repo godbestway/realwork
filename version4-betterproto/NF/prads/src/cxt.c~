@@ -21,6 +21,10 @@ connection *bucket[BUCKET_SIZE];
 connState *conn_bucket[BUCKET_SIZE];
 actionState *action_bucket[BUCKET_SIZE];
 
+static void put_asset(asset* ori_asset, Asset *in_asset);
+static void *conn_sender(void *arg);
+static void *action_sender(void *arg);
+
 void cxt_init()
 {
     cxtrackerid = 0;
@@ -91,6 +95,10 @@ int local_conn_put_perflow(ConnState* recv_state){
 //+++
     connac_notify_flow_created();
 //+++
+
+
+    printf("\n--------------check first time--------------------\n");
+    //showAllCxid();
     pthread_mutex_unlock(&ConnEntryLock);
   
   return 1;
@@ -137,19 +145,123 @@ int local_action_put_perflow(ActionState* recv_state){
     //showPutActionState();
     pthread_mutex_unlock(&ActionEntryLock);
     // If asset structure is present push it into the asset list.
-    if(action_state->c_asset != NULL){
-	put_asset_per_sip(recv_state->s_ip, action_state->c_asset); 
+    if(recv_state->c_asset != NULL){
+	printf("\n--------------c_asset exits--------------------\n");
+	asset* c_asset = (asset*)malloc(sizeof(asset));
+	put_asset(c_asset, recv_state->c_asset);
+
     }
-   if(action_state->s_asset != NULL){
-	put_asset_per_sip(recv_state->d_ip, action_state->s_asset); 
+    if(recv_state->s_asset != NULL){
+	printf("\n--------------s_asset exits--------------------\n");
+	asset* s_asset = (asset*)malloc(sizeof(asset));
+	put_asset(s_asset, recv_state->s_asset);
     }
 
-
-    action_state->c_asset = NULL; 
-    action_state->s_asset = NULL;  
+    pthread_mutex_unlock(&ActionEntryLock);
+	
+    //action_state->c_asset = NULL; 
+    //action_state->s_asset = NULL;  
   
     return 1;
 }
+
+static void put_asset(asset* ori_asset, Asset *in_asset){
+
+	printf("\n--------------check put asset--------------------\n");
+        
+	ori_asset->first_seen = in_asset->first_seen;   	
+	ori_asset->last_seen = in_asset->last_seen;
+	ori_asset->i_attempts = in_asset->i_attempts;
+	ori_asset->af = in_asset->af;
+	ori_asset->vlan = in_asset->vlan;
+	ori_asset->ip_addr.s6_addr32[0] = in_asset->s_ip;
+	ori_asset->last_seen = in_asset->last_seen;
+	//ori_asset->removed = 1;
+
+	serv_asset* services;
+	os_asset* os;
+	if(in_asset->services != NULL){
+		serv_asset* services = (serv_asset*)malloc(sizeof(serv_asset));
+		printf("\n--------------check put services init--------------------\n");
+
+		services->first_seen= in_asset->services->first_seen;
+		services->last_seen= in_asset->services->last_seen;
+		services->i_attempts= in_asset->services->i_attempts;
+		services->proto= in_asset->services->proto;
+		services->port= in_asset->services->port;
+		services->ttl= in_asset->services->ttl;
+
+		bstring service= (bstring)malloc(sizeof(tagBstring));
+		service->mlen= in_asset->services->bservice->mlen;
+		service->slen= in_asset->services->bservice->slen;
+		service->data= in_asset->services->bservice->data;
+		services->service =service;
+
+
+		bstring application= (bstring)malloc(sizeof(tagBstring));
+		application->mlen= in_asset->services->bapplication->mlen;
+		application->slen= in_asset->services->bapplication->slen;
+		application->data= in_asset->services->bapplication->data;
+		services->application =application;
+
+		services->role= in_asset->services->role;
+		services->unknown= in_asset->services->unknown;
+  		printf("\n--------------check put services finished--------------------\n");
+		ori_asset->services = services;
+
+	}
+	
+	if(in_asset->os != NULL){
+		os_asset* os = (os_asset*)malloc(sizeof(os_asset));
+		printf("\n--------------check put os init --------------------\n");
+		os->first_seen= in_asset->os->first_seen;
+		os->last_seen= in_asset->os->last_seen;
+		os->i_attempts= in_asset->os->i_attempts;
+
+		bstring os_string= (bstring)malloc(sizeof(tagBstring));
+		os_string->mlen= in_asset->os->bos->mlen;
+		os_string->slen= in_asset->os->bos->slen;
+		os_string->data= in_asset->os->bos->data;
+		os->os = os_string;
+	
+		bstring vendor= (bstring)malloc(sizeof(tagBstring));
+		vendor->mlen= in_asset->os->bvendor->mlen;
+		vendor->slen= in_asset->os->bvendor->slen;
+		vendor->data= in_asset->os->bvendor->data;
+		os->vendor = vendor;
+
+		os->detection= in_asset->os->detection;
+
+		bstring raw_fp= (bstring)malloc(sizeof(tagBstring));
+		raw_fp->mlen= in_asset->os->raw_fp->mlen;
+		raw_fp->slen= in_asset->os->raw_fp->slen;
+		raw_fp->data= in_asset->os->raw_fp->data;
+		os->raw_fp = raw_fp;
+
+		bstring matched_fp= (bstring)malloc(sizeof(tagBstring));
+		matched_fp->mlen= in_asset->os->matched_fp->mlen;
+		matched_fp->slen= in_asset->os->matched_fp->slen;
+		matched_fp->data= in_asset->os->matched_fp->data;
+		os->matched_fp = matched_fp;
+		
+
+		os->match_os= in_asset->os->match_os;
+		os->match_desc= in_asset->os->match_desc;
+  
+		os->port= in_asset->os->port;
+		os->ttl= in_asset->os->ttl;
+		os->mtu= in_asset->os->mtu;
+		os->uptime= in_asset->os->uptime;
+
+		printf("\n--------------check put os finished --------------------\n");
+		ori_asset->os = os;
+	}
+
+	printf("\n--------------check put asset before put asset per sip--------------------\n");
+	put_asset_per_sip(in_asset->s_ip, ori_asset);
+}
+
+
 
 
 void showPutConnState(){
@@ -292,7 +404,6 @@ int local_action_get_one_perflow(Match *match){
         pthread_mutex_lock(&ActionEntryLock);
 	int hash = match->hash;
  	int cxid = match->cxid;
-	printf("local get one action per flow ---finished read match\n");
 	actionState *action_state = action_bucket[hash];
 	while(action_state != NULL){
 		printf("local get one action per flow ---while find the right action\n");
@@ -303,63 +414,11 @@ int local_action_get_one_perflow(Match *match){
 		}
 
 		printf("local get one action per flow ---find the action\n");
-		ActionState* action_perflow = (ActionState*)malloc(sizeof(ActionState));;
-		action_state__init(action_perflow);
+		//showActionState(action_state);
 
-        	action_perflow->has_start_time=1; 
-        	action_perflow->start_time = action_state->start_time;
-		action_perflow->has_last_pkt_time=1;
-		action_perflow->last_pkt_time = action_state->last_pkt_time;
-		action_perflow->has_cxid=1;
-		action_perflow->cxid = action_state->cxid;
-		action_perflow->has_reversed=1;		
-		action_perflow->reversed = action_state->reversed;
-		action_perflow->has_af=1;		
-		action_perflow->af = action_state->af;
-		action_perflow->has_s_total_pkts=1;	
-		action_perflow->s_total_pkts = action_state->s_total_pkts;
-		action_perflow->has_s_total_bytes=1;
-		action_perflow->s_total_bytes = action_state->s_total_bytes;
-		action_perflow->has_d_total_pkts=1;		
-		action_perflow->d_total_pkts = action_state->d_total_pkts;
-		action_perflow->has_d_total_bytes=1;		
-		action_perflow->d_total_bytes = action_state->d_total_bytes;
-		action_perflow->has_s_tcpflags=1;
-		action_perflow->s_tcpflags = action_state->s_tcpFlags;
-		action_perflow->has_pad=1;
-		action_perflow->pad = action_state->__pad__;
-		action_perflow->has_d_tcpflags=1;		
-		action_perflow->d_tcpflags = action_state-> d_tcpFlags;
-		action_perflow->has_check = 1;
-		action_perflow->check = action_state->check;
-		action_perflow->has_hash = 1;
-		action_perflow->hash = action_state->hash;
-		printf("local get one action per flow ---check c/s asset\n");
-		Asset* c_asset = serialize_c_asset(action_state);
-		if(c_asset != NULL){
-			action_perflow->c_asset = c_asset;
-			action_perflow->has_s_ip= 1;
-			action_perflow->s_ip = match->nw_src;
-		}
-
-		Asset* s_asset = serialize_s_asset(action_state);
-		if(s_asset != NULL){
-			action_perflow->s_asset = s_asset;
-			action_perflow->has_d_ip= 1;
-			action_perflow->d_ip = match->nw_dst;
-		}
-
-		printf("local get one action per flow ---check c/s asset finished\n");
-		MyActionMessage mes;
-        	my_action_message__init(&mes);	
-        	mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionStateType;
-        	mes.message_case = MY_ACTION_MESSAGE__MESSAGE_ACTION_STATE;
-        	mes.actionstate = action_perflow;
- 
-        	int len = my_action_message__get_packed_size(&mes);
-        	//printf("size of Perflow : %u\n", len);
-        	void *buf = malloc(len);
-        	my_action_message__pack(&mes, buf);
+		ProtoObject *proto_object = serialize_action_state(action_state);
+		uint8_t* buf = proto_object->buf;
+		int len = proto_object->length;
 
 		int result = action_send_perflow(buf, len);    
        		 if(result < 0){
@@ -367,8 +426,7 @@ int local_action_get_one_perflow(Match *match){
 		}
 		action_state = action_state->next;
 	        printf("local get one action per flow ---send successful\n");
-		free(buf);
-		free(action_perflow);
+		free(proto_object);
 		break;
 		
 	}
@@ -409,7 +467,7 @@ static void *action_sender(void *arg){
 }
 
 int local_conn_get_perflow(Key key){
-     printf("start conn get perflow");
+     printf("start conn get perflow\n");
      printf("local  key.dl_type %x\n", key.dl_type);
      printf("key.nw_proto %u\n",key.nw_proto);
  
@@ -421,6 +479,8 @@ int local_conn_get_perflow(Key key){
         connState *conn_state = conn_bucket[h];
         while (conn_state != NULL)
         {
+
+		
 		//printf("local key.wildcards & WILDCARD_DL_TYPE %d\n", key.wildcards & WILDCARD_DL_TYPE);
 		//printf("local key.wildcards & WILDCARD_NW_PROTO %d\n", key.wildcards & WILDCARD_NW_PROTO);
 		//printf("localconn_head[i]->hw_proto %u\n", conn_state->hw_proto);
@@ -440,20 +500,21 @@ int local_conn_get_perflow(Key key){
 		        }
 
 	    
+	  
+	    if(1 == count){		
 
+		
 	     int err;
 	     if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)conn_state))!=0)
              {
              	perror("pthread_create error");
              }
-	     count++;
+	   
 
 	     
 	     Match* match = (Match*)malloc(sizeof(Match));
 	     match->hash = conn_state->hash;
 	     match->cxid = conn_state->cxid;
-	     match->nw_src = conn_state->s_ip.s6_addr32[0];
-	     match->nw_dst = conn_state->d_ip.s6_addr32[0];
  	     //printf("local_get_conn hash %d\n", match->hash);
 	     //printf("loca_get_conn cxid %d\n", match->cxid);
 	
@@ -463,8 +524,10 @@ int local_conn_get_perflow(Key key){
              {
                  perror("pthread_create error");
              }
-
-
+		
+	 	return 1;
+	   }
+		count++;	
 	
 	        
            // Move on to next connection

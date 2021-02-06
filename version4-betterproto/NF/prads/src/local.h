@@ -9,23 +9,29 @@ typedef struct
 {
     int cxid;
     int hash;
-    uint32_t nw_src;
-    uint32_t nw_dst;
-
 }Match;
+
+typedef struct
+{
+    uint8_t* buf;
+    int length;
+
+}ProtoObject;
+
+
 
 
 ///// FUNCTION PROTOTYPES ////////////////////////////////////////////////////
 int local_conn_get_one_perflow(connState* conn_state);
 int local_conn_get_perflow();
-static void *conn_sender(void *arg);
-
-static void *action_sender(void *arg);
-int local_action_get_one_perflow(Match *match);
-
 int local_conn_put_perflow(ConnState* recv_state);
+
+int local_action_get_one_perflow(Match *match);
 int local_action_get_perflow();
 int local_action_put_perflow(ActionState* recv_state);
+
+ProtoObject* serialize_action_state(actionState* action_state);
+
 
 void showPutConnState();
 void showPutActionState();
@@ -35,5 +41,10 @@ void showAllState();
 
 void showConnState(connState* conn_state);
 void showActionState(actionState* action_state);
+
+
+void showAllAssets();
+
+
 
 #endif

@@ -44,6 +44,9 @@ int connection_tracking(packetinfo *pi);
 void reverse_pi_cxt(packetinfo *pi);
 void reverse_pi_conn_action(packetinfo *pi);
 
+
+void showActionState(actionState* action_state);
+
 extern uint64_t cxtrackerid;
 extern actionState *action_bucket[BUCKET_SIZE];
 

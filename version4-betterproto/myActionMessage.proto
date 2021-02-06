@@ -61,8 +61,6 @@ message ActionState {
         optional fixed32 hash=14;      
 	optional Asset  c_asset = 15;
 	optional Asset  s_asset = 16; 
-	optional fixed32 s_ip = 17;
-        optional fixed32 d_ip = 18;
 }
 
 message ActionPutPerflowMsg {
