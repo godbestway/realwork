@@ -97,7 +97,7 @@ int local_conn_put_perflow(ConnState* recv_state){
 //+++
 
 
-    printf("\n--------------check first time--------------------\n");
+    //printf("\n--------------check first time--------------------\n");
     //showAllCxid();
     pthread_mutex_unlock(&ConnEntryLock);
   
@@ -108,7 +108,7 @@ int local_conn_put_perflow(ConnState* recv_state){
 
 int local_action_put_perflow(ActionState* recv_state){
 	
-    printf("receive action state, begin to putPerFlow");
+    printf("receive action state, begin to putPerFlow\n");
     pthread_mutex_lock(&ActionEntryLock);
     actionState *action_state = NULL;
     action_state =(actionState*)malloc(sizeof(actionState));
@@ -178,8 +178,6 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 	ori_asset->last_seen = in_asset->last_seen;
 	//ori_asset->removed = 1;
 
-	serv_asset* services;
-	os_asset* os;
 	if(in_asset->services != NULL){
 		serv_asset* services = (serv_asset*)malloc(sizeof(serv_asset));
 		printf("\n--------------check put services init--------------------\n");
@@ -191,18 +189,23 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 		services->port= in_asset->services->port;
 		services->ttl= in_asset->services->ttl;
 
-		bstring service= (bstring)malloc(sizeof(tagBstring));
-		service->mlen= in_asset->services->bservice->mlen;
-		service->slen= in_asset->services->bservice->slen;
-		service->data= in_asset->services->bservice->data;
-		services->service =service;
+		bstring service;
+		if(in_asset->services->bservice != NULL){
+			bstring service= (bstring)malloc(sizeof(tagBstring));
+			service->mlen= in_asset->services->bservice->mlen;
+			service->slen= in_asset->services->bservice->slen;
+			service->data= in_asset->services->bservice->data;
+			services->service =service;
+		}
 
-
-		bstring application= (bstring)malloc(sizeof(tagBstring));
-		application->mlen= in_asset->services->bapplication->mlen;
-		application->slen= in_asset->services->bapplication->slen;
-		application->data= in_asset->services->bapplication->data;
-		services->application =application;
+		bstring application;
+		if(in_asset->services->bapplication != NULL){
+			bstring application= (bstring)malloc(sizeof(tagBstring));
+			application->mlen= in_asset->services->bapplication->mlen;
+			application->slen= in_asset->services->bapplication->slen;
+			application->data= in_asset->services->bapplication->data;
+			services->application =application;
+		}		
 
 		services->role= in_asset->services->role;
 		services->unknown= in_asset->services->unknown;
@@ -212,46 +215,59 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 	}
 	
 	if(in_asset->os != NULL){
-		os_asset* os = (os_asset*)malloc(sizeof(os_asset));
+		os_asset* os_ori = (os_asset*)malloc(sizeof(os_asset));
 		printf("\n--------------check put os init --------------------\n");
-		os->first_seen= in_asset->os->first_seen;
-		os->last_seen= in_asset->os->last_seen;
-		os->i_attempts= in_asset->os->i_attempts;
+		os_ori->first_seen= in_asset->os->first_seen;
+		os_ori->last_seen= in_asset->os->last_seen;
+		os_ori->i_attempts= in_asset->os->i_attempts;
 
-		bstring os_string= (bstring)malloc(sizeof(tagBstring));
-		os_string->mlen= in_asset->os->bos->mlen;
-		os_string->slen= in_asset->os->bos->slen;
-		os_string->data= in_asset->os->bos->data;
-		os->os = os_string;
+		bstring bos;
+		if(in_asset->os->bos != NULL){
+			bstring os_string= (bstring)malloc(sizeof(tagBstring));
+			os_string->mlen= in_asset->os->bos->mlen;
+			os_string->slen= in_asset->os->bos->slen;
+			os_string->data= in_asset->os->bos->data;
+			os_ori->os = os_string;
+		}
 	
-		bstring vendor= (bstring)malloc(sizeof(tagBstring));
-		vendor->mlen= in_asset->os->bvendor->mlen;
-		vendor->slen= in_asset->os->bvendor->slen;
-		vendor->data= in_asset->os->bvendor->data;
-		os->vendor = vendor;
+		bstring bvendor;
+		if(in_asset->os->bvendor != NULL){
+			bstring vendor= (bstring)malloc(sizeof(tagBstring));
+			vendor->mlen= in_asset->os->bvendor->mlen;
+			vendor->slen= in_asset->os->bvendor->slen;
+			vendor->data= in_asset->os->bvendor->data;
+			os_ori->vendor = vendor;
+		}
 
-		os->detection= in_asset->os->detection;
 
-		bstring raw_fp= (bstring)malloc(sizeof(tagBstring));
-		raw_fp->mlen= in_asset->os->raw_fp->mlen;
-		raw_fp->slen= in_asset->os->raw_fp->slen;
-		raw_fp->data= in_asset->os->raw_fp->data;
-		os->raw_fp = raw_fp;
+		os_ori->detection= in_asset->os->detection;
 
-		bstring matched_fp= (bstring)malloc(sizeof(tagBstring));
-		matched_fp->mlen= in_asset->os->matched_fp->mlen;
-		matched_fp->slen= in_asset->os->matched_fp->slen;
-		matched_fp->data= in_asset->os->matched_fp->data;
-		os->matched_fp = matched_fp;
+		bstring raw_fp;
+		if(in_asset->os->raw_fp != NULL){
+			bstring raw_fp= (bstring)malloc(sizeof(tagBstring));
+			raw_fp->mlen= in_asset->os->raw_fp->mlen;
+			raw_fp->slen= in_asset->os->raw_fp->slen;
+			raw_fp->data= in_asset->os->raw_fp->data;
+			os_ori->raw_fp = raw_fp;
+		}		
 		
+		
+		bstring matched_fp;
+		if(in_asset->os->matched_fp != NULL){
+			bstring matched_fp= (bstring)malloc(sizeof(tagBstring));
+			matched_fp->mlen= in_asset->os->matched_fp->mlen;
+			matched_fp->slen= in_asset->os->matched_fp->slen;
+			matched_fp->data= in_asset->os->matched_fp->data;
+			os_ori->matched_fp = matched_fp;
+		}
 
-		os->match_os= in_asset->os->match_os;
-		os->match_desc= in_asset->os->match_desc;
+		os_ori->match_os= in_asset->os->match_os;
+		os_ori->match_desc= in_asset->os->match_desc;
   
-		os->port= in_asset->os->port;
-		os->ttl= in_asset->os->ttl;
-		os->mtu= in_asset->os->mtu;
-		os->uptime= in_asset->os->uptime;
+		os_ori->port= in_asset->os->port;
+		os_ori->ttl= in_asset->os->ttl;
+		os_ori->mtu= in_asset->os->mtu;
+		os_ori->uptime= in_asset->os->uptime;
 
 		printf("\n--------------check put os finished --------------------\n");
 		ori_asset->os = os;
@@ -332,9 +348,8 @@ void showPutActionState(){
 }
 
 
-int local_conn_get_one_perflow(connState* conn_state){
-	 printf("local get one conn per flow\n");	
-		
+int local_conn_get_one_perflow(connState* conn_state){	
+	printf("local get conn one per flow\n");
 	ConnState* conn_perflow = (ConnState*)malloc(sizeof(ConnState));
 	conn_state__init(conn_perflow);
 
@@ -376,6 +391,8 @@ int local_conn_get_one_perflow(connState* conn_state){
 	conn_perflow->has_cxid=1;
 	conn_perflow->cxid = cxid;
 
+
+	printf("local get conn one per flow------middle\n");
         MyConnMessage mes;
         my_conn_message__init(&mes);
    
@@ -384,7 +401,7 @@ int local_conn_get_one_perflow(connState* conn_state){
         mes.connstate =conn_perflow;
  
         int len = my_conn_message__get_packed_size(&mes);
-        //printf("size of Perflow : %u\n", len);
+        printf("size of Perflow : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -392,6 +409,7 @@ int local_conn_get_one_perflow(connState* conn_state){
        	if(result < 0){
 			return -1;
 	}
+	printf("local get one conn per flow---send successful\n");
 	free(buf);
 	free(conn_perflow);
 			
@@ -408,13 +426,13 @@ int local_action_get_one_perflow(Match *match){
 	while(action_state != NULL){
 		printf("local get one action per flow ---while find the right action\n");
 		if(action_state->cxid != cxid){
-			//printf("get one action cxid middle %d\n",head->cxid);
+			printf("get one action cxid middle\n ");
 			action_state = action_state->next;
 			continue;
 		}
 
 		printf("local get one action per flow ---find the action\n");
-		//showActionState(action_state);
+		showActionState(action_state);
 
 		ProtoObject *proto_object = serialize_action_state(action_state);
 		uint8_t* buf = proto_object->buf;
@@ -430,7 +448,7 @@ int local_action_get_one_perflow(Match *match){
 		break;
 		
 	}
-	//printf("action end----------------------\n");
+	printf("action end----------------------\n");
 	pthread_mutex_unlock(&ActionEntryLock);
 	printf("local get one action per flow ---unlock\n");
 	free(match);
@@ -457,8 +475,8 @@ static void *action_sender(void *arg){
 	printf("start a action sender\n");
 	Match *match = (Match*)arg;
 	
-	//printf("match hash %d\n", hash);
-	//printf("match cxid %d\n", cxid);
+	printf("match hash %d\n", match->hash);
+	printf("match cxid %d\n", match->cxid);
 	int send_action = local_action_get_one_perflow(match);
 	if(send_action < 0){
 		printf("send failed");
@@ -468,8 +486,8 @@ static void *action_sender(void *arg){
 
 int local_conn_get_perflow(Key key){
      printf("start conn get perflow\n");
-     printf("local  key.dl_type %x\n", key.dl_type);
-     printf("key.nw_proto %u\n",key.nw_proto);
+     //printf("local  key.dl_type %x\n", key.dl_type);
+     //printf("key.nw_proto %u\n",key.nw_proto);
  
     int count = 0;
     int h = 0;
@@ -481,6 +499,11 @@ int local_conn_get_perflow(Key key){
         {
 
 		
+		//if(count == 1){
+		//	printf("count == 1\n");
+		//	return 1; 
+		//}
+
 		//printf("local key.wildcards & WILDCARD_DL_TYPE %d\n", key.wildcards & WILDCARD_DL_TYPE);
 		//printf("local key.wildcards & WILDCARD_NW_PROTO %d\n", key.wildcards & WILDCARD_NW_PROTO);
 		//printf("localconn_head[i]->hw_proto %u\n", conn_state->hw_proto);
@@ -499,17 +522,31 @@ int local_conn_get_perflow(Key key){
 		                continue;
 		        }
 
+
+		int send_conn = local_conn_get_one_perflow(conn_state);
+		if(send_conn < 0){
+			printf("send failed");
+		}
+		
+
+		Match* match = (Match*)malloc(sizeof(Match));
+	     	match->hash = conn_state->hash;
+	     	match->cxid = conn_state->cxid;
+		int send_action = local_action_get_one_perflow(match);
+		if(send_action < 0){
+			printf("send failed");
+		}
 	    
 	  
-	    if(1 == count){		
+	    //if(1 == count){		
 
 		
-	     int err;
+	    /* int err;
 	     if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)conn_state))!=0)
              {
              	perror("pthread_create error");
              }
-	   
+	     
 
 	     
 	     Match* match = (Match*)malloc(sizeof(Match));
@@ -524,9 +561,9 @@ int local_conn_get_perflow(Key key){
              {
                  perror("pthread_create error");
              }
-		
-	 	return 1;
-	   }
+		*/
+	 	//return 1;
+	   //}
 		count++;	
 	
 	        

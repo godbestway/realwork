@@ -1105,9 +1105,9 @@ void game_over()
         end_logging();
         if(!ISSET_CONFIG_QUIET(config)){
            print_prads_stats();
-	   showAllState();
-	   showAllAssets();
-           //showAllCxid();
+	   //showAllState();
+	   //showAllAssets();
+           showAllCxid();
            if(!config.pcap_file)
                print_pcap_stats();
         }

@@ -57,7 +57,7 @@ int send_conn_syn_message(int conn){
         mes.connsyn = &syn;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of MyMessage : %u\n", len);
+        //printf("size of MyMessage : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -101,7 +101,7 @@ int send_action_syn_message(int conn){
         mes.actionsyn = &syn;
  
         int len = my_action_message__get_packed_size(&mes);
-        printf("size of MyMessage : %u\n", len);
+        //printf("size of MyMessage : %u\n", len);
         void *buf = malloc(len);
         my_action_message__pack(&mes, buf);
 

@@ -27,7 +27,7 @@ int connac_action_state = -1;
 
 
 int action_send_getPerflowAck(int count){
-        printf("send action getPerflowAck\n");
+        //printf("send action getPerflowAck\n");
 
 	ActionGetPerflowAckMsg	actionGetPerflowAckMsg;
 	action_get_perflow_ack_msg__init(&actionGetPerflowAckMsg);
@@ -42,7 +42,7 @@ int action_send_getPerflowAck(int count){
         mes.actiongetperflowackmsg = &actionGetPerflowAckMsg;
  
         int len = my_action_message__get_packed_size(&mes);
-        printf("size of getPerflowAck : %u\n", len);
+        //printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
         my_action_message__pack(&mes, buf);
 
@@ -58,7 +58,7 @@ int action_send_getPerflowAck(int count){
 }
 
 int action_send_putPerflowAck(int hash, int cxid){
-	printf("send action putPerflowAck\n");
+	//printf("send action putPerflowAck\n");
 
 	ActionPutPerflowAckMsg	actionPutPerflowAckMsg;
 	action_put_perflow_ack_msg__init(&actionPutPerflowAckMsg);
@@ -76,7 +76,7 @@ int action_send_putPerflowAck(int hash, int cxid){
         mes.actionputperflowackmsg = &actionPutPerflowAckMsg;
  
         int len = my_action_message__get_packed_size(&mes);
-        printf("size of getPerflowAck : %u\n", len);
+        //printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
         my_action_message__pack(&mes, buf);
 
@@ -125,9 +125,9 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
     pthread_mutex_lock(&connac_action_lock_get);
 
-    INFO_PRINT("receive getPerflow msg and try to get states");
+    //INFO_PRINT("receive getPerflow msg and try to get states");
     count = connac_locals->action_get_perflow(key);
-    printf("perflow count %d",count);
+    //printf("perflow count %d",count);
     action_send_getPerflowAck(count);    
 
     pthread_mutex_unlock(&connac_action_lock_get);
@@ -145,23 +145,23 @@ static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
     }
 
     ActionState* state = actionPutPerflow_recv->state;
-    printf("state count\n");
+    //printf("state count\n");
     connac_locals->action_put_perflow(state);
-    int32_t hash = state->hash;
-    printf("state->hash %u \n",hash);
-    uint64_t cxid = state->cxid;
-    printf("state->cxid %lu\n",cxid);
+    //int32_t hash = state->hash;
+    //printf("state->hash %u \n",hash);
+    //uint64_t cxid = state->cxid;
+    //printf("state->cxid %lu\n",cxid);
     action_send_putPerflowAck(state->hash, state->cxid);
 }
 
 
 static void *state_handler(void *arg)
 {
-    INFO_PRINT("State handling thread started");
+    INFO_PRINT("Action handling thread started");
 
     while (1)
     {
-        INFO_PRINT("while.....action....\n");        
+        //INFO_PRINT("while.....action....\n");        
 	// Attempt to read a JSON string
 
 
@@ -174,10 +174,10 @@ static void *state_handler(void *arg)
 
 
 
-        INFO_PRINT("while...connread...finish...\n");
+        //INFO_PRINT("while...connread...finish...\n");
 
 	int data_type = myActionMessage.data_type;
-        printf("data_type : %d\n",data_type );
+        //printf("data_type : %d\n",data_type );
 
 
         //printf("MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType: %d", MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType);

@@ -33,7 +33,7 @@ static void action_writeRawVarint32(int conn, int value);
 int send_conn_syn_message(int conn){
 
 
-        printf("try to build a syn Message");
+        //printf("try to build a syn Message");
 	ConnSyn syn;
         conn_syn__init(&syn);
 
@@ -41,8 +41,8 @@ int send_conn_syn_message(int conn){
         char host[1024];
         memset(host, 0, 1024);
         gethostname(host, 1024);
-        printf("hostname %s\n", host);
-        printf("pid %d\n",pid);
+        //printf("hostname %s\n", host);
+        //printf("pid %d\n",pid);
 
 	syn.has_pid = 1;
     	syn.pid=pid;
@@ -57,7 +57,7 @@ int send_conn_syn_message(int conn){
         mes.connsyn = &syn;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of MyMessage : %u\n", len);
+        //printf("size of MyMessage : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -77,7 +77,7 @@ int send_conn_syn_message(int conn){
 int send_action_syn_message(int conn){
 
 
-        printf("try to build a syn Message");
+        //printf("try to build a syn Message");
 	ActionSyn syn;
         action_syn__init(&syn);
 
@@ -85,8 +85,8 @@ int send_action_syn_message(int conn){
         char host[1024];
         memset(host, 0, 1024);
         gethostname(host, 1024);
-        printf("hostname %s\n", host);
-        printf("pid %d\n",pid);
+        //printf("hostname %s\n", host);
+        //printf("pid %d\n",pid);
 
 	syn.has_pid = 1;
     	syn.pid=pid;
@@ -101,7 +101,7 @@ int send_action_syn_message(int conn){
         mes.actionsyn = &syn;
  
         int len = my_action_message__get_packed_size(&mes);
-        printf("size of MyMessage : %u\n", len);
+        //printf("size of MyMessage : %u\n", len);
         void *buf = malloc(len);
         my_action_message__pack(&mes, buf);
 

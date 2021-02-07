@@ -204,6 +204,7 @@ Bstring* pack_bstring_struct(bstring ori_bstring){
 	new_bstring->mlen = ori_bstring->mlen;
 	new_bstring->has_slen = 1;
 	new_bstring->slen = ori_bstring->slen;
+	printf(" pack a bstring middle\n");
 	new_bstring->data = (char*)malloc(BSTRING_LEN);
   	new_bstring->data = ori_bstring->data;
 	printf(" pack a bstring finish\n");
@@ -225,14 +226,24 @@ OsAsset* pack_os_asset_struct(os_asset *os_ori){
   	os_asset->has_i_attempts=1;
   	os_asset->i_attempts=os_ori->i_attempts;
 
-	os_asset->bvendor = pack_bstring_struct(os_ori->vendor);
-	os_asset->bos  = pack_bstring_struct(os_ori->os);
+	if(os_ori->vendor != NULL){
+		os_asset->bvendor = pack_bstring_struct(os_ori->vendor);
+	}
+
+	if(os_ori->os != NULL){
+		os_asset->bos  = pack_bstring_struct(os_ori->os);
+	}
 
   	os_asset->has_detection=1;
   	os_asset->detection = os_ori->detection;
 
-  	os_asset->raw_fp = pack_bstring_struct(os_ori->raw_fp);
-  	os_asset->matched_fp = pack_bstring_struct(os_ori->matched_fp);
+	if(os_ori->raw_fp != NULL){
+  		os_asset->raw_fp = pack_bstring_struct(os_ori->raw_fp);
+	}
+	if(os_ori->matched_fp != NULL){
+  		os_asset->matched_fp = pack_bstring_struct(os_ori->matched_fp);
+	}
+
 	printf(" pack a  os asset middle--2\n");
         os_asset->match_os = (char*)malloc(BSTRING_LEN);
 	os_asset->match_os = os_ori->match_os;
@@ -271,14 +282,18 @@ ServAsset* pack_ser_asset_struct(serv_asset *services){
   	serv_asset->has_ttl = 1;
   	serv_asset->ttl=services->ttl;
 
-	serv_asset->bservice = pack_bstring_struct(services->service);
+	if(services->service != NULL){
+		serv_asset->bservice = pack_bstring_struct(services->service);
+	}
 
-	serv_asset->bapplication = pack_bstring_struct(services->application);
-	
+	if(services->application != NULL){
+		serv_asset->bapplication = pack_bstring_struct(services->application);
+	}
   	serv_asset->has_role = 1;
   	serv_asset->role=services->role;
   	serv_asset->has_unknown = 1;
   	serv_asset->unknown=services->unknown;
+	printf(" pack a serv asset finished\n");
 
 	return serv_asset;
 
@@ -363,35 +378,37 @@ ProtoObject* serialize_action_state(actionState* action_state){
 		action_perflow->check = action_state->check;
 		action_perflow->has_hash = 1;
 		action_perflow->hash = action_state->hash;
-		//printf("local get one action per flow ---check c/s asset\n");
+		printf("local get one action per flow ---check c/s asset\n");
 
 
 		if (action_state->s_asset != NULL)
     		{
-
+			
+			//showAssetState(action_state->s_asset);
         		if (action_state->s_asset->removed == 1)
         		{
- 	   			 //printf(" pack a s asset struct return null\n");
+ 	   			 printf(" pack a s asset struct return null\n");
            			 action_perflow->s_asset = NULL;
         		}
-        		//action_state->s_asset->removed = 1;
+        		action_state->s_asset->removed = 1;
 			printf(" pack a s asset struct return s_asset\n");
 			action_perflow->s_asset = pack_asset_struct(action_state->s_asset);
     		}
 		if (action_state->c_asset != NULL)
     		{
-			//printf(" pack a c asset struct start  if 1\n"); 
+			//showAssetState(action_state->c_asset);
+			printf(" pack a c asset struct start  if 1\n"); 
         		if (action_state->c_asset->removed == 1)
         		{
- 	   			 printf(" pack a c asset struct return null\n");
+ 	   			 //printf(" pack a c asset struct return null\n");
            			 action_perflow->c_asset = NULL;
         		}
         		action_state->c_asset->removed = 1;
-			//printf(" pack a s asset struct return s_asset\n");
+			printf(" pack a s asset struct return s_asset\n");
 			action_perflow->c_asset = pack_asset_struct(action_state->c_asset);
     		}
 
-		//printf("local get one action per flow ---check c/s asset finished\n");
+		printf("local get one action per flow ---check c/s asset finished\n");
 		MyActionMessage mes;
         	my_action_message__init(&mes);	
         	mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionStateType;
@@ -399,7 +416,7 @@ ProtoObject* serialize_action_state(actionState* action_state){
         	mes.actionstate = action_perflow;
  
         	int len = my_action_message__get_packed_size(&mes);
-        	//printf("size of Perflow : %u\n", len);
+        	printf("size of Perflow : %u\n", len);
         	void *buf = malloc(len);
         	my_action_message__pack(&mes, buf);
 
@@ -427,7 +444,7 @@ asset* get_asset_per_sip(uint32_t sip)
         if (masset->af == AF_INET && CMP_ADDR4( &masset->ip_addr, sip))
         {
             //INFO_PRINT("get asset_per_sp %d", masset->vlan);
-	    printf("get asset_per_sp %d", masset->vlan);
+	    printf("get asset_per_sp %d\n", masset->vlan);
             /*if (curr != NULL && state != NULL)
             {
                 curr->c_asset = masset;
@@ -634,13 +651,13 @@ void put_asset_per_sip(uint32_t sip, asset* in_asset)
     in_asset->next = NULL;
     in_asset->prev = NULL;
     //INFO_PRINT("[put_asset_per_sip]: Putting asset in the list..for IP %d",  sip);
-    printf("[put_asset_per_sip]: Putting asset in the list..for IP %d",sip); 
+    printf("[put_asset_per_sip]: Putting asset in the list..for IP %d\n",sip); 
     if (l_asset == NULL)
     {
         // Asset struct not found
         // Push the struct into the list
         //INFO_PRINT("[put_asset_per_sip]: Asset structure not found"); 
-	printf("[put_asset_per_sip]: Asset structure not found");
+	printf("[put_asset_per_sip]: Asset structure not found\n");
         uint64_t hash;
         pthread_mutex_lock(&AssetEntryLock);
         hash = ASSET_HASH4(sip);
@@ -659,7 +676,7 @@ void put_asset_per_sip(uint32_t sip, asset* in_asset)
     // Asset struct found update
     // Update the structs if required
     //INFO_PRINT("[put_asset_per_sip]: Asset structure found");
-    printf("[put_asset_per_sip]: Asset structure found");
+    printf("[put_asset_per_sip]: Asset structure found\n");
     if (l_asset->last_seen > in_asset->last_seen)
     { 
 	return; 
@@ -669,7 +686,7 @@ void put_asset_per_sip(uint32_t sip, asset* in_asset)
     l_asset->last_seen = in_asset->last_seen;
      
     //INFO_PRINT("[put_asset_per_sip]: Updating OS and Service Assets");
-    printf("[put_asset_per_sip]: Updating OS and Service Assets");
+    printf("[put_asset_per_sip]: Updating OS and Service Assets\n");
     update_sassets_per_asset(l_asset, in_asset);
     update_osassets_per_asset(l_asset, in_asset);
 
@@ -725,11 +742,11 @@ void update_action_state_asset(packetinfo *pi, asset *masset)
    if(NULL == pi->action_state)
    {
       //INFO_PRINT("[update_cxt_asset] pi->cxt is Null");
-      printf("[update_cxt_asset] pi->cxt is Null");
+      printf("[update_cxt_asset] pi->cxt is Null\n");
       return;
    }
    //INFO_PRINT("[update_cxt_asset] Updating cxt asset");
-   printf("[update_cxt_asset] Updating cxt asset");
+   printf("[update_cxt_asset] Updating cxt asset\n");
    if (pi->sc == SC_CLIENT && pi->action_state->reversed == 0 ) 
    { pi->action_state->c_asset = masset; }
    else if (pi->sc == SC_CLIENT && pi->action_state->reversed == 1 ) 
@@ -1200,7 +1217,7 @@ arp_update:
 
 void del_os_asset(os_asset ** head_oa, os_asset * os)
 {
-
+    printf("delete_os_asset start\n");
     if (os == NULL)
         return;
     os_asset *tmp_oa = NULL;
@@ -1238,7 +1255,7 @@ void del_os_asset(os_asset ** head_oa, os_asset * os)
         prev_oa->next = next_oa;
         next_oa->prev = prev_oa;
     }
-
+    printf("delete_os_asset free\n");
     free(tmp_oa);
     tmp_oa = NULL;
     os = next_oa;
@@ -1248,7 +1265,7 @@ void del_os_asset(os_asset ** head_oa, os_asset * os)
 
 void del_serv_asset(serv_asset ** head_sa, serv_asset * service)
 {
-
+    printf("delete_serv_asset start\n");
     if (service == NULL)
         return;
     serv_asset *tmp_sa = NULL;
@@ -1285,6 +1302,7 @@ void del_serv_asset(serv_asset ** head_sa, serv_asset * service)
         next_sa->prev = prev_sa;
     }
 
+    printf("delete_serv_asset free\n");
     free(service);
     service = NULL;
     service = next_sa;
@@ -1307,6 +1325,7 @@ void del_asset(asset * passet, asset ** bucket_ptr)
      * delete all service assets 
      */
     while (tmp_sa != NULL) {
+	printf("delete serve_asset\n");
         stmp = tmp_sa;
         tmp_sa = tmp_sa->next;
         del_serv_asset(&passet->services, stmp);
@@ -1315,6 +1334,7 @@ void del_asset(asset * passet, asset ** bucket_ptr)
      * delete all os assets 
      */
     while (tmp_oa != NULL) {
+	printf("delete os_asset\n");
         otmp = tmp_oa;
         tmp_oa = tmp_oa->next;
         del_os_asset(&passet->os, otmp);
@@ -1341,6 +1361,7 @@ void del_asset(asset * passet, asset ** bucket_ptr)
     /*
      * Free and set to NULL 
      */
+    printf("free passet\n");
     free(passet);
     passet = NULL;
 }

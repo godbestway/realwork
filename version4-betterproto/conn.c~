@@ -161,7 +161,7 @@ ProtoObject conn_read(int conn)
 	//INFO_PRINT("conn_read_in.....string.........\n");        
 	// Read from connection
         result = read(conn, buf, length - readlen);
-	printf("result %d\n",result);
+	//printf("result %d\n",result);
         // Encountered error
         if (result < 0)
         { 

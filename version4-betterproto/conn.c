@@ -137,7 +137,7 @@ ProtoObject conn_read(int conn)
     int readlen = 0, result = 0;
 
     
-    INFO_PRINT("conn_read.........\n");
+    //INFO_PRINT("conn_read.........\n");
 
     int length;
     length = conn_readRawVarint32(conn);
@@ -189,7 +189,7 @@ ProtoObject action_read(int conn)
     int readlen = 0, result = 0;
 
     
-    INFO_PRINT("action_read.........\n");
+    //INFO_PRINT("action_read.........\n");
 
     int length;
     length = action_readRawVarint32(conn);

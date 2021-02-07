@@ -29,7 +29,7 @@ int drop = 0;
 
 
 int conn_send_getPerflowAck(int count){
-        printf("send conn getPerflowAck\n");
+        //printf("send conn getPerflowAck\n");
 
 	ConnGetPerflowAckMsg	connGetPerflowAckMsg;
 	conn_get_perflow_ack_msg__init(&connGetPerflowAckMsg);
@@ -44,7 +44,7 @@ int conn_send_getPerflowAck(int count){
         mes.conngetperflowackmsg = &connGetPerflowAckMsg;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of getPerflowAck : %u\n", len);
+        //printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -60,7 +60,7 @@ int conn_send_getPerflowAck(int count){
 }
 
 int conn_send_putPerflowAck(int hash, int cxid){
-	printf("send conn putPerflowAck\n");
+	//printf("send conn putPerflowAck\n");
 
 	ConnPutPerflowAckMsg connPutPerflowAckMsg;
 	conn_put_perflow_ack_msg__init(&connPutPerflowAckMsg);
@@ -78,7 +78,7 @@ int conn_send_putPerflowAck(int hash, int cxid){
         mes.connputperflowackmsg = &connPutPerflowAckMsg;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of getPerflowAck : %u\n", len);
+        //printf("size of getPerflowAck : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -127,10 +127,10 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
 
     pthread_mutex_lock(&connac_conn_lock_get);
  //   if(strcmp(key,"all")==0){
-    INFO_PRINT("receive getPerflow msg and try to get states");
+   // INFO_PRINT("receive getPerflow msg and try to get states");
     count = connac_locals->conn_get_perflow(key);
 //	} 
-   printf("perflow count %d",count);
+   //printf("perflow count %d",count);
    conn_send_getPerflowAck(count);
    action_send_getPerflowAck(count);
    pthread_mutex_unlock(&connac_conn_lock_get);
@@ -145,7 +145,7 @@ static int handle_put_perflow(ConnPutPerflowMsg* connPutPerflow_recv)
     }
 
     ConnState* state = connPutPerflow_recv->state;
-    printf("state received");
+    //printf("state received");
     connac_locals->conn_put_perflow(state);
     conn_send_putPerflowAck(state->hash, state->cxid);
 
@@ -157,7 +157,7 @@ static void *state_handler(void *arg)
 
     while (1)
     {
-        INFO_PRINT("while....conn.....\n");        
+        //INFO_PRINT("while....conn.....\n");        
 	// Attempt to read a JSON string
 	ProtoObject protoObject;
 
@@ -165,14 +165,14 @@ static void *state_handler(void *arg)
 
 	MyConnMessage myConnMessage = *my_conn_message__unpack(NULL,protoObject.length,protoObject.object);
 
-        printf(" myConnMessage type %d\n ", myConnMessage.data_type);
+        //printf(" myConnMessage type %d\n ", myConnMessage.data_type);
 	
 	 if(myConnMessage.data_type == MY_CONN_MESSAGE__DATA_TYPE__ConnGetPerflowMsgType){
 		ConnGetPerflowMsg* connGetPerflowMsg = myConnMessage.conngetperflowmsg;
 		handle_get_perflow(connGetPerflowMsg);
 
 	}else if(myConnMessage.data_type == MY_CONN_MESSAGE__DATA_TYPE__ConnPutPerflowMsgType){
-		printf("ConnPutPerflowMsgType received\n");
+		//printf("ConnPutPerflowMsgType received\n");
 		ConnPutPerflowMsg *connPutPerflowMsg = myConnMessage.connputperflowmsg;
 		handle_put_perflow(connPutPerflowMsg);
 
