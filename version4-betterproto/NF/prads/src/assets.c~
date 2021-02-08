@@ -197,28 +197,28 @@ void update_os_stats(uint8_t detection)
 
 ///// CONNAC Support Functions from OpenNF///////////////////////////////////////////////
 Bstring* pack_bstring_struct(bstring ori_bstring){
-	printf(" pack a bstring\n");
+	//printf(" pack a bstring\n");
 	Bstring* new_bstring = (Bstring*)malloc(sizeof(Bstring));
 	bstring__init(new_bstring);
 	new_bstring->has_mlen = 1;
 	new_bstring->mlen = ori_bstring->mlen;
 	new_bstring->has_slen = 1;
 	new_bstring->slen = ori_bstring->slen;
-	printf(" pack a bstring middle\n");
+	//printf(" pack a bstring middle\n");
 	new_bstring->data = (char*)malloc(BSTRING_LEN);
   	new_bstring->data = ori_bstring->data;
-	printf(" pack a bstring finish\n");
+	//printf(" pack a bstring finish\n");
 	return new_bstring;
 
 }
 
 OsAsset* pack_os_asset_struct(os_asset *os_ori){
 	// OS ASSET SERILIZE
-	printf(" pack a os asset\n");
+	//printf(" pack a os asset\n");
 	OsAsset* os_asset = (OsAsset*)malloc(sizeof(OsAsset));
 	os_asset__init(os_asset);
 
-	printf(" pack a  os asset middle\n");
+	//printf(" pack a  os asset middle\n");
 	os_asset->has_first_seen=1;
   	os_asset->first_seen=os_ori->first_seen;
   	os_asset->has_last_seen=1;
@@ -244,7 +244,7 @@ OsAsset* pack_os_asset_struct(os_asset *os_ori){
   		os_asset->matched_fp = pack_bstring_struct(os_ori->matched_fp);
 	}
 
-	printf(" pack a  os asset middle--2\n");
+	//printf(" pack a  os asset middle--2\n");
         os_asset->match_os = (char*)malloc(BSTRING_LEN);
 	os_asset->match_os = os_ori->match_os;
         os_asset->match_desc = (char*)malloc(BSTRING_LEN);
@@ -257,18 +257,18 @@ OsAsset* pack_os_asset_struct(os_asset *os_ori){
   	os_asset->ttl=os_ori->ttl;
   	os_asset->has_uptime=1;
   	os_asset->uptime=os_ori->uptime;
-	printf(" pack a  os asset finished--2\n");
+	//printf(" pack a  os asset finished--2\n");
 	return os_asset;
 
 }
 
 ServAsset* pack_ser_asset_struct(serv_asset *services){
 	// Serv ASSET SERILIZE
-	printf(" pack a serv asset start\n");
+	//printf(" pack a serv asset start\n");
 	ServAsset* serv_asset = (ServAsset*)malloc(sizeof(ServAsset));
 	serv_asset__init(serv_asset);
 
-	printf(" pack a serv asset middle\n");
+	//printf(" pack a serv asset middle\n");
 	serv_asset->has_first_seen = 1;
         serv_asset->first_seen=services->first_seen;
   	serv_asset->has_last_seen=1;
@@ -293,7 +293,7 @@ ServAsset* pack_ser_asset_struct(serv_asset *services){
   	serv_asset->role=services->role;
   	serv_asset->has_unknown = 1;
   	serv_asset->unknown=services->unknown;
-	printf(" pack a serv asset finished\n");
+	//printf(" pack a serv asset finished\n");
 
 	return serv_asset;
 
@@ -304,7 +304,7 @@ Asset* pack_asset_struct(asset* asset_ori){
 	serv_asset *services_ori = asset_ori->services;
 	os_asset *os_ori = asset_ori->os;
 
-	printf(" pack a asset struct start\n");
+	//printf(" pack a asset struct start\n");
 	Asset* asset = (Asset*)malloc(sizeof(Asset));
 	asset__init(asset);
 	
@@ -344,7 +344,7 @@ Asset* pack_asset_struct(asset* asset_ori){
 ProtoObject* serialize_action_state(actionState* action_state){
 
 
-		printf("seriliaze---------------------\n");
+		//printf("seriliaze---------------------\n");
 
 		pthread_mutex_lock(&AssetEntryLock);  
 		ActionState* action_perflow = (ActionState*)malloc(sizeof(ActionState));;
@@ -378,7 +378,7 @@ ProtoObject* serialize_action_state(actionState* action_state){
 		action_perflow->check = action_state->check;
 		action_perflow->has_hash = 1;
 		action_perflow->hash = action_state->hash;
-		printf("local get one action per flow ---check c/s asset\n");
+		//printf("local get one action per flow ---check c/s asset\n");
 
 
 		if (action_state->s_asset != NULL)
@@ -387,28 +387,32 @@ ProtoObject* serialize_action_state(actionState* action_state){
 			//showAssetState(action_state->s_asset);
         		if (action_state->s_asset->removed == 1)
         		{
- 	   			 printf(" pack a s asset struct return null\n");
+ 	   			 //printf(" pack a s asset struct return null\n");
            			 action_perflow->s_asset = NULL;
         		}
-        		action_state->s_asset->removed = 1;
-			printf(" pack a s asset struct return s_asset\n");
-			action_perflow->s_asset = pack_asset_struct(action_state->s_asset);
+			else{
+        			action_state->s_asset->removed = 1;
+				//printf(" pack a s asset struct return s_asset\n");
+				action_perflow->s_asset = pack_asset_struct(action_state->s_asset);
+			}
     		}
 		if (action_state->c_asset != NULL)
     		{
 			//showAssetState(action_state->c_asset);
-			printf(" pack a c asset struct start  if 1\n"); 
+			//printf(" pack a c asset struct start  if 1\n"); 
         		if (action_state->c_asset->removed == 1)
         		{
  	   			 //printf(" pack a c asset struct return null\n");
            			 action_perflow->c_asset = NULL;
         		}
-        		action_state->c_asset->removed = 1;
-			printf(" pack a s asset struct return s_asset\n");
-			action_perflow->c_asset = pack_asset_struct(action_state->c_asset);
+			else{
+        			action_state->c_asset->removed = 1;
+				//printf(" pack a s asset struct return s_asset\n");
+				action_perflow->c_asset = pack_asset_struct(action_state->c_asset);
+			}
     		}
 
-		printf("local get one action per flow ---check c/s asset finished\n");
+		//printf("local get one action per flow ---check c/s asset finished\n");
 		MyActionMessage mes;
         	my_action_message__init(&mes);	
         	mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionStateType;
@@ -416,7 +420,7 @@ ProtoObject* serialize_action_state(actionState* action_state){
         	mes.actionstate = action_perflow;
  
         	int len = my_action_message__get_packed_size(&mes);
-        	printf("size of Perflow : %u\n", len);
+        	//printf("size of Perflow : %u\n", len);
         	void *buf = malloc(len);
         	my_action_message__pack(&mes, buf);
 

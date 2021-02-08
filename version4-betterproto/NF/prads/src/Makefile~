@@ -55,7 +55,7 @@ osx:
 	$(MAKE) BUILD=osx
 
 prads: $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LDFLAGS)
+	$(CC) -g $(CFLAGS) -o $@ $(OBJECTS) $(LDFLAGS)
 
 shm-client: $(SHM_CLIENT_OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $(SHM_CLIENT_OBJECTS) $(LDFLAGS)

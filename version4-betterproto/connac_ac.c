@@ -145,9 +145,9 @@ static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
     }
 
     ActionState* state = actionPutPerflow_recv->state;
-    printf("\n-------------action_hash_before--------------\n");
-    printf("state->hash %u\n",state->hash);
-    printf("\n-------------action_hash_after--------------\n");
+    //printf("\n-------------action_hash_before--------------\n");
+    //printf("state->hash %u\n",state->hash);
+    //printf("\n-------------action_hash_after--------------\n");
     //printf("state count\n");
     connac_locals->action_put_perflow(state);
     //int32_t hash = state->hash;

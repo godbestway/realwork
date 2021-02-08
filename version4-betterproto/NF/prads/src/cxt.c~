@@ -146,13 +146,13 @@ int local_action_put_perflow(ActionState* recv_state){
     pthread_mutex_unlock(&ActionEntryLock);
     // If asset structure is present push it into the asset list.
     if(recv_state->c_asset != NULL){
-	printf("\n--------------c_asset exits--------------------\n");
+	//printf("\n--------------c_asset exits--------------------\n");
 	asset* c_asset = (asset*)malloc(sizeof(asset));
 	put_asset(c_asset, recv_state->c_asset);
 
     }
     if(recv_state->s_asset != NULL){
-	printf("\n--------------s_asset exits--------------------\n");
+	//printf("\n--------------s_asset exits--------------------\n");
 	asset* s_asset = (asset*)malloc(sizeof(asset));
 	put_asset(s_asset, recv_state->s_asset);
     }
@@ -167,7 +167,7 @@ int local_action_put_perflow(ActionState* recv_state){
 
 static void put_asset(asset* ori_asset, Asset *in_asset){
 
-	printf("\n--------------check put asset--------------------\n");
+	//printf("\n--------------check put asset--------------------\n");
         
 	ori_asset->first_seen = in_asset->first_seen;   	
 	ori_asset->last_seen = in_asset->last_seen;
@@ -177,10 +177,12 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 	ori_asset->ip_addr.s6_addr32[0] = in_asset->s_ip;
 	ori_asset->last_seen = in_asset->last_seen;
 	//ori_asset->removed = 1;
+	serv_asset* services;
+	os_asset* os_ori;
 
 	if(in_asset->services != NULL){
-		serv_asset* services = (serv_asset*)malloc(sizeof(serv_asset));
-		printf("\n--------------check put services init--------------------\n");
+		services = (serv_asset*)malloc(sizeof(serv_asset));
+		//printf("\n--------------check put services init--------------------\n");
 
 		services->first_seen= in_asset->services->first_seen;
 		services->last_seen= in_asset->services->last_seen;
@@ -209,14 +211,14 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 
 		services->role= in_asset->services->role;
 		services->unknown= in_asset->services->unknown;
-  		printf("\n--------------check put services finished--------------------\n");
-		ori_asset->services = services;
+  		//printf("\n--------------check put services finished--------------------\n");
 
 	}
+	ori_asset->services = services;
 	
 	if(in_asset->os != NULL){
-		os_asset* os_ori = (os_asset*)malloc(sizeof(os_asset));
-		printf("\n--------------check put os init --------------------\n");
+		os_ori = (os_asset*)malloc(sizeof(os_asset));
+		//printf("\n--------------check put os init --------------------\n");
 		os_ori->first_seen= in_asset->os->first_seen;
 		os_ori->last_seen= in_asset->os->last_seen;
 		os_ori->i_attempts= in_asset->os->i_attempts;
@@ -269,11 +271,12 @@ static void put_asset(asset* ori_asset, Asset *in_asset){
 		os_ori->mtu= in_asset->os->mtu;
 		os_ori->uptime= in_asset->os->uptime;
 
-		printf("\n--------------check put os finished --------------------\n");
-		ori_asset->os = os;
+		//printf("\n--------------check put os finished --------------------\n");
+		
 	}
+	ori_asset->os = os_ori;
 
-	printf("\n--------------check put asset before put asset per sip--------------------\n");
+	//printf("\n--------------check put asset before put asset per sip--------------------\n");
 	put_asset_per_sip(in_asset->s_ip, ori_asset);
 }
 
@@ -392,7 +395,7 @@ int local_conn_get_one_perflow(connState* conn_state){
 	conn_perflow->cxid = cxid;
 
 
-	printf("local get conn one per flow------middle\n");
+	//printf("local get conn one per flow------middle\n");
         MyConnMessage mes;
         my_conn_message__init(&mes);
    
@@ -424,15 +427,15 @@ int local_action_get_one_perflow(Match *match){
  	int cxid = match->cxid;
 	actionState *action_state = action_bucket[hash];
 	while(action_state != NULL){
-		printf("local get one action per flow ---while find the right action\n");
+		//printf("local get one action per flow ---while find the right action\n");
 		if(action_state->cxid != cxid){
 			printf("get one action cxid middle\n ");
 			action_state = action_state->next;
 			continue;
 		}
 
-		printf("local get one action per flow ---find the action\n");
-		showActionState(action_state);
+		//printf("local get one action per flow ---find the action\n");
+		//showActionState(action_state);
 
 		ProtoObject *proto_object = serialize_action_state(action_state);
 		uint8_t* buf = proto_object->buf;
@@ -448,9 +451,9 @@ int local_action_get_one_perflow(Match *match){
 		break;
 		
 	}
-	printf("action end----------------------\n");
+	//printf("action end----------------------\n");
 	pthread_mutex_unlock(&ActionEntryLock);
-	printf("local get one action per flow ---unlock\n");
+	//printf("local get one action per flow ---unlock\n");
 	free(match);
 	return 1;
 }
@@ -523,11 +526,17 @@ int local_conn_get_perflow(Key key){
 		        }
 
 
-		int send_conn = local_conn_get_one_perflow(conn_state);
+		/*int send_conn = local_conn_get_one_perflow(conn_state);
 		if(send_conn < 0){
 			printf("send failed");
-		}
+		}*/
+
 		
+		int err;
+	     	if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)conn_state))!=0)
+             	{
+             		perror("pthread_create error");
+             	}
 
 		Match* match = (Match*)malloc(sizeof(Match));
 	     	match->hash = conn_state->hash;
@@ -540,8 +549,8 @@ int local_conn_get_perflow(Key key){
 	  
 	    //if(1 == count){		
 
-		
-	    /* int err;
+		/*
+	    int err;
 	     if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)conn_state))!=0)
              {
              	perror("pthread_create error");
@@ -898,7 +907,7 @@ connection *cxt_new(packetinfo *pi)
     cxt->reversed = 0;
 
     //showConnection(cxt);
-    showAllCxid();
+    //showAllCxid();
 
     return cxt;
 }
