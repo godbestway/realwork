@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message ConnGetPerflowMsg {
+    optional string key = 1;
+}

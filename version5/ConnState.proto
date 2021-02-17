@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+message ConnState {
+	required int32 data = 1;
+}
+
+
+
