@@ -40,13 +40,12 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     
 //+++
     if(drop == 1){
+	printf("drop == 1");
 	drop_number++;
 	printf("drop_number %d",drop_number);
 	return;
     } 
-    else{
-	printf("drop != 1");
-	}
+    
     struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
 

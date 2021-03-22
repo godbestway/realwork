@@ -66,6 +66,9 @@ message ActionState {
 		CLOSED = 2;
     	} 
 	optional fwState fwstate = 17;
+	optional fixed32 external_ip = 18;
+	optional fixed32 external_port = 19;
+	optional fixed32 nat_hash=20;      
 }
 
 message ActionPutPerflowMsg {

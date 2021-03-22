@@ -127,10 +127,12 @@ struct  _ConnState
   uint64_t cxid;
   protobuf_c_boolean has_hash;
   uint32_t hash;
+  protobuf_c_boolean has_nat_hash;
+  uint32_t nat_hash;
 };
 #define CONN_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&conn_state__descriptor) \
-    , 0,NULL, 0,NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    , 0,NULL, 0,NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 
 
 struct  _ConnPutPerflowMsg

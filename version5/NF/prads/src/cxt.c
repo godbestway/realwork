@@ -1113,6 +1113,8 @@ int conn_cx_track(packetinfo *pi){
     }
     pi->cxid = cxid; 
    // bucket turned upside down didn't yeild anything. new connection
+
+    //judge whether the cxid in pi is set 
     if(cxid == 0)
     {
 	conn_state = conn_cxt_new(pi);

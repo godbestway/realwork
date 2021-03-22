@@ -822,7 +822,7 @@ const ProtobufCEnumDescriptor action_state__fw_state__descriptor =
   action_state__fw_state__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor action_state__field_descriptors[17] =
+static const ProtobufCFieldDescriptor action_state__field_descriptors[20] =
 {
   {
     "start_time",
@@ -1028,6 +1028,42 @@ static const ProtobufCFieldDescriptor action_state__field_descriptors[17] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "external_ip",
+    18,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionState, has_external_ip),
+    offsetof(ActionState, external_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "external_port",
+    19,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionState, has_external_port),
+    offsetof(ActionState, external_port),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "nat_hash",
+    20,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionState, has_nat_hash),
+    offsetof(ActionState, nat_hash),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned action_state__field_indices_by_name[] = {
   4,   /* field[4] = af */
@@ -1037,9 +1073,12 @@ static const unsigned action_state__field_indices_by_name[] = {
   11,   /* field[11] = d_tcpFlags */
   8,   /* field[8] = d_total_bytes */
   7,   /* field[7] = d_total_pkts */
+  17,   /* field[17] = external_ip */
+  18,   /* field[18] = external_port */
   16,   /* field[16] = fwstate */
   13,   /* field[13] = hash */
   1,   /* field[1] = last_pkt_time */
+  19,   /* field[19] = nat_hash */
   10,   /* field[10] = pad */
   3,   /* field[3] = reversed */
   15,   /* field[15] = s_asset */
@@ -1051,7 +1090,7 @@ static const unsigned action_state__field_indices_by_name[] = {
 static const ProtobufCIntRange action_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 17 }
+  { 0, 20 }
 };
 const ProtobufCMessageDescriptor action_state__descriptor =
 {
@@ -1061,7 +1100,7 @@ const ProtobufCMessageDescriptor action_state__descriptor =
   "ActionState",
   "",
   sizeof(ActionState),
-  17,
+  20,
   action_state__field_descriptors,
   action_state__field_indices_by_name,
   1,  action_state__number_ranges,

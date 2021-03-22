@@ -49,7 +49,8 @@ message ConnState {
 	optional int32 hw_proto = 7;            
         optional int32  proto = 8; 
         optional fixed64 cxid=9;
-        optional fixed32 hash=10;      
+        optional fixed32 hash=10;  
+	optional fixed32 nat_hash=10;      
 }
 
 

@@ -148,10 +148,16 @@ struct  _ActionState
   Asset *s_asset;
   protobuf_c_boolean has_fwstate;
   ActionState__FwState fwstate;
+  protobuf_c_boolean has_external_ip;
+  uint32_t external_ip;
+  protobuf_c_boolean has_external_port;
+  uint32_t external_port;
+  protobuf_c_boolean has_nat_hash;
+  uint32_t nat_hash;
 };
 #define ACTION_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&action_state__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, ACTION_STATE__FW_STATE__OPEN }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, ACTION_STATE__FW_STATE__OPEN, 0, 0, 0, 0, 0, 0 }
 
 
 struct  _ActionPutPerflowMsg

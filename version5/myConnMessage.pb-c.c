@@ -614,7 +614,7 @@ const ProtobufCMessageDescriptor conn_get_perflow_ack_msg__descriptor =
   (ProtobufCMessageInit) conn_get_perflow_ack_msg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor conn_state__field_descriptors[10] =
+static const ProtobufCFieldDescriptor conn_state__field_descriptors[11] =
 {
   {
     "ether_dst",
@@ -736,6 +736,18 @@ static const ProtobufCFieldDescriptor conn_state__field_descriptors[10] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "nat_hash",
+    11,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ConnState, has_nat_hash),
+    offsetof(ConnState, nat_hash),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned conn_state__field_indices_by_name[] = {
   8,   /* field[8] = cxid */
@@ -745,6 +757,7 @@ static const unsigned conn_state__field_indices_by_name[] = {
   1,   /* field[1] = ether_src */
   9,   /* field[9] = hash */
   6,   /* field[6] = hw_proto */
+  10,   /* field[10] = nat_hash */
   7,   /* field[7] = proto */
   2,   /* field[2] = s_ip */
   4,   /* field[4] = s_port */
@@ -752,7 +765,7 @@ static const unsigned conn_state__field_indices_by_name[] = {
 static const ProtobufCIntRange conn_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 10 }
+  { 0, 11 }
 };
 const ProtobufCMessageDescriptor conn_state__descriptor =
 {
@@ -762,7 +775,7 @@ const ProtobufCMessageDescriptor conn_state__descriptor =
   "ConnState",
   "",
   sizeof(ConnState),
-  10,
+  11,
   conn_state__field_descriptors,
   conn_state__field_indices_by_name,
   1,  conn_state__number_ranges,

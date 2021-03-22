@@ -688,7 +688,7 @@ void process_with_conn_state(packetinfo *pi){
 
         int hash = get_hash(pi);
     
-        printf("HASH %d\n",hash);
+        //printf("HASH %d\n",hash);
 	pi->hash = hash;
         //SYN ACK Packet
         connState* conn_state = find_conn_state(pi);

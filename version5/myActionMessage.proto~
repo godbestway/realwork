@@ -62,10 +62,13 @@ message ActionState {
 	optional Asset  c_asset = 15;
 	optional Asset  s_asset = 16;
 	enum fwState{
-        	SynType= 1;
-		ActionGetPerflowMsgType = 2;
+        	OPEN= 1;
+		CLOSED = 2;
     	} 
 	optional fwState fwstate = 17;
+	optional fixed32 external_ip = 18;
+	optional fixed32 external_port = 19;
+	optional fixed32 nat_hash=20;      
 }
 
 message ActionPutPerflowMsg {
