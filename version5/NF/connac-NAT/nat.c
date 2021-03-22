@@ -35,12 +35,18 @@
 #include <unistd.h>
 #include <semaphore.h>
 #include <netdb.h>
+#include <CONNAC.h>
 #include "nat.h"
 #include "table.h"
 #include "arp.h"
 
 connState *nat_conn_bucket[BUCKET_SIZE];
 actionState *nat_action_bucket[BUCKET_SIZE];
+//+++
+static int drop_number=0;
+pthread_mutex_t ConnEntryLock;
+pthread_mutex_t ActionEntryLock;
+//+++
 
 /**
  * Return a staticly allocated string buffer containing the IP protocol name
@@ -79,8 +85,9 @@ static void signal_handler(int signal)
         /*pcap_close(interfaces[INTERFACE_INTERNAL].descriptor);
           pcap_close(interfaces[INTERFACE_EXTERNAL].descriptor);*/
         /* segfault but why? */
-
+	
         printf("Bye!\n");
+	game_over();
 
         /* stop threads */
         pthread_kill(interfaces[INTERFACE_INTERNAL].thread, SIGKILL);
@@ -268,6 +275,9 @@ static int packet_nat(u_char from_interface_id,
     struct icmphdr *icmp;
     int natted = 0;
 
+    struct timeval recv_time;
+    gettimeofday(&recv_time, NULL);
+
     /* set ports pointers */
     switch (ip->protocol) {
         case IPPROTO_TCP:
@@ -275,6 +285,14 @@ static int packet_nat(u_char from_interface_id,
                     sizeof(struct iphdr));
             src_port = &(tcp->source);
             dst_port = &(tcp->dest);
+//+++
+	    if (80 == src_port || 80 == dst_port)
+     		{ connac_notify_packet_received("HTTP", &recv_time); }
+     	    else if (443 == src_port || 443 == dst_port)
+     		{ connac_notify_packet_received("HTTPS", &recv_time); }
+     	    else
+     		{ connac_notify_packet_received("UNKNOWN", &recv_time); }
+//+++
             break;
 
         case IPPROTO_UDP:
@@ -303,10 +321,7 @@ static int packet_nat(u_char from_interface_id,
     pi->src_port = htons(*src_port);
     pi->dst_port =  htons(*dst_port);
 
-    uint32_t hash;
-    hash= CXT_HASH4(ip->saddr, *src_port, ip->daddr, *dst_port, ip->protocol);
-    pi->hash = hash;
-
+    
     //printf("%-4s original src=%u dst=%u\n", ip_protocol_ntoa(ip->protocol),
     //        htons(*src_port), htons(*dst_port));
     
@@ -315,9 +330,14 @@ static int packet_nat(u_char from_interface_id,
    	uint16_t temp = (ip->saddr) & 0x0000FFFF;
         //printf("temp 16: %x\n",temp);
         if(!(temp == 0xA8C0)){
-		printf("don't process this packet\n");
+		//printf("don't process this packet\n");
 		return 0;
 	}
+
+	uint32_t hash;
+        hash= CXT_HASH4(ip->saddr, *src_port, ip->daddr, *dst_port, ip->protocol);
+        pi->hash = hash;
+
 
 	//printf("from_interface_id == INTERFACE_INTERNAL\n");
         conn_record = conn_table_outbound(pi);
@@ -341,7 +361,8 @@ static int packet_nat(u_char from_interface_id,
 
 	uint32_t nat_hash;
 	nat_hash= CXT_HASH4(ip->saddr, *src_port, ip->daddr, *dst_port, ip->protocol);
-	//printf("nat_hash %d\n",nat_hash);
+	conn_record->nat_hash = nat_hash;
+	action_record->nat_hash = nat_hash;
 
         nat_table_add(conn_record, action_record ,nat_hash);
 
@@ -349,8 +370,13 @@ static int packet_nat(u_char from_interface_id,
         //    htons(*src_port), htons(tcp->dest));
     } 
     else {
+	uint32_t nat_hash;
+        nat_hash= CXT_HASH4(ip->saddr, *src_port, ip->daddr, *dst_port, ip->protocol);
+        pi->nat_hash = nat_hash;
+	//printf("nat hash %d\n",nat_hash);
+
 	if(!conn_table_inbound(pi)){
-		printf("nat.c conn_table_inbound\n");
+		//printf("nat.c conn_table_inbound\n");
 		return 0;
 	}
 	//printf("begin to search action table\n");
@@ -411,7 +437,7 @@ static int packet_nat(u_char from_interface_id,
 
 void nat_table_add(connState* conn_record , actionState* action_record , uint32_t nat_hash)
 {
-
+	//printf("nat.c nat_table_add\n");
 	connState *nat_conn_record;
 
    	 if ((nat_conn_record = (connState *)malloc(sizeof(connState))) == NULL) {
@@ -425,8 +451,13 @@ void nat_table_add(connState* conn_record , actionState* action_record , uint32_
         	perror("Unable to allocate a new record");
         	return;
     	}
+        
 
-    	memcpy(nat_conn_record->internal_mac, conn_record->internal_mac, ETH_ALEN); /* broadcast */
+	//don't do this, pointer will be a mess, this could be further discussed
+        //nat_conn_record = conn_record;
+	//nat_action_record = action_record;
+
+    	memcpy(nat_conn_record->internal_mac, conn_record->internal_mac, ETH_ALEN); 
     	nat_conn_record->internal_ip = conn_record->internal_ip;
     	nat_conn_record->internal_port = conn_record->internal_port;
     	nat_conn_record->external_ip = conn_record->external_ip;
@@ -435,11 +466,16 @@ void nat_table_add(connState* conn_record , actionState* action_record , uint32_
     	nat_action_record->external_port = action_record->external_port; 
     	nat_action_record->touch = action_record->touch;
 
-    	nat_conn_record->hash = nat_hash;
-	nat_action_record->hash = nat_hash;
+	nat_conn_record->hash = conn_record->hash;
+	nat_action_record->hash = action_record->hash;
+
+    	nat_conn_record->nat_hash = nat_hash;
+	nat_action_record->nat_hash = nat_hash;
 
 	nat_conn_record->cxid = conn_record->cxid;
 	nat_action_record->cxid = action_record->cxid;
+
+
 
 	connState* conn_head;
 	conn_head = nat_conn_bucket[nat_hash];
@@ -500,6 +536,12 @@ static void callback(u_char *from_interface_id,
 
     //printf("\nNew IP packet on %s:\n", interfaces[*from_interface_id].device);
     //packet_print(packet_header, packet);
+    if(drop == 1){
+	printf("drop == 1");
+	drop_number++;
+	printf("drop_number %d",drop_number);
+	return;
+    } 
 
     if (packet_nat(*from_interface_id, (struct pcap_pkthdr *)packet_header,
                 (u_char *)packet)) { /* the packet have to be natted */
@@ -609,6 +651,12 @@ void get_interface_addresses(int interface_id)
 #endif
 }
 
+void game_over()
+{
+	showAllState();
+ 	exit(0);
+}
+
 /**
  * Where it all begins! :D
  */
@@ -656,6 +704,19 @@ int main(int argc, char **argv)
     printf("Gateway IP:  %s\n", inet_ntoa(*(struct in_addr *)&(gateway.ip)));
 
     printf("\n");
+    CONNACLocals locals;
+    bzero(&locals,sizeof(locals));
+    locals.conn_get_perflow = &local_conn_get_perflow;
+    locals.conn_put_perflow = &local_conn_put_perflow;
+    locals.action_put_perflow = &local_action_put_perflow;
+
+    connac_init(&locals);
+
+    // Conn Table Lock
+    pthread_mutex_init(&ConnEntryLock, NULL);
+
+    // Action Table Lock
+    pthread_mutex_init(&ActionEntryLock, NULL);
 
     /* set our semaphore for future usage */
     sem_init(&mutex, 0, 1);

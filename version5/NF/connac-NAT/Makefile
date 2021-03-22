@@ -25,7 +25,7 @@ clean:
 	rm -f *.o nat
 
 nat: nat.o table.o arp.o
-	$(CC) $(CFLAGS) -o nat nat.o table.o arp.o -lpcap -lnet -lpthread
+	$(CC) $(CFLAGS) -o nat nat.o table.o arp.o -lpcap -lnet -lprotobuf-c -lpthread -lconnac 
 
 nat.o: nat.h
 

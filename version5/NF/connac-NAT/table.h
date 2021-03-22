@@ -21,10 +21,11 @@
 #include <netinet/ether.h>
 #include <time.h>
 #include <linux/types.h>
-
 #include <pcap.h>
 #include <libnet.h>
+#include <pthread.h>
 #include <netinet/ip.h>
+#include <CONNAC.h>
 
 #ifndef ETH_ALEN
 #define ETH_ALEN 6
@@ -47,8 +48,9 @@ typedef struct _connState {
     uint32_t    internal_ip;
     uint16_t    internal_port;
     uint32_t    external_ip;
-    uint8_t     proto;
+    uint8_t	proto;
     uint32_t    hash;
+    uint32_t 	nat_hash;
     uint32_t    cxid;
     struct _connState *prev;
     struct _connState *next;
@@ -58,6 +60,7 @@ typedef struct _actionState {
     uint32_t    external_ip;
     uint16_t    external_port;
     uint32_t    hash;
+    uint32_t    nat_hash;
     uint32_t    cxid;
     time_t      touch;
     struct _actionState *prev;
@@ -70,8 +73,15 @@ typedef struct _packetinfo {
 	u_int16_t src_port;
 	u_int16_t dst_port;
 	uint32_t hash;
+	uint32_t nat_hash;
 	uint32_t cxid;
 }packetinfo;
+
+typedef struct
+{
+    int cxid;
+    int hash;
+}Match;
 
 /* Our functions prototypes */
 void table_print(enum print_mode mode);
@@ -83,27 +93,17 @@ connState *action_table_inbound(packetinfo* pi);
 
 void state_expunge_expired();
 
+int local_conn_get_one_perflow(connState * conn_state);
+int local_conn_get_perflow();
+int local_conn_put_perflow(ConnState* recv_state);
 
+int local_action_get_one_perflow(Match *match);
+int local_action_get_perflow();
+int local_action_put_perflow(ActionState* recv_state);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void showConnState(connState* conn_state);
+void showActionState(actionState* action_state);
+void showAllState();
 
 
 

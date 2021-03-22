@@ -22,7 +22,517 @@ extern connState *nat_conn_bucket[BUCKET_SIZE];
 extern actionState *nat_action_bucket[BUCKET_SIZE];
 connState *conn_bucket[BUCKET_SIZE];
 actionState *action_bucket[BUCKET_SIZE];
-uint32_t cxid = 0;
+uint32_t cxtrackerid = 0;
+
+extern pthread_mutex_t ConnEntryLock;
+extern pthread_mutex_t ActionEntryLock;
+static pthread_t conn_thread;
+static pthread_t action_thread;
+
+
+int local_conn_put_perflow(ConnState* recv_state){
+	
+    printf("receive conn state, begin to putPerFlow\n");
+    pthread_mutex_lock(&ConnEntryLock);
+    //connState *conn_state = NULL;
+    connState *conn_state =(connState*)malloc(sizeof(connState));
+
+    int i;
+    for(i =0; i< 6;i++){
+	conn_state->internal_mac[i]=recv_state->ether_src[i];
+	//printf("conn_state->ether_dst[i] %u",conn_state->ether_dst[i]);
+
+    }
+    //memcpy(conn_state->internal_mac, recv_state->ether_src, ETH_ALEN);
+    conn_state-> internal_ip = recv_state->s_ip;
+    conn_state-> external_ip = recv_state->d_ip;
+    conn_state->internal_port = recv_state->s_port;
+    conn_state->proto = recv_state->proto;
+    
+    uint64_t cxid = recv_state->cxid;
+    conn_state->cxid = cxid;
+
+    //set a right number of cxtrackerid
+    if(cxid > cxtrackerid){
+	cxtrackerid = cxid;
+    }
+   
+    uint32_t hash = recv_state->hash;
+    conn_state->hash = hash;
+
+    uint32_t nat_hash = recv_state->nat_hash;
+    conn_state->nat_hash = nat_hash;
+
+    connState* head = conn_bucket[hash];
+
+    // Add to linked list
+    conn_state->prev = NULL;
+    if (head != NULL)
+    {
+        head->prev = conn_state;
+        conn_state->next = head;
+    }
+    else
+    { 
+	conn_state->next = NULL; 
+    }
+    conn_bucket[hash] = conn_state;
+
+    
+    connState *nat_conn_state =(connState*)malloc(sizeof(connState));
+    for(i =0; i< 6;i++){
+	nat_conn_state->internal_mac[i]=recv_state->ether_src[i];
+	//printf("conn_state->ether_dst[i] %u",conn_state->ether_dst[i]);
+
+    }
+    //memcpy(nat_conn_state->internal_mac, recv_state->ether_src, ETH_ALEN);
+    nat_conn_state-> internal_ip = recv_state->s_ip;
+    nat_conn_state-> external_ip = recv_state->d_ip;
+    nat_conn_state->internal_port = recv_state->s_port;
+    nat_conn_state->proto = recv_state->proto;
+ 
+    nat_conn_state->cxid = cxid;
+    nat_conn_state->hash = hash;
+    nat_conn_state->nat_hash = nat_hash;
+
+    connState* nat_head = nat_conn_bucket[nat_hash];
+
+    // Add to linked list
+    nat_conn_state->prev = NULL;
+    if (nat_head != NULL)
+    {
+        nat_head->prev = nat_conn_state;
+        nat_conn_state->next = nat_head;
+    }
+    else
+    { 
+	nat_conn_state->next = NULL; 
+    }
+    nat_conn_bucket[hash] = nat_conn_state;
+
+
+//+++
+    connac_notify_flow_created();
+//+++
+     
+    pthread_mutex_unlock(&ConnEntryLock);
+  
+  return 1;
+
+}
+
+
+
+int local_action_put_perflow(ActionState* recv_state){
+	
+    printf("receive action state, begin to putPerFlow\n");
+    pthread_mutex_lock(&ActionEntryLock);
+    actionState *action_state = NULL;
+    action_state =(actionState*)malloc(sizeof(actionState));
+
+    action_state->external_ip = recv_state->external_ip;
+    action_state->external_port = recv_state->external_port;
+    action_state->touch = recv_state->last_pkt_time;
+    action_state->cxid = recv_state->cxid;
+    uint32_t hash = recv_state->hash;
+    action_state->hash = hash;
+    uint32_t nat_hash = recv_state->nat_hash;
+    action_state->nat_hash = nat_hash;
+    
+
+    actionState* head = action_bucket[hash];
+
+    // Add to linked list
+    action_state->prev = NULL;
+    if (head != NULL)
+    {
+        head->prev = action_state;
+        action_state->next = head;
+    }
+    else
+    { action_state->next = NULL; }
+    action_bucket[hash] = action_state;
+
+    actionState *nat_action_state = NULL;
+    nat_action_state =(actionState*)malloc(sizeof(actionState));
+
+    nat_action_state->external_ip = recv_state->external_ip;
+    nat_action_state->external_port = recv_state->external_port;
+    nat_action_state->touch = recv_state->last_pkt_time;
+    nat_action_state->cxid = recv_state->cxid;
+    
+    nat_action_state->hash = hash;
+    nat_action_state->nat_hash = nat_hash;
+
+    actionState* nat_head = nat_action_bucket[hash];
+
+    // Add to linked list
+    nat_action_state->prev = NULL;
+    if (nat_head != NULL)
+    {
+        nat_head->prev = nat_action_state;
+        nat_action_state->next = nat_head;
+    }
+    else
+    { nat_action_state->next = NULL; }
+    nat_action_bucket[hash] = nat_action_state;
+    //showPutActionState();
+    pthread_mutex_unlock(&ActionEntryLock);
+    
+  
+    return 1;
+}
+
+
+
+int local_conn_get_one_perflow(connState* conn_state){	
+	printf("local get conn one per flow\n");
+	ConnState* conn_perflow = (ConnState*)malloc(sizeof(ConnState));
+	conn_state__init(conn_perflow);
+
+	conn_perflow->n_ether_src = 6;
+        conn_perflow->ether_src = malloc(sizeof(uint32_t)*6);
+
+        int m;
+
+	for(m = 0; m < 6; m++){
+		conn_perflow->ether_src[m]=conn_state->internal_mac[m];
+	}
+   
+
+	conn_perflow->has_s_ip = 1;
+	conn_perflow->s_ip = conn_state->internal_ip;
+	conn_perflow->has_d_ip = 1;
+	conn_perflow->d_ip = conn_state->external_ip;
+	conn_perflow->has_s_port = 1;
+        conn_perflow->s_port = conn_state->internal_port;
+	conn_perflow->has_proto=1;
+	conn_perflow->proto = conn_state->proto;
+	int hash = conn_state->hash;			
+	conn_perflow->has_hash=1;
+	conn_perflow->hash = hash;
+	int nat_hash = conn_state->nat_hash;			
+	conn_perflow->has_nat_hash=1;
+	conn_perflow->nat_hash = nat_hash;
+	int cxid = conn_state->cxid;
+	conn_perflow->has_cxid=1;
+	conn_perflow->cxid = cxid;
+
+
+        MyConnMessage mes;
+        my_conn_message__init(&mes);
+   
+        mes.data_type = MY_CONN_MESSAGE__DATA_TYPE__ConnStateType;
+        mes.message_case = MY_CONN_MESSAGE__MESSAGE_CONN_STATE;
+        mes.connstate =conn_perflow;
+ 
+        int len = my_conn_message__get_packed_size(&mes);
+        printf("size of Perflow : %u\n", len);
+        void *buf = malloc(len);
+        my_conn_message__pack(&mes, buf);
+
+	int result = conn_send_perflow(buf, len);    
+       	if(result < 0){
+			return -1;
+	}
+	printf("local get one conn per flow---send successful\n");
+	free(buf);
+	free(conn_perflow);
+			
+}
+
+
+
+int local_action_get_one_perflow(Match *match){
+        printf("local get one action per flow\n");	
+        pthread_mutex_lock(&ActionEntryLock);
+	int hash = match->hash;
+ 	int cxid = match->cxid;
+	actionState *action_state = action_bucket[hash];
+	while(action_state != NULL){
+		if(action_state->cxid != cxid){
+			printf("get one action cxid middle\n ");
+			action_state = action_state->next;
+			continue;
+		}
+
+		ActionState* action_perflow = (ActionState*)malloc(sizeof(ActionState));;
+		action_state__init(action_perflow);
+
+        	
+		action_perflow->has_last_pkt_time=1;
+		action_perflow->last_pkt_time = action_state->touch;
+
+		action_perflow->has_external_ip=1;
+		action_perflow->external_ip = action_state->external_ip;
+		action_perflow->has_external_port=1;
+		action_perflow->external_port = action_state->external_port;
+
+		action_perflow->has_cxid=1;
+		action_perflow->cxid = action_state->cxid;		
+		action_perflow->has_hash = 1;
+		action_perflow->hash = action_state->hash;
+		action_perflow->has_nat_hash = 1;
+		action_perflow->nat_hash = action_state->nat_hash;
+		
+		MyActionMessage mes;
+        	my_action_message__init(&mes);	
+        	mes.data_type = MY_ACTION_MESSAGE__DATA_TYPE__ActionStateType;
+        	mes.message_case = MY_ACTION_MESSAGE__MESSAGE_ACTION_STATE;
+        	mes.actionstate = action_perflow;
+ 
+        	int len = my_action_message__get_packed_size(&mes);
+        	void *buf = malloc(len);
+        	my_action_message__pack(&mes, buf);
+
+		int result = action_send_perflow(buf, len);    
+       		 if(result < 0){
+			return -1;
+		}
+		action_state = action_state->next;
+	        printf("local get one action per flow ---send successful\n");
+		
+		break;
+		
+	}
+
+
+	pthread_mutex_unlock(&ActionEntryLock);
+	//printf("local get one action per flow ---unlock\n");
+	free(match);
+	return 1;
+}
+
+
+
+
+
+static void *conn_sender(void *arg){
+	printf("start a conn sender\n");
+	
+	connState* conn_state = (connState*)arg;
+	int send_conn = local_conn_get_one_perflow(conn_state);
+	if(send_conn < 0){
+		printf("send failed");
+	}
+
+	
+}
+
+static void *action_sender(void *arg){
+	printf("start a action sender\n");
+	Match *match = (Match*)arg;
+	
+	printf("match hash %d\n", match->hash);
+	printf("match cxid %d\n", match->cxid);
+	int send_action = local_action_get_one_perflow(match);
+	if(send_action < 0){
+		printf("send failed");
+	}
+
+}
+
+int local_conn_get_perflow(Key key){
+     printf("start conn get perflow\n");
+     //printf("local  key.dl_type %x\n", key.dl_type);
+     //printf("key.nw_proto %u\n",key.nw_proto);
+ 
+    int count = 0;
+    int h = 0;
+    for (h = 0; h < BUCKET_SIZE; h++)
+    {        
+        pthread_mutex_lock(&ConnEntryLock);
+        connState *conn_state = conn_bucket[h];
+        while (conn_state != NULL)
+        {
+
+		
+		//if(count == 1){
+		//	printf("count == 1\n");
+		//	return 1; 
+		//}
+
+		//printf("local key.wildcards & WILDCARD_DL_TYPE %d\n", key.wildcards & WILDCARD_DL_TYPE);
+		//printf("local key.wildcards & WILDCARD_NW_PROTO %d\n", key.wildcards & WILDCARD_NW_PROTO);
+		//printf("localconn_head[i]->hw_proto %u\n", conn_state->hw_proto);
+		//printf("localconn_head[i]->hw_proto %u\n",ntohs(key.dl_type));
+		//printf("ntohs(key.dl_type) %x\n", conn_state->proto);
+		
+		            // Check nw_proto
+		if ((!(key.wildcards & WILDCARD_NW_PROTO)) &&((conn_state->proto) != key.nw_proto))
+			{
+		                conn_state = conn_state->next;
+		                continue;
+		        }
+
+
+		/*int send_conn = local_conn_get_one_perflow(conn_state);
+		if(send_conn < 0){
+			printf("send failed");
+		}
+
+		
+		int send_action = local_action_get_one_perflow(match);
+		if(send_action < 0){
+			printf("send failed");
+		}*/
+	    
+	  
+	       	
+
+		
+	    int err;
+	     if((err = pthread_create(&conn_thread, NULL, conn_sender, (void*)conn_state))!=0)
+             {
+             	perror("pthread_create error");
+             }
+	     
+
+	     
+	     Match* match = (Match*)malloc(sizeof(Match));
+	     match->hash = conn_state->hash;
+	     match->cxid = conn_state->cxid;
+		
+	     //create a thread to send action state
+	     if((err = pthread_create(&action_thread, NULL, action_sender, (void*)match))!=0)
+             {
+                 perror("pthread_create error");
+             }
+		
+	 	
+		count++;	
+	
+	        
+           // Move on to next connection
+           conn_state = conn_state->next;
+        }
+        pthread_mutex_unlock(&ConnEntryLock);
+    }
+    return count;
+
+}
+		
+
+//+++
+void showConnState(connState* conn_state){
+    struct in6_addr ips;
+    struct in6_addr ipd;
+
+    ips.s6_addr32[0] = conn_state->internal_ip;
+    ipd.s6_addr32[0] = conn_state->external_ip;
+
+    //struct sockaddr_in sa;
+    char src_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(ips), src_str, INET_ADDRSTRLEN);
+   
+    //struct sockaddr_in sa;
+    char dst_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(ipd), dst_str, INET_ADDRSTRLEN);
+    
+
+
+    printf("---------------ConnState------------------\n");
+
+    printf("src_ip %s\n", src_str);
+    printf("dst_ip %s\n", dst_str);
+    printf("internal_port %u\n",conn_state->internal_port);
+    printf("mac_src %u",conn_state->internal_mac[0]);
+    printf(" %u",conn_state->internal_mac[1]);
+    printf(" %u",conn_state->internal_mac[2]);
+    printf(" %u",conn_state->internal_mac[3]);
+    printf(" %u",conn_state->internal_mac[4]);
+    printf(" %u\n",conn_state->internal_mac[5]);
+    printf("cxid  %d\n",conn_state->cxid);
+    printf("hash  %d\n",conn_state->hash);
+    printf("---------------ConnState------------------\n");
+
+}
+
+//+++
+
+//+++
+void showActionState(actionState* action_state){
+
+    struct in6_addr ipd;
+
+    ipd.s6_addr32[0] = action_state->external_ip;
+
+   //struct sockaddr_in sa;
+    char dst_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(ipd), dst_str, INET_ADDRSTRLEN);
+
+
+    printf("---------------actionState------------------\n");
+    printf("ds_ip %s\n", dst_str);
+    printf("external_port %u\n",action_state->external_port);
+    printf("last_pkt_time %lu\n", action_state->touch);
+    printf("cxid: %d\n",action_state->cxid);
+    printf("hash  %d\n",action_state->hash);
+    printf("---------------actionState------------------\n");
+
+}
+
+
+
+void showAllState(){
+ int h;
+ uint64_t action[100];
+ memset(action, 0, sizeof(action));
+ uint64_t conn[100];
+ memset(conn, 0, sizeof(conn));
+ int count_action =0;
+ int count_conn=0;
+ for (h = 0; h < BUCKET_SIZE; h++)
+    {        
+        actionState *action_state = action_bucket[h];
+        connState *conn_state = conn_bucket[h];
+
+
+        while (conn_state != NULL)
+        { 
+            printf("-----------conn----h%d------------\n",h);    
+            //showConnState(conn_state); 
+            //conn[count_conn] = conn_state->cxid; 
+	    conn[count_conn] = conn_state->hash;
+            count_conn++;     
+            // Move on to next connection
+            conn_state = conn_state->next;
+        }   
+	while (action_state != NULL)
+        {     
+            printf("-----------action---h%d------------\n",h);
+	    //showActionState(action_state); 
+            //action[count_action] = action_state->cxid; 
+            action[count_action] = action_state->hash;
+            count_action++;     
+            // Move on to next connection
+            action_state = action_state->next;
+        }             
+    }
+    printf("\n");
+    int m,n;
+    printf("count_conn%d\n",count_conn);
+    printf("------------------------------------\n");
+    for(m = 0; m<= count_conn; m++){
+	printf("%lu,",conn[m]);
+    }
+    printf("\n");
+    printf("count_action%d\n",count_action);
+    printf("------------------------------------\n");
+    
+    for(n = 0; n<= count_action; n++){
+	printf("%lu,",action[n]);
+    }
+
+
+}
+
 
 
 /**
@@ -32,8 +542,6 @@ uint32_t cxid = 0;
  */
 void table_print(enum print_mode mode)
 {
-    connState *conn_record;
-    actionState *action_record;
     int iter;
  
     if (mode == PRINT_ALL)
@@ -47,13 +555,15 @@ void table_print(enum print_mode mode)
     printf("\n");
 
     for (iter = 0; iter < BUCKET_SIZE; iter++) {
+        connState *conn_record = conn_bucket[iter];
+	actionState *action_record = action_bucket[iter];
+
 	if(conn_record != NULL){
-		printf(" conn_record != NULL");
+		printf("conn_record iter %d",iter);
 	}
 
-        conn_record = conn_bucket[iter];
-	action_record = action_bucket[iter];
-        while (conn_record != NULL) {
+
+        while (conn_record) {
             if (mode == PRINT_ALL){
             	printf("%17s |",
                     ether_ntoa((struct ether_addr *)&(conn_record->internal_mac)));
@@ -67,68 +577,17 @@ void table_print(enum print_mode mode)
 	    }
             if (mode == PRINT_ALL)
             	printf(" | %lu", (long unsigned)action_record->touch);
-
-            printf("\n");
+	    
+            printf("iter %d\n",iter); 
 	    conn_record = conn_record->prev;
 	    action_record = action_record->prev;
-        } // end while cxt
+        } // end while cxt 
     } // end for buckets
 
 
     printf("\n");
 }
 
-void table_hash_print(uint32_t hash)
-{
-    connState *conn_record;
-    //actionState *action_record;
-   //printf("outbound hash %d\n",hash);
-        conn_record = conn_bucket[hash];
-        //printf(" conn_record = conn_bucket[hash];\n");
-
-
-	//action_record = action_bucket[hash];
-        //printf(" conn_record = conn_bucket[hash];\n");
-        if(conn_record != NULL){
-		printf(" conn_record != NULL");
-	}
-	else{printf(" conn_record == NULL\n"); }
-
-
-
-        while (conn_record != NULL) {
-		//printf(" conn_record != NULL  !!!!!!");
-
-                //if(conn_record->internal_mac != NULL){
-		//	printf(" conn_record->internal_mac != NULL");
-		//}
-		//else{
-		//	printf(" conn_record->internal_mac == NULL");
-		//}
-		
-
-            	printf("%17s |",
-                    ether_ntoa((struct ether_addr *)&(conn_record->internal_mac)));
-
-        	printf("%13s | %8u | ",
-                    	inet_ntoa(*(struct in_addr *)&(conn_record->internal_ip)),
-                	conn_record->internal_port);
-        	//printf("%8u | %13s",
-                //	action_record->external_port,
-                //	inet_ntoa(*(struct in_addr *)&(action_record->external_ip)));
-	    
-            
-            	//printf(" | %lu", (long unsigned)action_record->touch);
-
-            printf("\n");
-	    conn_record = conn_record->prev;
-	    //action_record = action_record->prev;
-        } // end while cxt
-    
-
-
-    printf("\n");
-}
 
 /**
  * Get the mapped external port for a record
@@ -140,6 +599,7 @@ void table_hash_print(uint32_t hash)
  */
 uint16_t table_get_external_port(uint32_t hash)
 {
+    //printf("able_get_external_port\n");
     uint16_t external_port = 0;
     actionState *action_record;
 
@@ -149,7 +609,7 @@ uint16_t table_get_external_port(uint32_t hash)
         external_port = rand() % (MAX_EXTERNAL_PORT - MIN_EXTERNAL_PORT)
             + MIN_EXTERNAL_PORT;
         for (action_record = action_bucket[hash]; action_record && action_record->external_port != external_port;
-                action_record = action_record->prev);
+                action_record = action_record->next);
     } while (action_record);
 
     return external_port;
@@ -168,8 +628,11 @@ connState *conn_table_add(uint32_t internal_ip, uint8_t *internal_mac,
         uint16_t internal_port, uint32_t external_ip, uint32_t hash, packetinfo* pi)
 {
     //printf("Creating conn table\n");
-    cxid++;
-    //printf("flow_number %d\n",cxid);
+    cxtrackerid++;
+
+//+++
+    connac_notify_flow_created();
+//+++
 
     connState *record;
 
@@ -181,13 +644,13 @@ connState *conn_table_add(uint32_t internal_ip, uint8_t *internal_mac,
     memcpy(record->internal_mac, internal_mac, ETH_ALEN); /* broadcast */
     record->internal_ip = internal_ip;
     record->internal_port = internal_port;
-    //printf("record->internal_port %u\n",record->internal_port);
 
     record->external_ip = external_ip;
-    record->proto = pi->ip->protocol;
     record->hash = hash;
-    record->cxid = cxid;
-    pi->cxid = cxid;
+    record->cxid = cxtrackerid;
+    record->proto = pi->ip->protocol;
+
+    pi->cxid = cxtrackerid;
 
     connState* head;
     head = conn_bucket[hash];
@@ -223,7 +686,6 @@ actionState *action_table_add(uint32_t hash, uint32_t cxid, packetinfo* pi)
     }
 
     record->external_port = table_get_external_port(hash);
-    //printf("record->external_port %u\n",record->external_port);
     
     record->external_ip = pi->ip->daddr;
     record->touch = time(NULL); /* current timestamp */
@@ -325,7 +787,7 @@ void state_expunge_expired()
 connState* conn_table_outbound(packetinfo* pi)
 {
 
-    //printf("table_outbound\n");
+    //printf("conn table_outbound\n");
     u_int16_t src_port, dst_port;
     uint32_t internal_ip;
     uint8_t *internal_mac;
@@ -340,17 +802,12 @@ connState* conn_table_outbound(packetinfo* pi)
     internal_mac = pi->eth->h_source;
 
     internal_port = src_port;
-    //printf("outbound internal_port %d\n",internal_port);
-
-    
     external_ip = pi->ip->daddr;
-
     hash= pi->hash;
-    //printf("outbound hash %d\n",hash);
+
 
     connState *record;
     record = conn_bucket[hash];
-    //table_record *before = NULL;
 
     while (record) {
         if (record->internal_ip == internal_ip &&
@@ -359,10 +816,9 @@ connState* conn_table_outbound(packetinfo* pi)
 	    pi->cxid = record->cxid;
             return record;
         }
-        record = record->prev;
+	record = record->next;
     }
 
-    //printf("table out bound finish\n");
     record = conn_table_add(internal_ip, internal_mac, internal_port, external_ip, hash, pi);
     return record;
 }
@@ -378,30 +834,24 @@ connState* conn_table_outbound(packetinfo* pi)
  */
 actionState *action_table_outbound(packetinfo* pi)
 {
-
+    //printf("action table_outbound\n");
     uint32_t hash;
     hash= pi->hash;
-    //printf("outbound hash %d\n",hash);
-
+    
     uint32_t cxid;
     cxid= pi->cxid;
-    //printf("outbound cxid %d\n",cxid);
-	
+   
     actionState *record = action_bucket[hash];
-    //table_record *before = NULL;
-
+ 
     while (record) {
         if (record->cxid == cxid) {
             record->touch = time(NULL); /* touch! */
             return record;
         }
-
-        record = record->prev;
+	record = record->next;
     }
 
     record = action_table_add(hash,cxid, pi);
-
-    //printf("action table outbound final finish\n");
     return record;
 }
 
@@ -422,12 +872,7 @@ int conn_table_inbound(packetinfo* pi)
     uint32_t external_ip = pi->ip->saddr;
     uint16_t external_port = pi->dst_port;
   
-    actionState *record = nat_action_bucket[pi->hash];
-
-    //printf("hash %d\n",pi->hash);
-    //if(record == NULL){
-    //	printf("record == NULL\n");
-    //}
+    actionState *record = nat_action_bucket[pi->nat_hash];
 
     while (record) {
         //printf("record :%8u | %13s \n", record->external_port, inet_ntoa(*(struct in_addr *)&(record->external_ip)));       
@@ -440,7 +885,7 @@ int conn_table_inbound(packetinfo* pi)
 	    //printf("find record\n");
             return 1;
         }
-        record = record->prev;
+	record = record->next;
     }
 
 #ifdef DEBUG
@@ -462,19 +907,14 @@ int conn_table_inbound(packetinfo* pi)
 connState *action_table_inbound(packetinfo* pi)
 {
     //printf("nat action table inbound---------------\n");
-    connState *record =nat_conn_bucket[pi->hash];
-
-    //printf("hash %d\n",pi->hash);
-    //if(record == NULL){
-    //	printf("record == NULL\n");
-    //}
+    connState *record =nat_conn_bucket[pi->nat_hash];
 
     while (record) {
         if (record->cxid == pi->cxid) {
 	    //printf("find record\n");
             return record;
         }
-        record = record->prev;
+	record = record->next;
     }
 
 #ifdef DEBUG
