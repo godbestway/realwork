@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+message ActionState {
+	required int32 data = 1;
+}
+
+
+

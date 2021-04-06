@@ -1,0 +1,190 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyActionMessage{
+    enum DataType{
+        SynType= 1;
+	ActionGetPerflowMsgType = 2;
+	ActionGetPerflowAckMsgType = 3;
+	ActionStateType =4;
+	ActionPutPerflowMsgType = 5;
+	ActionPutPerflowAckMsgType = 6;
+	
+	ActionGetMultiflowMsgType = 8;
+	ActionGetMultiflowAckMsgType = 9;
+	ActionMultiStateType = 10;
+	ActionPutMultiflowMsgType = 11;
+	ActionPutMultiflowAckMsgType = 12;
+
+	ActionGetAllflowMsgType = 13;
+	ActionGetAllflowAckMsgType = 14;
+	ActionAllStateType = 15;
+	ActionPutAllflowMsgType = 16;
+	ActionPutAllflowAckMsgType = 17;
+	
+
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        ActionSyn actionsyn = 2;
+	ActionGetPerflowMsg actionGetPerflowMsg = 3;
+	ActionGetPerflowAckMsg	actionGetPerflowAckMsg = 4;
+	ActionState actionState= 5;
+	ActionPutPerflowMsg actionPutPerflowMsg= 6;
+	ActionPutPerflowAckMsg actionPutPerflowAckMsg= 7;
+
+	ActionGetMultiflowMsg actionGetMultiflowMsg = 8;
+	ActionGetMultiflowAckMsg actionGetMultiflowAckMsg = 9;
+	ActionPutMultiflowMsg actionPutMultiflowMsg= 10;
+	ActionPutMultiflowAckMsg actionPutMultiflowAckMsg= 11;
+
+	ActionGetAllflowMsg actionGetAllflowMsg = 12;
+	ActionGetAllflowAckMsg	actionGetAllflowAckMsg = 13;
+	ActionPutAllflowMsg actionPutAllflowMsg= 14;
+	ActionPutAllflowAckMsg actionPutAllflowAckMsg= 15;
+        
+    }
+}
+
+
+message ActionSyn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message ActionState {
+	optional fixed64 start_time=1;
+        optional fixed64 last_pkt_time=2;	
+        optional fixed64 cxid=3;
+        optional uint32  reversed=4;
+        optional fixed32 af=5;
+        optional fixed64 s_total_pkts=6;
+        optional fixed64 s_total_bytes=7;
+        optional fixed64 d_total_pkts=8;
+        optional fixed64 d_total_bytes=9;
+        optional uint32  s_tcpFlags=10;
+        optional uint32  pad=11;
+        optional uint32  d_tcpFlags=12;
+        optional uint32  check=13;
+        optional fixed32 hash=14;      
+	optional Asset  c_asset = 15;
+	optional Asset  s_asset = 16;
+	enum fwState{
+        	OPEN= 1;
+		CLOSED = 2;
+    	} 
+	optional fwState fwstate = 17;
+	optional fixed32 external_ip = 18;
+	optional fixed32 external_port = 19;
+	optional fixed32 nat_hash=20; 
+	optional Asset 	 multi_asset = 21; 
+	optional string all_state = 22;   
+}
+
+message ActionGetPerflowMsg {
+    optional int32 hw_proto = 1;            
+    optional int32  proto = 2; 
+}
+
+message ActionGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ActionPutPerflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+}
+
+
+message ActionGetMultiflowMsg {            
+}
+
+message ActionGetMultiflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ActionPutMultiflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutMultiflowAckMsg {
+}
+
+message ActionGetAllflowMsg {
+}
+
+message ActionGetAllflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ActionPutAllflowMsg {
+    optional ActionState state = 1;
+}
+
+message ActionPutAllflowAckMsg {
+}
+
+
+message Asset{
+	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional fixed32 af = 4;
+	optional uint32 vlan = 5;
+	optional fixed32 s_ip=6;	
+	optional ServAsset services =7;
+	optional OsAsset os = 8;
+}
+
+
+message ServAsset {
+	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional uint32 proto = 4;
+	optional uint32 port = 5;
+	optional uint32 ttl = 6;
+	optional Bstring bservice = 7;
+	optional Bstring bapplication = 8;
+	optional fixed32 role = 9;
+	optional fixed32 unknown = 10; 
+}
+
+message OsAsset{
+   	optional fixed64 first_seen = 1;
+	optional fixed64 last_seen = 2;
+	optional uint32 i_attempts = 3;	
+	optional Bstring bvendor = 4;
+	optional Bstring bos = 5;
+	optional uint32 detection = 6;
+	optional Bstring raw_fp = 7;
+	optional Bstring matched_fp = 8;
+	optional string match_os = 9;
+	optional string match_desc = 10;
+	optional uint32 port = 11;
+	optional uint32 mtu = 12;
+	optional uint32 ttl = 13;
+	optional uint32 uptime = 14;
+       
+}
+
+message Bstring {
+    optional fixed32 mlen = 1;
+    optional fixed32 slen = 2;
+    optional string data = 3;
+}
+
+
+
+
+
+
+
+
