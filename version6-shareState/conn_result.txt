@@ -1,0 +1,106 @@
+22:03:40.472 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - receive a object1611695020472
+22:03:40.483 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.487 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.488 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.495 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.496 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype17
+22:03:40.498 [nioEventLoopGroup-3-1] INFO  version1.coder.ConnServerDecoder - datatype7
+
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.507 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020507
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=1
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020508
+22:03:40.508 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020508 data=2
+22:03:40.509 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020509connState 1
+22:03:40.511 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build1
+22:03:40.512 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish1
+22:03:40.512 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020512 data=3
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.512 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020512
+22:03:40.513 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020513 data=4
+22:03:40.513 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020513connState 3
+
+22:03:40.522 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build3
+22:03:40.522 [pool-1-thread-1] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish3
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020522
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020522connState 2
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020522
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build2
+22:03:40.522 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish2
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020522
+22:03:40.522 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020522
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.526 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a connstate1611695020526
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - conn receive state current time 1611695020527 data=5
+22:03:40.527 [nioEventLoopGroup-3-1] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  version1.channel.ConnectionChannel - receive a  conn getAck1611695020528
+22:03:40.528 [nioEventLoopGroup-3-1] INFO  v.zmove.single.ConnMsgProcessor - connection totalnum:5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020529connState 5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build5
+22:03:40.529 [pool-1-thread-2] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish5
+22:03:40.529 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020529
+22:03:40.529 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020529
+22:03:40.529 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - ConnstateChuck call before build1611695020529connState 4
+22:03:40.529 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg after build4
+22:03:40.530 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - begin encode1611695020530
+22:03:40.530 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerEncoder - finish encode1611695020530
+22:03:40.530 [pool-1-thread-3] INFO  version1.zmove.single.ConnStateChunk - send a connection putPerFlowMsg send finish4
+
+22:03:40.571 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - receive a object1611695020571
+22:03:40.572 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.573 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.coder.ConnServerDecoder - datatype9
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count1
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020574
+22:03:40.574 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020574
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count2
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020575
+22:03:40.575 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020575
+
+22:03:40.587 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count3
+22:03:40.587 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020595
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020595
+22:03:40.595 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count4
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.BaseChannelHandler - channel read
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - process message begin
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  version1.channel.ConnectionChannel - receive a conn putAck1611695020596
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - conn putperflow ack current time1611695020596
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow count5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - connection put perflow totalnum5
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnMsgProcessor - set a stateStorage Ack
+22:03:40.596 [nioEventLoopGroup-3-2] INFO  v.zmove.single.ConnStateStorage - set a conn stateStorage ack
+
+22:03:40.598 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - receive double ack1611695020598
+22:03:40.602 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - begin to change forward direction
+22:03:40.603 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - end move time1611695020598
+22:03:40.603 [pool-3-thread-1] INFO  v.zmove.single.MoveProcessControl - total move time241

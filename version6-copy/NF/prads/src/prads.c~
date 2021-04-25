@@ -81,7 +81,6 @@ pthread_mutex_t ConnEntryLock;
 pthread_mutex_t ActionEntryLock;
 pthread_mutex_t AssetEntryLock;
 pthread_mutex_t MultiEntryLock;
-pthread_mutex_t PutEntryLock;
 //+++
 
 /*  I N T E R N A L   P R O T O T Y P E S  ***********************************/
@@ -122,7 +121,12 @@ inline int filter_packet(const int af, void *ip);
 void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
                 const u_char * packet)
 {
-    
+    printf("Total TCP packets received:%12u\n",config.pr_s.tcp_recv);
+    struct timeval start_serialize, end_serialize;
+    gettimeofday(&start_serialize, NULL);    
+    printf("STATS: PERFLOW: start_serialize.tv_sec = %lds\n", start_serialize.tv_sec);	
+    printf("STATS: PERFLOW: start_serialize.tv_usec = %ldus\n", start_serialize.tv_usec);
+
     //+++
     if(drop == 1){
 	drop_number++;
@@ -177,6 +181,15 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
      { connac_notify_packet_received("UNKNOWN", &recv_time); }
 
 //+++
+
+    gettimeofday(&end_serialize, NULL);
+    long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+    long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+    long total = (sec * 1000 * 1000) + usec;
+			
+    printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
+    printf("STATS: PERFLOW: TIME TO finish = %ldus\n", end_serialize.tv_sec);	
+    printf("STATS: PERFLOW: TIME TO finish = %ldus\n", end_serialize.tv_usec);
 
     return;
 }
@@ -1579,7 +1592,6 @@ int main(int argc, char *argv[])
     pthread_mutex_init(&AssetEntryLock, NULL);
     pthread_mutex_init(&MultiEntryLock, NULL);
 
-    pthread_mutex_init(&PutEntryLock, NULL);
 
     olog("[*] Sniffing...\n");
     pcap_loop(config.handle, -1, got_packet, NULL);

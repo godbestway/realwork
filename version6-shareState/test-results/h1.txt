@@ -1,0 +1,14 @@
+LISTEN_IP: 192.168.0.1
+LISTEN_PORT: 8080
+Send on interface h1-eth0
+Starting traceload server
+Listening for commands on 192.168.0.1:8080
+start youtube.pcap 1000 -1
+TOKENS is: start
+ACTION is: start
+TRACE is: youtube.pcap
+NUMPKTS is: -1
+This is 2 situation
+NUMPKTS : -1
+RATE : 1000
+INTERFACE TRACEDIR/TRACE : h1-eth0 ./youtube.pcap

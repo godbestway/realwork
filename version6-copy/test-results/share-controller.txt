@@ -1,0 +1,60 @@
+10:58:58.519 [main] WARN  i.netty.util.internal.MacAddressUtil - Failed to find a usable hardware address from the network interfaces; using random bytes: 40:6e:ab:2b:cb:e5:0e:75
+10:58:58.571 [nioEventLoopGroup-2-1] INFO  Server.ServerListener - bind success at port:18080
+traceNumPkts-1
+operationdelay65
+10:58:58.572 [Thread-0] INFO  Server.OperationManager - a new condition is added
+10:58:58.573 [nioEventLoopGroup-4-1] INFO  Server.ServerListener - bind success at port:18081
+10:58:58.573 [main] INFO  zconnacmove.SingleMove - netty server is set up
+10:59:12.010 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.2:57857已连接上action来
+10:59:12.010 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.2:38353已连接上Connection来
+10:59:12.011 [nioEventLoopGroup-5-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.2:57857在线
+10:59:12.011 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.2:38353在线
+10:59:12.044 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - syn message comes
+10:59:12.047 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - channel try to connect
+10:59:12.047 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - host: godbestway
+10:59:12.048 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel - pid: 39520
+10:59:12.048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - a new NF is found
+10:59:12.048 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - channel try to connect
+10:59:12.048 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - a new NF is found
+godbestway.39520
+10:59:12.049 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - not contains this id
+10:59:12.049 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - set a NF successful
+10:59:12.049 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - try to set a connection channel
+godbestway.39520
+10:59:12.049 [nioEventLoopGroup-3-1] INFO  Server.OperationManager - connection channel has connected
+10:59:12.049 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - contains this id
+10:59:12.050 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - try to set a action channel
+10:59:12.050 [nioEventLoopGroup-5-1] INFO  Server.OperationManager - godbestway.39520has already fully connected
+10:59:13.968 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.3:49045已连接上Connection来
+10:59:13.969 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.3:49045在线
+10:59:13.970 [nioEventLoopGroup-5-2] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.3:59232已连接上action来
+10:59:13.970 [nioEventLoopGroup-5-2] INFO  channel.ConnectionChannelHandler - 客户端：/192.168.0.3:59232在线
+10:59:13.972 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel - syn message comes
+10:59:13.974 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - channel try to connect
+10:59:13.974 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - a new NF is found
+godbestway.39526
+10:59:13.974 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - not contains this id
+10:59:13.974 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - set a NF successful
+10:59:13.974 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - try to set a connection channel
+10:59:13.974 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel - host: godbestway
+10:59:13.974 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel - pid: 39526
+10:59:13.975 [nioEventLoopGroup-5-2] INFO  Server.OperationManager - channel try to connect
+10:59:13.975 [nioEventLoopGroup-5-2] INFO  Server.OperationManager - a new NF is found
+godbestway.39526
+10:59:13.975 [nioEventLoopGroup-5-2] INFO  Server.OperationManager - contains this id
+10:59:13.975 [nioEventLoopGroup-3-2] INFO  Server.OperationManager - connection channel has connected
+10:59:13.975 [nioEventLoopGroup-5-2] INFO  Server.OperationManager - try to set a action channel
+10:59:13.976 [nioEventLoopGroup-5-2] INFO  Server.OperationManager - godbestway.39526has already fully connected
+{"status" : "Entry pushed"}
+
+10:59:16.185 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl - Started replaying trace
+11:00:21.186 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl - a simulation of move start
+11:00:21.188 [Thread-1] INFO  zconnacmove.ConnMsgProcessor - 发送了connection getperflow
+11:00:21.206 [nioEventLoopGroup-3-1] INFO  zconnacmove.ConnMsgProcessor - move start from conn processor1618131621206
+11:00:21.273 [nioEventLoopGroup-3-2] INFO  zconnacmove.ConnStateStorage - set a conn stateStorage ack
+11:00:21.293 [nioEventLoopGroup-5-2] INFO  zconnacmove.ActionStateStorage - set a action stateStorage ack
+1618131621293
+11:00:21.294 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl - begin to change forward direction
+{"status" : "Entry pushed"}
+
+11:00:21.320 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl - [MOVE_TIME] elapse=88 

@@ -117,12 +117,12 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
     Key key;
     if(actionGetPerflow_recv->has_hw_proto){
 	key.dl_type = actionGetPerflow_recv->hw_proto;
-	printf("handle get perflow hw_proto %x\n",key.dl_type);
+	//printf("handle get perflow hw_proto %x\n",key.dl_type);
 	}
     else{ key.wildcards |= WILDCARD_DL_TYPE;  }
     if(actionGetPerflow_recv->has_proto){
 	key.nw_proto = actionGetPerflow_recv->proto;
-	printf("handle get perflow proto %u\n",key.nw_proto);
+	//printf("handle get perflow proto %u\n",key.nw_proto);
 	}
     else{  key.wildcards |= WILDCARD_NW_PROTO; }
 
@@ -143,6 +143,7 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
 static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
 {
+    printf("receive getPerflow\n");
     if (NULL == connac_locals->action_put_perflow)
     {
 	printf("this function is not supported");
@@ -408,8 +409,8 @@ static void *state_handler(void *arg)
 
         //INFO_PRINT("while...connread...finish...\n");
 
-	int data_type = myActionMessage.data_type;
-        printf("data_type : %d\n",data_type );
+	//int data_type = myActionMessage.data_type;
+        //printf("data_type : %d\n",data_type );
 
 
         //printf("MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType: %d", MY_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType);
