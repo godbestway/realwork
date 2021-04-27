@@ -1,0 +1,105 @@
+10:59:03.478 INFO [n.f.c.m.FloodlightModuleLoader:main] Loading modules from src/main/resources/floodlightdefault.properties
+10:59:03.708 WARN [n.f.r.RestApiServer:main] HTTPS disabled; HTTPS will not be used to connect to the REST API.
+10:59:03.708 WARN [n.f.r.RestApiServer:main] HTTP enabled; Allowing unsecure access to REST API on port 8080.
+10:59:03.973 ERROR [o.s.s.i.c.DelegatingCCProvider:main] Failed to initialize provider org.sdnplatform.sync.internal.config.SyncStoreCCProvider
+org.sdnplatform.sync.error.PersistException: Could not initialize persistent storage
+	at org.sdnplatform.sync.internal.store.JavaDBStorageEngine.<init>(JavaDBStorageEngine.java:102) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.StoreRegistry.register(StoreRegistry.java:114) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.SyncManager.registerPersistentStore(SyncManager.java:183) [floodlight.jar:na]
+	at org.sdnplatform.sync.internal.config.SyncStoreCCProvider.init(SyncStoreCCProvider.java:85) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.config.DelegatingCCProvider.init(DelegatingCCProvider.java:37) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.SyncManager.init(SyncManager.java:487) [floodlight.jar:na]
+	at net.floodlightcontroller.core.module.FloodlightModuleLoader.initModules(FloodlightModuleLoader.java:460) [floodlight.jar:na]
+	at net.floodlightcontroller.core.module.FloodlightModuleLoader.loadModulesFromList(FloodlightModuleLoader.java:295) [floodlight.jar:na]
+	at net.floodlightcontroller.core.module.FloodlightModuleLoader.loadModulesFromConfig(FloodlightModuleLoader.java:235) [floodlight.jar:na]
+	at net.floodlightcontroller.core.Main.main(Main.java:61) [floodlight.jar:na]
+Caused by: java.sql.SQLException: Failed to create database '/var/lib/floodlight/SyncDB', see the next exception for details.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.EmbedConnection30.<init>(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbeddedDataSource.getConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbedPooledConnection.openRealConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbedPooledConnection.<init>(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbedPooledConnection40.<init>(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.Driver40.getNewPooledConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource.createPooledConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource.getPooledConnection(Unknown Source) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.store.JavaDBStorageEngine.getConnection(JavaDBStorageEngine.java:365) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.store.JavaDBStorageEngine.initTable(JavaDBStorageEngine.java:372) ~[floodlight.jar:na]
+	at org.sdnplatform.sync.internal.store.JavaDBStorageEngine.<init>(JavaDBStorageEngine.java:100) ~[floodlight.jar:na]
+	... 9 common frames omitted
+Caused by: org.apache.derby.impl.jdbc.EmbedSQLException: Failed to create database '/var/lib/floodlight/SyncDB', see the next exception for details.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source) ~[floodlight.jar:na]
+	... 28 common frames omitted
+Caused by: org.apache.derby.impl.jdbc.EmbedSQLException: Directory /var/lib/floodlight/SyncDB cannot be created.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source) ~[floodlight.jar:na]
+	... 25 common frames omitted
+Caused by: org.apache.derby.iapi.error.StandardException: Directory /var/lib/floodlight/SyncDB cannot be created.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.services.monitor.StorageFactoryService$9.run(Unknown Source) ~[floodlight.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_271]
+	at org.apache.derby.impl.services.monitor.StorageFactoryService.createServiceRoot(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.impl.services.monitor.BaseMonitor.createPersistentService(Unknown Source) ~[floodlight.jar:na]
+	at org.apache.derby.iapi.services.monitor.Monitor.createPersistentService(Unknown Source) ~[floodlight.jar:na]
+	... 25 common frames omitted
+10:59:03.981 WARN [n.f.c.i.OFSwitchManager:main] SSL disabled. Using unsecure connections between Floodlight and switches.
+10:59:03.981 INFO [n.f.c.i.OFSwitchManager:main] Clear switch flow tables on initial handshake as master: TRUE
+10:59:03.981 INFO [n.f.c.i.OFSwitchManager:main] Clear switch flow tables on each transition to master: TRUE
+10:59:03.981 INFO [n.f.c.i.OFSwitchManager:main] Setting 0x1 as the default max tables to receive table-miss flow
+10:59:03.986 INFO [n.f.c.i.OFSwitchManager:main] Setting max tables to receive table-miss flow to 0x1 for DPID 00:00:00:00:00:00:00:01
+10:59:03.986 INFO [n.f.c.i.OFSwitchManager:main] Setting max tables to receive table-miss flow to 0x1 for DPID 00:00:00:00:00:00:00:02
+10:59:04.015 INFO [n.f.c.i.OFSwitchManager:main] Computed OpenFlow version bitmap as [62]
+10:59:04.016 INFO [n.f.c.i.Controller:main] OpenFlow port set to 6653
+10:59:04.017 INFO [n.f.c.i.Controller:main] Number of worker threads set to 16
+10:59:04.017 INFO [n.f.c.i.Controller:main] Controller role set to ACTIVE
+10:59:04.040 INFO [n.f.l.i.LinkDiscoveryManager:main] Link latency history set to 10 LLDP data points
+10:59:04.041 INFO [n.f.l.i.LinkDiscoveryManager:main] Latency update threshold set to +/-0.5 (50.0%) of rolling historical average
+10:59:04.047 INFO [n.f.f.Forwarding:main] Default hard timeout not configured. Using 0.
+10:59:04.047 INFO [n.f.f.Forwarding:main] Default idle timeout not configured. Using 5.
+10:59:04.047 INFO [n.f.f.Forwarding:main] Default priority not configured. Using 1.
+10:59:04.047 INFO [n.f.f.Forwarding:main] Default flags will be empty.
+10:59:04.047 INFO [n.f.f.Forwarding:main] Default flow matches set to: VLAN=true, MAC=true, IP=true, TPPT=true
+10:59:04.047 INFO [n.f.f.Forwarding:main] Not flooding ARP packets. ARP flows will be inserted for known destinations
+10:59:04.047 INFO [n.f.s.StatisticsCollector:main] Statistics collection disabled
+10:59:04.047 INFO [n.f.s.StatisticsCollector:main] Port statistics collection interval set to 10s
+10:59:04.067 INFO [o.s.s.i.c.FallbackCCProvider:main] Cluster not yet configured; using fallback local configuration
+10:59:04.068 INFO [o.s.s.i.SyncManager:main] [32767] Updating sync configuration ClusterConfig [allNodes={32767=Node [hostname=localhost, port=6642, nodeId=32767, domainId=32767]}, authScheme=CHALLENGE_RESPONSE, keyStorePath=/etc/floodlight/auth_credentials.jceks, keyStorePassword is unset]
+10:59:04.159 INFO [o.s.s.i.r.RPCService:main] Listening for internal floodlight RPC on localhost/127.0.0.1:6642
+10:59:04.166 INFO [n.f.c.i.OFSwitchManager:main] Listening for switch connections on /0.0.0.0:6653
+10:59:04.198 INFO [n.f.l.i.LinkDiscoveryManager:main] Setting autoportfast feature to OFF
+10:59:06.530 INFO [n.f.j.JythonServer:debugserver-main] Starting DebugServer on :6655
+10:59:08.856 INFO [n.f.c.i.OFChannelHandler:nioEventLoopGroup-3-1] New switch connection from /127.0.0.1:57379
+10:59:08.881 INFO [n.f.c.i.OFChannelHandler:nioEventLoopGroup-3-1] [[? from 127.0.0.1:57379]] Disconnected connection
+10:59:08.892 INFO [n.f.c.i.OFChannelHandler:nioEventLoopGroup-3-2] New switch connection from /127.0.0.1:57380
+10:59:08.916 INFO [n.f.c.i.OFChannelHandler:nioEventLoopGroup-3-2] Negotiated down to switch OpenFlow version of OF_10 for /127.0.0.1:57380 using lesser hello header algorithm.
+10:59:08.921 WARN [n.f.c.i.OFChannelHandler:nioEventLoopGroup-3-2] Ignoring PACKET_IN message from /127.0.0.1:57380 during OpenFlow channel establishment.
+10:59:08.960 INFO [n.f.c.i.OFSwitchHandshakeHandler:nioEventLoopGroup-3-2] Switch OFSwitch DPID[00:00:00:00:00:00:00:01] bound to class class net.floodlightcontroller.core.internal.OFSwitch, description SwitchDescription [manufacturerDescription=Nicira, Inc., hardwareDescription=Open vSwitch, softwareDescription=2.0.2, serialNumber=None, datapathDescription=None]
+10:59:08.966 INFO [n.f.c.i.OFSwitchHandshakeHandler:nioEventLoopGroup-3-2] Clearing flow tables of 00:00:00:00:00:00:00:01 on upcoming transition to MASTER.
+10:59:08.971 WARN [n.f.c.i.C.s.notification:main] Switch 00:00:00:00:00:00:00:01 connected.
+10:59:09.438 WARN [n.f.c.i.C.s.notification:main] Switch 00:00:00:00:00:00:00:01 port s1-eth1 changed: UP
+10:59:16.099 DEBUG [LogService:Dispatcher: Thread-27] Processing request to: "http://127.0.0.1:8080/wm/staticflowpusher/json"
+10:59:16.173 INFO [LogService:Dispatcher: Thread-27] 2021-04-11	10:59:16	127.0.0.1	-	-	8080	POST	/wm/staticflowpusher/json	-	200	27	108	72	http://127.0.0.1:8080	curl/7.35.0	-
+10:59:19.211 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-1] Sending LLDP packets out of all the enabled ports
+10:59:34.238 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-1] Sending LLDP packets out of all the enabled ports
+10:59:49.251 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-1] Sending LLDP packets out of all the enabled ports
+11:00:04.263 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-3] Sending LLDP packets out of all the enabled ports
+11:00:19.277 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-4] Sending LLDP packets out of all the enabled ports
+11:00:21.303 DEBUG [LogService:Dispatcher: Thread-31] Processing request to: "http://127.0.0.1:8080/wm/staticflowpusher/json"
+11:00:21.316 INFO [LogService:Dispatcher: Thread-31] 2021-04-11	11:00:21	127.0.0.1	-	-	8080	POST	/wm/staticflowpusher/json	-	200	27	108	13	http://127.0.0.1:8080	curl/7.35.0	-
+11:00:34.289 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-4] Sending LLDP packets out of all the enabled ports
+11:00:49.301 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-4] Sending LLDP packets out of all the enabled ports
+11:01:04.310 INFO [n.f.l.i.LinkDiscoveryManager:Scheduled-2] Sending LLDP packets out of all the enabled ports

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message Bstring {
+    required fixed32 mlen = 1;
+    required fixed32 slen = 2;
+    required string data = 3;
+}

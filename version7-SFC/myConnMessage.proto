@@ -1,0 +1,78 @@
+syntax ="proto2";
+
+option optimize_for = SPEED;
+
+message MyConnMessage{
+    enum DataType{
+        SynType= 1;
+	ConnGetPerflowMsgType =2;
+	ConnGetPerflowAckMsgType =3;
+	ConnStateType = 4;
+	ConnPutPerflowMsgType =5;
+	ConnPutPerflowAckMsgType = 6;
+	UnlockMsgType = 7;
+    }
+
+    required DataType data_type = 1;
+
+    oneof message{
+        ConnSyn connsyn = 2;
+	ConnGetPerflowMsg connGetPerflowMsg=3;
+	ConnGetPerflowAckMsg connGetPerflowAckMsg=4;
+	ConnState connState= 5;
+	ConnPutPerflowMsg connPutPerflowMsg=6;
+	ConnPutPerflowAckMsg connPutPerflowAckMsg= 7;
+	UnlockMsg unlockMsg = 8;
+    }
+}
+
+
+message ConnSyn {
+	optional string host=1;
+	optional fixed32 pid=2;
+}
+
+message ConnGetPerflowMsg {
+    optional int32 hw_proto = 1;            
+    optional int32  proto = 2;
+    optional int32 mode = 3;
+}
+
+message ConnGetPerflowAckMsg {
+    optional fixed32 count = 1;
+}
+
+message ConnState {
+	repeated fixed32 ether_dst=1;
+        repeated fixed32 ether_src=2;	
+        optional fixed32 s_ip=3;
+        optional fixed32 d_ip=4;
+        optional fixed32 s_port=5;
+        optional fixed32 d_port=6;
+	optional int32 hw_proto = 7;            
+        optional int32  proto = 8; 
+        optional fixed64 cxid=9;
+        optional fixed32 hash=10;  
+	optional fixed32 nat_hash=11;      
+}
+
+
+message ConnPutPerflowMsg {
+    optional ConnState state = 1;
+}
+
+message ConnPutPerflowAckMsg {
+    optional fixed32 hash = 1;
+    optional fixed32 cxid = 2;
+    enum fwState{
+        	OPEN= 1;
+		CLOSED = 2;
+    	} 
+    optional fwState fwstate = 3;
+    optional fixed32 nat_hash= 4; 
+}
+
+message UnlockMsg {
+}
+
+
