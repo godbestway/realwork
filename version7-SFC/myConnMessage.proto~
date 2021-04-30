@@ -51,7 +51,7 @@ message ConnState {
         optional fixed32 d_port=6;
 	optional int32 hw_proto = 7;            
         optional int32  proto = 8; 
-        optional fixed64 cxid=9;
+        optional fixed32 cxid=9;
         optional fixed32 hash=10;  
 	optional fixed32 nat_hash=11;      
 }
@@ -66,7 +66,7 @@ message ConnPutPerflowAckMsg {
     optional fixed32 cxid = 2;
     enum fwState{
         	OPEN= 1;
-			CLOSED = 2;
+		CLOSED = 2;
     	} 
     optional fwState fwstate = 3;
     optional fixed32 nat_hash= 4; 

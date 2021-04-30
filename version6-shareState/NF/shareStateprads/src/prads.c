@@ -1503,9 +1503,10 @@ int main(int argc, char *argv[])
 
     CONNACLocals locals;
     bzero(&locals,sizeof(locals));
-    locals.action_get_sharestate_perflow = &local_action_get_perflow;
-    locals.action_put_sharestate_perflow = &local_action_put_perflow;
 
+    locals.action_get_sharestate_perflow = &local_action_get_perflow;
+
+    locals.action_put_sharestate_perflow = &local_action_put_perflow;
     locals.action_get_multiflow = &local_action_get_multiflow;
     locals.action_put_multiflow = &local_action_put_multiflow;
     locals.action_get_allflows = &local_action_get_allflows;

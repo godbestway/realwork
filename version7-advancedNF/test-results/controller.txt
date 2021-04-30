@@ -1,0 +1,7 @@
+11:58:01.479 [main] WARN  i.netty.util.internal.MacAddressUtil - Failed to find a usable hardware address from the network interfaces; using random bytes: d2:88:97:d0:62:9d:b2:86
+traceNumPkts-1
+operationdelay5
+11:58:01.529 [Thread-0] INFO  Server.OperationManager - a new condition is added
+11:58:01.533 [nioEventLoopGroup-2-1] INFO  Server.ServerListener - bind success at port:18080
+11:58:01.533 [nioEventLoopGroup-4-1] INFO  Server.ServerListener - bind success at port:18081
+11:58:01.534 [main] INFO  zconnacmove.SingleMove - netty server is set up

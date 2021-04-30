@@ -60,25 +60,30 @@ int conn_send_getPerflowAck(int count){
 
 }
 
-int sfc_send_putPerflowAck(int hash, int cxid, ){
-	//printf("send conn putPerflowAck\n");
+int sfc_send_putPerflowAck(int hash, int cxid,int state ){
 
 	ConnPutPerflowAckMsg connPutPerflowAckMsg;
-	conn_put_perflow_ack_msg__init(&connPutPerflowAckMsg);
+        conn_put_perflow_ack_msg__init(&connPutPerflowAckMsg);
 
-        connPutPerflowAckMsg.has_hash=1;
-	connPutPerflowAckMsg.hash = send_state->hash;
-	connPutPerflowAckMsg.has_cxid=1;
-	connPutPerflowAckMsg.cxid = send_state->cxid;
-	connPutPerflowAckMsg.has_fwstate=1;
-	connPutPerflowAckMsg.fwstate = send_state->state;
+    
+    	connPutPerflowAckMsg.has_hash=1;
+    	connPutPerflowAckMsg.hash = hash;
+    	connPutPerflowAckMsg.has_cxid=1;
+    	connPutPerflowAckMsg.cxid = cxid;
+    	connPutPerflowAckMsg.has_fwstate=1;
+    	connPutPerflowAckMsg.fwstate = state;
+
 	
+	printf("sfc_send_putPerflowAck\n");
 	MyConnMessage mes;
         my_conn_message__init(&mes);
    
         mes.data_type = MY_CONN_MESSAGE__DATA_TYPE__ConnPutPerflowAckMsgType;
-        mes.message_case =  MY_CONN_MESSAGE__MESSAGE_CONN_GET_PERFLOW_ACK_MSG;
+        mes.message_case =  MY_CONN_MESSAGE__MESSAGE_CONN_PUT_PERFLOW_ACK_MSG;
         mes.connputperflowackmsg = &connPutPerflowAckMsg;
+
+	printf("connPutPerflowAckMsg hash %u\n",mes.connputperflowackmsg->has_hash);
+        printf("connPutPerflowAckMsg cxid %u\n",mes.connputperflowackmsg->has_cxid);
  
         int len = my_conn_message__get_packed_size(&mes);
         //printf("size of getPerflowAck : %u\n", len);
@@ -110,7 +115,7 @@ int conn_send_putPerflowAck(ConnState* send_state){
         my_conn_message__init(&mes);
    
         mes.data_type = MY_CONN_MESSAGE__DATA_TYPE__ConnPutPerflowAckMsgType;
-        mes.message_case =  MY_CONN_MESSAGE__MESSAGE_CONN_GET_PERFLOW_ACK_MSG;
+        mes.message_case =  MY_CONN_MESSAGE__MESSAGE_CONN_PUT_PERFLOW_ACK_MSG;
         mes.connputperflowackmsg = &connPutPerflowAckMsg;
  
         int len = my_conn_message__get_packed_size(&mes);
@@ -177,6 +182,7 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
 
 static int handle_put_perflow(ConnPutPerflowMsg* connPutPerflow_recv)
 {
+    printf("handle_put_perflow\n");
     if (NULL == connac_locals->conn_put_perflow)
     {
 	printf("this function is not supported");
@@ -209,14 +215,14 @@ static void *state_handler(void *arg)
 
 	MyConnMessage myConnMessage = *my_conn_message__unpack(NULL,protoObject.length,protoObject.object);
 
-        //printf(" myConnMessage type %d\n ", myConnMessage.data_type);
+        printf(" myConnMessage type %d\n ", myConnMessage.data_type);
 	
 	 if(myConnMessage.data_type == MY_CONN_MESSAGE__DATA_TYPE__ConnGetPerflowMsgType){
 		ConnGetPerflowMsg* connGetPerflowMsg = myConnMessage.conngetperflowmsg;
 		handle_get_perflow(connGetPerflowMsg);
 
 	}else if(myConnMessage.data_type == MY_CONN_MESSAGE__DATA_TYPE__ConnPutPerflowMsgType){
-		//printf("ConnPutPerflowMsgType received\n");
+		printf("ConnPutPerflowMsgType received\n");
 		ConnPutPerflowMsg *connPutPerflowMsg = myConnMessage.connputperflowmsg;
 		handle_put_perflow(connPutPerflowMsg);
 

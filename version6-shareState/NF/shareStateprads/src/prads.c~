@@ -1081,6 +1081,7 @@ void game_over()
     intr_flag = 1;
 */
     print_prads_stats();
+    showAllState();
     exit(0);
 }
 
@@ -1502,6 +1503,7 @@ int main(int argc, char *argv[])
 
     CONNACLocals locals;
     bzero(&locals,sizeof(locals));
+
     locals.action_get_sharestate_perflow = &local_action_get_perflow;
     locals.action_put_sharestate_perflow = &local_action_put_perflow;
 

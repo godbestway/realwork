@@ -30,9 +30,6 @@ static pthread_t multi_thread;
 //from connac_state.c
 extern int drop;
 
-int share = 0;
-
-
 int action_send_getPerflowAck(int count){
         //printf("send action getPerflowAck\n");
 
@@ -125,6 +122,7 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 	}
     else{  key.wildcards |= WILDCARD_NW_PROTO; }
 
+    int share = 0;
     if(actionGetPerflow_recv->has_share == 1){
     	share = actionGetPerflow_recv->share;
     }
@@ -158,20 +156,11 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
 static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
 {
-    //printf("receive getPerflow\n")
+    printf("handel put perflow\n");
 
     //share == 1, send one completed state instead of conn-action
-    if(share == 1){
-	if (NULL == connac_locals->action_put_perflow)
-    	{
-		printf("this function is not supported");
-        	return -1; 
-    	}
-    	ActionState* state = actionPutPerflow_recv->state;
-        connac_locals->action_put_perflow(state);
-	action_send_putPerflowAck(state->hash, state->cxid);
-    }
-    else{
+    if(connac_config.ctrl_share == 1){
+	printf("share == 1\n");
 	if (NULL == connac_locals->action_put_sharestate_perflow)
     	{
 		printf("this function is not supported");
@@ -180,6 +169,17 @@ static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
     	ShareState* share_state = actionPutPerflow_recv->share_state;
         connac_locals->action_put_sharestate_perflow(share_state);
 	action_send_putPerflowAck(share_state->hash, share_state->cxid);
+    }
+    else{
+	printf("share == 0\n");
+	if (NULL == connac_locals->action_put_perflow)
+    	{
+		printf("this function is not supported");
+        	return -1; 
+    	}
+    	ActionState* state = actionPutPerflow_recv->state;
+        connac_locals->action_put_perflow(state);
+	action_send_putPerflowAck(state->hash, state->cxid);
 
     }
     

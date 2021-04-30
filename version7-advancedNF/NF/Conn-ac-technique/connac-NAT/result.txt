@@ -1,0 +1,393 @@
+
+Retrieving gateway addresses...
+Gateway MAC: c6:12:a2:58:48:52
+Gateway IP:  10.0.10.254
+
+Trying to listen on h2-eth1...
+h2-eth1: hwaddr = 5a:6e:8b:42:70:6f, ipaddr =   192.168.0.2,
+      subnet =   192.168.0.0, netmask = 255.255.255.0
+Trying to listen on h2-eth0...
+h2-eth0: hwaddr =      0:0:0:0:0:2, ipaddr =     10.0.10.1,
+      subnet =     10.0.10.0, netmask = 255.255.255.0
+Listening on h2-eth0...
+Listening on h2-eth1...
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+Creating conn table
+flow_number 1
+record->internal_port 42245
+outbound hash 11387
+outbound cxid 1
+outbound hash 11387
+Creating action table
+action table outbound final finish
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=42245
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=0:0:0:0:0:3
+IP   src=10.0.0.1 dst=192.168.0.1
+TCP  packet print src=8080 dst=42245
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=1e:51:b0:79:15:7f
+IP   src=10.0.0.1 dst=44.81.176.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=1e:51:b0:79:15:7f
+IP   src=10.0.0.1 dst=44.81.176.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=1e:51:b0:79:15:7f
+IP   src=10.0.0.1 dst=44.81.176.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778216
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:ae:79:15:7f
+IP   src=10.0.0.1 dst=148.80.174.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:b2:79:15:7f
+IP   src=10.0.0.1 dst=148.80.178.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:b2:79:15:7f
+IP   src=10.0.0.1 dst=148.80.178.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:ba:79:15:7f
+IP   src=10.0.0.1 dst=148.80.186.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:ba:79:15:7f
+IP   src=10.0.0.1 dst=148.80.186.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778217
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.10.1 dst=10.0.0.1
+TCP  packet print src=32488 dst=8080
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778218
+
+
+New IP packet on h2-eth0:
+packet print
+ETH  src=c6:12:a2:58:48:52 dst=0:0:0:0:0:2
+IP   src=10.0.0.1 dst=10.0.10.1
+TCP  packet print src=8080 dst=32488
+TCP  original src=8080 dst=32488
+conn table inbound---------------
+hash 23553
+record :   32488 |      10.0.0.1 
+parameters :   32488 |      10.0.0.1 
+find record
+hash 23553
+TCP  src=8080 dst=32533
+packet print
+ETH  src=5a:6e:8b:42:70:6f dst=86:50:a0:79:15:7f
+IP   src=10.0.0.1 dst=148.80.160.121
+TCP  packet print src=8080 dst=32533
+     internal MAC |  internal IP | in. port | ex. port |   external IP | touch
+ conn_record != NULL      0:0:0:0:0:3 |  192.168.0.1 |    42245 |    32488 |      10.0.0.1 | 1613778218
+
+
+New IP packet on h2-eth1:
+packet print
+ETH  src=0:0:0:0:0:3 dst=5a:6e:8b:42:70:6f
+IP   src=192.168.0.1 dst=10.0.0.1
+TCP  packet print src=42245 dst=8080
+TCP  original src=42245 dst=8080
+from_interface_id == INTERFACE_INTERNAL
+outbound internal_port 42245
+outbound hash 11387
+outbound hash 11387
+outbound cxid 1
+nat_hash 23553
+TCP  src=32488 dst=8080
+packet print
+ETH  src=0:0:0:0:0:2 dst=c6:12:a2:58:48:52
+IP   src=10.0.1
