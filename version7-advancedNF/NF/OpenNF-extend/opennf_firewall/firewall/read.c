@@ -15,7 +15,9 @@
 #include <string.h>
 
 #include <pthread.h>
-#include <CONNAC.h>
+#include <SDMBN.h>
+#include "SDMBNLocal.h"
+#include "serialize.h"
 
 #include "packets.h"
 
@@ -27,30 +29,39 @@
 #define ICMP_PROTO_ID 1
 #define UDP_PROTO_ID 17
 #define MAX_LINE_LEN 256
-//+++
-static int drop_number=0;
+//struct timeval start_serialize;
+
 pthread_mutex_t ConnEntryLock;
-pthread_mutex_t ActionEntryLock;
-//+++
+pthread_mutex_t AssetEntryLock;
+ser_tra_t *state_tra;
+
+	
+ser_tra_t* setup_serialize_translators(){
+	state_tra = ser_new_tra("serialize_node",sizeof(serialize_node),NULL);
+	ser_new_field(state_tra,"uint32_t",0,"src_ip",offsetof(serialize_node,src_ip));
+	ser_new_field(state_tra,"uint32_t",0,"src_prt",offsetof(serialize_node,src_prt));
+	ser_new_field(state_tra,"uint32_t",0,"dst_ip",offsetof(serialize_node,dst_ip));
+	ser_new_field(state_tra,"uint32_t",0,"dst_prt",offsetof(serialize_node,dst_prt));
+	ser_new_field(state_tra,"int",0,"proto",offsetof(serialize_node,proto));
+	ser_new_field(state_tra,"time_t",0,"time",offsetof(serialize_node,time));
+	ser_new_field(state_tra,"uint32_t",0,"cxid",offsetof(serialize_node,cxid));
+	ser_new_field(state_tra,"uint8_t",0,"gotten",offsetof(serialize_node,gotten));
+}
+
+
 
 //Processes a packet read from an interface
 void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr, const u_char *data) {
     
     u_int offset = 0;
-    
-//+++
-    if(drop == 1){
-	printf("drop == 1");
-	drop_number++;
-	printf("drop_number %d",drop_number);
-	return;
-    } 
-    
-    struct timeval recv_time;
+    //struct timeval end_serialize;
+    //gettimeofday(&start_serialize, NULL);    
+
+     struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
 
-     
-//+++
+    
+    //expunge_expired();
     
     // Get the ethernet header which is the start of the array.
     struct eth_header *h_ether = malloc(sizeof(struct eth_header));
@@ -70,8 +81,6 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     offset += (h_ip->ver_ihl & 0x0f) * 4;
 
     //printf("\n\nProtocol Type: %d\n\n", h_ip->proto);
-
-
     
     //handle ICMP packets
     if(h_ip->proto ==ICMP_PROTO_ID){
@@ -86,15 +95,24 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
         memcpy(h_tcp, (struct tcp_header *)(data + offset), sizeof(struct tcp_header));
         //printf("\nsrc_port %d\n", ntohs(h_tcp->src_port)); 
         //printf("\ndst_port %d\n", ntohs(h_tcp->dst_port));
-//+++
-	if (htons(80) == h_tcp->src_port || htons(80) == h_tcp->dst_port)
-     { connac_notify_packet_received("HTTP", &recv_time); }
-     else if (htons(443) == h_tcp->src_port || htons(443) == h_tcp->dst_port)
-     { connac_notify_packet_received("HTTPS", &recv_time); }
-     else
-     { connac_notify_packet_received("UNKNOWN", &recv_time); }
-//+++
         handle_tcp(h_ether, h_ip, h_tcp, iface, hdr, data); 
+
+
+//+++
+	if (htons(80) == h_tcp->src_port || htons(80) ==h_tcp->dst_port)
+    { sdmbn_notify_packet_received("HTTP", &recv_time); }
+    else if (htons(443) == h_tcp->src_port || htons(443) == h_tcp->dst_port)
+    { sdmbn_notify_packet_received("HTTPS", &recv_time); }
+    else
+    { sdmbn_notify_packet_received("UNKNOWN", &recv_time); }
+//+++
+
+	//gettimeofday(&end_serialize, NULL);
+        //long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+        //long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+        //long total = (sec * 1000 * 1000) + usec;
+			
+        //printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
         return;
     //handle UPD packets
     }else if(h_ip-> proto == UDP_PROTO_ID){
@@ -110,20 +128,8 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     }
 }
 
-
-void game_over()
-{
-	showAllState();
- 	exit(0);
-}
-
-
 int main(int argc, char **argv) {
     //intiialize globals
-
-    signal(SIGTERM, game_over);
-    signal(SIGINT, game_over);
-    signal(SIGQUIT, game_over);
 
     char err[PCAP_ERRBUF_SIZE];
     pcap_t *pch;
@@ -162,6 +168,9 @@ int main(int argc, char **argv) {
             i->pcap= pcap_open_live(argv[1],65535,1,0, pcap_errbuff);
             printf("Opening interface %s..\n", argv[1]);
 
+	    char* dev = argv[1];
+	    //printf("Opening device %s", dev);
+
 
 	    if(!(i->pcap)){
 		printf("could not open device\n");
@@ -196,23 +205,20 @@ int main(int argc, char **argv) {
             im->iface=i;
             printf("%d\n", i->ip_addr);
 
-	
+	SDMBNLocals locals;
+    	bzero(&locals, sizeof(locals));
+    	locals.get_perflow = &local_get_perflow;
+    	locals.put_perflow = &local_put_perflow;
+	locals.device = dev;
+        sdmbn_init(&locals);
 
-	CONNACLocals locals;
-    	bzero(&locals,sizeof(locals));
-    	locals.conn_get_perflow = &local_conn_get_perflow;
-    	locals.conn_put_perflow = &local_conn_put_perflow;
-    	locals.action_put_perflow = &local_action_put_perflow;
-
-    	//connac_init(&locals);
-
-    	// Conn Table Lock
-   	 pthread_mutex_init(&ConnEntryLock, NULL);
-
-    	// Action Table Lock
-    	pthread_mutex_init(&ActionEntryLock, NULL);
-
-           
+	// Connection Table Lock
+        pthread_mutex_init(&ConnEntryLock, NULL);
+        // Asset Table Lock
+        pthread_mutex_init(&AssetEntryLock, NULL);
+    
+        setup_serialize_translators();
+          
        
         //indefinately read from the interfaces 
         while(1){
@@ -225,4 +231,6 @@ int main(int argc, char **argv) {
         }
         return 0;
 }
+
+
 

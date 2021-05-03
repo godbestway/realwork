@@ -236,10 +236,14 @@ struct  _ShareState
   uint32_t external_port;
   protobuf_c_boolean has_hash;
   uint32_t hash;
+  protobuf_c_boolean has_nat_hash;
+  uint32_t nat_hash;
+  size_t n_ether_src;
+  uint32_t *ether_src;
 };
 #define SHARE_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&share_state__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, SHARE_STATE__FW_STATE__OPEN, 0, 0, 0, 0, 0, 0 }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, SHARE_STATE__FW_STATE__OPEN, 0, 0, 0, 0, 0, 0, 0, 0, 0,NULL }
 
 
 struct  _ActionGetPerflowMsg

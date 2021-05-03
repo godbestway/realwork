@@ -1,0 +1,4 @@
+nat must change the nat_hash
+for example ex_ip in nat.c, use ex_ip, s_ip, src_port, dst_port recalculate the nat_hash
+in local_put_perflow
+

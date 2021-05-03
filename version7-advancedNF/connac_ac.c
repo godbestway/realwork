@@ -109,7 +109,8 @@ int action_send_perflow(uint8_t* buf, int len){
 
 static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 {
-    
+    //set drop flag == 1;
+    drop = 1;
     int count;
     Key key;
     if(actionGetPerflow_recv->has_hw_proto){

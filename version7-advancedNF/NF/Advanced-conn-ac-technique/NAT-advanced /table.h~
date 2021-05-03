@@ -91,8 +91,6 @@ actionState *action_table_outbound(packetinfo* pi);
 int conn_table_inbound(packetinfo* pi);
 connState *action_table_inbound(packetinfo* pi);
 
-uint16_t table_get_external_port(uint32_t hash,uint32_t cxid);
-
 void state_expunge_expired();
 
 int local_conn_get_one_perflow(connState * conn_state);

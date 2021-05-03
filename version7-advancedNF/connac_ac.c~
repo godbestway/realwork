@@ -157,7 +157,7 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
 static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
 {
-    printf("handle put perflow\n")
+    printf("handle put perflow\n");
 
     //share == 1, send one completed state instead of conn-action
     if(connac_config.ctrl_share == 1){

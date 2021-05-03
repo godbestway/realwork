@@ -108,6 +108,9 @@ int local_conn_get_one_perflow(connState* conn_state){
         conn_perflow->s_port = conn_state->src_prt;
 	conn_perflow->has_d_port = 1;
 	conn_perflow->d_port = conn_state->dst_prt;
+	conn_perflow->has_proto = 1;
+	conn_perflow->proto = conn_state->proto;
+
 	int hash = conn_state->hash;			
 	conn_perflow->has_hash=1;
 	conn_perflow->hash = hash;
@@ -180,6 +183,22 @@ int local_conn_get_perflow(Key key){
              {
              	perror("pthread_create error");
              }
+
+	     printf("ad_nat_firewall %d",ad_nat_firewall);
+	     if(ad_nat_firewall == 0){	 
+ 		
+    
+	     	Match* match = (Match*)malloc(sizeof(Match));
+	     	match->hash = conn_state->hash;
+	     	match->cxid = conn_state->cxid;
+		
+	     	//create a thread to send action state
+	     	if((err = pthread_create(&action_thread, NULL, action_sender, (void*)match))!=0)
+             	{
+                	 perror("pthread_create error");
+             	}
+		
+	      }
 	 
 	     count++;	
 	

@@ -15,6 +15,7 @@
 #include <pcap.h>
 
 ConnacConfig connac_config;
+int ad_nat_firewall;
 
 CONNACLocals *connac_locals = NULL;
 
@@ -40,6 +41,13 @@ int connac_init(CONNACLocals *locals)
     assert(0 == pthread_mutex_init(&connac_lock_action, NULL));
 
     printf("connac_config.ctrl_share %d\n",connac_config.ctrl_share);
+
+    if(connac_config.ctrl_adnatfire == 1){
+	ad_nat_firewall = 1;
+	printf("ad_nat_firewall %d\n",ad_nat_firewall);
+     }else{
+	printf("ad_nat_firewall %d\n",ad_nat_firewall);
+     }
     
     if(connac_config.ctrl_share == 0){
     // Initialize state
@@ -50,12 +58,14 @@ int connac_init(CONNACLocals *locals)
     	}
     }
 
+   
     // Initialize state
     if (action_init() < 0)
     { 
         ERROR_PRINT("Failed to initialize action"); 
         return -1;
     }
+    
     
     INFO_PRINT("Initialized");
     

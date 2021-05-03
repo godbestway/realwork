@@ -60,7 +60,7 @@ int action_send_perflow(uint8_t* buf, int len);
 int connac_init(CONNACLocals *locals);
 int connac_cleanup();
 
-int sfc_send_putPerflowAck(int hash, int cxid, int state);
+int sfc_send_putPerflowAck(ConnPutPerflowAckMsg connPutPerflowAckMsg);
 
 void connac_notify_packet_received(char *type, struct timeval *recv_time);
 void connac_notify_flow_created();

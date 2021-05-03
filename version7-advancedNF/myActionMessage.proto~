@@ -117,6 +117,8 @@ message ShareState{
 	optional fwState fwstate = 22;
 	optional fixed32 external_ip = 23;
 	optional fixed32 external_port = 24;
+	optional fixed32 hash = 25;
+	repeated fixed32 ether_src=26;
 }
 
 message ActionGetPerflowMsg {

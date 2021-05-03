@@ -18,6 +18,7 @@ int connac_parse_config()
     connac_config.ctrl_port_action = CONF_CTRL_PORT_ACTION_DEFAULT;
     connac_config.ctrl_share =  CONF_CTRL_SHARE_DEFAULT;
     connac_config.ctrl_sfc = CONF_CTRL_SFC_DEFAULT;
+    connac_config.ctrl_adnatfire = CONF_CTRL_ADNATFIRE_DEFAULT;
     
 #define FILEPATH_LEN 256
     char filepath[FILEPATH_LEN];
@@ -45,6 +46,8 @@ int connac_parse_config()
         { connac_config.ctrl_share = atoi(value); }
 	else if (0 == strncmp(key, CONF_CTRL_SFC, 8))
         { connac_config.ctrl_sfc = atoi(value); }
+	else if (0 == strncmp(key, CONF_CTRL_ADNATFIRE, 14))
+        { connac_config.ctrl_adnatfire = atoi(value); }
     }
 
     if (fclose(file) != 0)

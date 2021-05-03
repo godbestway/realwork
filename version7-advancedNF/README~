@@ -5,3 +5,12 @@ connac_init don't need to open the state channel, only open the action channel
 ctrl_sfc means, support sfc mode
 ctrl_sfc = 0, conn_send_putPerflowAck process as normal
 ctrl_sfc = 1, NF directly use this function sfc_send_putPerflowAck from library 
+
+sfc-NAT
+use a fixed port instead of dynamic random port
+uint16_t table_get_external_port(uint32_t hash,uint32_t cxid)
+external_port = (hash+cxid) % (MAX_EXTERNAL_PORT - MIN_EXTERNAL_PORT) + MIN_EXTERNAL_PORT;
+
+"ctrl_adnatfire"
+advanced mode for NAT and firewall
+only need to open the action channel

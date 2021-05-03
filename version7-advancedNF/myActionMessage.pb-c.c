@@ -1706,7 +1706,7 @@ const ProtobufCEnumDescriptor share_state__fw_state__descriptor =
   share_state__fw_state__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor share_state__field_descriptors[25] =
+static const ProtobufCFieldDescriptor share_state__field_descriptors[27] =
 {
   {
     "start_time",
@@ -2008,6 +2008,30 @@ static const ProtobufCFieldDescriptor share_state__field_descriptors[25] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "nat_hash",
+    26,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ShareState, has_nat_hash),
+    offsetof(ShareState, nat_hash),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "ether_src",
+    27,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ShareState, n_ether_src),
+    offsetof(ShareState, ether_src),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned share_state__field_indices_by_name[] = {
   4,   /* field[4] = af */
@@ -2019,12 +2043,14 @@ static const unsigned share_state__field_indices_by_name[] = {
   17,   /* field[17] = d_tcpFlags */
   14,   /* field[14] = d_total_bytes */
   13,   /* field[13] = d_total_pkts */
+  26,   /* field[26] = ether_src */
   22,   /* field[22] = external_ip */
   23,   /* field[23] = external_port */
   21,   /* field[21] = fwstate */
   24,   /* field[24] = hash */
   5,   /* field[5] = hw_proto */
   1,   /* field[1] = last_pkt_time */
+  25,   /* field[25] = nat_hash */
   16,   /* field[16] = pad */
   6,   /* field[6] = proto */
   3,   /* field[3] = reversed */
@@ -2039,7 +2065,7 @@ static const unsigned share_state__field_indices_by_name[] = {
 static const ProtobufCIntRange share_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 25 }
+  { 0, 27 }
 };
 const ProtobufCMessageDescriptor share_state__descriptor =
 {
@@ -2049,7 +2075,7 @@ const ProtobufCMessageDescriptor share_state__descriptor =
   "ShareState",
   "",
   sizeof(ShareState),
-  25,
+  27,
   share_state__field_descriptors,
   share_state__field_indices_by_name,
   1,  share_state__number_ranges,

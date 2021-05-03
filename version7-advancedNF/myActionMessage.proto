@@ -118,6 +118,8 @@ message ShareState{
 	optional fixed32 external_ip = 23;
 	optional fixed32 external_port = 24;
 	optional fixed32 hash = 25;
+	optional fixed32 nat_hash = 26;
+	repeated fixed32 ether_src=27;
 }
 
 message ActionGetPerflowMsg {

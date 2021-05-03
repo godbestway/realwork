@@ -2,15 +2,14 @@
 
 void pass_packet(struct interface* iface, struct ip_header* h_ip,u_char* data, struct pcap_pkthdr* hdr){
 
-	//printf("pass the packet\n");
-	printf("");
+	printf("pass the packet\n");
 }
 
 //Appropriately handles TCP packets seen
 //By the Firewall
 void handle_tcp(struct eth_header* h_ether, struct ip_header* h_ip, struct tcp_header* h_tcp, struct interface* iface, const struct pcap_pkthdr *hdr, u_char* data){
 
-    state_expunge_expired();
+    //state_expunge_expired();
     struct interface* i =NULL;
     rule_type_t rt;
 
@@ -21,8 +20,7 @@ void handle_tcp(struct eth_header* h_ether, struct ip_header* h_ip, struct tcp_h
     pi->h_tcp = h_tcp;
     
     //get the Rule that applies to this packet
-    process_with_conn_state(pi);
-    rt = process_with_action_state(pi);
+    rt = process_with_state(pi);
     //Free interface memory
     free(i);
    
@@ -34,7 +32,7 @@ void handle_tcp(struct eth_header* h_ether, struct ip_header* h_ip, struct tcp_h
         free(h_tcp);
         return;
     }else if(rt == PASS){
-        //printf("TCP: Forwarding the packet.\n");
+        printf("TCP: Forwarding the packet.\n");
         pass_packet(iface, h_ip, data, hdr);
         //free the packets
         //free(h_ip);
