@@ -45,8 +45,6 @@ int connac_init(CONNACLocals *locals)
     if(connac_config.ctrl_adnatfire == 1){
 	ad_nat_firewall = 1;
 	printf("ad_nat_firewall %d\n",ad_nat_firewall);
-     }else{
-	printf("ad_nat_firewall %d\n",ad_nat_firewall);
      }
     
     if(connac_config.ctrl_share == 0){
@@ -109,7 +107,7 @@ void connac_notify_packet_received(char *type, struct timeval *recv_time)
 void connac_notify_flow_created()
 {
     connac_stats.flows_active++;
-    printf("connac_stats.flows_active=%d\n",connac_stats.flows_active);
+    //printf("connac_stats.flows_active=%d\n",connac_stats.flows_active);
 }
 
 void connac_notify_flow_destroyed()

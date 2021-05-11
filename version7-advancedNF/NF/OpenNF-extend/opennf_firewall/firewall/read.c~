@@ -13,7 +13,7 @@
 #include <arpa/inet.h>
 #include <time.h>
 #include <string.h>
-
+#include <signal.h>
 #include <pthread.h>
 #include <SDMBN.h>
 #include "SDMBNLocal.h"
@@ -44,6 +44,7 @@ ser_tra_t* setup_serialize_translators(){
 	ser_new_field(state_tra,"uint32_t",0,"dst_prt",offsetof(serialize_node,dst_prt));
 	ser_new_field(state_tra,"int",0,"proto",offsetof(serialize_node,proto));
 	ser_new_field(state_tra,"time_t",0,"time",offsetof(serialize_node,time));
+	ser_new_field(state_tra,"int",0,"state",offsetof(serialize_node,state));
 	ser_new_field(state_tra,"uint32_t",0,"cxid",offsetof(serialize_node,cxid));
 	ser_new_field(state_tra,"uint8_t",0,"gotten",offsetof(serialize_node,gotten));
 }
@@ -99,9 +100,9 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
 
 
 //+++
-	if (htons(80) == h_tcp->s_port || htons(80) ==h_tcp->d_port)
+	if (htons(80) == h_tcp->src_port || htons(80) ==h_tcp->dst_port)
     { sdmbn_notify_packet_received("HTTP", &recv_time); }
-    else if (htons(443) == h_tcp->s_port || htons(443) == h_tcp->d_port)
+    else if (htons(443) == h_tcp->src_port || htons(443) == h_tcp->dst_port)
     { sdmbn_notify_packet_received("HTTPS", &recv_time); }
     else
     { sdmbn_notify_packet_received("UNKNOWN", &recv_time); }
@@ -128,8 +129,17 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     }
 }
 
+void game_over()
+{
+	showAllState();
+ 	exit(0);
+}
+
 int main(int argc, char **argv) {
     //intiialize globals
+    signal(SIGTERM, game_over);
+    signal(SIGINT, game_over);
+    signal(SIGQUIT, game_over);
 
     char err[PCAP_ERRBUF_SIZE];
     pcap_t *pch;

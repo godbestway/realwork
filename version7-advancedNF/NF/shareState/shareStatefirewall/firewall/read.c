@@ -127,7 +127,7 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
 
 void game_over()
 {
-	showAllState();
+	//showAllState();
  	exit(0);
 }
 

@@ -337,7 +337,7 @@ ProtoObject* serialize_cxt_state(connection* cxt){
 
 		pthread_mutex_lock(&AssetEntryLock);  
 
-		//printf("local get conn one per flow\n");
+		printf("local get conn one per flow\n");
 		ShareState *share_state = (ShareState *)malloc(sizeof(ShareState));
 		share_state__init(share_state);
 

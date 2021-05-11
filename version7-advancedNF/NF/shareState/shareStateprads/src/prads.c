@@ -1081,7 +1081,7 @@ void game_over()
     intr_flag = 1;
 */
     print_prads_stats();
-    showAllState();
+//    showAllState();
     exit(0);
 }
 

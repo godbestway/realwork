@@ -110,6 +110,7 @@ int local_conn_get_one_perflow(connState* conn_state){
 	ConnState* conn_perflow = (ConnState*)malloc(sizeof(ConnState));
 	conn_state__init(conn_perflow);
 
+	//lack proto element
 	conn_perflow->has_s_ip = 1;
 	conn_perflow->s_ip = get_int_ip(conn_state->src_ip);
 	conn_perflow->has_d_ip = 1;

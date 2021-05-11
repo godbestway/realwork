@@ -17,9 +17,9 @@
 
 #include "table.h"
 
-
-extern connState *nat_conn_bucket[BUCKET_SIZE];
-extern actionState *nat_action_bucket[BUCKET_SIZE];
+extern uint32_t *hash_nat_array[BUCKET_SIZE];
+//extern connState *nat_conn_bucket[BUCKET_SIZE];
+//extern actionState *nat_action_bucket[BUCKET_SIZE];
 connState *conn_bucket[BUCKET_SIZE];
 actionState *action_bucket[BUCKET_SIZE];
 uint32_t cxtrackerid = 0;
@@ -78,37 +78,11 @@ int local_conn_put_perflow(ConnState* recv_state){
     }
     conn_bucket[hash] = conn_state;
 
-    
-    connState *nat_conn_state =(connState*)malloc(sizeof(connState));
-    for(i =0; i< 6;i++){
-	nat_conn_state->internal_mac[i]=recv_state->ether_src[i];
-	//printf("conn_state->ether_dst[i] %u",conn_state->ether_dst[i]);
+    hash_nat_array[nat_hash] = hash;
+//TODO
+//    uint32_t nat_hash = CXT_HASH4(ex_ip, IP4ADDR(&ipd), htons(key->tp_src),
+//                htons(key->tp_dst), key->nw_proto);
 
-    }
-    //memcpy(nat_conn_state->internal_mac, recv_state->ether_src, ETH_ALEN);
-    nat_conn_state-> internal_ip = recv_state->s_ip;
-    nat_conn_state-> external_ip = recv_state->d_ip;
-    nat_conn_state->internal_port = recv_state->s_port;
-    nat_conn_state->proto = recv_state->proto;
- 
-    nat_conn_state->cxid = cxid;
-    nat_conn_state->hash = hash;
-    nat_conn_state->nat_hash = nat_hash;
-
-    connState* nat_head = nat_conn_bucket[nat_hash];
-
-    // Add to linked list
-    nat_conn_state->prev = NULL;
-    if (nat_head != NULL)
-    {
-        nat_head->prev = nat_conn_state;
-        nat_conn_state->next = nat_head;
-    }
-    else
-    { 
-	nat_conn_state->next = NULL; 
-    }
-    nat_conn_bucket[hash] = nat_conn_state;
 
 
 //+++
@@ -153,30 +127,6 @@ int local_action_put_perflow(ActionState* recv_state){
     { action_state->next = NULL; }
     action_bucket[hash] = action_state;
 
-    actionState *nat_action_state = NULL;
-    nat_action_state =(actionState*)malloc(sizeof(actionState));
-
-    nat_action_state->external_ip = recv_state->external_ip;
-    nat_action_state->external_port = recv_state->external_port;
-    nat_action_state->touch = recv_state->last_pkt_time;
-    nat_action_state->cxid = recv_state->cxid;
-    
-    nat_action_state->hash = hash;
-    nat_action_state->nat_hash = nat_hash;
-
-    actionState* nat_head = nat_action_bucket[hash];
-
-    // Add to linked list
-    nat_action_state->prev = NULL;
-    if (nat_head != NULL)
-    {
-        nat_head->prev = nat_action_state;
-        nat_action_state->next = nat_head;
-    }
-    else
-    { nat_action_state->next = NULL; }
-    nat_action_bucket[hash] = nat_action_state;
-    //showPutActionState();
     pthread_mutex_unlock(&ActionEntryLock);
     
   
@@ -186,7 +136,7 @@ int local_action_put_perflow(ActionState* recv_state){
 
 
 int local_conn_get_one_perflow(connState* conn_state){	
-	printf("local get conn one per flow\n");
+	//printf("local get conn one per flow\n");
 	ConnState* conn_perflow = (ConnState*)malloc(sizeof(ConnState));
 	conn_state__init(conn_perflow);
 
@@ -227,7 +177,7 @@ int local_conn_get_one_perflow(connState* conn_state){
         mes.connstate =conn_perflow;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of Perflow : %u\n", len);
+        //printf("size of Perflow : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -244,14 +194,14 @@ int local_conn_get_one_perflow(connState* conn_state){
 
 
 int local_action_get_one_perflow(Match *match){
-        printf("local get one action per flow\n");	
+        //printf("local get one action per flow\n");	
         pthread_mutex_lock(&ActionEntryLock);
 	int hash = match->hash;
  	int cxid = match->cxid;
 	actionState *action_state = action_bucket[hash];
 	while(action_state != NULL){
 		if(action_state->cxid != cxid){
-			printf("get one action cxid middle\n ");
+			//printf("get one action cxid middle\n ");
 			action_state = action_state->next;
 			continue;
 		}
@@ -308,7 +258,7 @@ int local_action_get_one_perflow(Match *match){
 
 
 static void *conn_sender(void *arg){
-	printf("start a conn sender\n");
+	//printf("start a conn sender\n");
 	
 	connState* conn_state = (connState*)arg;
 	int send_conn = local_conn_get_one_perflow(conn_state);
@@ -320,11 +270,11 @@ static void *conn_sender(void *arg){
 }
 
 static void *action_sender(void *arg){
-	printf("start a action sender\n");
+	//printf("start a action sender\n");
 	Match *match = (Match*)arg;
 	
-	printf("match hash %d\n", match->hash);
-	printf("match cxid %d\n", match->cxid);
+	//printf("match hash %d\n", match->hash);
+	//printf("match cxid %d\n", match->cxid);
 	int send_action = local_action_get_one_perflow(match);
 	if(send_action < 0){
 		printf("send failed");
@@ -872,7 +822,8 @@ int conn_table_inbound(packetinfo* pi)
     uint32_t external_ip = pi->ip->saddr;
     uint16_t external_port = pi->dst_port;
   
-    actionState *record = nat_action_bucket[pi->nat_hash];
+    uint32_t hash = hash_nat_array[pi->nat_hash];
+    actionState *record = action_bucket[hash];
 
     while (record) {
         //printf("record :%8u | %13s \n", record->external_port, inet_ntoa(*(struct in_addr *)&(record->external_ip)));       
@@ -907,7 +858,8 @@ int conn_table_inbound(packetinfo* pi)
 connState *action_table_inbound(packetinfo* pi)
 {
     //printf("nat action table inbound---------------\n");
-    connState *record =nat_conn_bucket[pi->nat_hash];
+     uint32_t hash = hash_nat_array[pi->nat_hash];
+    connState *record = conn_bucket[pi->nat_hash];
 
     while (record) {
         if (record->cxid == pi->cxid) {

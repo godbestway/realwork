@@ -48,6 +48,7 @@ static int drop_number=0;
 pthread_mutex_t ConnEntryLock;
 pthread_mutex_t ActionEntryLock;
 //+++
+uint32_t ex_ip;
 
 /**
  * Return a staticly allocated string buffer containing the IP protocol name
@@ -596,7 +597,7 @@ void get_interface_addresses(int interface_id)
 
 void game_over()
 {
-	showAllState();
+	//showAllState();
  	exit(0);
 }
 
@@ -629,6 +630,8 @@ int main(int argc, char **argv)
     /* store interface names (e.g. "eth0") */
     interfaces[INTERFACE_INTERNAL].device = argv[1];
     interfaces[INTERFACE_EXTERNAL].device = argv[2];
+
+    ex_ip = interfaces[INTERFACE_EXTERNAL].ip;
 
     if (inet_aton(argv[3], &gateway_addr) == 0) {
         perror("gateway");

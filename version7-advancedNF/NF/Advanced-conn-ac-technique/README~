@@ -1,0 +1,5 @@
+NAT uses a the parameter ctrl_adnatfire, to avoid sending the action state in table.c
+
+Firewall uses a traditional way, delete all the action state related part.
+
+Prads send the action and conn state as normal but only the conn states will be checked.

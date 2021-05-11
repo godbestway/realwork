@@ -1142,8 +1142,8 @@ void game_over()
 
 */
     print_prads_stats();
-    showAllState();
-    showAllAssets();
+ //   showAllState();
+//    showAllAssets();
     //showAllCxid();
     exit(0);
 }

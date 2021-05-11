@@ -55,8 +55,8 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     //struct timeval end_serialize;
     //gettimeofday(&start_serialize, NULL);    
 
-     struct timeval recv_time;
-    gettimeofday(&recv_time, NULL);
+     //struct timeval recv_time;
+    //gettimeofday(&recv_time, NULL);
 
     
     //expunge_expired();

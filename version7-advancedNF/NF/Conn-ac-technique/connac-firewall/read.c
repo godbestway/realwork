@@ -113,7 +113,7 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
 
 void game_over()
 {
-	showAllState();
+	//showAllState();
  	exit(0);
 }
 
@@ -204,7 +204,7 @@ int main(int argc, char **argv) {
     	locals.conn_put_perflow = &local_conn_put_perflow;
     	locals.action_put_perflow = &local_action_put_perflow;
 
-    	//connac_init(&locals);
+    	connac_init(&locals);
 
     	// Conn Table Lock
    	 pthread_mutex_init(&ConnEntryLock, NULL);

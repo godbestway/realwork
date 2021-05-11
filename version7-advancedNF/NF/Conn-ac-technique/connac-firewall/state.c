@@ -106,7 +106,7 @@ int local_action_put_perflow(ActionState* recv_state){
 
 
 int local_conn_get_one_perflow(connState* conn_state){	
-	printf("local get conn one per flow\n");
+	//printf("local get conn one per flow\n");
 	ConnState* conn_perflow = (ConnState*)malloc(sizeof(ConnState));
 	conn_state__init(conn_perflow);
 
@@ -136,7 +136,7 @@ int local_conn_get_one_perflow(connState* conn_state){
         mes.connstate =conn_perflow;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of Perflow : %u\n", len);
+        //printf("size of Perflow : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -144,7 +144,7 @@ int local_conn_get_one_perflow(connState* conn_state){
        	if(result < 0){
 			return -1;
 	}
-	printf("local get one conn per flow---send successful\n");
+	//printf("local get one conn per flow---send successful\n");
 	free(buf);
 	free(conn_perflow);
 			
@@ -161,7 +161,7 @@ int local_action_get_one_perflow(Match *match){
 	while(action_state != NULL){
 		//printf("local get one action per flow ---while find the right action\n");
 		if(action_state->cxid != cxid){
-			printf("get one action cxid middle\n ");
+			//printf("get one action cxid middle\n ");
 			action_state = action_state->next;
 			continue;
 		}
@@ -198,7 +198,7 @@ int local_action_get_one_perflow(Match *match){
 			return -1;
 		}
 		action_state = action_state->next;
-	        printf("local get one action per flow ---send successful\n");
+	        //printf("local get one action per flow ---send successful\n");
 		
 		break;
 		
@@ -215,7 +215,7 @@ int local_action_get_one_perflow(Match *match){
 
 
 static void *conn_sender(void *arg){
-	printf("start a conn sender\n");
+	//printf("start a conn sender\n");
 	
 	connState* conn_state = (connState*)arg;
 	int send_conn = local_conn_get_one_perflow(conn_state);
@@ -227,11 +227,11 @@ static void *conn_sender(void *arg){
 }
 
 static void *action_sender(void *arg){
-	printf("start a action sender\n");
+	//printf("start a action sender\n");
 	Match *match = (Match*)arg;
 	
-	printf("match hash %d\n", match->hash);
-	printf("match cxid %d\n", match->cxid);
+	//printf("match hash %d\n", match->hash);
+	//printf("match cxid %d\n", match->cxid);
 	int send_action = local_action_get_one_perflow(match);
 	if(send_action < 0){
 		printf("send failed");
@@ -240,7 +240,7 @@ static void *action_sender(void *arg){
 }
 
 int local_conn_get_perflow(Key key){
-     printf("start conn get perflow\n");
+     //printf("start conn get perflow\n");
      //printf("local  key.dl_type %x\n", key.dl_type);
      //printf("key.nw_proto %u\n",key.nw_proto);
  

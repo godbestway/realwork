@@ -109,17 +109,18 @@ int action_send_perflow(uint8_t* buf, int len){
 
 static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 {
-    
+    //set drop flag == 1;
+    drop = 1;
     int count;
     Key key;
     if(actionGetPerflow_recv->has_hw_proto){
 	key.dl_type = actionGetPerflow_recv->hw_proto;
-	//printf("handle get perflow hw_proto %x\n",key.dl_type);
+	printf("handle get perflow hw_proto %x\n",key.dl_type);
 	}
     else{ key.wildcards |= WILDCARD_DL_TYPE;  }
     if(actionGetPerflow_recv->has_proto){
 	key.nw_proto = actionGetPerflow_recv->proto;
-	//printf("handle get perflow proto %u\n",key.nw_proto);
+	printf("handle get perflow proto %u\n",key.nw_proto);
 	}
     else{  key.wildcards |= WILDCARD_NW_PROTO; }
 
@@ -130,13 +131,16 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
     pthread_mutex_lock(&connac_action_lock_get);
 
-     //share == 1, send one completed state instead of conn-action
+    //share == 1, send one completed state instead of conn-action
     if(share == 1){
 	if (NULL == connac_locals->action_get_sharestate_perflow)
 	{
 		printf("this function is not supported");
         	return -1; 
     	}
+	else{
+		printf("this function is supported\n");
+	}
 	count = connac_locals->action_get_sharestate_perflow(key);     
      }
     else{
@@ -157,7 +161,7 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 
 static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
 {
-    printf("handle put perflow\n");
+    //printf("handle put perflow\n");
 
     //share == 1, send one completed state instead of conn-action
     if(connac_config.ctrl_share == 1){

@@ -291,11 +291,7 @@ int local_action_get_perflow(Key key){
 
         while (cxt != NULL)
         {
-		//printf("local key.wildcards & WILDCARD_DL_TYPE %d\n", key.wildcards & WILDCARD_DL_TYPE);
-		//printf("local key.wildcards & WILDCARD_NW_PROTO %d\n", key.wildcards & WILDCARD_NW_PROTO);
-		//printf("localconn_head[i]->hw_proto %u\n", cxt->hw_proto);
-		//printf("localconn_head[i]->hw_proto %u\n",ntohs(key.dl_type));
-		//printf("ntohs(key.dl_type) %x\n", cxt->proto);
+		//printf("while begin\n");
 		if (!(key.wildcards & WILDCARD_DL_TYPE) && cxt->hw_proto != ntohs(key.dl_type))
 			{
 		        	cxt = cxt->next;
@@ -309,6 +305,7 @@ int local_action_get_perflow(Key key){
 		                continue;
 		        }
 		
+	    //printf("create thread begin\n");
 	    int err;
 	     if((err = pthread_create(&action_thread, NULL, cxt_sender, (void*)cxt))!=0)
              {

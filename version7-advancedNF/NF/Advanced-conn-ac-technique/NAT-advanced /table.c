@@ -29,6 +29,8 @@ extern pthread_mutex_t ActionEntryLock;
 static pthread_t conn_thread;
 static pthread_t action_thread;
 
+extern uint32_t ex_ip;
+
 
 int local_conn_put_perflow(ConnState* recv_state){
 	
@@ -62,6 +64,12 @@ int local_conn_put_perflow(ConnState* recv_state){
 
     uint32_t nat_hash = recv_state->nat_hash;
     conn_state->nat_hash = nat_hash;
+
+    hash_nat_array[nat_hash] = hash;
+//TODO
+//    uint32_t nat_hash = CXT_HASH4(ex_ip, IP4ADDR(&ipd), htons(key->tp_src),
+//                htons(key->tp_dst), key->nw_proto);
+
 
     connState* head = conn_bucket[hash];
 
@@ -201,7 +209,7 @@ int local_conn_get_one_perflow(connState* conn_state){
         mes.connstate =conn_perflow;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of Perflow : %u\n", len);
+        //printf("size of Perflow : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -282,7 +290,7 @@ int local_action_get_one_perflow(Match *match){
 
 
 static void *conn_sender(void *arg){
-	printf("start a conn sender\n");
+	//printf("start a conn sender\n");
 	
 	connState* conn_state = (connState*)arg;
 	int send_conn = local_conn_get_one_perflow(conn_state);

@@ -1,4 +1,5 @@
 NAT uses a the parameter ctrl_adnatfire, to avoid sending the action state in table.c
+if(ad_nat_firewall == 0) don't send action state in table.c
 
 Firewall uses a traditional way, delete all the action state related part.
 

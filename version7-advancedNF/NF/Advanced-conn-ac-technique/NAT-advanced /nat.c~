@@ -40,13 +40,15 @@
 #include "table.h"
 #include "arp.h"
 
-connState *nat_conn_bucket[BUCKET_SIZE];
-actionState *nat_action_bucket[BUCKET_SIZE];
+//connState *nat_conn_bucket[BUCKET_SIZE];
+//actionState *nat_action_bucket[BUCKET_SIZE];
+uint32_t *hash_nat_array[BUCKET_SIZE];
 //+++
 static int drop_number=0;
 pthread_mutex_t ConnEntryLock;
 pthread_mutex_t ActionEntryLock;
 //+++
+uint32_t ex_ip;
 
 /**
  * Return a staticly allocated string buffer containing the IP protocol name
@@ -364,7 +366,7 @@ static int packet_nat(u_char from_interface_id,
 	conn_record->nat_hash = nat_hash;
 	action_record->nat_hash = nat_hash;
 
-        nat_table_add(conn_record, action_record ,nat_hash);
+        nat_table_add(hash,nat_hash);
 
         //printf("%-4s src=%u dst=%u\n", ip_protocol_ntoa(ip->protocol),
         //    htons(*src_port), htons(tcp->dest));
@@ -434,71 +436,13 @@ static int packet_nat(u_char from_interface_id,
     return 0;
 }
 
-
-void nat_table_add(connState* conn_record , actionState* action_record , uint32_t nat_hash)
+void nat_table_add(uint32_t hash , uint32_t nat_hash)
 {
-	//printf("nat.c nat_table_add\n");
-	connState *nat_conn_record;
-
-   	 if ((nat_conn_record = (connState *)malloc(sizeof(connState))) == NULL) {
-        	perror("Unable to allocate a new record");
-        	return;
-    	}
-
-        actionState *nat_action_record;
-
-   	 if ((nat_action_record = (actionState *)malloc(sizeof(actionState))) == NULL) {
-        	perror("Unable to allocate a new record");
-        	return;
-    	}
-        
-
-	//don't do this, pointer will be a mess, this could be further discussed
-        //nat_conn_record = conn_record;
-	//nat_action_record = action_record;
-
-    	memcpy(nat_conn_record->internal_mac, conn_record->internal_mac, ETH_ALEN); 
-    	nat_conn_record->internal_ip = conn_record->internal_ip;
-    	nat_conn_record->internal_port = conn_record->internal_port;
-    	nat_conn_record->external_ip = conn_record->external_ip;
-
-	nat_action_record->external_ip = action_record->external_ip;
-    	nat_action_record->external_port = action_record->external_port; 
-    	nat_action_record->touch = action_record->touch;
-
-	nat_conn_record->hash = conn_record->hash;
-	nat_action_record->hash = action_record->hash;
-
-    	nat_conn_record->nat_hash = nat_hash;
-	nat_action_record->nat_hash = nat_hash;
-
-	nat_conn_record->cxid = conn_record->cxid;
-	nat_action_record->cxid = action_record->cxid;
-
-
-
-	connState* conn_head;
-	conn_head = nat_conn_bucket[nat_hash];
-    	/* * New connections are pushed on to the head of bucket[s_hash] */
-    	nat_conn_record->next = conn_head;
-    	if (conn_head != NULL) {
-       		// are we doubly linked?
-        	conn_head->prev = nat_conn_record;
-    	}
-    	nat_conn_bucket[nat_hash] = nat_conn_record;
-
-	actionState* action_head;
-        action_head = nat_action_bucket[nat_hash];
-    	/* * New connections are pushed on to the head of bucket[s_hash] */
-    	nat_action_record->next = action_head;
-    	if (action_head != NULL) {
-       		// are we doubly linked?
-        	action_head->prev = nat_action_record;
-    	}
-    	nat_action_bucket[nat_hash] = nat_action_record;
-
-   
+	hash_nat_array[nat_hash]= hash; 
 }
+
+
+
 
 /**
  * Inject a packet on an interface
@@ -686,6 +630,8 @@ int main(int argc, char **argv)
     /* store interface names (e.g. "eth0") */
     interfaces[INTERFACE_INTERNAL].device = argv[1];
     interfaces[INTERFACE_EXTERNAL].device = argv[2];
+
+    ex_ip = interfaces[INTERFACE_EXTERNAL].ip;
 
     if (inet_aton(argv[3], &gateway_addr) == 0) {
         perror("gateway");

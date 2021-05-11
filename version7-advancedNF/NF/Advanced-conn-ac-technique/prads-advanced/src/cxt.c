@@ -102,37 +102,20 @@ int local_conn_put_perflow(ConnState* recv_state){
     actionState *action_state = NULL;
     action_state =(actionState*)malloc(sizeof(actionState));
     memset(action_state,0,sizeof(actionState));
+    
+    action_state->cxid = cxid;
+    action_state->hash = hash;
 
     actionState* action_head = action_bucket[hash];
 
-    // Add to linked list
-    action_state->prev = NULL;
-    if (action_head != NULL)
-    {
-	actionState* target_state = action_head;
-	//judge whether the action state is arrived
-	while(target_state->cxid != cxid && target_state !=  NULL){
-		target_state = target_state->next;
-	}
-	if(target_state == NULL){
-		printf("action state hasn't arrived \n");
-		action_head->prev = action_state;
-       		action_state->next = action_head;
-		action_state->cxid = cxid;
-                action_state->hash = hash;
-	}
-	else{
-		printf("action state has arrived \n");
-	}
-    }
-    else
-    { 
-	action_state->next = NULL; 
-        action_bucket[hash] = action_state;
-	action_state->cxid = cxid;
-        action_state->hash = hash;
 
+    /* * New connections are pushed on to the head of bucket[s_hash] */
+    action_state->next = action_head;
+    if (action_head != NULL) {
+        // are we doubly linked?
+        action_head->prev = action_state;
     }
+    action_bucket[hash] = action_state;
    
 //+++advanced part, differnt from normal process
 
@@ -171,11 +154,12 @@ int local_action_put_perflow(ActionState* recv_state){
     
     actionState* target_state = head;
     //judge whether the action state is created
-    while(target_state !=  NULL && target_state->cxid != cxid && target_state){
+    while(target_state !=  NULL && target_state->cxid != cxid){
 	target_state = target_state->next;
     }
-    if(target_state == NULL){
-    	printf("action state is not created, conn_state is not arrived \n");
+    //printf("\n--------------find target--------------------\n");
+    /*if(target_state == NULL){
+    	//printf("action state is not created, conn_state is not arrived \n");
         
         actionState *action_state = NULL;
         action_state =(actionState*)malloc(sizeof(actionState));
@@ -205,12 +189,12 @@ int local_action_put_perflow(ActionState* recv_state){
         { action_state->next = NULL; }
         action_bucket[hash] = action_state;	
    }
-   else{
-	printf("action state has created \n");
+   else{*/
+	//printf("action state has created \n");
 
 	target_state->start_time = start_time;
-	printf("last_pkt_time %lu",last_pkt_time);
-	printf("target_state->last_pkt_time %lu",target_state->last_pkt_time);
+	//printf("last_pkt_time %lu",last_pkt_time);
+	//printf("target_state->last_pkt_time %lu",target_state->last_pkt_time);
 
 	if(target_state->last_pkt_time < last_pkt_time){
 		target_state->last_pkt_time = last_pkt_time;
@@ -225,17 +209,17 @@ int local_action_put_perflow(ActionState* recv_state){
         target_state->__pad__ =__pad__;
         target_state->d_tcpFlags =d_tcpflags;  
         target_state->check = check;
-   }
+   //}
 
    
     if(recv_state->c_asset != NULL){
-	printf("\n--------------c_asset exits--------------------\n");
+	//printf("\n--------------c_asset exits--------------------\n");
 	asset* c_asset = (asset*)malloc(sizeof(asset));
 	put_asset(c_asset, recv_state->c_asset);
 
     }
     if(recv_state->s_asset != NULL){
-	printf("\n--------------s_asset exits--------------------\n");
+	//printf("\n--------------s_asset exits--------------------\n");
 	asset* s_asset = (asset*)malloc(sizeof(asset));
 	put_asset(s_asset, recv_state->s_asset);
     }
@@ -252,7 +236,7 @@ int local_action_put_perflow(ActionState* recv_state){
 
 void put_asset(asset* ori_asset, Asset *in_asset){
 
-	printf("\n--------------check put asset--------------------\n");
+	//printf("\n--------------check put asset--------------------\n");
 	//pthread_mutex_lock(&ActionEntryLock); 
         
 	if(in_asset == NULL){
@@ -273,7 +257,7 @@ void put_asset(asset* ori_asset, Asset *in_asset){
 	os_asset* os_ori;
 
 	if(in_asset->services != NULL){
-		printf("\n--------------in_asset services not null--------------------\n");
+		//printf("\n--------------in_asset services not null--------------------\n");
 
 		services = (serv_asset*)malloc(sizeof(serv_asset));
 		//printf("\n--------------check put services init--------------------\n");
@@ -312,7 +296,7 @@ void put_asset(asset* ori_asset, Asset *in_asset){
 	//ori_asset->services = services;
 	
 	if(in_asset->os != NULL){
-		printf("\n--------------in_asset os not null--------------------\n");
+		//printf("\n--------------in_asset os not null--------------------\n");
 
 		os_ori = (os_asset*)malloc(sizeof(os_asset));
 		//printf("\n--------------check put os init --------------------\n");
@@ -378,7 +362,7 @@ void put_asset(asset* ori_asset, Asset *in_asset){
 	//printf("\n--------------check put asset before put asset per sip--------------------\n");
 	put_asset_per_sip(in_asset->s_ip, ori_asset);
 
-	printf("\n--------------check put asset after put asset per sip--------------------\n");
+	//printf("\n--------------check put asset after put asset per sip--------------------\n");
 	//pthread_mutex_unlock(&ActionEntryLock); 
 	
 }

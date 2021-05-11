@@ -19,6 +19,7 @@ extern ser_tra_t *state_tra;
  *
  */
 
+
 int get_hash(packetinfo *pi){
     //printf("get_hash function\n");
 
@@ -256,6 +257,81 @@ void update_state(state_node* sn,state_t state ){
 
 
 ///// SDMBN Local Perflow State Handlers /////////////////////////////////////
+//+++
+void showActionState(state_node *state){
+
+    struct in6_addr ips;
+    struct in6_addr ipd;
+
+    ips.s6_addr32[0] = get_int_ip(state->src_ip);
+    ipd.s6_addr32[0] = get_int_ip(state->dst_ip);
+
+    //struct sockaddr_in sa;
+    char src_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(ips), src_str, INET_ADDRSTRLEN);
+   
+    //struct sockaddr_in sa;
+    char dst_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(ipd), dst_str, INET_ADDRSTRLEN);
+    
+
+
+    printf("---------------ConnState------------------\n");
+
+    printf("src_ip %s\n", src_str);
+    printf("ds_ip %s\n", dst_str);
+    printf("s_port %u\n",state->src_prt);
+    printf("d_port %u\n",state->dst_prt);
+    printf("cxid  %d\n",state->cxid);
+    printf("proto %u\n",state->proto);
+   
+    printf("last_pkt_time %lu\n", state->time);
+    printf("state: %i\n",state->state);
+    printf("cxid %u\n",state->cxid);
+    printf("gotten %u",state->gotten);
+    printf("---------------actionState------------------\n");
+
+}
+
+void showAllState(){
+ int h;
+ uint64_t action[100];
+ memset(action, 0, sizeof(action));
+ 
+ int count_action =0;
+
+ for (h = 0; h < BUCKET_SIZE; h++)
+    {        
+        state_node *state = bucket[h];
+         
+	while (state != NULL)
+        {     
+            printf("-----------action---h%d------------\n",h);
+	    showActionState(state); 
+            
+            action[count_action] = h;
+            count_action++;     
+            // Move on to next connection
+            state = state->next;
+        }             
+    }
+    printf("\n");
+    int n;
+    
+    printf("count_action%d\n",count_action);
+    printf("------------------------------------\n");
+    
+    for(n = 0; n<= count_action; n++){
+	printf("%lu,",action[n]);
+    }
+
+
+}
+
 int local_get_perflow(PerflowKey *key, int id, int raiseEvents)
 {
     if (NULL == key)
@@ -437,6 +513,8 @@ int local_put_perflow(int hashkey, PerflowKey *key, char *state)
 	printf("STATS: PERFLOW: TIME TO DESERIALIZE CURRENT = %ldus\n", total);
 	printf("STATS: PERFLOW: TIME TO DESERIALIZE OVERALL = %ldus\n", overall_pdeserz_time);
 
+   
+
    state_node * cxt = NULL;
    cxt =(state_node *)malloc(sizeof(state_node));
 
@@ -445,7 +523,7 @@ int local_put_perflow(int hashkey, PerflowKey *key, char *state)
 	cxt->src_ip[3-m] = (serialize_state->src_ip)>>(24-m*8);
 	}
     for(n = 0; n<4;n++){
-	cxt->dst_ip[3-n] = (serialize_state->src_ip)>>(24-m*8);
+	cxt->dst_ip[3-n] = (serialize_state->dst_ip)>>(24-n*8);
 	}
 
     cxt->time = serialize_state->time;
@@ -454,6 +532,7 @@ int local_put_perflow(int hashkey, PerflowKey *key, char *state)
 	 cxt->state = OPEN;
 	}
     else{
+	printf("serialize state = 1");
 	cxt->state = CLOSED;
 	}
     cxt->proto = serialize_state->proto;

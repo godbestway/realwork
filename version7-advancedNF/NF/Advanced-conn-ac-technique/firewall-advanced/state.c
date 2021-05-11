@@ -128,7 +128,7 @@ int local_conn_get_one_perflow(connState* conn_state){
         mes.connstate =conn_perflow;
  
         int len = my_conn_message__get_packed_size(&mes);
-        printf("size of Perflow : %u\n", len);
+        //printf("size of Perflow : %u\n", len);
         void *buf = malloc(len);
         my_conn_message__pack(&mes, buf);
 
@@ -143,7 +143,7 @@ int local_conn_get_one_perflow(connState* conn_state){
 }
 
 static void *conn_sender(void *arg){
-	printf("start a conn sender\n");
+	//printf("start a conn sender\n");
 	
 	connState* conn_state = (connState*)arg;
 	int send_conn = local_conn_get_one_perflow(conn_state);

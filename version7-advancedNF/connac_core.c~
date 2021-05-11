@@ -109,7 +109,7 @@ void connac_notify_packet_received(char *type, struct timeval *recv_time)
 void connac_notify_flow_created()
 {
     connac_stats.flows_active++;
-    printf("connac_stats.flows_active=%d\n",connac_stats.flows_active);
+    //printf("connac_stats.flows_active=%d\n",connac_stats.flows_active);
 }
 
 void connac_notify_flow_destroyed()
