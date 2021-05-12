@@ -320,8 +320,10 @@ static int packet_nat(u_char from_interface_id,
     packetinfo *pi = &pstruct;
     pi->eth = eth;
     pi->ip = ip;
-    pi->src_port = htons(*src_port);
-    pi->dst_port =  htons(*dst_port);
+    //pi->src_port = htons(*src_port);
+    //pi->dst_port =  htons(*dst_port);
+    pi->src_port = *src_port;
+    pi->dst_port = *dst_port;
 
     
     //printf("%-4s original src=%u dst=%u\n", ip_protocol_ntoa(ip->protocol),
@@ -507,7 +509,7 @@ static void callback(u_char *from_interface_id,
         long usec = end_serialize.tv_usec - start_serialize.tv_usec;
         long total = (sec * 1000 * 1000) + usec;
 			
-        printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
+        //printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
 }
 
 /**

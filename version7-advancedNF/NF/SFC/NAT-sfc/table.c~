@@ -110,6 +110,19 @@ int local_conn_put_perflow(ConnState* recv_state){
     else
     { action_state->next = NULL; }
     action_bucket[hash] = action_state;
+
+
+    ConnPutPerflowAckMsg connPutPerflowAckMsg;
+    conn_put_perflow_ack_msg__init(&connPutPerflowAckMsg);
+
+    connPutPerflowAckMsg.has_hash = 1;
+    connPutPerflowAckMsg.hash = hash;
+    connPutPerflowAckMsg.has_cxid = 1;
+    connPutPerflowAckMsg.cxid = cxid;
+    connPutPerflowAckMsg.has_nat_hash = 1;
+    connPutPerflowAckMsg.nat_hash = nat_hash;
+
+    sfc_send_putPerflowAck(connPutPerflowAckMsg);
 //+++sfc support+++
 
 

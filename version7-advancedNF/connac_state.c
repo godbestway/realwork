@@ -71,8 +71,8 @@ int sfc_send_putPerflowAck(ConnPutPerflowAckMsg connPutPerflowAckMsg){
         mes.message_case =  MY_CONN_MESSAGE__MESSAGE_CONN_PUT_PERFLOW_ACK_MSG;
         mes.connputperflowackmsg = &connPutPerflowAckMsg;
 
-	printf("connPutPerflowAckMsg hash %u\n",mes.connputperflowackmsg->has_hash);
-        printf("connPutPerflowAckMsg cxid %u\n",mes.connputperflowackmsg->has_cxid);
+	//printf("connPutPerflowAckMsg hash %u\n",mes.connputperflowackmsg->has_hash);
+        //printf("connPutPerflowAckMsg cxid %u\n",mes.connputperflowackmsg->has_cxid);
  
         int len = my_conn_message__get_packed_size(&mes);
         //printf("size of getPerflowAck : %u\n", len);

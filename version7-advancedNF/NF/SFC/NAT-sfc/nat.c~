@@ -275,9 +275,10 @@ static int packet_nat(u_char from_interface_id,
     struct udphdr *udp;
     struct icmphdr *icmp;
     int natted = 0;
-
+//+++
     struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
+//+++
 
     /* set ports pointers */
     switch (ip->protocol) {
@@ -506,7 +507,7 @@ static void callback(u_char *from_interface_id,
         long usec = end_serialize.tv_usec - start_serialize.tv_usec;
         long total = (sec * 1000 * 1000) + usec;
 			
-        printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
+        //printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
 }
 
 /**

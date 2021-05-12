@@ -1582,7 +1582,7 @@ int main(int argc, char *argv[])
     locals.action_get_allflows = &local_action_get_allflows;
     locals.action_put_allflows = &local_action_put_allflows;
 
-    connac_init(&locals);
+//    connac_init(&locals);
 
     // Conn Table Lock
     pthread_mutex_init(&ConnEntryLock, NULL);
@@ -1593,6 +1593,12 @@ int main(int argc, char *argv[])
     pthread_mutex_init(&AssetEntryLock, NULL);
     pthread_mutex_init(&MultiEntryLock, NULL);
 
+    char errbuf[PCAP_ERRBUF_SIZE];
+    pcap_t      *live;
+    if ((live = pcap_open_live(config.dev, 0, 1, 10, errbuf)) == NULL) {
+        fprintf(stderr, "pcap_open_live: %s\n", errbuf);
+        exit(EXIT_FAILURE);
+    }
 
     olog("[*] Sniffing...\n");
     pcap_loop(config.handle, -1, got_packet, NULL);

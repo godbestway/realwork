@@ -485,7 +485,7 @@ void showAllState(){
         while (conn_state != NULL)
         { 
             printf("-----------conn----h%d------------\n",h);    
-            //showConnState(conn_state); 
+            showConnState(conn_state); 
             //conn[count_conn] = conn_state->cxid; 
 	    conn[count_conn] = conn_state->hash;
             count_conn++;     
@@ -495,7 +495,7 @@ void showAllState(){
 	while (action_state != NULL)
         {     
             printf("-----------action---h%d------------\n",h);
-	    //showActionState(action_state); 
+	    showActionState(action_state); 
             //action[count_action] = action_state->cxid; 
             action[count_action] = action_state->hash;
             count_action++;     

@@ -2254,3 +2254,158 @@
 2021-05-06 18:28:44,481 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - client：/192.168.0.3:33684offline
 2021-05-06 18:28:44,482 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 49] - client：/192.168.0.3:35626disconnected
 2021-05-06 18:28:44,482 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - client：/192.168.0.3:33684disconnected
+2021-05-11 14:32:15,705 [main] INFO  Server.OperationManager [OperationManager.java : 73] - only framework0
+2021-05-11 14:32:15,843 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18080
+2021-05-11 14:32:15,846 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18081
+2021-05-11 14:32:15,847 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 84] - operationdelay500
+2021-05-11 14:32:15,847 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 87] - advanced: 1
+2021-05-11 14:32:15,847 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 89] - switchid00:00:00:00:00:00:00:01
+2021-05-11 14:32:15,847 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 66] - advanced = 1, countDownlatch = 1
+2021-05-11 14:32:15,848 [main] INFO  zconnacmove.SingleMove [SingleMove.java : 40] - netty server is set up
+2021-05-11 14:32:15,848 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 237] - a new condition is added
+2021-05-11 14:32:36,016 [main] INFO  Server.OperationManager [OperationManager.java : 73] - only framework0
+2021-05-11 14:32:36,165 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18080
+2021-05-11 14:32:36,165 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 84] - operationdelay500
+2021-05-11 14:32:36,166 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 87] - advanced: 0
+2021-05-11 14:32:36,166 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 89] - switchid00:00:00:00:00:00:00:01
+2021-05-11 14:32:36,166 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18081
+2021-05-11 14:32:36,166 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 237] - a new condition is added
+2021-05-11 14:32:36,167 [main] INFO  zconnacmove.SingleMove [SingleMove.java : 40] - netty server is set up
+2021-05-11 14:33:21,991 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.2:52563connected Connection channel
+2021-05-11 14:33:21,993 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.2:52563online
+2021-05-11 14:33:21,995 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.2:37587connected action channel
+2021-05-11 14:33:21,996 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.2:37587online
+2021-05-11 14:33:22,042 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:33:22,048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:22,048 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:33:22,048 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7377
+2021-05-11 14:33:22,050 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:22,048 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:22,050 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:22,053 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:33:22,054 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:33:22,055 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:33:22,055 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:33:22,057 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:33:22,056 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 219] - connection channel has connected
+2021-05-11 14:33:22,057 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7377has already fully connected
+2021-05-11 14:33:33,067 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.3:37322connected Connection channel
+2021-05-11 14:33:33,068 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.3:39755connected action channel
+2021-05-11 14:33:33,069 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.3:37322online
+2021-05-11 14:33:33,069 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.3:39755online
+2021-05-11 14:33:33,075 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7384
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:33:33,077 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:33:33,078 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 223] - action channel has connected
+2021-05-11 14:33:33,078 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:33,079 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:33,080 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:33:33,085 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:33:33,086 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7384has already fully connected
+2021-05-11 14:33:35,164 [pool-3-thread-1] ERROR traceload.TraceLoad [TraceLoad.java : 57] - Failed to connect to traceload sever
+2021-05-11 14:33:35,164 [pool-3-thread-1] ERROR zconnacmove.MoveProcessControl [MoveProcessControl.java : 239] - Failed to start replaying trace
+2021-05-11 14:33:48,078 [main] INFO  Server.OperationManager [OperationManager.java : 73] - only framework0
+2021-05-11 14:33:48,224 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 84] - operationdelay500
+2021-05-11 14:33:48,224 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18080
+2021-05-11 14:33:48,224 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18081
+2021-05-11 14:33:48,224 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 87] - advanced: 0
+2021-05-11 14:33:48,225 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 89] - switchid00:00:00:00:00:00:00:01
+2021-05-11 14:33:48,225 [main] INFO  zconnacmove.SingleMove [SingleMove.java : 40] - netty server is set up
+2021-05-11 14:33:48,225 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 237] - a new condition is added
+2021-05-11 14:33:59,511 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.2:52606connected Connection channel
+2021-05-11 14:33:59,511 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.2:37630connected action channel
+2021-05-11 14:33:59,512 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.2:52606online
+2021-05-11 14:33:59,513 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.2:37630online
+2021-05-11 14:33:59,560 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:33:59,564 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:59,564 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:33:59,565 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:59,566 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7420
+2021-05-11 14:33:59,567 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:33:59,568 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:33:59,568 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:33:59,568 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:33:59,569 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:33:59,569 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:33:59,569 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:33:59,569 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 219] - connection channel has connected
+2021-05-11 14:33:59,569 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7420has already fully connected
+2021-05-11 14:34:03,097 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.3:37358connected Connection channel
+2021-05-11 14:34:03,099 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.3:39791connected action channel
+2021-05-11 14:34:03,099 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.3:37358online
+2021-05-11 14:34:03,101 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:34:03,101 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:34:03,101 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:34:03,101 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:34:03,101 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:34:03,102 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 219] - connection channel has connected
+2021-05-11 14:34:03,102 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.3:39791online
+2021-05-11 14:34:03,107 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:34:03,108 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:34:03,110 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7427
+2021-05-11 14:34:03,112 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:34:03,113 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:34:03,114 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:34:03,114 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:34:03,119 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7427has already fully connected
+2021-05-11 14:34:05,197 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 237] - Started replaying trace
+2021-05-11 14:34:05,437 [nioEventLoopGroup-3-1] INFO  zconnacmove.ConnMsgProcessor [ConnMsgProcessor.java : 59] - move start from conn processor1620736445436
+2021-05-11 14:34:11,612 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - client：/192.168.0.2:52606offline
+2021-05-11 14:34:11,613 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 69] - client：/192.168.0.2:37630offline
+2021-05-11 14:34:11,613 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - client：/192.168.0.2:52606disconnected
+2021-05-11 14:34:11,613 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 49] - client：/192.168.0.2:37630disconnected
+2021-05-11 14:34:12,511 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 71] - client：/192.168.0.3:37358offline
+2021-05-11 14:34:12,512 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 69] - client：/192.168.0.3:39791offline
+2021-05-11 14:34:12,512 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 49] - client：/192.168.0.3:39791disconnected
+2021-05-11 14:34:12,512 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 51] - client：/192.168.0.3:37358disconnected
+2021-05-11 14:34:50,567 [main] INFO  Server.OperationManager [OperationManager.java : 73] - only framework0
+2021-05-11 14:34:50,711 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 84] - operationdelay500
+2021-05-11 14:34:50,711 [nioEventLoopGroup-4-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18081
+2021-05-11 14:34:50,712 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 87] - advanced: 0
+2021-05-11 14:34:50,712 [main] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 89] - switchid00:00:00:00:00:00:00:01
+2021-05-11 14:34:50,712 [nioEventLoopGroup-2-1] INFO  Server.ServerListener [ServerListener.java : 39] - bind success at port:18080
+2021-05-11 14:34:50,713 [main] INFO  zconnacmove.SingleMove [SingleMove.java : 40] - netty server is set up
+2021-05-11 14:34:50,713 [Thread-0] INFO  Server.OperationManager [OperationManager.java : 237] - a new condition is added
+2021-05-11 14:34:56,897 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.2:52669connected Connection channel
+2021-05-11 14:34:56,897 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.2:37693connected action channel
+2021-05-11 14:34:56,898 [nioEventLoopGroup-3-1] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.2:52669online
+2021-05-11 14:34:56,898 [nioEventLoopGroup-5-1] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.2:37693online
+2021-05-11 14:34:56,939 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:34:56,942 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:34:56,942 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:34:56,943 [nioEventLoopGroup-5-1] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7500
+2021-05-11 14:34:56,943 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:34:56,943 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:34:56,944 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:34:56,946 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:34:56,947 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:34:56,947 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:34:56,947 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:34:56,947 [nioEventLoopGroup-3-1] INFO  Server.OperationManager [OperationManager.java : 219] - connection channel has connected
+2021-05-11 14:34:56,948 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:34:56,948 [nioEventLoopGroup-5-1] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7500has already fully connected
+2021-05-11 14:35:00,113 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 32] - client：/192.168.0.3:37421connected Connection channel
+2021-05-11 14:35:00,116 [nioEventLoopGroup-3-2] INFO  channel.ConnectionChannelHandler [ConnectionChannelHandler.java : 60] - client：/192.168.0.3:37421online
+2021-05-11 14:35:00,117 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:35:00,117 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:35:00,118 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 172] - not contains this id
+2021-05-11 14:35:00,118 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 175] - set a NF successful
+2021-05-11 14:35:00,118 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 196] - try to set a connection channel
+2021-05-11 14:35:00,118 [nioEventLoopGroup-3-2] INFO  Server.OperationManager [OperationManager.java : 219] - connection channel has connected
+2021-05-11 14:35:00,120 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 30] - client：/192.168.0.3:39854connected action channel
+2021-05-11 14:35:00,121 [nioEventLoopGroup-5-2] INFO  channel.ActionChannelHandler [ActionChannelHandler.java : 58] - client：/192.168.0.3:39854online
+2021-05-11 14:35:00,124 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 30] - syn message comes
+2021-05-11 14:35:00,124 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 33] - host: godbestway
+2021-05-11 14:35:00,128 [nioEventLoopGroup-5-2] INFO  channel.ActionChannel [ActionChannel.java : 35] - pid: 7506
+2021-05-11 14:35:00,128 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 189] - channel try to connect
+2021-05-11 14:35:00,129 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 162] - a new NF is found
+2021-05-11 14:35:00,129 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 168] - contains this id
+2021-05-11 14:35:00,130 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 201] - try to set a action channel
+2021-05-11 14:35:00,131 [nioEventLoopGroup-5-2] INFO  Server.OperationManager [OperationManager.java : 214] - godbestway.7506has already fully connected
+2021-05-11 14:35:02,219 [pool-3-thread-1] INFO  zconnacmove.MoveProcessControl [MoveProcessControl.java : 237] - Started replaying trace
+2021-05-11 14:35:02,825 [nioEventLoopGroup-3-1] INFO  zconnacmove.ConnMsgProcessor [ConnMsgProcessor.java : 59] - move start from conn processor1620736502825
