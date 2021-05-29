@@ -687,7 +687,7 @@ const ProtobufCMessageDescriptor conn_get_perflow_ack_msg__descriptor =
   (ProtobufCMessageInit) conn_get_perflow_ack_msg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor conn_state__field_descriptors[11] =
+static const ProtobufCFieldDescriptor conn_state__field_descriptors[12] =
 {
   {
     "ether_dst",
@@ -821,6 +821,18 @@ static const ProtobufCFieldDescriptor conn_state__field_descriptors[11] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "sfc_last",
+    12,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_INT32,
+    offsetof(ConnState, has_sfc_last),
+    offsetof(ConnState, sfc_last),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned conn_state__field_indices_by_name[] = {
   8,   /* field[8] = cxid */
@@ -834,11 +846,12 @@ static const unsigned conn_state__field_indices_by_name[] = {
   7,   /* field[7] = proto */
   2,   /* field[2] = s_ip */
   4,   /* field[4] = s_port */
+  11,   /* field[11] = sfc_last */
 };
 static const ProtobufCIntRange conn_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 11 }
+  { 0, 12 }
 };
 const ProtobufCMessageDescriptor conn_state__descriptor =
 {
@@ -848,7 +861,7 @@ const ProtobufCMessageDescriptor conn_state__descriptor =
   "ConnState",
   "",
   sizeof(ConnState),
-  11,
+  12,
   conn_state__field_descriptors,
   conn_state__field_indices_by_name,
   1,  conn_state__number_ranges,
@@ -921,7 +934,7 @@ const ProtobufCEnumDescriptor conn_put_perflow_ack_msg__fw_state__descriptor =
   conn_put_perflow_ack_msg__fw_state__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor conn_put_perflow_ack_msg__field_descriptors[4] =
+static const ProtobufCFieldDescriptor conn_put_perflow_ack_msg__field_descriptors[6] =
 {
   {
     "hash",
@@ -971,17 +984,43 @@ static const ProtobufCFieldDescriptor conn_put_perflow_ack_msg__field_descriptor
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "host",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(ConnPutPerflowAckMsg, host),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "pid",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ConnPutPerflowAckMsg, has_pid),
+    offsetof(ConnPutPerflowAckMsg, pid),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned conn_put_perflow_ack_msg__field_indices_by_name[] = {
   1,   /* field[1] = cxid */
   2,   /* field[2] = fwstate */
   0,   /* field[0] = hash */
+  4,   /* field[4] = host */
   3,   /* field[3] = nat_hash */
+  5,   /* field[5] = pid */
 };
 static const ProtobufCIntRange conn_put_perflow_ack_msg__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 4 }
+  { 0, 6 }
 };
 const ProtobufCMessageDescriptor conn_put_perflow_ack_msg__descriptor =
 {
@@ -991,7 +1030,7 @@ const ProtobufCMessageDescriptor conn_put_perflow_ack_msg__descriptor =
   "ConnPutPerflowAckMsg",
   "",
   sizeof(ConnPutPerflowAckMsg),
-  4,
+  6,
   conn_put_perflow_ack_msg__field_descriptors,
   conn_put_perflow_ack_msg__field_indices_by_name,
   1,  conn_put_perflow_ack_msg__number_ranges,

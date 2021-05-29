@@ -32,7 +32,7 @@ extern int drop;
 
 
 int action_send_getPerflowAck(int count){
-        //printf("send action getPerflowAck\n");
+        printf("send action getPerflowAck\n");
 
 	ActionGetPerflowAckMsg	actionGetPerflowAckMsg;
 	action_get_perflow_ack_msg__init(&actionGetPerflowAckMsg);
@@ -63,7 +63,7 @@ int action_send_getPerflowAck(int count){
 }
 
 int action_send_putPerflowAck(int hash, int cxid){
-	//printf("send action putPerflowAck\n");
+	printf("send action putPerflowAck\n");
 
 	ActionPutPerflowAckMsg	actionPutPerflowAckMsg;
 	action_put_perflow_ack_msg__init(&actionPutPerflowAckMsg);
@@ -109,7 +109,7 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 {
     if (NULL == connac_locals->action_get_perflow)
     {
-	printf("this function is not supported");
+	printf("this handle_get_perflow is not supported");
         return -1; 
     }
 
@@ -146,7 +146,7 @@ static int handle_put_perflow(ActionPutPerflowMsg* actionPutPerflow_recv)
     printf("receive getPerflow\n");
     if (NULL == connac_locals->action_put_perflow)
     {
-	printf("this function is not supported");
+	printf("handle_put_perflow is not supported");
         return -1; 
     }
 
@@ -229,7 +229,7 @@ static int handle_get_multiflow(ActionGetMultiflowMsg* actionGetMultiflow_recv)
 {
     if (NULL == connac_locals->action_get_multiflow)
     {
-	printf("this function is not supported");
+	printf("handle_get_multiflow is not supported");
         return -1; 
     }
 
@@ -257,7 +257,7 @@ static int handle_put_multiflow(ActionPutMultiflowMsg* actionPutMultiflow_recv)
 
     if (NULL == connac_locals->action_put_multiflow)
     {
-	printf("this function is not supported");
+	printf("this handle_put_multiflow is not supported");
         return -1; 
     }
 
@@ -346,7 +346,7 @@ static int handle_get_allflow(ActionGetAllflowMsg* actionGetAllflow_recv)
 {
     if (NULL == connac_locals->action_get_allflows)
     {
-	printf("this function is not supported");
+	printf("handle_get_allflow is not supported");
         return -1; 
     }
 
@@ -371,7 +371,7 @@ static int handle_put_allflow(ActionPutAllflowMsg* actionPutAllflow_recv)
 {
     if (NULL == connac_locals->action_put_allflows)
     {
-	printf("this function is not supported");
+	printf("handle put_allflows is not supported");
         return -1; 
     }
 

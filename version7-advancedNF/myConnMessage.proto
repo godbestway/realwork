@@ -53,7 +53,8 @@ message ConnState {
         optional int32  proto = 8; 
         optional fixed32 cxid=9;
         optional fixed32 hash=10;  
-	optional fixed32 nat_hash=11;      
+	optional fixed32 nat_hash=11;    
+	optional int32 sfc_last=12;  
 }
 
 
@@ -70,6 +71,8 @@ message ConnPutPerflowAckMsg {
     	} 
     optional fwState fwstate = 3;
     optional fixed32 nat_hash= 4; 
+    optional string host=5;
+    optional fixed32 pid=6;
 }
 
 message UnlockMsg {

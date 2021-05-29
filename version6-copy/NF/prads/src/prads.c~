@@ -121,12 +121,14 @@ inline int filter_packet(const int af, void *ip);
 void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
                 const u_char * packet)
 {
+/*
     printf("Total TCP packets received:%12u\n",config.pr_s.tcp_recv);
     struct timeval start_serialize, end_serialize;
     gettimeofday(&start_serialize, NULL);    
     printf("STATS: PERFLOW: start_serialize.tv_sec = %lds\n", start_serialize.tv_sec);	
     printf("STATS: PERFLOW: start_serialize.tv_usec = %ldus\n", start_serialize.tv_usec);
-
+*/
+    printf("Total TCP packets received:%12u\n",config.pr_s.tcp_recv);
     //+++
     if(drop == 1){
 	drop_number++;
@@ -181,7 +183,7 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
      { connac_notify_packet_received("UNKNOWN", &recv_time); }
 
 //+++
-
+/*
     gettimeofday(&end_serialize, NULL);
     long sec = end_serialize.tv_sec - start_serialize.tv_sec;
     long usec = end_serialize.tv_usec - start_serialize.tv_usec;
@@ -190,7 +192,7 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
     printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
     printf("STATS: PERFLOW: TIME TO finish = %ldus\n", end_serialize.tv_sec);	
     printf("STATS: PERFLOW: TIME TO finish = %ldus\n", end_serialize.tv_usec);
-
+*/
     return;
 }
 
@@ -1738,6 +1740,7 @@ int local_action_put_allflows(ActionAllState *recv_state)
     // Clean-up
     free(received);
 
+    printf("local_action_put_allflows finished \n");
     return 1;
 }
 

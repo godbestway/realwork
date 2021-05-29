@@ -140,10 +140,12 @@ struct  _ConnState
   uint32_t hash;
   protobuf_c_boolean has_nat_hash;
   uint32_t nat_hash;
+  protobuf_c_boolean has_sfc_last;
+  int32_t sfc_last;
 };
 #define CONN_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&conn_state__descriptor) \
-    , 0,NULL, 0,NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    , 0,NULL, 0,NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 
 
 struct  _ConnPutPerflowMsg
@@ -167,10 +169,13 @@ struct  _ConnPutPerflowAckMsg
   ConnPutPerflowAckMsg__FwState fwstate;
   protobuf_c_boolean has_nat_hash;
   uint32_t nat_hash;
+  char *host;
+  protobuf_c_boolean has_pid;
+  uint32_t pid;
 };
 #define CONN_PUT_PERFLOW_ACK_MSG__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&conn_put_perflow_ack_msg__descriptor) \
-    , 0, 0, 0, 0, 0, CONN_PUT_PERFLOW_ACK_MSG__FW_STATE__OPEN, 0, 0 }
+    , 0, 0, 0, 0, 0, CONN_PUT_PERFLOW_ACK_MSG__FW_STATE__OPEN, 0, 0, NULL, 0, 0 }
 
 
 struct  _UnlockMsg

@@ -536,9 +536,9 @@ int local_action_put_multiflow(ActionMultiState *recv_state)
     //printf("local_action_put_multiflow\n");
     pthread_mutex_lock(&MultiEntryLock); 
     asset* ori_asset = (asset*)malloc(sizeof(asset));
-    //printf("local_action_put_multiflow start\n");
+    printf("local_action_put_multiflow start\n");
     put_asset(ori_asset, recv_state->multi_state);
-    //printf("local_action_put_multiflow end\n");
+    printf("local_action_put_multiflow end\n");
     pthread_mutex_unlock(&MultiEntryLock);
 
     return 1;

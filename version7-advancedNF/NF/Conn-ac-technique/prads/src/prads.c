@@ -1582,7 +1582,7 @@ int main(int argc, char *argv[])
     locals.action_get_allflows = &local_action_get_allflows;
     locals.action_put_allflows = &local_action_put_allflows;
 
-//    connac_init(&locals);
+    connac_init(&locals);
 
     // Conn Table Lock
     pthread_mutex_init(&ConnEntryLock, NULL);

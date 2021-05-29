@@ -36,7 +36,7 @@ void cxt_init()
 
 int local_conn_put_perflow(ConnState* recv_state){
 	
-    //printf("receive conn state, begin to putPerFlow\n");
+    printf("receive conn state, begin to putPerFlow\n");
     pthread_mutex_lock(&ConnEntryLock);
     //connState *conn_state = NULL;
     connState *conn_state =(connState*)malloc(sizeof(connState));
@@ -110,7 +110,7 @@ int local_conn_put_perflow(ConnState* recv_state){
 
 int local_action_put_perflow(ActionState* recv_state){
 	
-    //printf("receive action state, begin to putPerFlow\n");
+    printf("receive action state, begin to putPerFlow\n");
     pthread_mutex_lock(&ActionEntryLock);
     actionState *action_state = NULL;
     action_state =(actionState*)malloc(sizeof(actionState));
@@ -149,13 +149,13 @@ int local_action_put_perflow(ActionState* recv_state){
     // If asset structure is present push it into the asset list.
     
     if(recv_state->c_asset != NULL){
-	//printf("\n--------------c_asset exits--------------------\n");
+	printf("\n--------------c_asset exits--------------------\n");
 	asset* c_asset = (asset*)malloc(sizeof(asset));
 	put_asset(c_asset, recv_state->c_asset);
 
     }
     if(recv_state->s_asset != NULL){
-	//printf("\n--------------s_asset exits--------------------\n");
+	printf("\n--------------s_asset exits--------------------\n");
 	asset* s_asset = (asset*)malloc(sizeof(asset));
 	put_asset(s_asset, recv_state->s_asset);
     }
@@ -288,7 +288,7 @@ void put_asset(asset* ori_asset, Asset *in_asset){
 	}
 	ori_asset->os = os_ori;
 
-	//printf("\n--------------check put asset before put asset per sip--------------------\n");
+	printf("\n--------------check put asset before put asset per sip--------------------\n");
 	put_asset_per_sip(in_asset->s_ip, ori_asset);
 
 	//printf("\n--------------check put asset after put asset per sip--------------------\n");
