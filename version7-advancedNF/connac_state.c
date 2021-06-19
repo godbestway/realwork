@@ -26,7 +26,8 @@ static pthread_t state_thread;
 // Connection for state messages
 int connac_conn_state = -1;
 int drop = 0;
-int mode = 0;
+int mode = 0; 
+int get_conn = 0;
 
 
 int conn_send_getPerflowAck(int count){
@@ -140,8 +141,13 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
         return -1; 
     }
 //set drop flag == 1;
-    drop = 1;
-    int count;
+//in advanced mode, drop will be set at the get_action_peflow operation
+    if(connac_config.ctrl_adnatfire == 0){
+    	drop = 1;
+    }else{
+	get_conn = 1;
+    }
+    int count = 0;
     Key key;
     if(connGetPerflow_recv->has_hw_proto){
 	key.dl_type = connGetPerflow_recv->hw_proto;
@@ -159,13 +165,15 @@ static int handle_get_perflow(ConnGetPerflowMsg* connGetPerflow_recv)
 
 
     pthread_mutex_lock(&connac_conn_lock_get);
- //   if(strcmp(key,"all")==0){
-   // INFO_PRINT("receive getPerflow msg and try to get states");
     count = connac_locals->conn_get_perflow(key);
-//	} 
-   //printf("perflow count %d",count);
-   conn_send_getPerflowAck(count);
-   action_send_getPerflowAck(count);
+    printf("get conn perflow %d\n",count);
+    conn_send_getPerflowAck(count);
+
+    if(connac_config.ctrl_adnatfire == 0){
+//in advanced mode, getActionPerflowAck will be sent from prads not from the library
+   	action_send_getPerflowAck(count);
+   }
+
    pthread_mutex_unlock(&connac_conn_lock_get);
 }
 

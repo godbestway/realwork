@@ -21,8 +21,8 @@ extern "C" {
 #define CONF_CTRL_SHARE_DEFAULT    0
 //1 is sfc mode
 #define CONF_CTRL_SFC_DEFAULT    0
-//only for NAT and firwall
-#define CONF_CTRL_ADNATFIRE_DEFAULT 0
+//for all the NFs
+#define CONF_CTRL_ADNATFIRE_DEFAULT	0
 
 #define CONF_CTRL_IP_LEN  16
 

@@ -29,6 +29,7 @@ extern int drop;
 extern int mode;
 extern int share;
 extern int ad_nat_firewall;
+extern int get_conn;
 
 //NF should provide
 typedef struct {

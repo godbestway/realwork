@@ -21,8 +21,10 @@ extern "C" {
 #define CONF_CTRL_SHARE_DEFAULT    0
 //1 is sfc mode
 #define CONF_CTRL_SFC_DEFAULT    0
-//only for NAT and firwall
+//for all the NFs
 #define CONF_CTRL_ADNATFIRE_DEFAULT	0
+#define CONF_CTRL_COPY_DEFAULT	0
+
 
 #define CONF_CTRL_IP_LEN  16
 
@@ -32,6 +34,7 @@ extern "C" {
 #define CONF_CTRL_SHARE    "ctrl_share"
 #define CONF_CTRL_SFC    "ctrl_sfc"
 #define CONF_CTRL_ADNATFIRE "ctrl_adnatfire"
+#define CONF_CTRL_COPY	"ctrl_copy"	
 ///// STRUCTURES /////////////////////////////////////////////////////////////
 typedef struct {
     char ctrl_ip[CONF_CTRL_IP_LEN];
@@ -40,6 +43,7 @@ typedef struct {
     uint16_t ctrl_share;
     uint16_t ctrl_sfc;
     uint16_t ctrl_adnatfire;
+    uint16_t ctrl_copy;
 } ConnacConfig;
 
 ///// FUNCTION PROTOTYPES ////////////////////////////////////////////////////

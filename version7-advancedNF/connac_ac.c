@@ -32,7 +32,7 @@ extern int drop;
 
 
 int action_send_getPerflowAck(int count){
-        //printf("send action getPerflowAck\n");
+        printf("send action getPerflowAck\n");
 
 	ActionGetPerflowAckMsg	actionGetPerflowAckMsg;
 	action_get_perflow_ack_msg__init(&actionGetPerflowAckMsg);
@@ -109,8 +109,11 @@ int action_send_perflow(uint8_t* buf, int len){
 
 static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 {
+     printf("handle getPerflow\n");
     //set drop flag == 1;
-    drop = 1;
+    if(connac_config.ctrl_copy == 0){
+    	drop = 1;
+    }
     int count;
     Key key;
     if(actionGetPerflow_recv->has_hw_proto){
@@ -149,7 +152,9 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 	count = connac_locals->action_get_perflow(key);    	
     }  
 
-    action_send_getPerflowAck(count);
+    if(connac_config.ctrl_adnatfire == 0){
+    	action_send_getPerflowAck(count);
+    }
     pthread_mutex_unlock(&connac_action_lock_get);
 
 
@@ -254,10 +259,7 @@ static int handle_get_multiflow(ActionGetMultiflowMsg* actionGetMultiflow_recv)
     }
 
     int count;
-//+++
-    //set drop flag == 1;
-    drop = 1;
-//+++
+
     printf("receive getMultiflow\n");
     pthread_mutex_lock(&connac_action_lock_get);
 
@@ -369,6 +371,7 @@ static int handle_get_allflow(ActionGetAllflowMsg* actionGetAllflow_recv)
 	printf("this function is not supported");
         return -1; 
     }
+
 
     int count;
 

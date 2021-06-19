@@ -48,6 +48,8 @@ int connac_parse_config()
         { connac_config.ctrl_sfc = atoi(value); }
 	else if (0 == strncmp(key, CONF_CTRL_ADNATFIRE, 14))
         { connac_config.ctrl_adnatfire = atoi(value); }
+	else if (0 == strncmp(key, CONF_CTRL_COPY, 10))
+        { connac_config.ctrl_copy = atoi(value); }
     }
 
     if (fclose(file) != 0)

@@ -2082,7 +2082,7 @@ const ProtobufCMessageDescriptor share_state__descriptor =
   (ProtobufCMessageInit) share_state__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor action_get_perflow_msg__field_descriptors[3] =
+static const ProtobufCFieldDescriptor action_get_perflow_msg__field_descriptors[7] =
 {
   {
     "hw_proto",
@@ -2120,16 +2120,68 @@ static const ProtobufCFieldDescriptor action_get_perflow_msg__field_descriptors[
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "s_ip",
+    4,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionGetPerflowMsg, has_s_ip),
+    offsetof(ActionGetPerflowMsg, s_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "d_ip",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionGetPerflowMsg, has_d_ip),
+    offsetof(ActionGetPerflowMsg, d_ip),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "s_port",
+    6,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionGetPerflowMsg, has_s_port),
+    offsetof(ActionGetPerflowMsg, s_port),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "d_port",
+    7,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ActionGetPerflowMsg, has_d_port),
+    offsetof(ActionGetPerflowMsg, d_port),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned action_get_perflow_msg__field_indices_by_name[] = {
+  4,   /* field[4] = d_ip */
+  6,   /* field[6] = d_port */
   0,   /* field[0] = hw_proto */
   1,   /* field[1] = proto */
+  3,   /* field[3] = s_ip */
+  5,   /* field[5] = s_port */
   2,   /* field[2] = share */
 };
 static const ProtobufCIntRange action_get_perflow_msg__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 3 }
+  { 0, 7 }
 };
 const ProtobufCMessageDescriptor action_get_perflow_msg__descriptor =
 {
@@ -2139,7 +2191,7 @@ const ProtobufCMessageDescriptor action_get_perflow_msg__descriptor =
   "ActionGetPerflowMsg",
   "",
   sizeof(ActionGetPerflowMsg),
-  3,
+  7,
   action_get_perflow_msg__field_descriptors,
   action_get_perflow_msg__field_indices_by_name,
   1,  action_get_perflow_msg__number_ranges,

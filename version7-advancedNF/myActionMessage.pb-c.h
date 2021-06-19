@@ -255,10 +255,18 @@ struct  _ActionGetPerflowMsg
   int32_t proto;
   protobuf_c_boolean has_share;
   int32_t share;
+  protobuf_c_boolean has_s_ip;
+  uint32_t s_ip;
+  protobuf_c_boolean has_d_ip;
+  uint32_t d_ip;
+  protobuf_c_boolean has_s_port;
+  uint32_t s_port;
+  protobuf_c_boolean has_d_port;
+  uint32_t d_port;
 };
 #define ACTION_GET_PERFLOW_MSG__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&action_get_perflow_msg__descriptor) \
-    , 0, 0, 0, 0, 0, 0 }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 
 
 struct  _ActionGetPerflowAckMsg

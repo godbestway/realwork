@@ -29,11 +29,34 @@ int main(int argc, char *argv[])
     uint16_t ttl_16;
     cxid = (uint16_t)(ttl <<8) | (uint16_t)tos;
     printf("cxid %u\n",cxid);
-	struct timeval start_serialize, end_serialize;
-    gettimeofday(&start_serialize, NULL);    
 
+
+    struct timeval start_serialize, end_serialize;
+    gettimeofday(&start_serialize, NULL); 
+    gettimeofday(&start_serialize, NULL); 
     int i = 0;
     while(i < 1000000){
+	if(cxid < 100000){
+		cxid = 10000;
+	}
+	i++;
+   }   
+
+  
+    gettimeofday(&end_serialize, NULL);
+    long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+    long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+    long total = (sec * 1000 * 1000) + usec;
+			
+    printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
+
+
+
+
+   
+    i = 0;
+    while(i < 1000000){
+	int hash = (34194317+1437813+349+344)%256;
 	if(cxid > 0){
 		if(cxid < 100000){
 			if(cxid < 50000){
@@ -48,33 +71,16 @@ int main(int argc, char *argv[])
 
 	}
 
-	i++
+	i++;
+	//printf(" %d ",i);
 
-
-	} 
+    } 
 
    
     gettimeofday(&end_serialize, NULL);
     long sec = end_serialize.tv_sec - start_serialize.tv_sec;
     long usec = end_serialize.tv_usec - start_serialize.tv_usec;
     long total = (sec * 1000 * 1000) + usec;
-			
-    printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
-
-   gettimeofday(&start_serialize, NULL); 
-   i = 0;
-   while(i < 100000){
-	if(cxid < 100000){
-		cxid = 10000;
-	}
-	i++;
-	}   
-
-  
-    gettimeofday(&end_serialize, NULL);
-    sec = end_serialize.tv_sec - start_serialize.tv_sec;
-    usec = end_serialize.tv_usec - start_serialize.tv_usec;
-    total = (sec * 1000 * 1000) + usec;
 			
     printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
 
