@@ -1,0 +1,3 @@
+use a fixed port instead of dynamic random port
+uint16_t table_get_external_port(uint32_t hash,uint32_t cxid)
+external_port = (hash+cxid) % (MAX_EXTERNAL_PORT - MIN_EXTERNAL_PORT) + MIN_EXTERNAL_PORT;

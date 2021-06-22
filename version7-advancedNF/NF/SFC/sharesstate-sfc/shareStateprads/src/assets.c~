@@ -333,14 +333,14 @@ Asset* pack_asset_struct(asset* asset_ori){
 ProtoObject* serialize_cxt_state(connection* cxt){
 
 		
-		//printf("seriliaze---------------------\n");
+		printf("seriliaze cxt state---------------------\n");
 
 		pthread_mutex_lock(&AssetEntryLock);  
 
-		printf("local get conn one per flow\n");
+		//printf("local get conn one per flow\n");
 		ShareState *share_state = (ShareState *)malloc(sizeof(ShareState));
 		share_state__init(share_state);
-
+		printf("malloc cxt state---------------------\n");
 		share_state->has_s_ip = 1;
 		share_state->s_ip = cxt->s_ip.s6_addr32[0];
 		share_state->has_d_ip = 1;
@@ -834,11 +834,12 @@ void put_asset_per_sip(uint32_t sip, asset* in_asset)
      
     //INFO_PRINT("[put_asset_per_sip]: Updating OS and Service Assets");
     //printf("[put_asset_per_sip]: Updating OS and Service Assets\n");
-    update_sassets_per_asset(l_asset, in_asset);
-    update_osassets_per_asset(l_asset, in_asset);
+//TODO
+    //update_sassets_per_asset(l_asset, in_asset);
+    //update_osassets_per_asset(l_asset, in_asset);
 
     // Delete the asset as the deltas have now been logged
-    del_asset(in_asset, &temp_asset);
+    //del_asset(in_asset, &temp_asset);
 }
 
 

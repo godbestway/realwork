@@ -42,7 +42,7 @@ void handle_tcp(struct eth_header* h_ether, struct ip_header* h_ip, struct tcp_h
         free(h_tcp);
         return;
     }else if(rt == PASS){
-        printf("TCP: Forwarding the packet.\n");
+       // printf("TCP: Forwarding the packet.\n");
         pass_packet(iface, h_ip, data, hdr);
         //free the packets
         //free(h_ip);

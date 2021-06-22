@@ -20,6 +20,14 @@ typedef struct {
         uint8_t wildcards;
 }Key;
 
+typedef struct {
+        uint32_t src_ip;
+	uint32_t dst_ip;
+	uint16_t src_port;
+	uint16_t dst_port;	
+	uint8_t nw_proto; 
+}DirectKey;
+
 
 #define WILDCARD_DL_TYPE    0x01
 #define WILDCARD_NW_PROTO   0x08
@@ -47,6 +55,9 @@ typedef struct {
     int (*action_put_multiflow)(ActionMultiState* state);
     int (*action_get_allflows)();
     int (*action_put_allflows)(ActionAllState* state);
+
+    int (*action_get_direct_sharestate_perflow)(DirectKey key);  
+    int (*action_get_direct_perflow)(DirectKey key);   
 //+++
     int (*unlock_packet)();
 //+++

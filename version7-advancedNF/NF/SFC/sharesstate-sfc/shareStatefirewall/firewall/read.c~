@@ -30,6 +30,9 @@
 //+++
 static int drop_number=0;
 pthread_mutex_t ActionEntryLock;
+struct interface *to_i;
+extern int count;
+
 //+++
 //struct timeval start_serialize;
 
@@ -127,7 +130,7 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
 
 void game_over()
 {
-	showAllState();
+	//showAllState();
  	exit(0);
 }
 
@@ -182,6 +185,20 @@ int main(int argc, char **argv) {
 		
 		}
             
+   
+	   
+	    to_i =(struct interface*)malloc(sizeof(struct interface));
+	    
+            to_i->pcap= pcap_open_live(argv[2],65535,1,0, pcap_errbuff);
+            printf("Opening interface %s..\n", argv[2]);
+
+
+	    if(!(to_i->pcap)){
+		printf("could not open device\n");
+		
+		}
+
+
             //get the subnet of the interface
             bpf_u_int32 netp, mask;
             pcap_lookupnet(argv[1], &netp, &mask,err);

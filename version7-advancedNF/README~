@@ -2,6 +2,18 @@ ctrl_share = 1 means, only use the framework without conn-action technique
 call the function action_get_sharestate_perflow instead of action_get_perflow to send a completed state
 connac_init don't need to open the state channel, only open the action channel
 
+
+"ctrl_adnatfire"
+in advanced mode, drop will be set at the get_action_peflow operation
+
+"ctrl_sfc"
+don't drop the packets
+
+"ctrl_copy"
+ddon't drop the packets
+
+
+Abondoned:
 ctrl_sfc means, support sfc mode
 ctrl_sfc = 0, conn_send_putPerflowAck process as normal
 ctrl_sfc = 1, NF directly use this function sfc_send_putPerflowAck from library 
@@ -10,7 +22,3 @@ sfc-NAT
 use a fixed port instead of dynamic random port
 uint16_t table_get_external_port(uint32_t hash,uint32_t cxid)
 external_port = (hash+cxid) % (MAX_EXTERNAL_PORT - MIN_EXTERNAL_PORT) + MIN_EXTERNAL_PORT;
-
-"ctrl_adnatfire"
-advanced mode for NAT and firewall
-only need to open the action channel

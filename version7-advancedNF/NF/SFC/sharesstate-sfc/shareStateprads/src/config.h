@@ -97,6 +97,8 @@ typedef struct _globalconfig {
     fp_entry   **sig_rst;               /* RST signature hash */
     mac_entry  **sig_mac;               /* Pointer to hash of mac signatures */
     dhcp_fp_entry **sig_dhcp;           /* DHCP signature hash */
+    char        *writeiface;            /* Interface to write packets */
+    pcap_t      *live;                  /* PCAP handle for writing packets */
     char        *bpf_file;              /* filename of BPF file to load */
 } globalconfig;
 #define ISSET_CONFIG_VERBOSE(config)    ((config).cflags & CONFIG_VERBOSE)

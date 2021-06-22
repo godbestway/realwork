@@ -4,7 +4,7 @@ extern struct interface *to_i;
 void pass_packet(struct interface* iface, struct ip_header* h_ip,u_char* data, struct pcap_pkthdr* hdr){
 
 	//printf("pass the packet\n");
-	/*if (to_i)
+	if (to_i)
     {
         int bytes = pcap_sendpacket(to_i->pcap, data, hdr->caplen);
         if (bytes < 0)
@@ -12,7 +12,7 @@ void pass_packet(struct interface* iface, struct ip_header* h_ip,u_char* data, s
             fprintf(stderr, "Failed to write packet of length %d to network interface after processing: ", hdr->caplen); 
             pcap_perror(to_i->pcap, "");
         }
-    }*/
+    }
 }
 
 //Appropriately handles TCP packets seen

@@ -420,7 +420,8 @@ int parse_args(globalconfig *conf, int argc, char *argv[], char *args)
             conf->dev = optarg;
             break;
         case 'r':
-            conf->pcap_file = strdup(optarg);
+            //conf->pcap_file = strdup(optarg);
+	    conf->writeiface = strdup(optarg);
             break;
         case 'b':
             conf->bpff = strdup(optarg);

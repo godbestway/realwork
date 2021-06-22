@@ -133,9 +133,9 @@ void state_expunge_expired()
 
 
 state_node* create_node(packetinfo *pi){
-    printf("Creating Node\n");
+    //printf("Creating Node\n");
     flow_number++;
-    printf("flow_number %d\n",flow_number);
+    //printf("flow_number %d\n",flow_number);
     cxtrackerid++;
 
 //+++

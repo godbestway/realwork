@@ -20,7 +20,7 @@
 #include "packets.h"
 #include "rules.h"
 
-#define BUCKET_SIZE  255
+#define BUCKET_SIZE  31337
 #define EXPIRE_STATE 60
 
 

@@ -80,6 +80,7 @@ pthread_mutex_t ActionEntryLock;
 pthread_mutex_t AssetEntryLock;
 pthread_mutex_t MultiEntryLock;
 //+++
+struct timeval start_serialize,end_serialize;
 
 /*  I N T E R N A L   P R O T O T Y P E S  ***********************************/
 static void usage();
@@ -138,6 +139,23 @@ static void close_writeiface(pcap_t *live)
 void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
                 const u_char * packet)
 {
+    if(config.pr_s.ip4_recv == 1){
+    	gettimeofday(&start_serialize, NULL);
+    }
+
+    if(config.live == NULL && config.pr_s.got_packets == 100000){
+    	gettimeofday(&end_serialize, NULL);
+    	long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+	long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+	long total = (sec * 1000 * 1000) + usec;
+	printf("start time sec: %lu",start_serialize.tv_sec);
+	printf("start time usec %lu",start_serialize.tv_usec);
+	printf("end time sec: %lu",end_serialize.tv_sec);
+	printf("end time usec %lu",end_serialize.tv_usec);
+	printf("total time: %lu",total);
+	game_over();
+    }
+
     //+++
     if(drop == 1){
 	drop_number++;
@@ -167,6 +185,13 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
     if (pi->eth_type == ETHERNET_TYPE_IP) {
         prepare_ip4(pi);
         parse_ip4(pi);
+	uint16_t temp = (pi->ip4->ip_src) & 0x0000FFFF;
+        //printf("temp 16: %x\n",temp);
+        if(!(temp == 0xA8C0)){
+		//printf("don't process this packet\n");
+		config.pr_s.ip4_recv--;
+		return;
+	}
         goto packet_end;
     } else if (pi->eth_type == ETHERNET_TYPE_IPV6) {
         prepare_ip6(pi);
@@ -208,6 +233,19 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
 //	   printf("send packet successfully!\n");
 //	}
 //        fprintf(stderr, "Wrote packet of length %d to network interface after processing\n", bytes);
+    }
+
+    if(config.pr_s.ip4_recv == 100500){
+    	gettimeofday(&end_serialize, NULL);
+    	long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+	long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+	long total = (sec * 1000 * 1000) + usec;
+	printf("start time sec: %lu",start_serialize.tv_sec);
+	printf("start time usec %lu",start_serialize.tv_usec);
+	printf("end time sec: %lu",end_serialize.tv_sec);
+	printf("end time usec %lu",end_serialize.tv_usec);
+	printf("total time: %lu",total);
+	game_over();
     }
 
     return;
@@ -1551,11 +1589,11 @@ int main(int argc, char *argv[])
 
 //+++ Open interface for writing packets after processing, if requested
     
-    //if (config.writeiface)
-    //{ 
-	config.live = open_writeiface("h2-eth2"); 
+    if (config.writeiface)
+    { 
+	config.live = open_writeiface(config.writeiface); 
 	printf("open live interface\n");
-    //}
+    }
 
 
     olog("[*] Sniffing...\n");

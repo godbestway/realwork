@@ -152,6 +152,18 @@ int main(int argc, char **argv) {
 		printf("could not open device\n");
 		
 		}
+
+	     to_i =(struct interface*)malloc(sizeof(struct interface));
+	    
+            to_i->pcap= pcap_open_live(argv[2],65535,1,0, pcap_errbuff);
+            printf("Opening interface %s..\n", argv[2]);
+
+
+	    if(!(to_i->pcap)){
+		printf("could not open device\n");
+		
+		}
+	
             
             //get the subnet of the interface
             bpf_u_int32 netp, mask;

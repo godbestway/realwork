@@ -111,7 +111,9 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
 {
      printf("handle getPerflow\n");
     //set drop flag == 1;
-    drop = 1;
+    if(connac_config.ctrl_copy == 0 && connac_config.ctrl_copy == 1 ){
+    	drop = 1;
+    }
     int count;
     Key key;
     if(actionGetPerflow_recv->has_hw_proto){
@@ -156,6 +158,48 @@ static int handle_get_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
     pthread_mutex_unlock(&connac_action_lock_get);
 
 
+}
+
+static int handle_get_direct_perflow(ActionGetPerflowMsg* actionGetPerflow_recv)
+{
+    printf("handle direct getPerflow\n");
+
+    int share = 0;
+    if(actionGetPerflow_recv->has_share == 1){
+    	share = actionGetPerflow_recv->share;
+    }
+
+    DirectKey key;
+    key.src_ip = actionGetPerflow_recv->s_ip;
+    key.dst_ip = actionGetPerflow_recv->d_ip;
+    key.src_port = actionGetPerflow_recv->s_port;
+    key.dst_port = actionGetPerflow_recv->d_port;
+    key.nw_proto = actionGetPerflow_recv->proto;
+    int count;
+
+    pthread_mutex_lock(&connac_action_lock_get);
+
+    //share == 1, send one completed state instead of conn-action
+    if(share == 1){
+	if (NULL == connac_locals->action_get_direct_sharestate_perflow)
+	{
+		printf("this function is not supported");
+        	return -1; 
+    	}
+	count = connac_locals->action_get_direct_sharestate_perflow(key);     
+     }
+    else{
+	if (NULL == connac_locals->action_get_direct_perflow)
+	{
+		printf("this function is not supported");
+        	return -1; 
+    	}
+	count = connac_locals->action_get_direct_perflow(key);    	
+    }  
+    if(count == 0){
+    	action_send_getPerflowAck(count);
+    }
+    pthread_mutex_unlock(&connac_action_lock_get);
 }
 
 
@@ -257,10 +301,7 @@ static int handle_get_multiflow(ActionGetMultiflowMsg* actionGetMultiflow_recv)
     }
 
     int count;
-//+++
-    //set drop flag == 1;
-    drop = 1;
-//+++
+
     printf("receive getMultiflow\n");
     pthread_mutex_lock(&connac_action_lock_get);
 
@@ -373,10 +414,6 @@ static int handle_get_allflow(ActionGetAllflowMsg* actionGetAllflow_recv)
         return -1; 
     }
 
-//+++
-    //set drop flag == 1;
-    drop = 1;
-//+++
 
     int count;
 
@@ -442,8 +479,12 @@ static void *state_handler(void *arg)
 	
 	if(myActionMessage.data_type == MY_ACTION_MESSAGE__DATA_TYPE__ActionGetPerflowMsgType){
 		ActionGetPerflowMsg* actionGetPerflowMsg = myActionMessage.actiongetperflowmsg;
-		handle_get_perflow(actionGetPerflowMsg);
-
+		if(actionGetPerflowMsg->has_s_ip){
+			handle_get_direct_perflow(actionGetPerflowMsg);
+		}
+		else{
+			handle_get_perflow(actionGetPerflowMsg);
+		}
 	}else if(myActionMessage.data_type ==MY_ACTION_MESSAGE__DATA_TYPE__ActionPutPerflowMsgType){
 		ActionPutPerflowMsg* actionPutPerflowMsg = myActionMessage.actionputperflowmsg;
 		handle_put_perflow(actionPutPerflowMsg);

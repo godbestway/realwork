@@ -35,7 +35,7 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
     
     u_int offset = 0;
     struct timeval end_serialize;
-    gettimeofday(&start_serialize, NULL);    
+    //gettimeofday(&start_serialize, NULL);    
 
      struct timeval recv_time;
     gettimeofday(&recv_time, NULL);
@@ -86,12 +86,12 @@ void process_packet_inject(struct interface* iface,const struct pcap_pkthdr *hdr
      else
      { connac_notify_packet_received("UNKNOWN", &recv_time); }
 //+++
-	gettimeofday(&end_serialize, NULL);
-        long sec = end_serialize.tv_sec - start_serialize.tv_sec;
-        long usec = end_serialize.tv_usec - start_serialize.tv_usec;
-        long total = (sec * 1000 * 1000) + usec;
+//	gettimeofday(&end_serialize, NULL);
+//        long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+//        long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+//        long total = (sec * 1000 * 1000) + usec;
 			
-        printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
+//        printf("STATS: PERFLOW: TIME TO process packet = %ldus\n", total);
         return;
     //handle UPD packets
     }else if(h_ip-> proto == UDP_PROTO_ID){

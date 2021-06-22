@@ -120,6 +120,9 @@ message ShareState{
 	optional fixed32 hash = 25;
 	optional fixed32 nat_hash = 26;
 	repeated fixed32 ether_src=27;
+
+	repeated fixed32 ether_gateway=28;
+        repeated fixed32 ether_external=29;
 }
 
 message ActionGetPerflowMsg {

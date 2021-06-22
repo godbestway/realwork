@@ -32,28 +32,10 @@ int local_action_put_perflow(ShareState* recv_state){
 	
     printf("receive action state, begin to putPerFlow\n");
     pthread_mutex_lock(&ActionEntryLock);
-   
-    uint64_t cxid = recv_state->cxid;
-    uint32_t hash = recv_state->hash;
-    int create_new = 0;
+    connection *cxt = NULL;
+    cxt =(connection*)malloc(sizeof(connection));
 
-    connection* cxt = bucket[hash];
-    while(cxt != NULL){
-	if(cxt->cxid != cxid){
-		cxt = cxt->cxid;
-		continue;	
-	}
-	break;
-    }
-    if(cxt == NULL){
-	cxt =(connection*)malloc(sizeof(connection));
-	 action_state->cxid = cxid;
-	 action_state->hash = hash;
-	 create_new = 1;
-    }
-    
 
-   
     struct in6_addr ips;
     struct in6_addr ipd;
     ips.s6_addr32[0] = recv_state->s_ip;
@@ -70,7 +52,7 @@ int local_action_put_perflow(ShareState* recv_state){
     cxt->start_time = recv_state->start_time;
     cxt->last_pkt_time = recv_state->last_pkt_time;
 
-    
+    uint64_t cxid = recv_state->cxid;
     cxt->cxid = cxid;
     //set a right number of cxtrackerid
     if(cxid > cxtrackerid){
@@ -88,7 +70,7 @@ int local_action_put_perflow(ShareState* recv_state){
     cxt->__pad__ = recv_state->pad;
     cxt->d_tcpFlags = recv_state->d_tcpflags;  
     cxt->check = recv_state->check;
-    
+    uint32_t hash = recv_state->hash;
     cxt->hash = hash;  
 	
     connection* head = bucket[hash];

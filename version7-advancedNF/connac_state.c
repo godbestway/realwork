@@ -61,6 +61,7 @@ int conn_send_getPerflowAck(int count){
 
 }
 
+//This method is abondoned
 int sfc_send_putPerflowAck(ConnPutPerflowAckMsg connPutPerflowAckMsg){
 
 	
@@ -190,10 +191,10 @@ static int handle_put_perflow(ConnPutPerflowMsg* connPutPerflow_recv)
     //printf("state received");
     connac_locals->conn_put_perflow(state);
 
-    //+++sfc support+++
-    if(connac_config.ctrl_sfc == 0){
+    //+++sfc support+++ Abondoned
+    //if(connac_config.ctrl_sfc == 0){
 	conn_send_putPerflowAck(state);
-    }
+    //}
     
 
 }

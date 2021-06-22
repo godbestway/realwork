@@ -1706,7 +1706,7 @@ const ProtobufCEnumDescriptor share_state__fw_state__descriptor =
   share_state__fw_state__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor share_state__field_descriptors[27] =
+static const ProtobufCFieldDescriptor share_state__field_descriptors[29] =
 {
   {
     "start_time",
@@ -2032,6 +2032,30 @@ static const ProtobufCFieldDescriptor share_state__field_descriptors[27] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "ether_gateway",
+    28,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ShareState, n_ether_gateway),
+    offsetof(ShareState, ether_gateway),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "ether_external",
+    29,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_FIXED32,
+    offsetof(ShareState, n_ether_external),
+    offsetof(ShareState, ether_external),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned share_state__field_indices_by_name[] = {
   4,   /* field[4] = af */
@@ -2043,6 +2067,8 @@ static const unsigned share_state__field_indices_by_name[] = {
   17,   /* field[17] = d_tcpFlags */
   14,   /* field[14] = d_total_bytes */
   13,   /* field[13] = d_total_pkts */
+  28,   /* field[28] = ether_external */
+  27,   /* field[27] = ether_gateway */
   26,   /* field[26] = ether_src */
   22,   /* field[22] = external_ip */
   23,   /* field[23] = external_port */
@@ -2065,7 +2091,7 @@ static const unsigned share_state__field_indices_by_name[] = {
 static const ProtobufCIntRange share_state__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 27 }
+  { 0, 29 }
 };
 const ProtobufCMessageDescriptor share_state__descriptor =
 {
@@ -2075,7 +2101,7 @@ const ProtobufCMessageDescriptor share_state__descriptor =
   "ShareState",
   "",
   sizeof(ShareState),
-  27,
+  29,
   share_state__field_descriptors,
   share_state__field_indices_by_name,
   1,  share_state__number_ranges,

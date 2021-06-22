@@ -193,12 +193,12 @@ rule_type_t process_with_state(packetinfo *pi){
 	    	return rt;
 	    } 	
 
-	gettimeofday(&find_middle, NULL);
-        sec = find_middle.tv_sec - start_serialize.tv_sec;
-       	usec = find_middle.tv_usec - start_serialize.tv_usec;
-        total = (sec * 1000 * 1000) + usec;		
+	/*gettimeofday(&find_middle, NULL);
+        long sec = find_middle.tv_sec - start_serialize.tv_sec;
+       	long usec = find_middle.tv_usec - start_serialize.tv_usec;
+        long total = (sec * 1000 * 1000) + usec;		
         printf("STATS: PERFLOW: find middle TIME TO process packet = %ldus\n", total);	    
-	    
+	  */  
 
 	    state_t s = sn->state;
             //printf("STATE %i\n", s);

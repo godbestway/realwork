@@ -240,10 +240,14 @@ struct  _ShareState
   uint32_t nat_hash;
   size_t n_ether_src;
   uint32_t *ether_src;
+  size_t n_ether_gateway;
+  uint32_t *ether_gateway;
+  size_t n_ether_external;
+  uint32_t *ether_external;
 };
 #define SHARE_STATE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&share_state__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, SHARE_STATE__FW_STATE__OPEN, 0, 0, 0, 0, 0, 0, 0, 0, 0,NULL }
+    , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, SHARE_STATE__FW_STATE__OPEN, 0, 0, 0, 0, 0, 0, 0, 0, 0,NULL, 0,NULL, 0,NULL }
 
 
 struct  _ActionGetPerflowMsg

@@ -80,6 +80,7 @@ pthread_mutex_t ActionEntryLock;
 pthread_mutex_t AssetEntryLock;
 pthread_mutex_t MultiEntryLock;
 //+++
+struct timeval start_serialize,end_serialize;
 
 /*  I N T E R N A L   P R O T O T Y P E S  ***********************************/
 static void usage();
@@ -111,12 +112,37 @@ void parse_nets(const char *s_net, fmask *network);
 void udp_guess_direction(packetinfo *pi);
 void set_pkt_end_ptr (packetinfo *pi);
 inline int filter_packet(const int af, void *ip);
+void showPacket(packetinfo *pi);
+//// SDMBN packet output code ////////////////////////////////////////////////
+static pcap_t *open_writeiface(char *writeiface)
+{
+    char errbuf[PCAP_ERRBUF_SIZE];
+    errbuf[0] = 0;
+    pcap_t *live = pcap_open_live(writeiface, 0, 1, 10, errbuf);
+    if (!live)
+    {
+        fprintf(stderr, "Failed to open network interface %s for writing packets after processing: %s\n", writeiface, errbuf);
+        return NULL;
+    }
+//    fprintf(stderr, "Opened network interface %s for writing packets after processing\n", writeiface);
+    return live;
+}
+
+static void close_writeiface(pcap_t *live)
+{
+    pcap_close(live);
+}
 
 /* F U N C T I O N S  ********************************************************/
 
 void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
                 const u_char * packet)
 {
+    
+    if(config.pr_s.ip4_recv == 1){
+    	gettimeofday(&start_serialize, NULL);
+    }
+
     //+++
     if(drop == 1){
 	drop_number++;
@@ -146,6 +172,26 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
     if (pi->eth_type == ETHERNET_TYPE_IP) {
         prepare_ip4(pi);
         parse_ip4(pi);
+	uint16_t temp = (pi->ip4->ip_src) & 0x0000FFFF;
+        //printf("temp 16: %x\n",temp);
+        if(!(temp == 0xA8C0)){
+		//printf("don't process this packet\n");
+		config.pr_s.ip4_recv--;
+		if(config.pr_s.ip4_recv == 22000){
+    			gettimeofday(&end_serialize, NULL);
+    			long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+			long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+			long total = (sec * 1000 * 1000) + usec;
+			printf("start time sec: %lu",start_serialize.tv_sec);
+			printf("start time usec %lu",start_serialize.tv_usec);
+			printf("end time sec: %lu",end_serialize.tv_sec);
+			printf("end time usec %lu",end_serialize.tv_usec);
+			printf("total time: %lu",total);
+			game_over();
+    			}
+		return;
+	}
+	//showPacket(pi);
         goto packet_end;
     } else if (pi->eth_type == ETHERNET_TYPE_IPV6) {
         prepare_ip6(pi);
@@ -172,9 +218,68 @@ void got_packet(u_char * useless, const struct pcap_pkthdr *pheader,
      { connac_notify_packet_received("UNKNOWN", &recv_time); }
 
 //+++
+     // Write packet after processing, if requested
+    if (config.live)
+    {
+        int bytes = pcap_sendpacket(config.live, packet, pheader->caplen);
+        if (bytes < 0)
+        { 
+            fprintf(stderr, "Failed to write packet of length %d to network interface after processing: ", pheader->caplen); 
+            pcap_perror(config.live, "");
+        }
+    }
+
+    if(config.pr_s.ip4_recv == 22000){
+    	gettimeofday(&end_serialize, NULL);
+    	long sec = end_serialize.tv_sec - start_serialize.tv_sec;
+	long usec = end_serialize.tv_usec - start_serialize.tv_usec;
+	long total = (sec * 1000 * 1000) + usec;
+	printf("start time sec: %lu",start_serialize.tv_sec);
+	printf("start time usec %lu",start_serialize.tv_usec);
+	printf("end time sec: %lu",end_serialize.tv_sec);
+	printf("end time usec %lu",end_serialize.tv_usec);
+	printf("total time: %lu",total);
+	game_over();
+    }
 
     return;
 }
+
+
+void showPacket(packetinfo *pi){
+   printf("src_mac : "); 
+   int i;  
+   for(i = 0; i < 6;i++){
+	printf("%x:",pi->eth_hdr->ether_src[i]);
+ 	}
+   printf("\n");
+   printf("dst_mac : ");   
+   for(i = 0; i < 6;i++){
+	printf("%x:",pi->eth_hdr->ether_dst[i]);
+ 	}
+   printf("\n");
+   
+   //struct sockaddr_in sa;
+    char src_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(pi->ip4->ip_src), src_str, INET_ADDRSTRLEN);
+     printf("src_ip %s\n", src_str);   
+
+
+    //struct sockaddr_in sa;
+    char dst_str[INET_ADDRSTRLEN];
+
+   // now get it back and print it
+    inet_ntop(AF_INET, &(pi->ip4->ip_dst), dst_str, INET_ADDRSTRLEN);
+   
+   
+    printf("ds_ip %s\n", dst_str);
+    printf("src_port %u\n", htons(pi->s_port));
+    printf("dst_port %u\n", htons(pi->d_port));
+    printf("server or client %u\n",pi->sc);
+}
+
 
 /* does this ip belong to our network? do we care about the packet?
  *
@@ -1082,6 +1187,7 @@ void game_over()
 */
     print_prads_stats();
 //    showAllState();
+    showAllCxid();
     exit(0);
 }
 
@@ -1519,8 +1625,21 @@ int main(int argc, char *argv[])
     pthread_mutex_init(&AssetEntryLock, NULL);
     pthread_mutex_init(&MultiEntryLock, NULL);
 
+    //+++ Open interface for writing packets after processing, if requested
+    
+    if (config.writeiface)
+    { 
+	config.live = open_writeiface(config.writeiface); 
+	printf("open live interface\n");
+    }
+
     olog("[*] Sniffing...\n");
     pcap_loop(config.handle, -1, got_packet, NULL);
+
+
+    //++ Close interface for writing packets after processing, if it was opened
+    if (config.live)
+    { close_writeiface(config.live); }
 
     game_over();
     return (0);

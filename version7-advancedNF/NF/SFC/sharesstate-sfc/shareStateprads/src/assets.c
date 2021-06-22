@@ -333,14 +333,14 @@ Asset* pack_asset_struct(asset* asset_ori){
 ProtoObject* serialize_cxt_state(connection* cxt){
 
 		
-		//printf("seriliaze---------------------\n");
+		//printf("seriliaze cxt state---------------------\n");
 
 		pthread_mutex_lock(&AssetEntryLock);  
 
-		printf("local get conn one per flow\n");
+		//printf("local get conn one per flow\n");
 		ShareState *share_state = (ShareState *)malloc(sizeof(ShareState));
 		share_state__init(share_state);
-
+		printf("seriliaze cxt state---------------------\n");
 		share_state->has_s_ip = 1;
 		share_state->s_ip = cxt->s_ip.s6_addr32[0];
 		share_state->has_d_ip = 1;

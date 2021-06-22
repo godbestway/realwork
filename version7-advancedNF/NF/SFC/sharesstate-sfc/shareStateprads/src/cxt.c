@@ -242,7 +242,7 @@ void put_asset(asset* ori_asset, Asset *in_asset){
 
 
 int local_get_one_sharestate(connection* cxt){
-        //printf("local get one action per flow\n");	
+        printf("local get one action per flow\n");	
         pthread_mutex_lock(&ActionEntryLock);
 		
 	ProtoObject *proto_object = serialize_cxt_state(cxt);
@@ -266,7 +266,7 @@ int local_get_one_sharestate(connection* cxt){
 }
 
 static void *cxt_sender(void *arg){
-	//printf("start a conn sender\n");
+	printf("start a conn sender\n");
 	
 	connection* cxt = (connection*)arg;
 	int send_conn = local_get_one_sharestate(cxt);
